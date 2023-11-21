@@ -23,8 +23,8 @@ final class ThingStory extends Story
         // Create default book (must be created first to appear first in list)
         $defaultThing = ThingFactory::createOne([
             'name' => 'Test Thing',
-            //'dateCreated' => new \DateTimeImmutable('-1 week'),
-            //'dateModified' => new \DateTimeImmutable('-1 week'),
+            'dateCreated' => \DateTimeImmutable::createFromMutable(ReviewFactory::faker()->dateTime('-1 week')),
+            'dateModified' => \DateTimeImmutable::createFromMutable(ReviewFactory::faker()->dateTime('-1 week')),
             /*'properties' => [
                 'test' => 'test',
                 'test2' => 'test2',
@@ -39,7 +39,7 @@ final class ThingStory extends Story
         */
 
         // Import books
-        $things = []; // store books in array to pick 30 random ones later without the default one
+        /*$things = []; // store books in array to pick 30 random ones later without the default one
         $data = $this->decoder->decode(file_get_contents(__DIR__.'/../things.json'), 'json');
         foreach ($data as $datum) {
             $thing = ThingFactory::createOne($datum + [
@@ -53,9 +53,9 @@ final class ThingStory extends Story
                     'publishedAt' => \DateTimeImmutable::createFromMutable(ReviewFactory::faker()->dateTime('-1 week')),
                 ]);
             }*/
-
+            /*
             $things[] = $thing;
-        }
+        }*/
 
         // Create default user
         $defaultUser = UserFactory::createOne([

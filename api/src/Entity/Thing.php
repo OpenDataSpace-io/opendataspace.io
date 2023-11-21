@@ -87,8 +87,7 @@ class Thing
 
     public function setDateCreated(\DateTimeInterface $dateCreated): static
     {
-        //$this->dateCreated = $dateCreated;
-        $this->dateCreated ??= new \DateTimeImmutable();
+        $this->dateCreated = $dateCreated;
 
         return $this;
     }
@@ -100,8 +99,7 @@ class Thing
 
     public function setDateModified(\DateTimeInterface $dateModified): static
     {
-        //$this->dateModified = $dateModified;
-        $this->dateModified ??= new \DateTimeImmutable();
+        $this->dateModified = $dateModified;
 
         return $this;
     }
