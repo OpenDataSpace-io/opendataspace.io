@@ -108,8 +108,6 @@ final class ThingFactory extends ModelFactory
                  $thing->setDateCreated(self::faker()->dateTime());
                  $thing->setDateModified(self::faker()->dateTime());
                  $thing->setProperties(self::faker()->words());
-                    //$thing->telephone ??= self::faker()->phoneNumber();
-                 //$thing->author ??= self::faker()->name();
              })
         ;
     }
