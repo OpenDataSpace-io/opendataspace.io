@@ -94,6 +94,10 @@ final class ThingFactory extends ModelFactory
                      //$thing->title ??= $datum['name'];
                      // A Thing can have no author
                      //$thing->author ??= $datum['author'] ?? self::faker()->name();
+                     $thing->setName($datum['name']);
+                     $thing->setDateCreated($datum['dateCreated']);
+                     $thing->setDateModified($datum['dateModified']);
+                     $thing->setProperties($data);
 
                      return;
                  }

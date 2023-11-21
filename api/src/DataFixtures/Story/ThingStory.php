@@ -78,13 +78,13 @@ final class ThingStory extends Story
         ]);*/
 
         // Default user has bookmarked other books
-        foreach (array_rand($thing, 30) as $key) {
+        /*foreach (array_rand($thing, 30) as $key) {
             BookmarkFactory::createOne([
                 'user' => $defaultUser,
                 'things' => $things[$key],
                 'bookmarkedAt' => \DateTimeImmutable::createFromMutable(BookmarkFactory::faker()->dateTime('-1 week')),
             ]);
-        }
+        }*/
 
         // Create admin user
         UserFactory::createOne([
