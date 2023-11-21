@@ -125,6 +125,36 @@ export const authOptions: AuthOptions = {
         token_endpoint_auth_method: "none"
       },
     }),
+    GitHubProvider({
+      clientId: GITHUB_CLIENT_ID,
+      clientSecret: GITHUB_SECRET
+    }),
+    {
+      id: "openstreetmap",
+      name: "OpenStreetMap",
+      type: "oauth",
+      version: "2.0",
+      //scope: "read_prefs",
+      authorization: {
+        params: { grant_type: "authorization_code" },
+      },
+      token: "https://www.openstreetmap.org/oauth/request_token",
+      accessTokenUrl: "https://www.openstreetmap.org/oauth/request_token",
+      requestTokenUrl: "https://www.openstreetmap.org/oauth/access_token",
+      //authorizationUrl: "https://www.openstreetmap.org/oauth/authorize",
+      profileUrl: "https://api.openstreetmap.org/api/0.6/user/details",
+      //userinfo: "https://api.openstreetmap.org/api/0.6/user/details",
+      clientId: OPENSTREETMAP_CLIENT_ID,
+      clientSecret: OPENSTREETMAP_CLIENT_SECRET,
+      profile: (profile) => {
+        return {
+          id: profile.id,
+          name: profile.display_name,
+          email: profile.email,
+          image: null,
+        };
+      },
+    },
   ],
 };
 

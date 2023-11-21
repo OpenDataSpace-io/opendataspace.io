@@ -1,0 +1,2 @@
+export const OPENSTREETMAP_CLIENT_ID: string = process.env.OPENSTREETMAP_CLIENT_ID;
+export const OPENSTREETMAP_CLIENT_SECRET: string = process.env.OPENSTREETMAP_CLIENT_SECRET;
