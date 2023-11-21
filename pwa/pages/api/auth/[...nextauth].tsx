@@ -1,5 +1,8 @@
 import NextAuth, { type AuthOptions, type SessionOptions, type DefaultUser, type TokenSet } from "next-auth";
 import KeycloakProvider from "next-auth/providers/keycloak";
+import GitHubProvider from "next-auth/providers/github";
+import { OPENSTREETMAP_CLIENT_ID, OPENSTREETMAP_CLIENT_SECRET } from "@/config/openstreetmap";
+import { GITHUB_CLIENT_ID, GITHUB_SECRET } from "@/config/github";
 
 import { OIDC_CLIENT_ID, OIDC_SERVER_URL } from "@/config/keycloak";
 
