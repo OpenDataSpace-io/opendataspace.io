@@ -100,6 +100,11 @@ final class ThingFactory extends ModelFactory
 
                  // No Open Library Thing has been found in the array of Things
                  //$thing->name ??= self::faker()->text();
+                 $thing->setName(self::faker()->text());
+                 $thing->setDateCreated(self::faker()->dateTime());
+                 $thing->setDateModified(self::faker()->dateTime());
+                 $thing->setProperties(self::faker()->words());
+                    //$thing->telephone ??= self::faker()->phoneNumber();
                  //$thing->author ??= self::faker()->name();
              })
         ;
