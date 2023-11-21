@@ -9,6 +9,7 @@ use Doctrine\ORM\EntityRepository;
 use Zenstruck\Foundry\ModelFactory;
 use Zenstruck\Foundry\Proxy;
 use Zenstruck\Foundry\RepositoryProxy;
+use DateTimeInterface;
 
 /**
  * @extends ModelFactory<Thing>
@@ -68,9 +69,9 @@ final class ThingFactory extends ModelFactory
         return [
             //'thing' => self::faker()->uuid(),
             'name' => self::faker()->text(),
-            'dateCreated' => self::faker()->dateTime(),
-            'dateModified' => self::faker()->dateTime(),
-            'properties' => self::faker()->words(),
+            //'dateCreated' => self::faker()->dateTime()->format('Y-m-d H:i:s'),
+            //'dateModified' => self::faker()->dateTime()->format('Y-m-d H:i:s'),
+            //'properties' => self::faker()->words(),
         ];
         /*return [
             'condition' => self::faker()->randomElement(ThingCondition::getCases()),
@@ -95,9 +96,9 @@ final class ThingFactory extends ModelFactory
                      // A Thing can have no author
                      //$thing->author ??= $datum['author'] ?? self::faker()->name();
                      $thing->setName($datum['name']);
-                     $thing->setDateCreated($datum['dateCreated']);
-                     $thing->setDateModified($datum['dateModified']);
-                     $thing->setProperties($data);
+                     //$thing->setDateCreated(new \DateTimeImmutable($data['dateCreated']));
+                     //$thing->setDateModified(new \DateTimeImmutable($data['dateModified']));
+                     //$thing->setProperties($data);
 
                      return;
                  }
@@ -105,9 +106,9 @@ final class ThingFactory extends ModelFactory
                  // No Open Library Thing has been found in the array of Things
                  //$thing->name ??= self::faker()->text();
                  $thing->setName(self::faker()->text());
-                 $thing->setDateCreated(self::faker()->dateTime());
-                 $thing->setDateModified(self::faker()->dateTime());
-                 $thing->setProperties(self::faker()->words());
+                 //$thing->setDateCreated(self::faker()->dateTime());
+                 //$thing->setDateModified(self::faker()->dateTime());
+                 //$thing->setProperties(self::faker()->words());
              })
         ;
     }

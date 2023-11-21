@@ -23,8 +23,12 @@ final class ThingStory extends Story
         // Create default book (must be created first to appear first in list)
         $defaultThing = ThingFactory::createOne([
             'name' => 'Test Thing',
-            'telephone' => "+41 71 368 50 50",
-            'url' => 'https://tso.ch',
+            //'dateCreated' => new \DateTimeImmutable('-1 week'),
+            //'dateModified' => new \DateTimeImmutable('-1 week'),
+            /*'properties' => [
+                'test' => 'test',
+                'test2' => 'test2',
+            ],*/
         ]);
 
         // Default book has reviews (new users are created)
@@ -36,7 +40,7 @@ final class ThingStory extends Story
 
         // Import books
         $things = []; // store books in array to pick 30 random ones later without the default one
-        $data = $this->decoder->decode(file_get_contents(__DIR__.'/../books.json'), 'json');
+        $data = $this->decoder->decode(file_get_contents(__DIR__.'/../things.json'), 'json');
         foreach ($data as $datum) {
             $thing = ThingFactory::createOne($datum + [
                 //'condition' => BookCondition::cases()[array_rand(BookCondition::cases())],

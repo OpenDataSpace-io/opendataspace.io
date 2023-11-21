@@ -50,14 +50,14 @@ class Thing
         types: ['https://schema.org/dateCreated'],
         example: 'The date on which the CreativeWork was created or the item was added to a DataFeed.'
     )]
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[ORM\Column(type: 'datetime_immutable')]
     private ?\DateTimeInterface $dateCreated = null;
 
     #[ApiProperty(
         types: ['https://schema.org/dateModified'],
         example: 'The date on which the CreativeWork was most recently modified or when the items entry was modified within a DataFeed.'
     )]
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[ORM\Column(type: 'datetime_immutable')]
     private ?\DateTimeInterface $dateModified = null;
 
     #[ORM\Column]
@@ -87,7 +87,8 @@ class Thing
 
     public function setDateCreated(\DateTimeInterface $dateCreated): static
     {
-        $this->dateCreated = $dateCreated;
+        //$this->dateCreated = $dateCreated;
+        $this->dateCreated ??= new \DateTimeImmutable();
 
         return $this;
     }
@@ -99,7 +100,8 @@ class Thing
 
     public function setDateModified(\DateTimeInterface $dateModified): static
     {
-        $this->dateModified = $dateModified;
+        //$this->dateModified = $dateModified;
+        $this->dateModified ??= new \DateTimeImmutable();
 
         return $this;
     }
