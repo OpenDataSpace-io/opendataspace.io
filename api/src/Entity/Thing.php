@@ -16,8 +16,66 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Uid\Uuid;
 use Symfony\Bridge\Doctrine\Types\UuidType;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use ApiPlatform\Metadata\Delete;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
+use ApiPlatform\Metadata\Post;
+use ApiPlatform\Metadata\Put;
+use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
+use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
 
-
+#[ApiResource(
+    uriTemplate: '/admin/things{._format}',
+    types: ['https://schema.org/Thing'],
+    operations: [
+        new GetCollection(
+            itemUriTemplate: '/admin/things/{id}{._format}',
+            paginationClientItemsPerPage: true
+        ),
+        new Post(
+            // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
+            processor: ThingPersistProcessor::class,
+            itemUriTemplate: '/admin/things/{id}{._format}'
+        ),
+        new Get(
+            uriTemplate: '/admin/things/{id}{._format}'
+        ),
+        // https://github.com/api-platform/admin/issues/370
+        new Put(
+            uriTemplate: '/admin/things/{id}{._format}',
+            // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
+            processor: ThingPersistProcessor::class
+        ),
+        new Delete(
+            uriTemplate: '/admin/things/{id}{._format}',
+            // Mercure publish is done manually in MercureProcessor through BookRemoveProcessor
+            processor: ThingRemoveProcessor::class
+        ),
+    ],
+    normalizationContext: [
+        AbstractNormalizer::GROUPS => ['Thing:read:admin', 'Enum:read'],
+        AbstractObjectNormalizer::SKIP_NULL_VALUES => true,
+    ],
+    denormalizationContext: [
+        AbstractNormalizer::GROUPS => ['Thing:write'],
+    ],
+    // todo waiting for https://github.com/api-platform/core/pull/5844
+//    collectDenormalizationErrors: true,
+    security: 'is_granted("ROLE_ADMIN")'
+)]
+#[ApiResource(
+    types: ['https://schema.org/Thing',],
+    operations: [
+        new GetCollection(
+            itemUriTemplate: '/things/{id}{._format}'
+        ),
+        new Get(),
+    ],
+    normalizationContext: [
+        AbstractNormalizer::GROUPS => ['Thing:read', 'Enum:read'],
+        AbstractObjectNormalizer::SKIP_NULL_VALUES => true,
+    ]
+)]
 #[ORM\Entity(repositoryClass: ThingRepository::class)]
 #[UniqueEntity(fields: ['thing'])]
 #[ApiResource]

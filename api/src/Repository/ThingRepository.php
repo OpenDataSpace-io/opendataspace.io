@@ -21,6 +21,24 @@ class ThingRepository extends ServiceEntityRepository
         parent::__construct($registry, Thing::class);
     }
 
+    public function save(Thing $entity, bool $flush = false): void
+    {
+        $this->getEntityManager()->persist($entity);
+
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
+    }
+
+    public function remove(Thing $entity, bool $flush = false): void
+    {
+        $this->getEntityManager()->remove($entity);
+
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
+    }
+
 //    /**
 //     * @return Thing[] Returns an array of Thing objects
 //     */
