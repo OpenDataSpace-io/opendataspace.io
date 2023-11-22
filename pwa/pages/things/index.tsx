@@ -1,16 +1,9 @@
-import { AdminGuesser, ResourceGuesser } from "@api-platform/admin";
-//import simpleRestProvider from 'ra-data-simple-rest';
+const ThingsPage = () => {
+  return (
+    <div>
+      <h1>ThingsPage</h1>
+    </div>
+  );
+};
 
-//const dataProvider = simpleRestProvider('http://path.to.my.api/');
-const entrypoint = process.env.NEXT_PUBLIC_ENTRYPOINT;
-
-const Things = () => (
-  <AdminGuesser
-    entrypoint={entrypoint}
-    //dataProvider={dataProvider}
-   >
-     <ResourceGuesser name="things" />
-  </AdminGuesser>
-);
-
-export default Things;
+export default ThingsPage;
