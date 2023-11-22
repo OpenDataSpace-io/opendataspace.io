@@ -24,7 +24,9 @@ final class ThingStory extends Story
         $defaultThing = ThingFactory::createOne([
             'name' => 'Test Thing',
             'dateCreated' => \DateTimeImmutable::createFromMutable(ReviewFactory::faker()->dateTime('-1 week')),
+            //'dateCreated' => '2021-01-01',
             'dateModified' => \DateTimeImmutable::createFromMutable(ReviewFactory::faker()->dateTime('-1 week')),
+            //'dateModified' => '2021-01-01',
             /*'properties' => [
                 'test' => 'test',
                 'test2' => 'test2',
@@ -59,9 +61,9 @@ final class ThingStory extends Story
 
         // Create default user
         $defaultUser = UserFactory::createOne([
-            'email' => 'john.doe@example.com',
+            'email' => 'john.depp@example.com',
             'firstName' => 'John',
-            'lastName' => 'Doe',
+            'lastName' => 'Depp',
             'roles' => ['ROLE_USER'],
         ]);
 
@@ -92,9 +94,9 @@ final class ThingStory extends Story
 
         // Create admin user
         UserFactory::createOne([
-            'email' => 'chuck.norris@example.com',
-            'firstName' => 'Chuck',
-            'lastName' => 'Norris',
+            'email' => 'jack.ryan@example.com',
+            'firstName' => 'Jack',
+            'lastName' => 'Ryan',
             'roles' => ['ROLE_ADMIN'],
         ]);
     }

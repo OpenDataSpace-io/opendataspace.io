@@ -68,8 +68,8 @@ final class ThingFactory extends ModelFactory
         return [
             //'thing' => self::faker()->uuid(),
             'name' => self::faker()->text(),
-            'dateCreated' => self::faker()->DateTimeImmutable()->format('Y-m-d H:i:s'),
-            'dateModified' => self::faker()->DateTimeImmutable()->format('Y-m-d H:i:s'),
+            'dateCreated' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 week')),
+            'dateModified' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 week')),
             //'properties' => self::faker()->words(),
         ];
         /*return [
@@ -95,8 +95,8 @@ final class ThingFactory extends ModelFactory
                      // A Thing can have no author
                      //$thing->author ??= $datum['author'] ?? self::faker()->name();
                      $thing->setName($datum['name']);
-                     $thing->setDateCreated(self::faker()->DateTimeImmutable()->format('Y-m-d H:i:s'));
-                     $thing->setDateModified(self::faker()->DateTimeImmutable()->format('Y-m-d H:i:s'));
+                     $thing->setDateCreated(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 week')),);
+                     $thing->setDateModified(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 week')),);
                      //$thing->setProperties($data);
 
                      return;
@@ -105,8 +105,8 @@ final class ThingFactory extends ModelFactory
                  // No Open Library Thing has been found in the array of Things
                  //$thing->name ??= self::faker()->text();
                  $thing->setName(self::faker()->text());
-                 $thing->setDateCreated(self::faker()->DateTimeImmutable()->format('Y-m-d H:i:s'));
-                 $thing->setDateModified(self::faker()->DateTimeImmutable()->format('Y-m-d H:i:s'));
+                 $thing->setDateCreated(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 week')),);
+                 $thing->setDateModified(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 week')),);
                  //$thing->setProperties(self::faker()->words());
              })
         ;
