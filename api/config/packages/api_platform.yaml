@@ -1,5 +1,5 @@
 api_platform:
-    title: API Platform's demo
+    title: OpenDataSpace API
     version: 1.0.0
     description: |
         This is a demo application of the [API Platform](https://api-platform.com) framework.
