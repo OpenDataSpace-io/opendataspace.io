@@ -24,9 +24,7 @@ final class ThingStory extends Story
         $defaultThing = ThingFactory::createOne([
             'name' => 'Test Thing',
             'dateCreated' => \DateTimeImmutable::createFromMutable(ReviewFactory::faker()->dateTime('-1 week')),
-            //'dateCreated' => '2021-01-01',
             'dateModified' => \DateTimeImmutable::createFromMutable(ReviewFactory::faker()->dateTime('-1 week')),
-            //'dateModified' => '2021-01-01',
             /*'properties' => [
                 'test' => 'test',
                 'test2' => 'test2',
@@ -40,24 +38,16 @@ final class ThingStory extends Story
         ]);
         */
 
-        // Import books
-        /*$things = []; // store books in array to pick 30 random ones later without the default one
+        // Import things
+        $things = []; // store books in array to pick 30 random ones later without the default one
         $data = $this->decoder->decode(file_get_contents(__DIR__.'/../things.json'), 'json');
         foreach ($data as $datum) {
             $thing = ThingFactory::createOne($datum + [
-                //'condition' => BookCondition::cases()[array_rand(BookCondition::cases())],
+                'name' => $datum['name'],
             ]);
-
-            // Optionally add reviews to it (create new users)
-            /*if ($number = random_int(0, 5)) {
-                ReviewFactory::createMany($number, [
-                    'thing' => $thing,
-                    'publishedAt' => \DateTimeImmutable::createFromMutable(ReviewFactory::faker()->dateTime('-1 week')),
-                ]);
-            }*/
-            /*
+            
             $things[] = $thing;
-        }*/
+        }
 
         // Create default user
         $defaultUser = UserFactory::createOne([
