@@ -1,7 +1,7 @@
 import NextAuth, { type AuthOptions, type SessionOptions, type DefaultUser, type TokenSet } from "next-auth";
-//import KeycloakProvider from "next-auth/providers/keycloak";
+import KeycloakProvider from "next-auth/providers/keycloak";
 import GitHubProvider from "next-auth/providers/github";
-//import { OIDC_CLIENT_ID, OIDC_SERVER_URL } from "@/config/keycloak";
+import { OIDC_CLIENT_ID, OIDC_SERVER_URL } from "@/config/keycloak";
 import { OPENSTREETMAP_CLIENT_ID, OPENSTREETMAP_CLIENT_SECRET } from "@/config/openstreetmap";
 import { GITHUB_CLIENT_ID, GITHUB_SECRET } from "@/config/github";
 
@@ -35,7 +35,7 @@ interface Account {
 
 export const authOptions: AuthOptions = {
   providers: [
-    /*KeycloakProvider({
+    KeycloakProvider({
       id: 'keycloak',
       clientId: OIDC_CLIENT_ID,
       issuer: OIDC_SERVER_URL,
@@ -54,7 +54,7 @@ export const authOptions: AuthOptions = {
       client: {
         token_endpoint_auth_method: "none"
       },
-    }),*/
+    }),
     GitHubProvider({
       clientId: GITHUB_CLIENT_ID,
       clientSecret: GITHUB_SECRET
@@ -88,7 +88,7 @@ export const authOptions: AuthOptions = {
   ],
   callbacks: {
     // @ts-ignore
-    /*async jwt({ token, account }: { token: JWT, account: Account }): Promise<JWT> {
+    async jwt({ token, account }: { token: JWT, account: Account }): Promise<JWT> {
       if (account) {
         // Save the access token and refresh token in the JWT on the initial login
         return {
@@ -105,7 +105,7 @@ export const authOptions: AuthOptions = {
         // If the access token has expired, try to refresh it
         try {
           // todo use .well-known
-          /*const response = await fetch(`${OIDC_SERVER_URL}/protocol/openid-connect/token`, {
+          const response = await fetch(`${OIDC_SERVER_URL}/protocol/openid-connect/token`, {
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams({
               client_id: OIDC_CLIENT_ID,
@@ -113,8 +113,8 @@ export const authOptions: AuthOptions = {
               refresh_token: token.refreshToken,
             }),
             method: "POST",
-          });*/
-          /*
+          });
+          
           const tokens: TokenSet = await response.json();
 
           if (!response.ok) throw tokens;
@@ -140,8 +140,7 @@ export const authOptions: AuthOptions = {
           };
         }
       }
-    },*/
-    /*
+    },
     // @ts-ignore
     async session({ session, token }: { session: Session, token: JWT }): Promise<Session> {
       // Save the access token in the Session for API calls
@@ -155,7 +154,7 @@ export const authOptions: AuthOptions = {
       }
 
       return session;
-    }*/
+    }
   },
   
 };
