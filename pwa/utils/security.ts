@@ -1,7 +1,7 @@
 import { signOut as logout, type SignOutParams, type SignOutResponse } from "next-auth/react";
 import { type Session } from "next-auth";
 
-//import { OIDC_SERVER_URL } from "@/config/keycloak";
+import { OIDC_SERVER_URL } from "@/config/keycloak";
 
 export async function signOut<R extends boolean = true>(
     session: Session,
