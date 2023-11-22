@@ -1,9 +1,10 @@
 import NextAuth, { type AuthOptions, type SessionOptions, type DefaultUser, type TokenSet } from "next-auth";
-import KeycloakProvider from "next-auth/providers/keycloak";
+//import KeycloakProvider from "next-auth/providers/keycloak";
 import GitHubProvider from "next-auth/providers/github";
+//import { OIDC_CLIENT_ID, OIDC_SERVER_URL } from "@/config/keycloak";
 import { OPENSTREETMAP_CLIENT_ID, OPENSTREETMAP_CLIENT_SECRET } from "@/config/openstreetmap";
 import { GITHUB_CLIENT_ID, GITHUB_SECRET } from "@/config/github";
-import { OIDC_CLIENT_ID, OIDC_SERVER_URL } from "@/config/keycloak";
+
 
 interface Session extends SessionOptions {
   accessToken: string
@@ -34,7 +35,7 @@ interface Account {
 
 export const authOptions: AuthOptions = {
   providers: [
-    KeycloakProvider({
+    /*KeycloakProvider({
       id: 'keycloak',
       clientId: OIDC_CLIENT_ID,
       issuer: OIDC_SERVER_URL,
@@ -53,7 +54,7 @@ export const authOptions: AuthOptions = {
       client: {
         token_endpoint_auth_method: "none"
       },
-    }),
+    }),*/
     GitHubProvider({
       clientId: GITHUB_CLIENT_ID,
       clientSecret: GITHUB_SECRET
