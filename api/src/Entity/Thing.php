@@ -78,7 +78,6 @@ use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
 )]
 #[ORM\Entity(repositoryClass: ThingRepository::class)]
 #[UniqueEntity(fields: ['thing'])]
-#[ApiResource]
 class Thing
 {
     /**
@@ -121,7 +120,7 @@ class Thing
     #[ORM\Column]
     private array $properties = [];
 
-    public function getId(): ?int
+    public function getId(): ?Uuid
     {
         return $this->id;
     }
