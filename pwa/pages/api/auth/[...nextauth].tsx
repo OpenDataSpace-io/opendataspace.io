@@ -64,7 +64,7 @@ export const authOptions: AuthOptions = {
       name: "OpenStreetMap",
       type: "oauth",
       version: "2.0",
-      //scope: "read_prefs",
+      issuer: "https://www.openstreetmap.org",
       authorization: {
         params: { grant_type: "authorization_code" },
       },
