@@ -53,7 +53,7 @@ use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
         ),
     ],
     normalizationContext: [
-        AbstractNormalizer::GROUPS => ['Thing:read:admin', 'Enum:read'],
+        AbstractNormalizer::GROUPS => ['Thing:read:admin'],
         AbstractObjectNormalizer::SKIP_NULL_VALUES => true,
     ],
     denormalizationContext: [
@@ -99,7 +99,7 @@ class Thing
         types: ['https://schema.org/name'],
         example: 'Hyperion'
     )]
-    #[Groups(groups: ['Thing:read', 'Thing:read:admin', 'Thingmark:read'])]
+    #[Groups(groups: ['Thing:read', 'Thing:read:admin'])]
     #[ORM\Column(type: Types::TEXT)]
     private ?string $name = null;
 
@@ -107,6 +107,7 @@ class Thing
         types: ['https://schema.org/dateCreated'],
         example: 'The date on which the CreativeWork was created or the item was added to a DataFeed.'
     )]
+    #[Groups(groups: ['Thing:read', 'Thing:read:admin'])]
     #[ORM\Column(type: 'datetime_immutable')]
     private ?\DateTimeInterface $dateCreated = null;
 
@@ -114,9 +115,12 @@ class Thing
         types: ['https://schema.org/dateModified'],
         example: 'The date on which the CreativeWork was most recently modified or when the items entry was modified within a DataFeed.'
     )]
+    #[Groups(groups: ['Thing:read', 'Thing:read:admin'])]
     #[ORM\Column(type: 'datetime_immutable')]
     private ?\DateTimeInterface $dateModified = null;
 
+    #[ApiProperty]
+    #[Groups(groups: ['Thing:read', 'Thing:read:admin'])]
     #[ORM\Column]
     private array $properties = [];
 

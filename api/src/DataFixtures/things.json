@@ -2,7 +2,8 @@
     {
         "name": "Thing 1",
         "dateCreated": "2021-10-01",
-        "dateModified": "2021-10-01"
+        "dateModified": "2021-10-01",
+        "description": "This is a description of thing 1"
     },
     {
         "name": "Thing 2",

@@ -67,10 +67,12 @@ final class ThingFactory extends ModelFactory
     {
         return [
             //'thing' => self::faker()->uuid(),
-            'name' => self::faker()->text(),
-            'dateCreated' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 week')),
-            'dateModified' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 week')),
-            //'properties' => self::faker()->words(),
+            'name' => self::faker()->text(20),
+            'dateCreated' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')),
+            'dateModified' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')),
+            'properties' => [
+                'description' => self::faker()->words()
+            ],
         ];
         /*return [
             'condition' => self::faker()->randomElement(ThingCondition::getCases()),
@@ -94,20 +96,24 @@ final class ThingFactory extends ModelFactory
                      //$thing->title ??= $datum['name'];
                      // A Thing can have no author
                      //$thing->author ??= $datum['author'] ?? self::faker()->name();
-                     $thing->setName($datum['name']);
-                     $thing->setDateCreated(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 week')),);
-                     $thing->setDateModified(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 week')),);
-                     //$thing->setProperties($data);
+                     $thing->setName(self::faker()->text(20));
+                     $thing->setDateCreated(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')),);
+                     $thing->setDateModified(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')),);
+                     $thing->setProperties([
+                            'description' => self::faker()->words()
+                     ]);
 
                      return;
                  }
 
                  // No Open Library Thing has been found in the array of Things
                  //$thing->name ??= self::faker()->text();
-                 $thing->setName(self::faker()->text());
-                 $thing->setDateCreated(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 week')),);
-                 $thing->setDateModified(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 week')),);
-                 //$thing->setProperties(self::faker()->words());
+                 $thing->setName(self::faker()->text(20));
+                 $thing->setDateCreated(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')),);
+                 $thing->setDateModified(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')),);
+                 $thing->setProperties([
+                            'description' => self::faker()->words()
+                 ]);
              })
         ;
     }

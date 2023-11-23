@@ -5,10 +5,7 @@ declare(strict_types=1);
 namespace App\DataFixtures\Story;
 
 use App\DataFixtures\Factory\ThingFactory;
-use App\DataFixtures\Factory\BookmarkFactory;
-use App\DataFixtures\Factory\ReviewFactory;
 use App\DataFixtures\Factory\UserFactory;
-use App\Enum\BookCondition;
 use Symfony\Component\Serializer\Encoder\DecoderInterface;
 use Zenstruck\Foundry\Story;
 
@@ -22,13 +19,13 @@ final class ThingStory extends Story
     {
         // Create default book (must be created first to appear first in list)
         $defaultThing = ThingFactory::createOne([
-            'name' => 'Test Thing',
-            'dateCreated' => \DateTimeImmutable::createFromMutable(ReviewFactory::faker()->dateTime('-1 week')),
-            'dateModified' => \DateTimeImmutable::createFromMutable(ReviewFactory::faker()->dateTime('-1 week')),
-            /*'properties' => [
-                'test' => 'test',
-                'test2' => 'test2',
-            ],*/
+            'name' => ThingFactory::faker()->text(20),
+            'dateCreated' => \DateTimeImmutable::createFromMutable(ThingFactory::faker()->dateTime('-1 month')),
+            'dateModified' => \DateTimeImmutable::createFromMutable(ThingFactory::faker()->dateTime('-1 month')),
+            'properties' => [
+                'name' => ThingFactory::faker()->words(20),
+                'description' => ThingFactory::faker()->words(),
+            ],
         ]);
 
         // Default book has reviews (new users are created)
@@ -42,8 +39,14 @@ final class ThingStory extends Story
         $things = []; // store books in array to pick 30 random ones later without the default one
         $data = $this->decoder->decode(file_get_contents(__DIR__.'/../things.json'), 'json');
         foreach ($data as $datum) {
-            $thing = ThingFactory::createOne($datum + [
+            $thing = ThingFactory::createOne([
                 'name' => $datum['name'],
+                'dateCreated' => \DateTimeImmutable::createFromMutable(ThingFactory::faker()->dateTime('-1 month')),
+                'dateModified' => \DateTimeImmutable::createFromMutable(ThingFactory::faker()->dateTime('-1 month')),
+                'properties' => [
+                    'name' => ThingFactory::faker()->words(20),
+                    'description' => ThingFactory::faker()->words(),
+                ],
             ]);
             
             $things[] = $thing;
