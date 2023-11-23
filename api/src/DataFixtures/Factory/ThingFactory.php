@@ -100,7 +100,8 @@ final class ThingFactory extends ModelFactory
                      $thing->setDateCreated(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')),);
                      $thing->setDateModified(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')),);
                      $thing->setProperties([
-                            'description' => self::faker()->words()
+                            'name' => self::faker()->text(20),
+                            'description' => self::faker()->text()
                      ]);
 
                      return;
@@ -112,7 +113,8 @@ final class ThingFactory extends ModelFactory
                  $thing->setDateCreated(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')),);
                  $thing->setDateModified(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')),);
                  $thing->setProperties([
-                            'description' => self::faker()->words()
+                            'name' => self::faker()->text(20),
+                            'description' => self::faker()->text()
                  ]);
              })
         ;

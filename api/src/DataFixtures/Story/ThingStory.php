@@ -23,8 +23,8 @@ final class ThingStory extends Story
             'dateCreated' => \DateTimeImmutable::createFromMutable(ThingFactory::faker()->dateTime('-1 month')),
             'dateModified' => \DateTimeImmutable::createFromMutable(ThingFactory::faker()->dateTime('-1 month')),
             'properties' => [
-                'name' => ThingFactory::faker()->words(20),
-                'description' => ThingFactory::faker()->words(),
+                'name' => ThingFactory::faker()->text(20),
+                'description' => ThingFactory::faker()->text(),
             ],
         ]);
 
@@ -45,7 +45,7 @@ final class ThingStory extends Story
                 'dateModified' => \DateTimeImmutable::createFromMutable(ThingFactory::faker()->dateTime('-1 month')),
                 'properties' => [
                     'name' => ThingFactory::faker()->words(20),
-                    'description' => ThingFactory::faker()->words(),
+                    'description' => ThingFactory::faker()->text(),
                 ],
             ]);
             
