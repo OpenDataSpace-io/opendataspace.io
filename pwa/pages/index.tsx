@@ -67,7 +67,7 @@ const Welcome = () => (
           </p>
           <div className="flex justify-center flex-wrap | lg:justify-start lg:grid lg:gap-5 lg:grid-cols-2">
             <Link
-              href={"/books"}
+              href={"/things"}
               className="bg-white text-cyan-700 px-8 py-3 relative overflow-hidden transition-all font-extrabold text-lg group hover:pl-4 hover:pr-12"
             >
               Visit the Things
