@@ -21,6 +21,9 @@ import { Edit as BooksEdit } from "@/components/admin/book/Edit";
 import { List as ReviewsList } from "@/components/admin/review/List";
 import { Show as ReviewsShow } from "@/components/admin/review/Show";
 import { Edit as ReviewsEdit } from "@/components/admin/review/Edit";
+import { List as ThingsList } from "@/components/admin/thing/List";
+import { Create as ThingsCreate } from "@/components/admin/thing/Create";
+import { Edit as ThingsEdit } from "@/components/admin/thing/Edit";
 import { type Book } from "@/types/Book";
 import { type Thing } from "@/types/Thing";
 import { type Review } from "@/types/Review";
@@ -122,6 +125,8 @@ const AdminWithContext = ({ session }: { session: Session }) => {
                          recordRepresentation={(record: Book) => `${record.title} - ${record.author}`}/>
         <ResourceGuesser name="admin/reviews" list={ReviewsList} show={ReviewsShow} edit={ReviewsEdit} hasCreate={false}
                          recordRepresentation={(record: Review) => record.user.name}/>
+        <ResourceGuesser name="admin/things" list={ThingsList} create={ThingsCreate} edit={ThingsEdit} hasShow={false}
+                         recordRepresentation={(record: Thing) => record.name}/>
       </AdminUI>
     </DocContext.Provider>
   );
