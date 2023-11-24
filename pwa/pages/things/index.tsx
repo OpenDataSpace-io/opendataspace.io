@@ -1,33 +1,39 @@
-import Head from "next/head";
+import { type GetServerSideProps } from "next";
 
-import { HydraAdmin, fetchHydra, hydraDataProvider, ResourceGuesser } from "@api-platform/admin";
-import { parseHydraDocumentation } from "@api-platform/api-doc-parser";
-import { Admin, Resource } from 'react-admin';
+import { List } from "@/components/thing/List";
+import { type Thing } from "@/types/Thing";
+import { type PagedCollection } from "@/types/collection";
+import { type FetchResponse, fetch } from "@/utils/dataAccess";
+import { type FiltersProps, buildUriFromFilters } from "@/utils/thing";
 
-//const entrypoint = process.env.NEXT_PUBLIC_ENTRYPOINT;
-const entrypoint: string = typeof window === "undefined" ? process.env.NEXT_PUBLIC_ENTRYPOINT : window.origin;
+export const getServerSideProps: GetServerSideProps<{
+  data: PagedCollection<Thing> | null,
+  hubURL: string | null,
+  filters: FiltersProps,
+}> = async ({ query }) => {
+  const page = Number(query.page ?? 1);
+  const filters: FiltersProps = {};
+  if (query.page) {
+    // @ts-ignore
+    filters.page = query.page;
+  }
+  //if (query.title) {
+    // @ts-ignore
+    //filters.title = query.title;
+  //}
 
-const dataProvider = hydraDataProvider({
-  entrypoint,
-  httpClient: fetchHydra,
-  apiDocumentationParser: parseHydraDocumentation,
-  mercure: true,
-  useEmbedded: false,
-})
+  try {
+    const response: FetchResponse<PagedCollection<Thing>> | undefined = await fetch(buildUriFromFilters("/things", filters));
+    if (!response?.data) {
+      throw new Error('Unable to retrieve data from /things.');
+    }
 
-const ThingsPage = () => {
-  return (
-    <div>
-      <Head>
-        <title>OpenDataSpace.io - Things</title>
-      </Head>
-      <h1>ThingsPage</h1>
+    return { props: { data: response.data, hubURL: response.hubURL, filters, page } };
+  } catch (error) {
+    console.error(error);
+  }
 
-      <Admin dataProvider={dataProvider}>
-        <Resource name="things" />
-      </Admin>
-    </div>
-  );
+  return { props: { data: null, hubURL: null, filters, page } };
 };
 
-export default ThingsPage;
+export default List;
