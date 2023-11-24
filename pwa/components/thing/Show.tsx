@@ -26,19 +26,6 @@ interface Props {
   page: number;
 }
 
-interface BookmarkProps {
-  book: string | undefined;
-}
-
-const saveBookmark = async (values: BookmarkProps) =>
-  await fetch<Bookmark>("/bookmarks", {
-    method: "POST",
-    body: JSON.stringify(values),
-  });
-
-const deleteBookmark = async (id: string) =>
-  await fetch<Bookmark>(id, { method: "DELETE" });
-
 export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
   const { data: session, status } = useSession();
   //const [bookmark, setBookmark] = useState<Bookmark | null | undefined>();

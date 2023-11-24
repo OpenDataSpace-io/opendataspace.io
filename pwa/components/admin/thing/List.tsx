@@ -18,6 +18,8 @@ export const List = (props: ListGuesserProps) => (
   <ReactAdminList {...props} filters={filters} exporter={false} title="Things">
     <Datagrid>
       <FieldGuesser source="name"/>
+      <FieldGuesser source="dateCreated"/>
+      <FieldGuesser source="dateModified"/>
       <ShowButton/>
       <EditButton/>
     </Datagrid>
