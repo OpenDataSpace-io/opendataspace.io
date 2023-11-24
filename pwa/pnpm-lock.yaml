@@ -24,16 +24,16 @@ dependencies:
     specifier: ^5.14.15
     version: 5.14.15(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.33)(react-dom@18.2.0)(react@18.2.0)
   '@rjsf/core':
-    specifier: ^5.13.6
+    specifier: ^5.14.2
     version: 5.14.2(@rjsf/utils@5.14.2)(react@18.2.0)
   '@rjsf/mui':
-    specifier: ^5.13.6
+    specifier: ^5.14.2
     version: 5.14.2(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@mui/icons-material@5.14.15)(@mui/material@5.14.15)(@rjsf/core@5.14.2)(@rjsf/utils@5.14.2)(react@18.2.0)
   '@rjsf/utils':
-    specifier: ^5.13.6
+    specifier: ^5.14.2
     version: 5.14.2(react@18.2.0)
   '@rjsf/validator-ajv8':
-    specifier: ^5.13.6
+    specifier: ^5.14.2
     version: 5.14.2(@rjsf/utils@5.14.2)
   '@tailwindcss/forms':
     specifier: ^0.5.6
