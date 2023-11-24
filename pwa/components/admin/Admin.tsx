@@ -22,6 +22,7 @@ import { List as ReviewsList } from "@/components/admin/review/List";
 import { Show as ReviewsShow } from "@/components/admin/review/Show";
 import { Edit as ReviewsEdit } from "@/components/admin/review/Edit";
 import { type Book } from "@/types/Book";
+import { type Thing } from "@/types/Thing";
 import { type Review } from "@/types/Review";
 
 const apiDocumentationParser = (session: Session) => async () => {
