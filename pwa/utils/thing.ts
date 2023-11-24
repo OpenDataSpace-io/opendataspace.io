@@ -18,7 +18,7 @@ export interface FiltersProps {
   page?: number | undefined;
 }
 
-export const useOpenLibraryBook = <TData extends Thing>(data: TData) => {
+export const useOpenLibraryThing = <TData extends Thing>(data: TData) => {
   if (!isItem(data)) {
     throw new Error("Object sent is not in JSON-LD format.");
   }

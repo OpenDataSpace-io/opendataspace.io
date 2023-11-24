@@ -14,7 +14,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { type Thing } from "@/types/Thing";
 import { useMercure } from "@/utils/mercure";
 //import { List as Reviews } from "@/components/review/List";
-//import { useOpenLibraryBook } from "@/utils/book";
+import { useOpenLibraryThing } from "@/utils/thing";
 import { fetch, type FetchError, type FetchResponse } from "@/utils/dataAccess";
 //import { type Bookmark } from "@/types/Bookmark";
 import { type PagedCollection } from "@/types/collection";
@@ -28,54 +28,8 @@ interface Props {
 
 export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
   const { data: session, status } = useSession();
-  //const [bookmark, setBookmark] = useState<Bookmark | null | undefined>();
-  //const { data: book, isLoading } = useOpenLibraryBook(data);
+  const { data: thing, isLoading } = useOpenLibraryThing(data);
   const item = useMercure(data, hubURL);
-
-  /*const bookmarkMutation = useMutation<
-    Promise<FetchResponse<Bookmark> | SignInResponse | undefined>,
-    Error | FetchError,
-    BookmarkProps
-    // @ts-ignore
-  >(async (data: BookmarkProps) => {
-    // @ts-ignore
-    if (!session || session?.error === "RefreshAccessTokenError") {
-      await signIn("keycloak");
-
-      return;
-    }
-
-    if (bookmark) {
-      // @ts-ignore
-      await deleteBookmark(bookmark["@id"]);
-      setBookmark(null);
-
-      return;
-    }
-
-    const response: FetchResponse<Bookmark> | undefined = await saveBookmark(data);
-    if (response && response?.data) {
-      setBookmark(response.data);
-    }
-  });*/
-
-  // Check in user bookmarks if the current book has been bookmarked
-  /*useEffect(() => {
-    // /bookmarks endpoint requires authentication
-    if (status === "loading" || status === "unauthenticated") return;
-
-    (async () => {
-      try {
-        const response: FetchResponse<PagedCollection<Bookmark>> | undefined = await fetch(`/bookmarks?book=${data["@id"]}`);
-        if (response && response?.data && response.data["hydra:member"]?.length) {
-          setBookmark(response.data["hydra:member"][0]);
-        }
-      } catch (error) {
-        console.error(error);
-        setBookmark(null);
-      }
-    })()
-  }, [data, status]);*/
 
   return (
     <div className="container mx-auto max-w-7xl items-center justify-between p-6 lg:px-8">
