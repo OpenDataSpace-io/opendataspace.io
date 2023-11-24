@@ -1,6 +1,6 @@
 import { required } from "react-admin";
 
-import { BookInput } from "@/components/admin/thing/ThingInput";
+import { ThingInput } from "@/components/admin/thing/ThingInput";
 
 export const Form = () => (
   <>

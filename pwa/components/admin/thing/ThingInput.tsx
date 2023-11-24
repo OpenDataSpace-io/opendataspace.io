@@ -9,9 +9,7 @@ import { useWatch } from "react-hook-form";
 //import { SearchDoc } from "@/types/OpenLibrary/SearchDoc";
 
 interface Result {
-  title: string;
-  author: string;
-  value: string;
+  name: string;
 }
 
 interface ThingInputProps extends TextInputProps {
@@ -20,7 +18,7 @@ interface ThingInputProps extends TextInputProps {
 
 export const ThingInput = (props: ThingInputProps) => {
   const { field: { ref, ...field} } = useInput(props);
-  const title = useWatch({ name: "title" });
+  const title = useWatch({ name: "name" });
   const controller = useRef<AbortController | undefined>();
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [value, setValue] = useState<Result | null | undefined>(
@@ -64,4 +62,4 @@ export const ThingInput = (props: ThingInputProps) => {
   />;
 };
 ThingInput.displayName = "ThingInput";
-ThingInput.defaultProps = { label: "Open Library Book" };
+ThingInput.defaultProps = { label: "Name" };
