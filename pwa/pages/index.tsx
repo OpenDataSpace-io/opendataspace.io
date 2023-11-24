@@ -70,7 +70,7 @@ const Welcome = () => (
               href={"/books"}
               className="bg-white text-cyan-700 px-8 py-3 relative overflow-hidden transition-all font-extrabold text-lg group hover:pl-4 hover:pr-12"
             >
-              Visit the Books Store
+              Visit the Things
               <div className="absolute left-full top-0 w-7 h-full bg-cyan-200 transition-all flex p-1 justify-center items-center group-hover:-translate-x-full">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
