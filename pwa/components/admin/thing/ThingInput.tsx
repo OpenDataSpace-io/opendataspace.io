@@ -5,15 +5,18 @@ import { TextInput, type TextInputProps, useInput } from "react-admin";
 import { useQuery } from "react-query";
 import { useWatch } from "react-hook-form";
 
-//import { Search } from "@/types/OpenLibrary/Search";
-//import { SearchDoc } from "@/types/OpenLibrary/SearchDoc";
-
 interface Result {
   name: string;
+  dateCreated: string;
+  dateModified: string;
+  value: string;
 }
 
 interface ThingInputProps extends TextInputProps {
   name?: string;
+  dateCreated?: string;
+  dateModified?: string;
+  value?: string;
 }
 
 export const ThingInput = (props: ThingInputProps) => {

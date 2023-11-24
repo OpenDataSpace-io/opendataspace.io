@@ -4,7 +4,7 @@ import { type FunctionComponent } from "react";
 
 import { type Thing } from "@/types/Thing";
 import { getItemPath } from "@/utils/dataAccess";
-import { useOpenLibraryBook } from "@/utils/thing";
+import { useOpenLibraryThing } from "@/utils/thing";
 import { Loading } from "@/components/common/Loading";
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const Item: FunctionComponent<Props> = ({ thing }) => {
-  const { data, isLoading } = useOpenLibraryBook(thing);
+  const { data, isLoading } = useOpenLibraryThing(thing);
 
   if (isLoading || !data) return <Loading/>;
 
