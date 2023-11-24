@@ -1,0 +1,55 @@
+[
+    {
+        "@context": "https://schema.org",
+        "@type": "Place",
+        "name" : "Appenzeller Schaukäserei",
+        "address": {
+            "@type": "https://schema.org/PostalAddress",
+            "streetAddress": "Dorf 711",
+            "addressLocality": "Stein",
+            "postalCode": "9063",
+            "addressCountry": "CH"
+        },
+        "geo": {
+            "@type": "https://schema.org/GeoCoordinates",
+            "latitude": 47.395,
+            "longitude": 9.364
+        },
+        "telephone": "+41 71 368 50 50",
+        "url": "https://www.appenzeller-bahnen.ch/de/erlebnisse/appenzeller-schaukaeserei",
+        "email": "",
+        "openingHours": "Mo-Su 09:00-18:00",
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "https://schema.org/Monday",
+                    "https://schema.org/Tuesday",
+                    "https://schema.org/Wednesday",
+                    "https://schema.org/Thursday",
+                    "https://schema.org/Friday"
+                ],
+                "opens": "09:00",
+                "closes": "18:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "https://schema.org/Saturday",
+                    "https://schema.org/Sunday"
+                ],
+                "opens": "09:00",
+                "closes": "17:00"
+            }
+        ],
+        "specialOpeningHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "validFrom": "2021-10-01",
+                "validThrough": "2021-10-31",
+                "opens": "09:00",
+                "closes": "17:00"
+            }
+        ]
+    }
+]

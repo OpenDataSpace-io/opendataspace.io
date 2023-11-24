@@ -16,41 +16,142 @@ const schema: RJSFSchema = {
 };
 
 const schema2: RJSFSchema = {
-  "title": "A registration form",
+  "title": "Test Place Form",
   "description": "A simple form example.",
   "type": "object",
   "required": [
-    "firstName",
-    "lastName"
+    "name",
   ],
   "properties": {
-    "firstName": {
+    "name": {
       "type": "string",
-      "title": "First name",
-      "default": "Chuck"
+      "title": "Name",
+      "default": "Test Thing"
     },
-    "lastName": {
+    "description": {
       "type": "string",
-      "title": "Last name"
+      "title": "Description",
     },
-    "age": {
-      "type": "integer",
-      "title": "Age"
+    "address": {
+      "type": "object",
+      "properties": {
+        "streetAddress": {
+          "type": "string",
+        },
+        "addressLocality": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "string"
+        },
+        "addressCountry": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "street_address",
+        "city",
+      ]
     },
-    "bio": {
-      "type": "string",
-      "title": "Bio"
-    },
-    "password": {
-      "type": "string",
-      "title": "Password",
-      "minLength": 3
+    "geo": {
+      "type": "object",
+      "title": "Geo Location",
+      "properties": {
+        "latitude": {
+          "type": "number",
+          "title": "Latitude",
+        },
+        "longitude": {
+          "type": "number",
+          "title": "Longitude",
+        }
+      }
     },
     "telephone": {
       "type": "string",
       "title": "Telephone",
       "minLength": 10
-    }
+    },
+    "email": {
+      "type": "string",
+      "title": "Email",
+      "format": "email"
+    },
+    "website": {
+      "type": "string",
+      "title": "Website",
+      "format": "uri"
+    },
+    "openingHours": {
+      "type": "array",
+      "title": "Öffnungszeiten",
+      "items": {
+        "type": "object",
+        "properties": {
+          "dayOfWeek": {
+            "type": "string",
+            "title": "Wochentag",
+            "enum": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "enumNames": [
+              "Montag",
+              "Dienstag",
+              "Mittwoch",
+              "Donnerstag",
+              "Freitag",
+              "Samstag",
+              "Sonntag"
+            ]
+          },
+          "opens": {
+            "type": "string",
+            "title": "Öffnet",
+            "format": "time"
+          },
+          "closes": {
+            "type": "string",
+            "title": "Schließt",
+            "format": "time"
+          }
+        }
+      }
+    },
+    "openingHoursSpecification":{
+      "type": "array",
+      "title": "spezifische Öffnungszeiten",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "title": "Datum",
+            "format": "date"
+          },
+          "opens": {
+            "type": "string",
+            "title": "Öffnet",
+            "format": "time"
+          },
+          "closes": {
+            "type": "string",
+            "title": "Schließt",
+            "format": "time"
+          },
+          "closed": {
+            "type": "boolean",
+            "title": "Geschlossen",
+            "default": false
+          }
+        }
+      }
+    },
   }
 }
 
@@ -62,14 +163,15 @@ const Playground = () => {
         <Head>
           <title>Form Playground!</title>
         </Head>
-  
-        <Form
-            schema={schema2}
-            validator={validator}
-            onChange={log('changed')}
-            onSubmit={log('submitted')}
-            onError={log('errors')}
-        />,
+        <div className="container mx-auto max-w-7xl items-center justify-between p-6 lg:px-8">
+          <Form
+              schema={schema2}
+              validator={validator}
+              onChange={log('changed')}
+              onSubmit={log('submitted')}
+              onError={log('errors')}
+          />
+        </div>
       </>
     );
 };
