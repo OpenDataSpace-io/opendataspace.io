@@ -19,7 +19,7 @@ const authProvider: AuthProvider = {
     const status = error.status;
     // @ts-ignore
     if (!session || session?.error === "RefreshAccessTokenError" || status === 401) {
-      await signIn("github");
+      await signIn("keycloak");
 
       return;
     }
@@ -32,7 +32,7 @@ const authProvider: AuthProvider = {
     const session = await getSession();
     // @ts-ignore
     if (!session || session?.error === "RefreshAccessTokenError") {
-      await signIn("github");
+      await signIn("keycloak");
 
       return;
     }
