@@ -21,11 +21,11 @@ interface ThingInputProps extends TextInputProps {
 
 export const ThingInput = (props: ThingInputProps) => {
   const { field: { ref, ...field} } = useInput(props);
-  const title = useWatch({ name: "name" });
+  const name = useWatch({ name: "name" });
   const controller = useRef<AbortController | undefined>();
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [value, setValue] = useState<Result | null | undefined>(
-    !!title && !!field.value ? { title: title, value: field.value } : undefined
+    !!name && !!field.value ? { name: name, value: field.value } : undefined
   );
   const { isLoading, data, isFetched } = useQuery<Result[]>(
     ["search", searchQuery],
@@ -56,7 +56,7 @@ export const ThingInput = (props: ThingInputProps) => {
       isOptionEqualToValue={(option, val) => option?.value === (val?.value || value?.value)}
       onChange={onChange}
       onInputChange={onInputChange}
-      getOptionLabel={(option: Result | undefined) => !!option ? `${option.title} - ${option.author}` : "No options"}
+      getOptionLabel={(option: Result | undefined) => !!option ? `${option.name}` : "No options"}
       style={{ width: 500 }}
       loading={isLoading}
       renderInput={(params) => (
