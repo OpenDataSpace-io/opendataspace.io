@@ -31,7 +31,10 @@ export const ThingInput = (props: ThingInputProps) => {
       }
       controller.current = new AbortController();
 
-      //return await fetchOpenLibrarySearch(searchQuery, controller.current.signal);
+      return {
+        name: "test",
+        value: "test",
+      }
     },
     {
       enabled: !!searchQuery,
