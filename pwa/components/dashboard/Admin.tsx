@@ -10,20 +10,20 @@ import frenchMessages from "ra-language-french";
 import { fetchHydra, HydraAdmin, hydraDataProvider, OpenApiAdmin, ResourceGuesser } from "@api-platform/admin";
 import { parseHydraDocumentation } from "@api-platform/api-doc-parser";
 
-import DocContext from "@/components/admin/DocContext";
+import DocContext from "@/components/dashboard/DocContext";
 import authProvider from "@/components/authProvider";
-import AppBar from "@/components/admin/AppBar";
-import Menu from "@/components/admin/Menu";
+import AppBar from "@/components/dashboard/AppBar";
+import Menu from "@/components/dashboard/Menu";
 import { ENTRYPOINT } from "@/config/entrypoint";
-import { List as BooksList } from "@/components/admin/book/List";
-import { Create as BooksCreate } from "@/components/admin/book/Create";
-import { Edit as BooksEdit } from "@/components/admin/book/Edit";
-import { List as ReviewsList } from "@/components/admin/review/List";
-import { Show as ReviewsShow } from "@/components/admin/review/Show";
-import { Edit as ReviewsEdit } from "@/components/admin/review/Edit";
-import { List as ThingsList } from "@/components/admin/thing/List";
-import { Create as ThingsCreate } from "@/components/admin/thing/Create";
-import { Edit as ThingsEdit } from "@/components/admin/thing/Edit";
+import { List as BooksList } from "@/components/dashboard/book/List";
+import { Create as BooksCreate } from "@/components/dashboard/book/Create";
+import { Edit as BooksEdit } from "@/components/dashboard/book/Edit";
+import { List as ReviewsList } from "@/components/dashboard/review/List";
+import { Show as ReviewsShow } from "@/components/dashboard/review/Show";
+import { Edit as ReviewsEdit } from "@/components/dashboard/review/Edit";
+import { List as ThingsList } from "@/components/dashboard/thing/List";
+import { Create as ThingsCreate } from "@/components/dashboard/thing/Create";
+import { Edit as ThingsEdit } from "@/components/dashboard/thing/Edit";
 import { type Book } from "@/types/Book";
 import { type Thing } from "@/types/Thing";
 import { type Review } from "@/types/Review";
@@ -121,10 +121,6 @@ const AdminWithContext = ({ session }: { session: Session }) => {
         setDocType,
       }}>
       <AdminUI session={session}>
-        <ResourceGuesser name="admin/books" list={BooksList} create={BooksCreate} edit={BooksEdit} hasShow={false}
-                         recordRepresentation={(record: Book) => `${record.title} - ${record.author}`}/>
-        <ResourceGuesser name="admin/reviews" list={ReviewsList} show={ReviewsShow} edit={ReviewsEdit} hasCreate={false}
-                         recordRepresentation={(record: Review) => record.user.name}/>
         <ResourceGuesser name="admin/things" list={ThingsList} create={ThingsCreate} edit={ThingsEdit} hasShow={false}
                          recordRepresentation={(record: Thing) => record.name}/>
       </AdminUI>
@@ -153,7 +149,7 @@ const AdminWithOIDC = () => {
 const Admin = () => (
   <>
     <Head>
-      <title>API Platform Admin</title>
+      <title>Dashboard</title>
     </Head>
 
     {/*@ts-ignore*/}

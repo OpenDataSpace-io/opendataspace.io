@@ -2,7 +2,7 @@ import { required } from "react-admin";
 import { DateTimeInput } from 'react-admin';
 import { TextInput } from 'react-admin';
 
-import { ThingInput } from "@/components/admin/thing/ThingInput";
+import { ThingInput } from "@/components/dashboard/thing/ThingInput";
 
 export const Form = () => (
   <>

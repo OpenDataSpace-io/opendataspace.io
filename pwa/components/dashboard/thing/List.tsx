@@ -8,7 +8,7 @@ import {
   EditButton,
 } from "react-admin";
 
-import { ShowButton } from "@/components/admin/thing/ShowButton";
+import { ShowButton } from "@/components/dashboard/thing/ShowButton";
 
 const filters = [
   <TextInput source="name" key="name"/>,

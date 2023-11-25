@@ -1,6 +1,6 @@
 import { CreateGuesser, type CreateGuesserProps } from "@api-platform/admin";
 
-import { Form } from "@/components/admin/thing/Form";
+import { Form } from "@/components/dashboard/thing/Form";
 
 export const Create = (props: CreateGuesserProps) => (
   <CreateGuesser {...props} title="Create thing">
