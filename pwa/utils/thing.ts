@@ -7,13 +7,11 @@ import { type Thing } from "@/types/Thing";
 //import { type Work } from "@/types/OpenLibrary/Work";
 
 interface OrderFilter {
-  title: string;
+  name: string;
 }
 
 export interface FiltersProps {
-  //author?: string | undefined;
-  //title?: string | undefined;
-  //condition?: string | string[] | undefined;
+  name?: string | undefined;
   order?: OrderFilter | undefined;
   page?: number | undefined;
 }
@@ -66,6 +64,7 @@ export const useOpenLibraryThing = <TData extends Thing>(data: TData) => {
     return data;
   });
   */
+  console.log(data);
   return data;
 };
 

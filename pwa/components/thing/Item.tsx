@@ -19,7 +19,7 @@ export const Item: FunctionComponent<Props> = ({ thing }) => {
   return (
     <div className="relative p-4 bg-white hover:drop-shadow-xl border-b border-gray-200 text-center" data-testid="thing">
       <div className="h-40 mb-2">
-        <Link href={getItemPath(data, "/things/[id]/[slug]")}>
+        <Link href={getItemPath(data, "/things/[id]")}>
           {!!data["images"] && (
             <Image alt={data["name"]} width={100} height={130} src={data["images"]["medium"]}
                    className="mx-auto w-auto max-w-[150px] h-auto max-h-[165px]" priority={true}
@@ -31,7 +31,7 @@ export const Item: FunctionComponent<Props> = ({ thing }) => {
       </div>
       <div className="h-32 mb-2">
         <p>
-          <Link href={getItemPath(data, "/things/[id]/[slug]")}
+          <Link href={getItemPath(data, "/things/[id]")}
                 className="font-bold text-lg text-gray-700 hover:underline">
             {data["name"]}
           </Link>

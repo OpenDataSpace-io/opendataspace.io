@@ -62,7 +62,7 @@ export const List: NextPage<Props> = ({ data, hubURL, filters, page }) => {
                     value={filters.order?.title ?? ""}
                     displayEmpty
                     onChange={(event) => {
-                      filtersMutation.mutate({ ...filters, order: event.target.value ? { title: event.target.value } : undefined });
+                      filtersMutation.mutate({ ...filters, order: event.target.value ? { name: event.target.value } : undefined });
                     }}
                     >
                     <MenuItem value="">Relevance</MenuItem>
