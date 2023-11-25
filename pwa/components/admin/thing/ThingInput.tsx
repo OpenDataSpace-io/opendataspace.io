@@ -32,8 +32,7 @@ export const ThingInput = (props: ThingInputProps) => {
       controller.current = new AbortController();
 
       return {
-        name: "test",
-        value: "test",
+        name: name
       }
     },
     {
