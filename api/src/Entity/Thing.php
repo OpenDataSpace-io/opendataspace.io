@@ -73,7 +73,7 @@ use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
         ),
         new Post(
             // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
-            processor: ThingPropertiesPersistProcessor::class,
+            processor: ThingPersistProcessor::class,
             itemUriTemplate: '/dashboard/things/{id}{._format}'
         ),
         new Get(
@@ -83,7 +83,7 @@ use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
         new Put(
             uriTemplate: '/dashboard/things/{id}{._format}',
             // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
-            processor: ThingPropertiesPersistProcessor::class
+            processor: ThingPersistProcessor::class
         ),
         /*new Delete(
             uriTemplate: '/dashboard/things/{id}{._format}',
