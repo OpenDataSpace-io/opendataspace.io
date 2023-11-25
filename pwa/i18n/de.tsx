@@ -1,12 +1,12 @@
 import { TranslationMessages } from 'react-admin';
-import englishMessages from 'ra-language-english';
+import germanMessages from 'ra-language-german';
 
-const customEnglishMessages: TranslationMessages = {
-    ...englishMessages,
+const customGermanMessages: TranslationMessages = {
+    ...germanMessages,
     pos: {
-        search: 'Search',
-        configuration: 'Configuration',
-        language: 'Language',
+        search: 'Suche',
+        configuration: 'Konfiguration',
+        language: 'Sprache',
         theme: {
             name: 'Theme',
             light: 'Light',
@@ -34,7 +34,7 @@ const customEnglishMessages: TranslationMessages = {
             },
         },
         menu: {
-            things: 'Things',
+            things: 'Objekte',
             sales: 'Sales',
             catalog: 'Catalog',
             customers: 'Customers',
@@ -223,4 +223,4 @@ const customEnglishMessages: TranslationMessages = {
     },
 };
 
-export default customEnglishMessages;
+export default customGermanMessages;

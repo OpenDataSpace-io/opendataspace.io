@@ -10,7 +10,7 @@ export const ShowButton = (props: ShowButtonProps) => {
     // @ts-ignore
     <Button label={props.label} target="_blank" href={getItemPath({
       id: record["@id"].replace(/^\/dashboard\/things\//, ""),
-      slug: slugify(`${record.name}`, { lower: true, trim: true, remove: /[*+~.(),;'"!:@]/g }),
+      //slug: slugify(`${record.name}`, { lower: true, trim: true, remove: /[*+~.(),;'"!:@]/g }),
     }, "/things/[id]")}>
       <VisibilityIcon/>
     </Button>

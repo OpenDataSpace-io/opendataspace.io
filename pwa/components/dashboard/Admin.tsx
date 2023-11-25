@@ -114,7 +114,7 @@ const AdminWithContext = ({ session }: { session: Session }) => {
         setDocType,
       }}>
       <AdminUI session={session}>
-        <ResourceGuesser name="dashboard/things" list={ThingsList} create={ThingsCreate} edit={ThingsEdit} hasShow={false}
+        <ResourceGuesser name="admin/things" list={ThingsList} create={ThingsCreate} edit={ThingsEdit} hasShow={false}
                          recordRepresentation={(record: Thing) => record.name}/>
       </AdminUI>
     </DocContext.Provider>

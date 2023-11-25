@@ -5,7 +5,7 @@ import DataObjectIcon from '@mui/icons-material/DataObject';
 
 const Menu = () => (
   <ReactAdminMenu>
-    <ReactAdminMenu.Item to="/dashboard/things" primaryText="Things" leftIcon={<DataObjectIcon/>}/>
+    <ReactAdminMenu.Item to="/admin/things" primaryText="Things" leftIcon={<DataObjectIcon/>}/>
   </ReactAdminMenu>
 );
 export default Menu;
