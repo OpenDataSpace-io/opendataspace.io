@@ -1,4 +1,5 @@
 const Logo = () => (
+  /*
   <svg height={50} viewBox="0 0 1200 322.6" xmlSpace="preserve">
     <style>
       {".st0{fill: #85ccd3}" +
@@ -79,6 +80,8 @@ const Logo = () => (
       />
     </g>
   </svg>
+  */
+ <span>OpenDataSpace</span>
 );
 
 export default Logo;

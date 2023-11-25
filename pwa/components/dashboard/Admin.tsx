@@ -15,18 +15,11 @@ import authProvider from "@/components/authProvider";
 import AppBar from "@/components/dashboard/AppBar";
 import Menu from "@/components/dashboard/Menu";
 import { ENTRYPOINT } from "@/config/entrypoint";
-import { List as BooksList } from "@/components/dashboard/book/List";
-import { Create as BooksCreate } from "@/components/dashboard/book/Create";
-import { Edit as BooksEdit } from "@/components/dashboard/book/Edit";
-import { List as ReviewsList } from "@/components/dashboard/review/List";
-import { Show as ReviewsShow } from "@/components/dashboard/review/Show";
-import { Edit as ReviewsEdit } from "@/components/dashboard/review/Edit";
 import { List as ThingsList } from "@/components/dashboard/thing/List";
 import { Create as ThingsCreate } from "@/components/dashboard/thing/Create";
 import { Edit as ThingsEdit } from "@/components/dashboard/thing/Edit";
-import { type Book } from "@/types/Book";
 import { type Thing } from "@/types/Thing";
-import { type Review } from "@/types/Review";
+
 
 const apiDocumentationParser = (session: Session) => async () => {
   try {
@@ -121,7 +114,7 @@ const AdminWithContext = ({ session }: { session: Session }) => {
         setDocType,
       }}>
       <AdminUI session={session}>
-        <ResourceGuesser name="admin/things" list={ThingsList} create={ThingsCreate} edit={ThingsEdit} hasShow={false}
+        <ResourceGuesser name="dashboard/things" list={ThingsList} create={ThingsCreate} edit={ThingsEdit} hasShow={false}
                          recordRepresentation={(record: Thing) => record.name}/>
       </AdminUI>
     </DocContext.Provider>

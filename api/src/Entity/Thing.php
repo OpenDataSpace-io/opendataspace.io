@@ -64,6 +64,45 @@ use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
     security: 'is_granted("ROLE_ADMIN")'
 )]
 #[ApiResource(
+    uriTemplate: '/dashboard/things{._format}',
+    types: ['https://schema.org/Thing'],
+    operations: [
+        new GetCollection(
+            itemUriTemplate: '/dashboard/things/{id}{._format}',
+            paginationClientItemsPerPage: true
+        ),
+        new Post(
+            // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
+            processor: ThingPersistProcessor::class,
+            itemUriTemplate: '/dashboard/things/{id}{._format}'
+        ),
+        new Get(
+            uriTemplate: '/dashboard/things/{id}{._format}'
+        ),
+        // https://github.com/api-platform/admin/issues/370
+        new Put(
+            uriTemplate: '/dashboard/things/{id}{._format}',
+            // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
+            processor: ThingPersistProcessor::class
+        ),
+        /*new Delete(
+            uriTemplate: '/dashboard/things/{id}{._format}',
+            // Mercure publish is done manually in MercureProcessor through BookRemoveProcessor
+            processor: ThingRemoveProcessor::class
+        ),*/
+    ],
+    normalizationContext: [
+        AbstractNormalizer::GROUPS => ['Thing:read'],
+        AbstractObjectNormalizer::SKIP_NULL_VALUES => true,
+    ],
+    denormalizationContext: [
+        AbstractNormalizer::GROUPS => ['Thing:write'],
+    ],
+    // todo waiting for https://github.com/api-platform/core/pull/5844
+    //    collectDenormalizationErrors: true,
+    security: 'is_granted("ROLE_USER")'
+)]
+#[ApiResource(
     types: ['https://schema.org/Thing',],
     operations: [
         new GetCollection(
