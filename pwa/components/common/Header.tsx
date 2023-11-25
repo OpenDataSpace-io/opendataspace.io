@@ -10,7 +10,7 @@ export const Header = () => {
   const router = useRouter();
   const { data: session } = useSession();
 
-  if (router.pathname === "/" || router.pathname.match(/^\/admin/)) return <></>;
+  if (router.pathname === "/" || router.pathname.match(/^\/admin/) || router.pathname.match(/^\/dashboard/) ) return <></>;
 
   return (
     <header className="bg-neutral-100 sticky top-0 z-10">
