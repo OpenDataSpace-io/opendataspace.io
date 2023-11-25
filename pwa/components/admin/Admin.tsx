@@ -11,7 +11,7 @@ import { fetchHydra, HydraAdmin, hydraDataProvider, OpenApiAdmin, ResourceGuesse
 import { parseHydraDocumentation } from "@api-platform/api-doc-parser";
 
 import DocContext from "@/components/admin/DocContext";
-import authProvider from "@/components/admin/authProvider";
+import authProvider from "@/components/authProvider";
 import AppBar from "@/components/admin/AppBar";
 import Menu from "@/components/admin/Menu";
 import { ENTRYPOINT } from "@/config/entrypoint";
