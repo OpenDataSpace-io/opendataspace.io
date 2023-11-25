@@ -74,6 +74,12 @@ jobs:
       -
         name: Lint PWA
         run: docker compose exec -T pwa pnpm lint
+      - 
+        name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      
 
   # run e2e tests iso-prod
   e2e-tests:
