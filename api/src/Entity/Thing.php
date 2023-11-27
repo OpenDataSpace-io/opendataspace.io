@@ -120,7 +120,7 @@ use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
     ],
 )]
 #[ORM\Entity(repositoryClass: ThingRepository::class)]
-#[UniqueEntity(fields: ['thing'])]
+//#[UniqueEntity(fields: ['thing'])]
 class Thing
 {
     /**
@@ -166,14 +166,6 @@ class Thing
     #[Groups(groups: ['Thing:read', 'Thing:write', 'Thing:read:admin'])]
     #[ORM\Column]
     private array $properties = [];
-
-    #[ApiProperty(
-        example: 'Mal sehen, was passiert.'
-    )]
-    #[Assert\NotBlank(allowNull: false)]
-    #[Groups(groups: ['Thing:read', 'Thing:read:admin', 'Thing:write'])]
-    #[ORM\Column(unique: true)]
-    public ?string $thing = null;
 
     public function getId(): ?Uuid
     {
@@ -224,18 +216,6 @@ class Thing
     public function setProperties(array $properties): static
     {
         $this->properties = $properties;
-
-        return $this;
-    }
-
-    public function getThing(): ?string
-    {
-        return $this->thing;
-    }
-
-    public function setThing(string $thing): static
-    {
-        $this->thing = $thing;
 
         return $this;
     }
