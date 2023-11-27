@@ -1,0 +1,35 @@
+{
+    "@context": "http://schema.org",
+    "@type": "Place",
+    "@id": "0b104137-7d83-45d6-b1be-5927f5d6da6f",
+    "name": "Theatre Royal",
+    "url": "http://www.theatreroyalnorwich.co.uk/",
+    "logo": "http://www.theatreroyalnorwich.co.uk/images/logo.png",
+    "image": "http://www.theatreroyalnorwich.co.uk/images/logo.png",
+    "description": "Theatre Royal Norwich is a 1300 seat art-deco theatre, presenting a high quality mix of drama, comedy, dance, opera and family shows. It is the regional home of the Royal Shakespeare Company, the National Theatre, the Royal Philharmonic Orchestra and the English Touring Opera.",
+    "telephone": "01603 630000",
+    "email": "",
+    "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 10:00-20:00",
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "52.628",
+        "longitude": "1.293"
+    },
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Theatre Street",
+        "addressLocality": "Norwich",
+        "addressRegion": "Norfolk",
+        "postalCode": "NR2 1RL",
+        "addressCountry": "GB"
+    },
+    "sameAs": [
+        "https://www.facebook.com/theatreroyalnorwich",
+        "https://twitter.com/TheatreRNorwich",
+        "https://www.youtube.com/user/TheatreRoyalNorwich",
+        "https://plus.google.com/100115377993168660095",
+        "https://www.instagram.com/theatreroyalnorwich/",
+        "https://www.pinterest.com/theatreroyalnorwich/",
+        "https://www.linkedin.com/company/theatre-royal-norwich"
+    ]
+}
