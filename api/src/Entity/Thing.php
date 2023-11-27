@@ -167,16 +167,13 @@ class Thing
     #[ORM\Column]
     private array $properties = [];
 
-    /**
-     * @see https://schema.org/itemOffered
-     */
     #[ApiProperty(
         example: 'Mal sehen, was passiert.'
     )]
     #[Assert\NotBlank(allowNull: false)]
     #[Groups(groups: ['Thing:read', 'Thing:read:admin', 'Thing:write'])]
     #[ORM\Column(unique: true)]
-    public ?string $book = null;
+    public ?string $thing = null;
 
     public function getId(): ?Uuid
     {
@@ -231,14 +228,14 @@ class Thing
         return $this;
     }
 
-    public function getBook(): ?string
+    public function getThing(): ?string
     {
-        return $this->book;
+        return $this->thing;
     }
 
-    public function setBook(string $book): static
+    public function setThing(string $thing): static
     {
-        $this->book = $book;
+        $this->thing = $thing;
 
         return $this;
     }
