@@ -125,6 +125,7 @@ const Welcome = () => (
             <Card image={apiPicture} title="API" url="/docs"/>
             <Card image={adminPicture} title="Admin" url="/admin"/>
             <Card image={mercurePicture} title="Mercure debugger" url="/.well-known/mercure/ui/"/>
+            <Card image={adminPicture} title="IAM Admin (Keycloak)" url="/oidc/admin"/>
           </div>
         </div>
       </div>
