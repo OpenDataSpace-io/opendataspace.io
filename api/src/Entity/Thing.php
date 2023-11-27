@@ -60,7 +60,7 @@ use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
         AbstractNormalizer::GROUPS => ['Thing:write'],
     ],
     // todo waiting for https://github.com/api-platform/core/pull/5844
-//    collectDenormalizationErrors: true,
+    //    collectDenormalizationErrors: true,
     security: 'is_granted("ROLE_ADMIN")'
 )]
 #[ApiResource(
@@ -109,11 +109,15 @@ use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
             itemUriTemplate: '/things/{id}{._format}'
         ),
         new Get(),
+        new Post(),
     ],
     normalizationContext: [
         AbstractNormalizer::GROUPS => ['Thing:read', 'Enum:read'],
         AbstractObjectNormalizer::SKIP_NULL_VALUES => true,
-    ]
+    ],
+    denormalizationContext: [
+        AbstractNormalizer::GROUPS => ['Thing:write'],
+    ],
 )]
 #[ORM\Entity(repositoryClass: ThingRepository::class)]
 #[UniqueEntity(fields: ['thing'])]
@@ -138,30 +142,41 @@ class Thing
         types: ['https://schema.org/name'],
         example: 'Hyperion'
     )]
-    #[Groups(groups: ['Thing:read', 'Thing:read:admin'])]
+    #[Groups(groups: ['Thing:read', 'Thing:write', 'Thing:read:admin'])]
     #[ORM\Column(type: Types::TEXT)]
     private ?string $name = null;
 
     #[ApiProperty(
         types: ['https://schema.org/dateCreated'],
-        example: 'The date on which the CreativeWork was created or the item was added to a DataFeed.'
+        example: '2022-01-01T00:00:00Z'
     )]
-    #[Groups(groups: ['Thing:read', 'Thing:read:admin'])]
+    #[Groups(groups: ['Thing:read', 'Thing:write', 'Thing:read:admin'])]
     #[ORM\Column(type: 'datetime_immutable')]
     private ?\DateTimeInterface $dateCreated = null;
 
     #[ApiProperty(
         types: ['https://schema.org/dateModified'],
-        example: 'The date on which the CreativeWork was most recently modified or when the items entry was modified within a DataFeed.'
+        example: '2022-01-01T00:00:00Z'
     )]
-    #[Groups(groups: ['Thing:read', 'Thing:read:admin'])]
+    #[Groups(groups: ['Thing:read', 'Thing:write', 'Thing:read:admin'])]
     #[ORM\Column(type: 'datetime_immutable')]
     private ?\DateTimeInterface $dateModified = null;
 
     #[ApiProperty]
-    #[Groups(groups: ['Thing:read', 'Thing:read:admin'])]
+    #[Groups(groups: ['Thing:read', 'Thing:write', 'Thing:read:admin'])]
     #[ORM\Column]
     private array $properties = [];
+
+    /**
+     * @see https://schema.org/itemOffered
+     */
+    #[ApiProperty(
+        example: 'Mal sehen, was passiert.'
+    )]
+    #[Assert\NotBlank(allowNull: false)]
+    #[Groups(groups: ['Thing:read', 'Thing:read:admin', 'Thing:write'])]
+    #[ORM\Column(unique: true)]
+    public ?string $book = null;
 
     public function getId(): ?Uuid
     {
@@ -212,6 +227,18 @@ class Thing
     public function setProperties(array $properties): static
     {
         $this->properties = $properties;
+
+        return $this;
+    }
+
+    public function getBook(): ?string
+    {
+        return $this->book;
+    }
+
+    public function setBook(string $book): static
+    {
+        $this->book = $book;
 
         return $this;
     }
