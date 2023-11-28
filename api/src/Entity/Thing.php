@@ -131,7 +131,6 @@ use App\State\Processor\ThingRemoveProcessor;
     ],
 )]
 #[ORM\Entity(repositoryClass: ThingRepository::class)]
-//#[UniqueEntity(fields: ['thing'])]
 class Thing
 {
     /**
