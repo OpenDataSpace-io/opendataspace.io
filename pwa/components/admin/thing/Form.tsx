@@ -1,6 +1,4 @@
-import { required } from "react-admin";
-import { DateTimeInput } from 'react-admin';
-import { TextInput } from 'react-admin';
+import { DateTimeInput, TextInput, ArrayInput, required } from "react-admin";
 
 import { ThingInput } from "@/components/admin/thing/ThingInput";
 
@@ -12,5 +10,7 @@ export const Form = () => (
     <TextInput source="name" validate={required()}/>
     <DateTimeInput source="dateCreated" validate={required()} />
     <DateTimeInput source="dateModified" validate={required()}/>
+    <TextInput source="properties" multiline fullWidth />
+
   </>
 );
