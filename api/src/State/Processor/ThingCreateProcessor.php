@@ -12,11 +12,8 @@ use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Serializer\Encoder\DecoderInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
-use ApiPlatform\State\Operation\DeleteOperationInterface;
-use ApiPlatform\State\Operation\PostOperationInterface;
-use ApiPlatform\State\Operation\PutOperationInterface;
 
-final readonly class ThingPostProcessor implements ProcessorInterface
+final readonly class ThingCreateProcessor implements ProcessorInterface
 {
     public function __construct(
         #[Autowire(service: PersistProcessor::class)]
@@ -55,14 +52,5 @@ final readonly class ThingPostProcessor implements ProcessorInterface
         }*/
 
         return $data;
-    }
-
-    private function getData(string $uri): array
-    {
-        return $this->decoder->decode($this->client->request(Request::METHOD_GET, $uri, [
-            'headers' => [
-                'Accept' => 'application/json',
-            ],
-        ])->getContent(), 'json');
     }
 }

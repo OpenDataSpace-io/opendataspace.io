@@ -12,8 +12,9 @@ use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Serializer\Encoder\DecoderInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
+use App\Repository\ThingRepository;
 
-final readonly class ThingPutProcessor implements ProcessorInterface
+final readonly class ThingUpdateProcessor implements ProcessorInterface
 {
     public function __construct(
         #[Autowire(service: PersistProcessor::class)]
@@ -21,7 +22,8 @@ final readonly class ThingPutProcessor implements ProcessorInterface
         #[Autowire(service: MercureProcessor::class)]
         private ProcessorInterface $mercureProcessor,
         private HttpClientInterface $client,
-        private DecoderInterface $decoder
+        private DecoderInterface $decoder,
+        private ThingRepository $repository
     ) {
     }
 
@@ -31,7 +33,10 @@ final readonly class ThingPutProcessor implements ProcessorInterface
      */
     public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = []): Thing
     {
+        $thing = $this->repository->find($uriVariables['id']);
+        
         $data->setName($data->getName());
+        $data->setDateCreated($thing->getDateCreated());
         $data->setDateModified(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
         // TODO: only update changed properties
         $data->setProperties($data->getProperties());
@@ -52,14 +57,5 @@ final readonly class ThingPutProcessor implements ProcessorInterface
         }*/
 
         return $data;
-    }
-
-    private function getData(string $uri): array
-    {
-        return $this->decoder->decode($this->client->request(Request::METHOD_GET, $uri, [
-            'headers' => [
-                'Accept' => 'application/json',
-            ],
-        ])->getContent(), 'json');
     }
 }

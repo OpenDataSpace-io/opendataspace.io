@@ -23,7 +23,9 @@ use ApiPlatform\Metadata\Post;
 use ApiPlatform\Metadata\Put;
 use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
-use App\State\Processor\ThingPersistProcessor;
+use App\State\Processor\ThingCreateProcessor;
+use App\State\Processor\ThingUpdateProcessor;
+use App\State\Processor\ThingRemoveProcessor;
 
 #[ApiResource(
     uriTemplate: '/admin/things{._format}',
@@ -35,7 +37,7 @@ use App\State\Processor\ThingPersistProcessor;
         ),
         new Post(
             // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
-            processor: ThingPersistProcessor::class,
+            processor: ThingCreateProcessor::class,
             itemUriTemplate: '/admin/things/{id}{._format}'
         ),
         new Get(
@@ -45,7 +47,7 @@ use App\State\Processor\ThingPersistProcessor;
         new Put(
             uriTemplate: '/admin/things/{id}{._format}',
             // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
-            processor: ThingPersistProcessor::class
+            processor: ThingUpdateProcessor::class
         ),
         new Delete(
             uriTemplate: '/admin/things/{id}{._format}',
@@ -74,7 +76,7 @@ use App\State\Processor\ThingPersistProcessor;
         ),
         new Post(
             // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
-            processor: ThingPersistProcessor::class,
+            processor: ThingCreateProcessor::class,
             itemUriTemplate: '/dashboard/things/{id}{._format}'
         ),
         new Get(
@@ -84,7 +86,7 @@ use App\State\Processor\ThingPersistProcessor;
         new Put(
             uriTemplate: '/dashboard/things/{id}{._format}',
             // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
-            processor: ThingPersistProcessor::class
+            processor: ThingUpdateProcessor::class
         ),
         /*new Delete(
             uriTemplate: '/dashboard/things/{id}{._format}',
@@ -111,10 +113,13 @@ use App\State\Processor\ThingPersistProcessor;
         ),
         new Get(),
         new Post(
-            processor: ThingPersistProcessor::class
+            processor: ThingCreateProcessor::class
         ),
         new Put(
-            processor: ThingPersistProcessor::class
+            processor: ThingUpdateProcessor::class
+        ),
+        new Delete(
+            processor: ThingRemoveProcessor::class
         ),
     ],
     normalizationContext: [
