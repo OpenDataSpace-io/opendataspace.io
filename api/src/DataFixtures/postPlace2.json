@@ -3,8 +3,8 @@
     "@id": "string",
     "@type": "string",
     "name": "Hyperion",
-    "dateCreated": "The date on which the CreativeWork was created or the item was added to a DataFeed.",
-    "dateModified": "The date on which the CreativeWork was most recently modified or when the items entry was modified within a DataFeed.",
+    "dateCreated": "2022-01-01T00:00:00Z",
+    "dateModified": "2022-01-01T00:00:00Z",
     "properties": [
       {
         "@context": "http://schema.org",
