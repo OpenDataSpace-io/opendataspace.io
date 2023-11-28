@@ -23,6 +23,7 @@ use ApiPlatform\Metadata\Post;
 use ApiPlatform\Metadata\Put;
 use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
+use App\State\Processor\ThingPersistProcessor;
 
 #[ApiResource(
     uriTemplate: '/admin/things{._format}',
@@ -109,7 +110,12 @@ use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
             itemUriTemplate: '/things/{id}{._format}'
         ),
         new Get(),
-        new Post(),
+        new Post(
+            processor: ThingPersistProcessor::class
+        ),
+        new Put(
+            processor: ThingPersistProcessor::class
+        ),
     ],
     normalizationContext: [
         AbstractNormalizer::GROUPS => ['Thing:read', 'Enum:read'],
@@ -150,7 +156,7 @@ class Thing
         types: ['https://schema.org/dateCreated'],
         example: '2022-01-01T00:00:00Z'
     )]
-    #[Groups(groups: ['Thing:read', 'Thing:write', 'Thing:read:admin'])]
+    #[Groups(groups: ['Thing:read', 'Thing:read:admin'])]
     #[ORM\Column(type: 'datetime_immutable')]
     private ?\DateTimeInterface $dateCreated = null;
 
@@ -158,7 +164,7 @@ class Thing
         types: ['https://schema.org/dateModified'],
         example: '2022-01-01T00:00:00Z'
     )]
-    #[Groups(groups: ['Thing:read', 'Thing:write', 'Thing:read:admin'])]
+    #[Groups(groups: ['Thing:read', 'Thing:read:admin'])]
     #[ORM\Column(type: 'datetime_immutable')]
     private ?\DateTimeInterface $dateModified = null;
 

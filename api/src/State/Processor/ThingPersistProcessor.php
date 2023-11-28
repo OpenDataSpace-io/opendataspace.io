@@ -25,27 +25,32 @@ final readonly class ThingPersistProcessor implements ProcessorInterface
     ) {
     }
 
+    // https://github.com/api-platform/api-platform/issues/2303
     /**
      * @param Thing $data
      */
     public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = []): Thing
     {
-        $thing = $this->getData($data->getName());
-        $data->setName($thing['name']);
-
-        /*$data->author = null;
-        if (isset($book['authors'][0]['key'])) {
-            $author = $this->getData('https://openlibrary.org'.$book['authors'][0]['key'].'.json');
-            if (isset($author['name'])) {
-                $data->author = $author['name'];
-            }
+        /*
+        switch ($operation->getName()) {
+            case 'post':
+                $data = $this->processCreate($data,$operation,$uriVariables,$context);
+                break;
+            case 'put':
+                $data = $this->processUpdate($data,$operation,$uriVariables,$context);
+                break;
         }*/
+
+        $data->setName($data->getName());
+        $data->setDateCreated(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
+        $data->setDateModified(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
+        $data->setProperties($data->getProperties());
 
         // save entity
         $data = $this->persistProcessor->process($data, $operation, $uriVariables, $context);
 
         // publish on Mercure
-        foreach (['/admin/things/{id}{._format}', '/things/{id}{._format}'] as $uriTemplate) {
+        /*foreach (['/admin/things/{id}{._format}', '/things/{id}{._format}'] as $uriTemplate) {
             $this->mercureProcessor->process(
                 $data,
                 $operation,
@@ -54,7 +59,7 @@ final readonly class ThingPersistProcessor implements ProcessorInterface
                     'item_uri_template' => $uriTemplate,
                 ]
             );
-        }
+        }*/
 
         return $data;
     }
@@ -67,4 +72,24 @@ final readonly class ThingPersistProcessor implements ProcessorInterface
             ],
         ])->getContent(), 'json');
     }
+
+    private function processCreate($data,$operation,$uriVariables,$context)
+    {
+        $data->setName($data->getName());
+        $data->setDateCreated(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
+        $data->setDateModified(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
+        $data->setProperties($data->getProperties());
+        return $data;
+    }
+
+    private function processUpdate($data,$operation,$uriVariables,$context)
+    {
+        $data->setName($data->getName());
+        $data->setDateModified(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
+        // TODO: only update changed properties
+        $data->setProperties($data->getProperties());
+        return $data;
+    }   
+
+
 }
