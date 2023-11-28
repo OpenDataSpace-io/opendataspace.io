@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Serializer\Encoder\DecoderInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-final readonly class ThingPropertiesPersistProcessor implements ProcessorInterface
+final readonly class ThingPutProcessor implements ProcessorInterface
 {
     public function __construct(
         #[Autowire(service: PersistProcessor::class)]
@@ -25,30 +25,22 @@ final readonly class ThingPropertiesPersistProcessor implements ProcessorInterfa
     ) {
     }
 
+    // https://github.com/api-platform/api-platform/issues/2303
     /**
      * @param Thing $data
      */
     public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = []): Thing
     {
-        $thing = $this->getData($data->getName());
-        $data->setName($thing['properties']['name']);
-        $data->setDateModified($thing['properties']['dateModified']);
-        $data->setProperties($thing['properties']);
-
-
-        /*$data->author = null;
-        if (isset($book['authors'][0]['key'])) {
-            $author = $this->getData('https://openlibrary.org'.$book['authors'][0]['key'].'.json');
-            if (isset($author['name'])) {
-                $data->author = $author['name'];
-            }
-        }*/
-
+        $data->setName($data->getName());
+        $data->setDateModified(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
+        // TODO: only update changed properties
+        $data->setProperties($data->getProperties());
+        
         // save entity
         $data = $this->persistProcessor->process($data, $operation, $uriVariables, $context);
 
         // publish on Mercure
-        foreach (['/admin/things/{id}{._format}', '/things/{id}{._format}'] as $uriTemplate) {
+        /*foreach (['/admin/things/{id}{._format}', '/things/{id}{._format}'] as $uriTemplate) {
             $this->mercureProcessor->process(
                 $data,
                 $operation,
@@ -57,7 +49,7 @@ final readonly class ThingPropertiesPersistProcessor implements ProcessorInterfa
                     'item_uri_template' => $uriTemplate,
                 ]
             );
-        }
+        }*/
 
         return $data;
     }
