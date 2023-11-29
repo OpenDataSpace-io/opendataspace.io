@@ -1,39 +1,17 @@
-import { type GetServerSideProps } from "next";
+import React from 'react';
+import { fetchUtils, Admin, Resource, ListGuesser } from 'react-admin';
+import simpleRestProvider from 'ra-data-simple-rest';
 
-import { List } from "@/components/thing/List";
-import { type Thing } from "@/types/Thing";
-import { type PagedCollection } from "@/types/collection";
-import { type FetchResponse, fetch } from "@/utils/dataAccess";
-import { type FiltersProps, buildUriFromFilters } from "@/utils/thing";
+const httpClient = (url, options = {}) => {
+    return fetchUtils.fetchJson(url, options);
+}
 
-export const getServerSideProps: GetServerSideProps<{
-  data: PagedCollection<Thing> | null,
-  hubURL: string | null,
-  filters: FiltersProps,
-}> = async ({ query }) => {
-  const page = Number(query.page ?? 1);
-  const filters: FiltersProps = {};
-  if (query.page) {
-    // @ts-ignore
-    filters.page = query.page;
-  }
-  //if (query.title) {
-    // @ts-ignore
-    //filters.title = query.title;
-  //}
+const dataProvider = simpleRestProvider('/things', httpClient);
 
-  try {
-    const response: FetchResponse<PagedCollection<Thing>> | undefined = await fetch(buildUriFromFilters("/things", filters));
-    if (!response?.data) {
-      throw new Error('Unable to retrieve data from /things.');
-    }
+const App = () => (
+    <Admin dataProvider={dataProvider}>
+        <Resource name="posts" list={ListGuesser} />
+    </Admin>
+);
 
-    return { props: { data: response.data, hubURL: response.hubURL, filters, page } };
-  } catch (error) {
-    console.error(error);
-  }
-
-  return { props: { data: null, hubURL: null, filters, page } };
-};
-
-export default List;
+export default App;
