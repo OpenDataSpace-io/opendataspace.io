@@ -109,6 +109,7 @@ use App\State\Processor\ThingRemoveProcessor;
             itemUriTemplate: '/things/{id}{._format}'
         ),
         new Get(),
+        // TOD: remove if bug fixed with token
         new Post(
             processor: ThingCreateProcessor::class
         ),
