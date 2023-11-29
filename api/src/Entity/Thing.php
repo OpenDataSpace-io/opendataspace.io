@@ -72,12 +72,13 @@ use App\State\Processor\ThingRemoveProcessor;
     operations: [
         new GetCollection(
             itemUriTemplate: '/dashboard/things/{id}{._format}',
-            paginationClientItemsPerPage: true
+            paginationClientItemsPerPage: true,
         ),
         new Post(
             // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
             processor: ThingCreateProcessor::class,
-            itemUriTemplate: '/dashboard/things/{id}{._format}'
+            itemUriTemplate: '/dashboard/things/{id}{._format}',
+            security: 'is_granted("ROLE_USER")'
         ),
         new Get(
             uriTemplate: '/dashboard/things/{id}{._format}'
@@ -86,13 +87,9 @@ use App\State\Processor\ThingRemoveProcessor;
         new Put(
             uriTemplate: '/dashboard/things/{id}{._format}',
             // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
-            processor: ThingUpdateProcessor::class
+            processor: ThingUpdateProcessor::class,
+            security: 'is_granted("ROLE_USER")'
         ),
-        /*new Delete(
-            uriTemplate: '/dashboard/things/{id}{._format}',
-            // Mercure publish is done manually in MercureProcessor through BookRemoveProcessor
-            processor: ThingRemoveProcessor::class
-        ),*/
     ],
     normalizationContext: [
         AbstractNormalizer::GROUPS => ['Thing:read'],
@@ -103,7 +100,7 @@ use App\State\Processor\ThingRemoveProcessor;
     ],
     // todo waiting for https://github.com/api-platform/core/pull/5844
     //    collectDenormalizationErrors: true,
-    security: 'is_granted("ROLE_USER")'
+    //security: 'is_granted("ROLE_USER")'
 )]
 #[ApiResource(
     types: ['https://schema.org/Thing',],
