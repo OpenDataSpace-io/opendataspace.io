@@ -21,7 +21,7 @@ export const Header = () => {
           </Link>
         </div>
         <div className="lg:flex lg:flex-1 lg:justify-end lg:gap-x-12">
-          <Link href="/bookmarks" className="font-semibold text-gray-700 hover:text-gray-900 mr-4">
+          <Link href="#" className="font-semibold text-gray-700 hover:text-gray-900 mr-4">
             <FavoriteBorderIcon className="w-6 h-6 mr-1"/>
             My Things
           </Link>
