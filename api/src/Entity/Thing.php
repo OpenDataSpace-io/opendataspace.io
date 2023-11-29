@@ -37,7 +37,7 @@ use App\State\Processor\ThingRemoveProcessor;
         ),
         new Post(
             // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
-            processor: ThingCreateProcessor::class,
+            //processor: ThingCreateProcessor::class,
             itemUriTemplate: '/admin/things/{id}{._format}'
         ),
         new Get(
@@ -47,7 +47,7 @@ use App\State\Processor\ThingRemoveProcessor;
         new Put(
             uriTemplate: '/admin/things/{id}{._format}',
             // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
-            processor: ThingUpdateProcessor::class
+            //processor: ThingUpdateProcessor::class
         ),
         new Delete(
             uriTemplate: '/admin/things/{id}{._format}',
