@@ -1,40 +1,32 @@
-import React from 'react';
-import { fetchUtils, Admin, Resource, ListGuesser } from 'react-admin';
-import simpleRestProvider from 'ra-data-simple-rest';
-import { type DataProvider, Layout, type LayoutProps, localStorageStore, resolveBrowserLocale } from "react-admin";
-import { fetchHydra, HydraAdmin, hydraDataProvider, OpenApiAdmin } from "@api-platform/admin";
-import { AdminGuesser, ResourceGuesser } from "@api-platform/admin";
-import { ENTRYPOINT } from "@/config/entrypoint";
+import React, { useEffect, useState } from 'react';
+//import Head from "next/head";
 
-import { useContext, useRef, useState } from "react";
+const ThingList = () => {
+  const [data, setData] = useState(null);
 
-const httpClient = (url, options = {}) => {
-    return fetchUtils.fetchJson(url, options);
-}
+  useEffect(() => {
+    fetch('/things.jsonld')
+      .then(response => response.json())
+      .then(json => setData(json));
+  }, []);
 
-const dataProvider = simpleRestProvider('http://localhost/', httpClient);
-/*const dataProvider = useRef<DataProvider>();
-dataProvider.current = hydraDataProvider({
-    entrypoint: ENTRYPOINT,
-    httpClient: (url: URL, options = {}) => fetchHydra(url, {
-      ...options,
-    }),
-    //apiDocumentationParser: apiDocumentationParser(session),
-  });
-*/
+  if (!data) {
+    return <div>Loading...</div>;
+  }
 
+  return (
+    <div className="container mx-auto max-w-7xl items-center justify-between p-6 lg:px-8">
+        <div className="flex">
+            <div className="float-right w-[1010px] justify-center">
+            <div className="grid grid-cols-5 gap-4">
+        {data.map(item => (
+            <div key={item.id}>{item.id} - {item.name}</div>
+        ))}
+        </div>
+         </div>
+        </div>
+    </div>
+  );
+};
 
-const ThingsApp = () => (
-    <Admin dataProvider={dataProvider}>
-        <Resource name="dashboard/things" list={ListGuesser} />
-    </Admin>
-);
-
-// Admin by api-platform/admin
-/*const ThingsApp = () => (
-    <AdminGuesser dataProvider={dataProvider}>
-        <ResourceGuesser name="things" list={ListGuesser} />
-    </AdminGuesser>
-);*/
-
-export default ThingsApp;
+export default ThingList;
