@@ -5,8 +5,10 @@ import { type DataProvider, Layout, type LayoutProps, localStorageStore, resolve
 import simpleRestProvider from 'ra-data-simple-rest';
 import { useContext, useRef, useState } from "react";
 import { ENTRYPOINT } from "@/config/entrypoint";
-import { fetchHydra, HydraAdmin, hydraDataProvider, OpenApiAdmin, ResourceGuesser } from "@api-platform/admin";
+import { fetchHydra, HydraAdmin, hydraDataProvider, OpenApiAdmin } from "@api-platform/admin";
 import { parseHydraDocumentation } from "@api-platform/api-doc-parser";
+import { AdminGuesser, ResourceGuesser } from "@api-platform/admin";
+import { List } from "@/components/thing/List";
 
 const httpClient = (url, options = {}) => {
     return fetchUtils.fetchJson(url, options);
@@ -35,8 +37,8 @@ const apiDocumentationParser = (session: Session) => async () => {
     }
   };
 
-//const dataProvider = simpleRestProvider('./things.jsonld', httpClient);
-const dataProvider = useRef<DataProvider>();
+const dataProvider = simpleRestProvider('./things.jsonld', httpClient);
+/*const dataProvider = useRef<DataProvider>();
 dataProvider.current = hydraDataProvider({
     entrypoint: ENTRYPOINT,
     httpClient: (url: URL, options = {}) => fetchHydra(url, {
@@ -48,10 +50,11 @@ dataProvider.current = hydraDataProvider({
     }),
     apiDocumentationParser: apiDocumentationParser(session),
   });
+  */
 
 const ThingAppTest2 = () => (
     <Admin dataProvider={dataProvider}>
-        <Resource name="things" list={ListGuesser} />
+        <Resource name="things" list={List} />
     </Admin>
 );
 
