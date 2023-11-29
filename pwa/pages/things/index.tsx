@@ -1,17 +1,21 @@
-import React from 'react';
-import { fetchUtils, Admin, Resource, ListGuesser } from 'react-admin';
-import simpleRestProvider from 'ra-data-simple-rest';
+import dynamic from "next/dynamic";
 
-const httpClient = (url, options = {}) => {
-    return fetchUtils.fetchJson(url, options);
-}
+const Things = dynamic(() => import("@/components/thing/"), {
+  ssr: false,
+});
 
-const dataProvider = simpleRestProvider('/things', httpClient);
-
-const App = () => (
-    <Admin dataProvider={dataProvider}>
-        <Resource name="posts" list={ListGuesser} />
-    </Admin>
+const ThingPage = () => (
+  <>
+    <Things />
+    <style jsx global>
+      {`
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      `}
+    </style>
+  </>
 );
-
-export default App;
+export default ThingPage;

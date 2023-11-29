@@ -1,8 +1,14 @@
-import { required } from "react-admin";
-import { DateTimeInput } from 'react-admin';
-import { TextInput } from 'react-admin';
+import { 
+  DateTimeInput, 
+  TextInput, 
+  ArrayInput, 
+  SimpleFormIterator,
+  NumberInput,
+  required 
+} from "react-admin";
+import JsonTextInput from './JsonTextInput';
 
-import { ThingInput } from "@/components/dashboard/thing/ThingInput";
+import { ThingInput } from "@/components/admin/thing/ThingInput";
 
 export const Form = () => (
   <>
@@ -12,5 +18,6 @@ export const Form = () => (
     <TextInput source="name" validate={required()}/>
     <DateTimeInput source="dateCreated" validate={required()} />
     <DateTimeInput source="dateModified" validate={required()}/>
+    <JsonTextInput source="properties" label="My JSON Field" multiline fullWidth/>
   </>
 );
