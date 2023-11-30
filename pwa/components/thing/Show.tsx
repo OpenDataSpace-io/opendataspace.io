@@ -48,7 +48,7 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
               {!!item["images"] && (
                 <Image alt={item["name"]} width={300} height={300} src={item["images"]["large"]} priority={true} data-testid="thing-cover"/>
               ) || (
-                <span className="h-40 text-slate-300">No cover</span>
+                <span className="h-40 text-slate-300">No image</span>
               )}
             </div>
             <div className="w-full">
