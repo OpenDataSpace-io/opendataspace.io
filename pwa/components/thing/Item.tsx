@@ -13,17 +13,6 @@ interface Props {
 }
 
 export const Item: FunctionComponent<Props> = ({ thing }) => {
-  //const { data, isLoading } = useThing(thing);
-
-  console.log("Test");
-  console.log(thing['@id']);
-  thing["id"] = thing["@id"]?.replace("/things/", "");
-  console.log(thing["id"]);
-  console.log(thing['name']);
-  console.log(thing['description']);
-
-  //if (isLoading || !data) return <Loading/>;
-
   return (
     <div className="relative p-4 bg-white hover:drop-shadow-xl border-b border-gray-200 text-center" data-testid="thing">
       <div className="h-40 mb-2">

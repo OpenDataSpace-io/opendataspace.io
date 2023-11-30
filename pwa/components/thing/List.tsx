@@ -59,15 +59,15 @@ export const List: NextPage<Props> = ({ data, hubURL, filters, page }) => {
                   <Select
                     data-testid="sort"
                     variant="standard"
-                    value={filters.order?.title ?? ""}
+                    value={filters.order?.name ?? ""}
                     displayEmpty
                     onChange={(event) => {
                       filtersMutation.mutate({ ...filters, order: event.target.value ? { name: event.target.value } : undefined });
                     }}
                     >
                     <MenuItem value="">Relevance</MenuItem>
-                    <MenuItem value="asc">Title ASC</MenuItem>
-                    <MenuItem value="desc">Title DESC</MenuItem>
+                    <MenuItem value="asc">Name ASC</MenuItem>
+                    <MenuItem value="desc">Name DESC</MenuItem>
                   </Select>
                 </div>
                 <span data-testid="nb-things" className="float-right mt-1">{collection["hydra:totalItems"]} thing(s) found</span>
