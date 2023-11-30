@@ -6,13 +6,24 @@ import { type Thing } from "@/types/Thing";
 import { getItemPath } from "@/utils/dataAccess";
 import { useOpenLibraryThing } from "@/utils/thing";
 import { Loading } from "@/components/common/Loading";
+import React, { useEffect, useState } from 'react';
 
 interface Props {
   thing: Thing;
 }
 
 export const Item: FunctionComponent<Props> = ({ thing }) => {
-  const { data, isLoading } = useOpenLibraryThing(thing);
+  //const { data, isLoading } = useOpenLibraryThing(thing);
+
+  const [data, isLoading] = useState(null);
+  console.log("Test");
+  console.log(thing['@id']);
+
+  /*useEffect(() => {
+    fetch('/things/{}.jsonld')
+      .then(response => response.json())
+      .then(json => data);
+  }, []);*/
 
   if (isLoading || !data) return <Loading/>;
 
