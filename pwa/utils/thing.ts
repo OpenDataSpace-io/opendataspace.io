@@ -20,7 +20,7 @@ export interface FiltersProps {
   page?: number | undefined;
 }
 
-export const useOpenLibraryThing = <TData extends Thing>(data: TData) => {
+export const useThing = <TData extends Thing>(data: TData) => {
   if (!isItem(data)) {
     throw new Error("Object sent is not in JSON-LD format.");
   }
@@ -68,6 +68,10 @@ export const useOpenLibraryThing = <TData extends Thing>(data: TData) => {
     return data;
   });
   */
+  data["name"] = data["name"];
+  data["dateCreated"] = data["dateCreated"];
+  data["dateModified"] = data["dateModified"];
+  data["properties"] = data["properties"];
   console.log(data);
   return data;
 };

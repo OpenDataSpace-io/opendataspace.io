@@ -4,7 +4,7 @@ import { type FunctionComponent } from "react";
 
 import { type Thing } from "@/types/Thing";
 import { getItemPath } from "@/utils/dataAccess";
-import { useOpenLibraryThing } from "@/utils/thing";
+import { useThing } from "@/utils/thing";
 import { Loading } from "@/components/common/Loading";
 import React, { useEffect, useState } from 'react';
 
@@ -13,38 +13,29 @@ interface Props {
 }
 
 export const Item: FunctionComponent<Props> = ({ thing }) => {
-  //const { data, isLoading } = useOpenLibraryThing(thing);
+  //const { data, isLoading } = useThing(thing);
 
-  const [data, isLoading] = useState(null);
   console.log("Test");
   console.log(thing['@id']);
+  thing["id"] = thing["@id"]?.replace("/things/", "");
+  console.log(thing["id"]);
+  console.log(thing['name']);
+  console.log(thing['description']);
 
-  /*useEffect(() => {
-    fetch('/things/{}.jsonld')
-      .then(response => response.json())
-      .then(json => data);
-  }, []);*/
-
-  if (isLoading || !data) return <Loading/>;
+  //if (isLoading || !data) return <Loading/>;
 
   return (
     <div className="relative p-4 bg-white hover:drop-shadow-xl border-b border-gray-200 text-center" data-testid="thing">
       <div className="h-40 mb-2">
-        <Link href={getItemPath(data, "/things/[id]")}>
-          {!!data["images"] && (
-            <Image alt={data["name"]} width={100} height={130} src={data["images"]["medium"]}
-                   className="mx-auto w-auto max-w-[150px] h-auto max-h-[165px]" priority={true}
-            />
-          ) || (
-            <span className="text-slate-300 block h-full">No cover</span>
-          )}
+        <Link href={getItemPath(thing, "/things/[id]")}>
+          <span className="text-slate-300 block h-full">No cover</span>
         </Link>
       </div>
       <div className="h-32 mb-2">
         <p>
-          <Link href={getItemPath(data, "/things/[id]")}
+          <Link href={getItemPath(thing, "/things/[id]")}
                 className="font-bold text-lg text-gray-700 hover:underline">
-            {data["name"]}
+            {thing["name"]}
           </Link>
         </p>
       </div>

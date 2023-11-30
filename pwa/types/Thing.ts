@@ -18,6 +18,7 @@ export class Thing implements Item {
     //public description?: string,
     public dateCreated?: string,
     public dateModified?: string,
+    public properties?: any,
   ) {
     this["@id"] = _id;
   }
