@@ -6,15 +6,22 @@ import {
     localStorageStore,
     useStore,
     StoreContextProvider,
+    fetchUtils,
 } from 'react-admin';
 import { Route } from 'react-router';
 
 import authProvider from '@/components/authProvider';
-import { Dashboard } from './dashboard';
-import dataProviderFactory from './dataProvider';
+//import { Dashboard } from './dashboard';
+//import dataProviderFactory from './dataProvider';
 import englishMessages from '@/i18n/en';
-import { Layout, Login } from './layout';
-import Segments from './segments/Segments';
+//import { Layout, Login } from './layout';
+import simpleRestProvider from 'ra-data-simple-rest';
+
+const httpClient = (url, options = {}) => {
+    return fetchUtils.fetchJson(url, options);
+}
+
+const dataProvider = simpleRestProvider('./things.jsonld', httpClient);
 
 const i18nProvider = polyglotI18nProvider(
     locale => {
@@ -41,24 +48,19 @@ const App = () => {
     return (
         <Admin
             title=""
-            dataProvider={dataProviderFactory(
-                process.env.REACT_APP_DATA_PROVIDER || ''
-            )}
-            store={store}
-            authProvider={authProvider}
-            dashboard={Dashboard}
-            loginPage={Login}
-            layout={Layout}
+            dataProvider={dataProvider}
+            //store={store}
+            //authProvider={authProvider}
+            //dashboard={Dashboard}
+            //loginPage={Login}
+            //layout={Layout}
             i18nProvider={i18nProvider}
             disableTelemetry
             lightTheme={lightTheme}
             darkTheme={darkTheme}
             defaultTheme="light"
         >
-            <CustomRoutes>
-                <Route path="/segments" element={<Segments />} />
-            </CustomRoutes>
-            <Resource name="things" {...things} />
+            <Resource name="things" />
         </Admin>
     );
 };

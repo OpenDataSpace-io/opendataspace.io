@@ -5,7 +5,7 @@ const ThingList = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch('/things.json')
+    fetch('/things.jsonld')
       .then(response => response.json())
       .then(json => setData(json));
   }, []);
@@ -19,8 +19,8 @@ const ThingList = () => {
         <div className="flex">
             <div className="float-right w-[1010px] justify-center">
             <div className="grid grid-cols-5 gap-4">
-        {data.map(item => (
-            <div key={item.id}>{item.name}</div>
+        {data['hydra:member'].map(item => (
+            <div key={item["@id"]}><a href="{item.@id}">{item.name}</a></div>
         ))}
         </div>
          </div>
