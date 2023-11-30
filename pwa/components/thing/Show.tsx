@@ -8,6 +8,8 @@ import Typography from "@mui/material/Typography";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import Button from "@mui/material/Button";
+import ButtonGroup from "@mui/material/ButtonGroup";
 
 import { type Thing } from "@/types/Thing";
 import { useMercure } from "@/utils/mercure";
@@ -44,18 +46,29 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
           <div className="flex">
             <div className="min-w-[270px] max-w-[300px] w-full mr-10 text-center">
               {!!item["images"] && (
-                <Image alt={item["name"]} width={300} height={300} src={item["images"]["large"]} priority={true} data-testid="book-cover"/>
+                <Image alt={item["name"]} width={300} height={300} src={item["images"]["large"]} priority={true} data-testid="thing-cover"/>
               ) || (
                 <span className="h-40 text-slate-300">No cover</span>
               )}
             </div>
             <div className="w-full">
               <h1 className="font-bold text-2xl text-gray-700">{item["name"]}</h1>
-              <p className="text-gray-600 mt-4" data-testid="book-metadata">
+              <ButtonGroup variant="contained" aria-label="outlined primary button group">
+                <Button href={"/dashboard"+item['@id']}>Edit</Button>
+                <Button href={item['@id']+".json"}>Json</Button>
+                <Button href={item['@id']+".jsonld"}>JsonLD</Button>
+              </ButtonGroup>
+              <p className="text-gray-600 mt-4" data-testid="thing-metadata">
                 <span className="flex">
                   {!!item["dateCreated"] && (
-                    <span className="ml-1"> | Created on {item["dateCreated"]}</span>
+                    <span className="ml-1">Created on {item["dateCreated"]}</span>
                   )}
+                </span>
+                <span className="flex">
+                  <span className="ml-1">ID: {item['@id']}</span>
+                </span>
+                <span className="flex">
+                  <span className="ml-1">Type: {item['@type']}</span>
                 </span>
               </p>
               <p className="text-justify leading-7 my-8" data-testid="book-description">
