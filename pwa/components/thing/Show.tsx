@@ -17,6 +17,7 @@ import { useThing } from "@/utils/thing";
 import { fetch, type FetchError, type FetchResponse } from "@/utils/dataAccess";
 import { type PagedCollection } from "@/types/collection";
 import { Loading } from "@/components/common/Loading";
+import ShowProperties from "./ShowProperties";
 
 interface Props {
   data: Thing;
@@ -76,9 +77,13 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
                   <span className="ml-1">Type: {item['@type']}</span>
                 </span>
               </p>
-              <p className="text-justify leading-7 my-8" data-testid="book-description">
+              <p className="text-justify leading-7 my-8" data-testid="thing-description">
                 {item["properties"][0]["description"] ?? "This thing has no description."}
               </p>
+              <p className="text-justify leading-7 my-8" data-testid="thing-description">
+                {item["properties"] ?? "This thing has no properties."}
+              </p>
+              <ShowProperties data={item["properties"]} />
             </div>
           </div>
         </>
