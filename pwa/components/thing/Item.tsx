@@ -16,13 +16,13 @@ export const Item: FunctionComponent<Props> = ({ thing }) => {
   return (
     <div className="relative p-4 bg-white hover:drop-shadow-xl border-b border-gray-200 text-center" data-testid="thing">
       <div className="h-40 mb-2">
-        <Link href={getItemPath(thing, "/things/[id]")}>
+        <Link href={getItemPath(thing['@id'], "/things/[id]")}>
           <span className="text-slate-300 block h-full">No cover</span>
         </Link>
       </div>
       <div className="h-32 mb-2">
         <p>
-          <Link href={getItemPath(thing, "/things/[id]")}
+          <Link href={getItemPath(thing['@id'], "/things/[id]")}
                 className="font-bold text-lg text-gray-700 hover:underline">
             {thing["name"]}
           </Link>
