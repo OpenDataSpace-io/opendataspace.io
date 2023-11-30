@@ -55,7 +55,11 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
               <h1 className="font-bold text-2xl text-gray-700">{item["name"]}</h1>
               <ButtonGroup variant="contained" aria-label="outlined primary button group">
                 <Button href={item['@id']+"/edit"}>Edit</Button>
-                <Button href={item['@id']+".json"}>Json</Button>
+                <Button href={item['@id']+"/history"}>History</Button>
+              </ButtonGroup>
+               - Export: 
+              <ButtonGroup variant="contained" aria-label="outlined primary button group">
+              <Button href={item['@id']+".json"}>Json</Button>
                 <Button href={item['@id']+".jsonld"}>JsonLD</Button>
                 <Button href={item['@id']+".csv"}>CSV</Button>
               </ButtonGroup>
