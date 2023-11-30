@@ -158,6 +158,8 @@ class Thing
         types: ['https://schema.org/dateCreated'],
         example: '2022-01-01T00:00:00Z'
     )]
+    #[ApiFilter(OrderFilter::class)]
+    #[ApiFilter(SearchFilter::class, strategy: 'i'.SearchFilterInterface::STRATEGY_PARTIAL)]
     #[Groups(groups: ['Thing:read', 'Thing:read:admin'])]
     #[ORM\Column(type: 'datetime_immutable')]
     private ?\DateTimeInterface $dateCreated = null;
@@ -166,6 +168,8 @@ class Thing
         types: ['https://schema.org/dateModified'],
         example: '2022-01-01T00:00:00Z'
     )]
+    #[ApiFilter(OrderFilter::class)]
+    #[ApiFilter(SearchFilter::class, strategy: 'i'.SearchFilterInterface::STRATEGY_PARTIAL)]
     #[Groups(groups: ['Thing:read', 'Thing:read:admin'])]
     #[ORM\Column(type: 'datetime_immutable')]
     private ?\DateTimeInterface $dateModified = null;
