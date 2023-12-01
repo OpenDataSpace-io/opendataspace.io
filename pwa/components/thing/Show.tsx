@@ -78,7 +78,7 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
                 </span>
               </p>
               <p className="text-justify leading-7 my-8" data-testid="thing-description">
-                {item["properties"][0]["description"] ?? "This thing has no description."}
+                {item["description"] ?? "This thing has no description."}
               </p>
 
             </div>

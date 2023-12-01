@@ -182,6 +182,12 @@ const schema2: RJSFSchema = {
   }
 }
 
+const uiSchema = {
+  "description": {
+    "ui:widget": "textarea"
+  },
+}
+
 const log = (type:any) => console.log.bind(console, type);
 
 export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
@@ -193,42 +199,24 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
     description: item["properties"][0]["description"],
   };
 
-  return (
-    <div className="container mx-auto max-w-7xl items-center justify-between p-6 lg:px-8">
-      <Head>
-        <title>{`${item["name"]}`}</title>
-      </Head>
-      <div role="presentation" className="mb-8">
-        <Breadcrumbs aria-label="breadcrumb" data-testid="book-breadcrumb">
-          <Link href="/things" className="hover:underline">
-            Things
-          </Link>
-          <Typography color="text.primary">{item["name"]}</Typography>
-        </Breadcrumbs>
-      </div>
-      <div>
-      {/* @ts-ignore */}
-      {!!session && !session.error && (
-            <a href="#" className="font-semibold text-gray-900" role="menuitem" onClick={(e) => {
-              e.preventDefault();
-              signOut(session);
-            }}>
-              Good
-            </a>
-          ) || (
-            <a href="#" className="font-semibold text-gray-900" role="menuitem" onClick={(e) => {
-              e.preventDefault();
-              signIn();
-            }}>
-              Please Login
-            </a>
-          )}
-        </div>
-      {!!item && (
-        <>
-          <div className="container mx-auto max-w-7xl items-center justify-between p-6 lg:px-8">
+  if (status === "loading") {
+    return <Loading/>;
+  }
+
+  if (session?.error) {
+    return <div>{session.error}</div>;
+  }
+
+  if (item) {
+    return (
+      <>
+        <Head>
+          <title>{`${item["name"]}`}</title>
+        </Head>
+        <div className="container mx-auto max-w-7xl items-center justify-between p-6 lg:px-8">
           <Form
               schema={schema2}
+              uiSchema={uiSchema}
               formData={formData}
               validator={validator}
               onChange={log('changed')}
@@ -236,10 +224,8 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
               onError={log('errors')}
           />
         </div>
-        </>
-      ) || (
-        <Loading/>
-      )}
-    </div>
-  );
+      </>
+    );
+
+  }
 };
