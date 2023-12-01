@@ -29,7 +29,7 @@ use App\State\Processor\ThingRemoveProcessor;
 
 #[ApiResource(
     uriTemplate: '/admin/things{._format}',
-    types: ['https://schema.org/Thing'],
+    //types: ['https://schema.org/Thing'],
     operations: [
         new GetCollection(
             itemUriTemplate: '/admin/things/{id}{._format}',
@@ -68,7 +68,7 @@ use App\State\Processor\ThingRemoveProcessor;
 )]
 #[ApiResource(
     uriTemplate: '/dashboard/things{._format}',
-    types: ['https://schema.org/Thing'],
+    //types: ['https://schema.org/Thing'],
     operations: [
         new GetCollection(
             itemUriTemplate: '/dashboard/things/{id}{._format}',

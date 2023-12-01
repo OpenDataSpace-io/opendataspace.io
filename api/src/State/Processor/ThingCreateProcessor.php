@@ -31,6 +31,7 @@ final readonly class ThingCreateProcessor implements ProcessorInterface
      */
     public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = []): Thing
     {
+        // TODO: Import Properties from Level 1 in Json
         $data->setName($data->getName());
         $data->setDateCreated(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
         $data->setDateModified(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
