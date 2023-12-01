@@ -56,6 +56,7 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
               <h1 className="font-bold text-2xl text-gray-700">{item["name"]}</h1>
               <ButtonGroup variant="contained" aria-label="outlined primary button group">
                 <Button href={item['@id']+"/edit"}>Edit</Button>
+                <Button href={item['@id']+"/preview"}>Preview</Button>
                 <Button href={item['@id']+"/history"}>History</Button>
               </ButtonGroup>
                - Export: 
@@ -80,10 +81,7 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
               <p className="text-justify leading-7 my-8" data-testid="thing-description">
                 {item["properties"][0]["description"] ?? "This thing has no description."}
               </p>
-              <p className="text-justify leading-7 my-8" data-testid="thing-description">
-                {item["properties"] ?? "This thing has no properties."}
-              </p>
-              <ShowProperties data={item["properties"]} />
+
             </div>
           </div>
         </>
