@@ -17,6 +17,7 @@ api_platform:
         jsonld: ['application/ld+json']
         jsonopenapi: ['application/vnd.openapi+json']
         html: ['text/html']
+        csv: ['text/csv']
     http_cache:
         public: true
     # Good defaults for REST APIs
