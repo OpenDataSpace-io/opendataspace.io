@@ -12,7 +12,6 @@ export const getServerSideProps: GetServerSideProps<{
   try {
     const response: FetchResponse<Thing> | undefined = await fetch(`/things/${id}`, {
       headers: {
-        //Preload: "/books/*/reviews",
       }
     });
     if (!response?.data) {

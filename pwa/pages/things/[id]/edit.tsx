@@ -1,179 +1,29 @@
-import { RJSFSchema } from '@rjsf/utils';
-import validator from '@rjsf/validator-ajv8';
-import Form from '@rjsf/mui';
-import Head from "next/head";
+import { GetServerSideProps } from "next";
 
-// https://rjsf-team.github.io/react-jsonschema-form/docs/
+import { Edit } from "@/components/thing/Edit";
+import { Thing } from "@/types/Thing";
+import { type FetchResponse, fetch } from "@/utils/dataAccess";
 
-const schema: RJSFSchema = {
-  title: 'Todo',
-  type: 'object',
-  required: ['title'],
-  properties: {
-    title: { type: 'string', title: 'Title', default: 'A new task' },
-    done: { type: 'boolean', title: 'Done?', default: false },
-  },
-};
+export const getServerSideProps: GetServerSideProps<{
+  data: Thing,
+  hubURL: string | null,
+  page: number, // required for reviews pagination, prevents useRouter
+}> = async ({ query: { id, page } }) => {
+  try {
+    const response: FetchResponse<Thing> | undefined = await fetch(`/things/${id}`, {
+      headers: {
+      }
+    });
+    if (!response?.data) {
+      throw new Error(`Unable to retrieve data from /things/${id}.`);
+    }
 
-const schema2: RJSFSchema = {
-  "title": "Test Place Form",
-  "description": "A simple form example.",
-  "type": "object",
-  "required": [
-    "name",
-  ],
-  "properties": {
-    "name": {
-      "type": "string",
-      "title": "Name",
-      "default": "Test Thing"
-    },
-    "description": {
-      "type": "string",
-      "title": "Description",
-    },
-    "address": {
-      "type": "object",
-      "properties": {
-        "streetAddress": {
-          "type": "string",
-        },
-        "addressLocality": {
-          "type": "string"
-        },
-        "postalCode": {
-          "type": "string"
-        },
-        "addressCountry": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "street_address",
-        "city",
-      ]
-    },
-    "geo": {
-      "type": "object",
-      "title": "Geo Location",
-      "properties": {
-        "latitude": {
-          "type": "number",
-          "title": "Latitude",
-        },
-        "longitude": {
-          "type": "number",
-          "title": "Longitude",
-        }
-      }
-    },
-    "telephone": {
-      "type": "string",
-      "title": "Telephone",
-      "minLength": 10
-    },
-    "email": {
-      "type": "string",
-      "title": "Email",
-      "format": "email"
-    },
-    "website": {
-      "type": "string",
-      "title": "Website",
-      "format": "uri"
-    },
-    "openingHours": {
-      "type": "array",
-      "title": "Öffnungszeiten",
-      "items": {
-        "type": "object",
-        "properties": {
-          "dayOfWeek": {
-            "type": "string",
-            "title": "Wochentag",
-            "enum": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday",
-              "Saturday",
-              "Sunday"
-            ],
-            "enumNames": [
-              "Montag",
-              "Dienstag",
-              "Mittwoch",
-              "Donnerstag",
-              "Freitag",
-              "Samstag",
-              "Sonntag"
-            ]
-          },
-          "opens": {
-            "type": "string",
-            "title": "Öffnet",
-            "format": "time"
-          },
-          "closes": {
-            "type": "string",
-            "title": "Schließt",
-            "format": "time"
-          }
-        }
-      }
-    },
-    "openingHoursSpecification":{
-      "type": "array",
-      "title": "spezifische Öffnungszeiten",
-      "items": {
-        "type": "object",
-        "properties": {
-          "date": {
-            "type": "string",
-            "title": "Datum",
-            "format": "date"
-          },
-          "opens": {
-            "type": "string",
-            "title": "Öffnet",
-            "format": "time"
-          },
-          "closes": {
-            "type": "string",
-            "title": "Schließt",
-            "format": "time"
-          },
-          "closed": {
-            "type": "boolean",
-            "title": "Geschlossen",
-            "default": false
-          }
-        }
-      }
-    },
+    return { props: { data: response.data, hubURL: response.hubURL, page: Number(page ?? 1) } };
+  } catch (error) {
+    console.error(error);
   }
-}
 
-const log = (type:any) => console.log.bind(console, type);
-
-const Playground = () => {
-    return (
-      <>
-        <Head>
-          <title>Form Playground!</title>
-        </Head>
-        <div className="container mx-auto max-w-7xl items-center justify-between p-6 lg:px-8">
-          <Form
-              schema={schema2}
-              validator={validator}
-              onChange={log('changed')}
-              onSubmit={log('submitted')}
-              onError={log('errors')}
-          />
-        </div>
-      </>
-    );
+  return { notFound: true };
 };
 
-export default Playground;
+export default Edit;
