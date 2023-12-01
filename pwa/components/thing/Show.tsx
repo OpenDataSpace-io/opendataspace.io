@@ -63,7 +63,6 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
               <ButtonGroup variant="contained" aria-label="outlined primary button group">
               <Button href={item['@id']+".json"}>Json</Button>
                 <Button href={item['@id']+".jsonld"}>JsonLD</Button>
-                <Button href={item['@id']+".csv"}>CSV</Button>
               </ButtonGroup>
               <p className="text-gray-600 mt-4" data-testid="thing-metadata">
                 <span className="flex">
