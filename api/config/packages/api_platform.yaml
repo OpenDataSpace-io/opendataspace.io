@@ -13,12 +13,7 @@ api_platform:
         graphql_playground: false
     formats:
         jsonld:     ['application/ld+json']
-        jsonhal:    ['application/hal+json']
-        jsonapi:    ['application/vnd.api+json']
         json:       ['application/json']
-        xml:        ['application/xml', 'text/xml']
-        csv:        ['text/csv']
-        html:       ['text/html']
     docs_formats:
         jsonld: ['application/ld+json']
         jsonopenapi: ['application/vnd.openapi+json']
