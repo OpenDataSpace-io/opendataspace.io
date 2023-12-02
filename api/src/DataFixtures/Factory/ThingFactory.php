@@ -9,6 +9,7 @@ use Doctrine\ORM\EntityRepository;
 use Zenstruck\Foundry\ModelFactory;
 use Zenstruck\Foundry\Proxy;
 use Zenstruck\Foundry\RepositoryProxy;
+use Symfony\Component\Uid\Uuid;
 
 /**
  * @extends ModelFactory<Thing>
@@ -96,12 +97,59 @@ final class ThingFactory extends ModelFactory
                      //$thing->title ??= $datum['name'];
                      // A Thing can have no author
                      //$thing->author ??= $datum['author'] ?? self::faker()->name();
-                     $thing->setName(self::faker()->text(20));
+                     $name = self::faker()->text(20);
+                     $id = Uuid::v4();
+                     $thing->setName($name);
+                     $thing->setId($id);
                      $thing->setDateCreated(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')),);
                      $thing->setDateModified(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')),);
                      $thing->setProperties([
-                            'name' => self::faker()->text(20),
-                            'description' => self::faker()->text()
+                            '@context' => 'https://schema.org/',
+                            '@type' => 'Thing',
+                            '@id' => $id,
+                            'name' => $name,
+                            'description' => self::faker()->text(),
+                            "url" => self::faker()->url(),
+                            "logo" => self::faker()->imageUrl(),
+                            "image" => self::faker()->imageUrl(),
+                            "telephone" => self::faker()->phoneNumber(),
+                            "email" => self::faker()->email(),
+                            "openingHours" => "Mo,Tu,We,Th,Fr,Sa,Su 10:00-20:00",
+                            "openingHoursSpecification" => [
+                                [
+                                    "@type" => "OpeningHoursSpecification",
+                                    "validFrom" => "2023-12-24",
+                                    "validThrough" => "2023-12-25",
+                                    "opens" => "10:00",
+                                    "closes" => "20:00"
+                                ]
+                            ],
+                            "priceRange" => "££",
+                            "paymentAccepted" => "Cash, Credit Card",
+                            "geo" => [
+                                "@type" => "GeoCoordinates",
+                                "latitude" => "52.628",
+                                "longitude" => "1.293"
+                            ],
+                            // "latitude" => "52.628",
+                            // "longitude" => "1.293"
+                            "address" => [
+                                "@type" => "PostalAddress",
+                                "streetAddress" => "Theatre Street",
+                                "addressLocality" => "Norwich",
+                                "addressRegion"=> "Norfolk",
+                                "postalCode" => "NR2 1RL",
+                                "addressCountry" => "GB"
+                            ],
+                            "sameAs" => [
+                                "https://www.facebook.com/theatreroyalnorwich",
+                                "https://twitter.com/TheatreRNorwich",
+                                "https://www.youtube.com/user/TheatreRoyalNorwich",
+                                "https://plus.google.com/100115377993168660095",
+                                "https://www.instagram.com/theatreroyalnorwich/",
+                                "https://www.pinterest.com/theatreroyalnorwich/",
+                                "https://www.linkedin.com/company/theatre-royal-norwich"
+                            ]
                      ]);
 
                      return;
