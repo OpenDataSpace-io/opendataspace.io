@@ -44,6 +44,9 @@ final readonly class ThingUpdateProcessor implements ProcessorInterface
         // save entity
         $data = $this->persistProcessor->process($data, $operation, $uriVariables, $context);
 
+        // TODO: save in Elasticsearch / Algolia
+        // TODO: save History
+
         // publish on Mercure
         /*foreach (['/admin/things/{id}{._format}', '/things/{id}{._format}'] as $uriTemplate) {
             $this->mercureProcessor->process(
