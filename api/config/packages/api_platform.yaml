@@ -12,8 +12,8 @@ api_platform:
     graphql:
         graphql_playground: false
     formats:
-        jsonld:     ['application/ld+json']
         json:       ['application/json']
+        jsonld:     ['application/ld+json']
     docs_formats:
         jsonld: ['application/ld+json']
         jsonopenapi: ['application/vnd.openapi+json']

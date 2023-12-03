@@ -8,6 +8,7 @@ use ApiPlatform\Doctrine\Common\State\PersistProcessor;
 use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProcessorInterface;
 use App\Entity\Thing;
+use Symfony\Component\Uid\Uuid;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Serializer\Encoder\DecoderInterface;
@@ -33,6 +34,7 @@ final readonly class ThingCreateProcessor implements ProcessorInterface
     {
         // TODO: Import Properties from Level 1 in Json
         //$data->setName($data->getName());
+        $data->setId(Uuid::v4());
         $data->setDateCreated(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
         $data->setDateModified(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
         //$data->setProperties($data->getProperties());

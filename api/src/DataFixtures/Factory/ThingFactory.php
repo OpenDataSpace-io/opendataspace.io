@@ -57,8 +57,8 @@ final class ThingFactory extends ModelFactory
     {
         parent::__construct();
 
-        $this->data = json_decode(file_get_contents(__DIR__.'/../things.json'), true);
-        shuffle($this->data);
+        //$this->data = json_decode(file_get_contents(__DIR__.'/../things.json'), true);
+        //shuffle($this->data);
     }
 
     /**
@@ -66,19 +66,70 @@ final class ThingFactory extends ModelFactory
      */
     protected function getDefaults(): array
     {
-        return [
-            //'thing' => self::faker()->uuid(),
-            'name' => self::faker()->text(20),
-            'dateCreated' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')),
-            'dateModified' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')),
-            'properties' => [
-                'description' => self::faker()->words()
+        $name = self::faker()->text(20);
+        // TODO: id Entity = Properties @id
+        $id = Uuid::v4();
+        echo "Loading ThingFactory\n";
+        echo $id;
+        echo "\n";
+        echo $name;
+        echo "\n";
+        $data = [
+            '@context' => 'https://schema.org/',
+            '@type' => 'Thing',
+            '@id' => $id,
+            'name' => $name,
+            'description' => self::faker()->text(),
+            "url" => self::faker()->url(),
+            "logo" => self::faker()->imageUrl(),
+            "image" => self::faker()->imageUrl(),
+            "telephone" => self::faker()->phoneNumber(),
+            "email" => self::faker()->email(),
+            "openingHours" => "Mo,Tu,We,Th,Fr,Sa,Su 10:00-20:00",
+            "openingHoursSpecification" => [
+                [
+                    "@type" => "OpeningHoursSpecification",
+                    "validFrom" => "2023-12-24",
+                    "validThrough" => "2023-12-25",
+                    "opens" => "10:00",
+                    "closes" => "20:00"
+                ]
             ],
+            "priceRange" => "££",
+            "paymentAccepted" => "Cash, Credit Card",
+            "geo" => [
+                "@type" => "GeoCoordinates",
+                "latitude" => "52.628",
+                "longitude" => "1.293"
+            ],
+            // "latitude" => "52.628",
+            // "longitude" => "1.293"
+            "address" => [
+                "@type" => "PostalAddress",
+                "streetAddress" => "Theatre Street",
+                "addressLocality" => "Norwich",
+                "addressRegion"=> "Norfolk",
+                "postalCode" => "NR2 1RL",
+                "addressCountry" => "GB"
+            ],
+            "sameAs" => [
+                "https://www.facebook.com/theatreroyalnorwich",
+                "https://twitter.com/TheatreRNorwich",
+                "https://www.youtube.com/user/TheatreRoyalNorwich",
+                "https://plus.google.com/100115377993168660095",
+                "https://www.instagram.com/theatreroyalnorwich/",
+                "https://www.pinterest.com/theatreroyalnorwich/",
+                "https://www.linkedin.com/company/theatre-royal-norwich"
+            ]
         ];
-        /*return [
-            'condition' => self::faker()->randomElement(ThingCondition::getCases()),
-        ];*/
-
+        return [
+            //'name' => self::faker()->text(20),
+            //'dateCreated' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')),
+            //'dateModified' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')),
+            //'properties' => [
+            //    'description' => self::faker()->words()
+            //],
+        ];
     }
 
     /**
@@ -89,11 +140,11 @@ final class ThingFactory extends ModelFactory
         return $this
              ->afterInstantiate(function (Thing $thing): void {
                  // An Open Library Thing URI has been specified: try to find it in the array of Things
-                 $data = array_filter($this->data, static function (array $datum) use ($thing) {
+                 //$data = array_filter($this->data, static function (array $datum) use ($thing) {
                      //return $thing->Thing === $datum['thing'];
-                 });
-                 if ($data) {
-                     $datum = current($data);
+                 //});
+                 //if ($data) {
+                     //$datum = current($data);
                      //$thing->title ??= $datum['name'];
                      // A Thing can have no author
                      //$thing->author ??= $datum['author'] ?? self::faker()->name();
@@ -153,17 +204,18 @@ final class ThingFactory extends ModelFactory
                      ]);
 
                      return;
-                 }
+                 //}
 
                  // No Open Library Thing has been found in the array of Things
                  //$thing->name ??= self::faker()->text();
-                 $thing->setName(self::faker()->text(20));
+                 /*$thing->setName(self::faker()->text(20));
                  $thing->setDateCreated(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')),);
                  $thing->setDateModified(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')),);
                  $thing->setProperties([
-                            'name' => self::faker()->text(20),
-                            'description' => self::faker()->text()
+                        'name' => self::faker()->text(20),
+                        'description' => self::faker()->text()
                  ]);
+                 */
              })
         ;
     }
