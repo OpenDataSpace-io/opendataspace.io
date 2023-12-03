@@ -14,32 +14,37 @@ class ThingNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
 {
     public function __construct(
         private ObjectNormalizer $normalizer,
-        private readonly IriConverterInterface $iriConverter)
+        private IriConverterInterface $iriConverter)
     {
+        $this->iriConverter = $iriConverter;
     }
 
     public function normalize($object, string $format = null, array $context = []): array
     {
-        //$object->setId(UUID::v4());
-        dump($object);
         $data = $this->normalizer->normalize($object, $format, $context);
         
         $dateCreated = $data['dateCreated'];
         $dateModified = $data['dateModified'];
 
-        if(isset($data['properties'][0])){
-            $data = $data['properties'];
+        if($format === 'jsonld'){
+            if (isset($data['properties']['hydra:member'][0])){
+                $data = $data['properties']['hydra:member'][0];
+            }
+            $data['@id'] = $this->iriConverter->getIriFromResource($object);
+        }else{
+            if(isset($data['properties'][0])){
+                $data = $data['properties'][0];
+            }
+            $data['@id'] = $object->getId();
         }
 
-        if (isset($data['properties']['hydra:member'][0])){
-            $data = $data['properties']['hydra:member'][0];
+        if(isset($object->getProperties()['@type'])){
+            $data['@type'] = $object->getProperties()['@type'];
         }
         
         $data["@context"] = "https://schema.org/";
         // TODO: Set Type from properties['@type']
         $data['@type'] = 'Thing';
-        $data['@id'] = $object->getId();
-        $data['id'] = $object->getId(); // neeeded for josnld IRI
         
         $data['dateCreated'] = $dateCreated;
         $data['dateModified'] = $dateModified;

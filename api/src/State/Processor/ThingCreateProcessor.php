@@ -34,7 +34,6 @@ final readonly class ThingCreateProcessor implements ProcessorInterface
     {
         // TODO: Import Properties from Level 1 in Json
         //$data->setName($data->getName());
-        $data->setId(Uuid::v4());
         $data->setDateCreated(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
         $data->setDateModified(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
         //$data->setProperties($data->getProperties());

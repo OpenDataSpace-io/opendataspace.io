@@ -103,13 +103,13 @@ use App\State\Processor\ThingRemoveProcessor;
     //security: 'is_granted("ROLE_USER")'
 )]
 #[ApiResource(
-    types: ['https://schema.org/Thing',],
+    //types: ['https://schema.org/Thing',],
     operations: [
         new GetCollection(
-            itemUriTemplate: '/things/{id}{._format}'
+            //itemUriTemplate: '/things/{id}{._format}'
         ),
         new Get(),
-        // TOD: remove if bug fixed with token
+        // TODO: remove if bug fixed with token
         new Post(
             processor: ThingCreateProcessor::class
         ),
@@ -182,13 +182,6 @@ class Thing
     public function getId(): ?Uuid
     {
         return $this->id;
-    }
-
-    public function setId(Uuid $id): static
-    {
-        $this->id = $id;
-
-        return $this;
     }
 
     public function getName(): ?string
