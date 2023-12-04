@@ -178,20 +178,26 @@ const uiSchema = {
   },
 }
 
-const generateSchema = (data: any) => {
+const generateSchema = (data: any, excludeFields = []) => {
   const schema = {
-    title: "Dynamisches Formular",
+    //title: "Dynamisches Formular",
     type: "object",
     properties: {} as { [key: string]: { type: string, title: string } },
   };
 
   for (const key in data) {
-    console.log(typeof data[key])
-    schema.properties[key] = {
-      type: typeof data[key],
-      title: key,
-    };
+    if (!excludeFields.includes(key)) {
+      if (typeof data[key] === 'object' && data[key] !== null && !Array.isArray(data[key])) {
+        schema.properties[key] = generateSchema(data[key]);
+      } else {
+        schema.properties[key] = {
+          type: typeof data[key],
+          title: key,
+        };
+      }
+    }
   }
+
 
   return schema;
 };
@@ -226,11 +232,18 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
     description: item["description"],
   };*/
 
-  const schema = generateSchema(data);
+  const excludeFields: Array<string | never[]> = [
+    "@context",
+    "@id",
+    //"@type",
+    "id",
+  ];
+
+  const schema = generateSchema(data, excludeFields as never[]);
   const formData = generateFromData(data);
 
   if (status === "loading") {
-    return <Loading/>;
+    return <Loading />;
   }
 
   if (session?.error) {
@@ -238,11 +251,6 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
   }
 
   if (item) {
-    console.log(item);
-    for (let index = 0; index < item.length; index++) {
-      const element = item[index];
-      console.log(typeof element);
-    }
     return (
       <>
         <Head>
