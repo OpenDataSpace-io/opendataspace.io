@@ -26,16 +26,18 @@ class ThingNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
         $dateCreated = $data['dateCreated'];
         $dateModified = $data['dateModified'];
 
+        $data = $object->getProperties();
+
         if($format === 'jsonld'){
-            if (isset($data['properties']['hydra:member'][0])){
+            /*if (isset($data['properties']['hydra:member'][0])){
                 $data = $data['properties']['hydra:member'][0];
-            }
+            }*/
             //$data['@id'] = $this->iriConverter->getIriFromResource($object);
             $data['@id'] = $object->getId();
         }else{
-            if(isset($data['properties'][0])){
-                $data = $data['properties'][0];
-            }
+            /*if(isset($data['properties'][0])){
+                $data = $object->getProperties();
+            }*/
             $data['id'] = $object->getId();
         }
 
@@ -52,6 +54,8 @@ class ThingNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
         // DEBUG
         //$data['context'] = $context;
         //$data['format'] = $format;
+
+        ksort($data);
 
         return $data;
     }
