@@ -32,19 +32,9 @@ interface Props {
 
 // https://rjsf-team.github.io/react-jsonschema-form/docs/
 
-const schema: RJSFSchema = {
-  title: 'Todo',
-  type: 'object',
-  required: ['title'],
-  properties: {
-    title: { type: 'string', title: 'Title', default: 'A new task' },
-    done: { type: 'boolean', title: 'Done?', default: false },
-  },
-};
-
 const schema2: RJSFSchema = {
   "title": "Test Place Form",
-  "description": "A simple form example.",
+  //"description": "A simple form example.",
   "type": "object",
   "required": [
     "name",
@@ -188,16 +178,56 @@ const uiSchema = {
   },
 }
 
-const log = (type:any) => console.log.bind(console, type);
+const generateSchema = (data: any) => {
+  const schema = {
+    title: "Dynamisches Formular",
+    type: "object",
+    properties: {} as { [key: string]: { type: string, title: string } },
+  };
+
+  for (const key in data) {
+    console.log(typeof data[key])
+    schema.properties[key] = {
+      type: typeof data[key],
+      title: key,
+    };
+  }
+
+  return schema;
+};
+
+const generateFromData = (data: any) => {
+  const formData: { [key: string]: any } = {};
+
+  for (const key in data) {
+    if (typeof data[key] === 'object' && data[key] !== null && !Array.isArray(data[key])) {
+      formData[key] = generateFromData(data[key]);
+    } else {
+      formData[key] = data[key];
+    }
+  }
+
+  return formData;
+};
+
+const log = (type: any) => console.log.bind(console, type);
 
 export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
   const { data: session, status } = useSession();
   const item = useMercure(data, hubURL);
 
-  const formData = {
+  for (let index = 0; index < item.length; index++) {
+    const element = item[index];
+    
+  }
+
+  /*const formData = {
     name: item["name"],
-    description: item["properties"][0]["description"],
-  };
+    description: item["description"],
+  };*/
+
+  const schema = generateSchema(data);
+  const formData = generateFromData(data);
 
   if (status === "loading") {
     return <Loading/>;
@@ -208,6 +238,11 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
   }
 
   if (item) {
+    console.log(item);
+    for (let index = 0; index < item.length; index++) {
+      const element = item[index];
+      console.log(typeof element);
+    }
     return (
       <>
         <Head>
@@ -215,7 +250,7 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
         </Head>
         <div className="container mx-auto max-w-7xl items-center justify-between p-6 lg:px-8">
           <Form
-              schema={schema2}
+              schema={schema}
               uiSchema={uiSchema}
               formData={formData}
               validator={validator}
