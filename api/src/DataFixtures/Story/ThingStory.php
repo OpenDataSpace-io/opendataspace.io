@@ -13,6 +13,7 @@ final class ThingStory extends Story
 {
     public function __construct(private readonly DecoderInterface $decoder)
     {
+        echo "ThingStory::__construct()\n";
     }
 
     public function build(): void
