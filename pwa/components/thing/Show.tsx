@@ -35,12 +35,22 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
         <title>{`${item["name"]}`}</title>
       </Head>
       <div role="presentation" className="mb-8">
-        <Breadcrumbs aria-label="breadcrumb" data-testid="book-breadcrumb">
+        <Breadcrumbs aria-label="breadcrumb" data-testid="thing-breadcrumb">
           <Link href="/things" className="hover:underline">
             Things
           </Link>
           <Typography color="text.primary">{item["name"]}</Typography>
         </Breadcrumbs>
+        <ButtonGroup variant="contained" aria-label="outlined primary button group">
+                <Button href={item['@id']+"/edit"}>Edit</Button>
+                <Button href={item['@id']+"/preview"}>Preview</Button>
+                <Button href={item['@id']+"/history"}>History</Button>
+              </ButtonGroup>
+               - Export: 
+              <ButtonGroup variant="contained" aria-label="outlined primary button group">
+              <Button href={item['@id']+".json"}>Json</Button>
+                <Button href={item['@id']+".jsonld"}>JsonLD</Button>
+              </ButtonGroup>
       </div>
       {!!item && (
         <>
@@ -54,16 +64,6 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
             </div>
             <div className="w-full">
               <h1 className="font-bold text-2xl text-gray-700">{item["name"]}</h1>
-              <ButtonGroup variant="contained" aria-label="outlined primary button group">
-                <Button href={item['@id']+"/edit"}>Edit</Button>
-                <Button href={item['@id']+"/preview"}>Preview</Button>
-                <Button href={item['@id']+"/history"}>History</Button>
-              </ButtonGroup>
-               - Export: 
-              <ButtonGroup variant="contained" aria-label="outlined primary button group">
-              <Button href={item['@id']+".json"}>Json</Button>
-                <Button href={item['@id']+".jsonld"}>JsonLD</Button>
-              </ButtonGroup>
               <p className="text-gray-600 mt-4" data-testid="thing-metadata">
                 <span className="flex">
                   {!!item["dateCreated"] && (
