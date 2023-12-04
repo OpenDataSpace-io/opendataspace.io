@@ -19,9 +19,6 @@ class ThingFixtures extends Fixture
             $thing->setDateCreated(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
             $thing->setDateModified(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
             $thing->setProperties([
-                '@context' => 'https://schema.org/',
-                '@type' => 'Thing',
-                '@id' => $id,
                 'name' => 'Thing '.$i,
                 'description' => 'Description of Thing '.$i,
                 "url" => "http://www.example.com/thing15",
@@ -41,7 +38,6 @@ class ThingFixtures extends Fixture
                 ],
                 "priceRange" => "$$$",
                 "paymentAccepted" => "Cash, Credit Card",
-
                 "geo" => [
                     "@type" => "GeoCoordinates",
                     "latitude" => "12.345",

@@ -23,7 +23,7 @@ class ThingNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
     {
         $data = $this->normalizer->normalize($object, $format, $context);
         
-        /*$dateCreated = $data['dateCreated'];
+        $dateCreated = $data['dateCreated'];
         $dateModified = $data['dateModified'];
 
         if($format === 'jsonld'){
@@ -50,8 +50,8 @@ class ThingNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
         $data['dateCreated'] = $dateCreated;
         $data['dateModified'] = $dateModified;
         // DEBUG
-        $data['context'] = $context;
-        $data['format'] = $format;*/
+        //$data['context'] = $context;
+        //$data['format'] = $format;
 
         return $data;
     }
