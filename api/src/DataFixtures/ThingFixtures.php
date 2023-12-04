@@ -26,7 +26,7 @@ class ThingFixtures extends Fixture
                 "image" => "http://www.example.com/thing15/image.png",
                 "telephone" => "1234567890",
                 "email" => "info@example.com",
-                "openingHours" => "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+                "openingHours" => ["Mo-Fr 10:00-19:00", "Sa 10:00-22:00", "Su 10:00-21:00"],
                 "openingHoursSpecification" => [
                     [
                         "@type" => "OpeningHoursSpecification",
@@ -34,6 +34,11 @@ class ThingFixtures extends Fixture
                         "validThrough" => "2021-12-24",
                         "opens" => "09:00",
                         "closes" => "18:00"
+                    ],
+                    [
+                        "@type" => "OpeningHoursSpecification",
+                        "validFrom" => "2023-12-25",
+                        "validThrough" => "2021-12-25",
                     ]
                 ],
                 "priceRange" => "$$$",

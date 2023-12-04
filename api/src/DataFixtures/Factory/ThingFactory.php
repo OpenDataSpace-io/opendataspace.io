@@ -59,7 +59,6 @@ final class ThingFactory extends ModelFactory
 
         //$this->data = json_decode(file_get_contents(__DIR__.'/../things.json'), true);
         //shuffle($this->data);
-        echo "Construct ThingFactory\n";
     }
 
     /**
