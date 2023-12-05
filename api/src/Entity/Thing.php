@@ -106,9 +106,11 @@ use App\State\Processor\ThingRemoveProcessor;
     //types: ['https://schema.org/Thing',],
     operations: [
         new GetCollection(
-            //itemUriTemplate: '/things/{id}{._format}'
+            itemUriTemplate: '/things/{id}{._format}'
         ),
-        new Get(),
+        new Get(
+            uriTemplate: '/things/{id}{._format}'
+        ),
         // TODO: remove if bug fixed with token
         new Post(
             processor: ThingCreateProcessor::class

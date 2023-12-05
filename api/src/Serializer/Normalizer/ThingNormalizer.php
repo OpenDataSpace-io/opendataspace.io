@@ -34,21 +34,14 @@ class ThingNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
             }*/
             //$data['@id'] = $this->iriConverter->getIriFromResource($object);
             $data['@id'] = $object->getId();
-        }else{
-            /*if(isset($data['properties'][0])){
-                $data = $object->getProperties();
-            }*/
-            $data['id'] = $object->getId();
+            $data["@context"] = "https://schema.org/";
+            // TODO: Set Type from properties['@type']
+            //$data['@type'] = 'Thing';
+            if(isset($object->getProperties()['@type'])){
+                $data['@type'] = $object->getProperties()['@type'];
+            }
         }
-
-        if(isset($object->getProperties()['@type'])){
-            $data['@type'] = $object->getProperties()['@type'];
-        }
-        
-        $data["@context"] = "https://schema.org/";
-        // TODO: Set Type from properties['@type']
-        $data['@type'] = 'Thing';
-        
+        $data['identifier'] = $object->getId();
         $data['dateCreated'] = $dateCreated;
         $data['dateModified'] = $dateModified;
         // DEBUG
