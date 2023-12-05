@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Serializer\Encoder\DecoderInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use App\Repository\ThingRepository;
+use App\Dto\ThingInput;
 
 final readonly class ThingUpdateProcessor implements ProcessorInterface
 {
@@ -33,13 +34,20 @@ final readonly class ThingUpdateProcessor implements ProcessorInterface
      */
     public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = []): Thing
     {
-        $thing = $this->repository->find($uriVariables['id']);
-        
-        $data->setName($data->getName());
-        $data->setDateCreated($thing->getDateCreated());
-        $data->setDateModified(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
+        $thing = new Thing();
+        /*foreach ($data as $property => $value) {
+            if (property_exists($thing, $property)) {
+                $thing->$property = $value;
+            }
+        }*/
+
+        $thing->setName($data->getName());
+        $thing->setDateCreated($data->getDateCreated());
+        $thing->setDateModified(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
         // TODO: only update changed properties
-        $data->setProperties($data->getProperties());
+        $thing->setProperties([$data]);
+
+        //$data->setProperties($data->getBody());
         
         // save entity
         $data = $this->persistProcessor->process($data, $operation, $uriVariables, $context);
@@ -59,6 +67,11 @@ final readonly class ThingUpdateProcessor implements ProcessorInterface
             );
         }*/
 
-        return $data;
+        return $thing;
+    }
+
+    public function supports(mixed $data, Operation $operation, array $uriVariables = [], array $context = []): bool
+    {
+        return $data instanceof Thing && $data instanceof ThingInput;
     }
 }
