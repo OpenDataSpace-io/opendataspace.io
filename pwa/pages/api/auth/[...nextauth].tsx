@@ -142,7 +142,7 @@ export const authOptions: AuthOptions = {
       }
     },
     // @ts-ignore
-    async session({ session, token }: { session: Session, token: JWT }): Promise<Session> {
+    async session({ session, token, user }: { session: Session, token: JWT }): Promise<Session> {
       // Save the access token in the Session for API calls
       if (token) {
         session.accessToken = token.accessToken;
@@ -151,6 +151,10 @@ export const authOptions: AuthOptions = {
         if (session?.user && token?.sub) {
           session.user.sub = token.sub;
         }
+      }
+
+      if (session.error === "RefreshAccessTokenError") {
+        console.log("Session abgelaufen. Bitte loggen Sie sich erneut ein.");
       }
 
       return session;
