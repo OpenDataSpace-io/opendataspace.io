@@ -26,6 +26,7 @@ use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
 use App\State\Processor\ThingCreateProcessor;
 use App\State\Processor\ThingUpdateProcessor;
 use App\State\Processor\ThingRemoveProcessor;
+use App\Dto\ThingInput;
 
 #[ApiResource(
     uriTemplate: '/admin/things{._format}',
@@ -113,12 +114,16 @@ use App\State\Processor\ThingRemoveProcessor;
         ),
         // TODO: remove if bug fixed with token
         new Post(
+            uriTemplate: '/things/{id}{._format}',
             processor: ThingCreateProcessor::class
         ),
         new Put(
+            uriTemplate: '/things/{id}{._format}',
+            input:ThingInput::class,
             processor: ThingUpdateProcessor::class
         ),
         new Delete(
+            uriTemplate: '/things/{id}{._format}',
             processor: ThingRemoveProcessor::class
         ),
     ],
