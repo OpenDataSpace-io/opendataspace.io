@@ -186,6 +186,8 @@ class Thing
     #[ORM\Column]
     private array $properties = [];
 
+    private $iri;
+
     public function getId(): ?Uuid
     {
         return $this->id;
@@ -242,6 +244,18 @@ class Thing
     public function setProperties(array $properties): static
     {
         $this->properties = $properties;
+
+        return $this;
+    }
+
+    public function getIri(): ?string
+    {
+        return $this->iri;
+    }
+
+    public function setIri(?string $iri): self
+    {
+        $this->iri = $iri;
 
         return $this;
     }

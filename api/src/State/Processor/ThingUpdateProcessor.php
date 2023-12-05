@@ -14,6 +14,7 @@ use Symfony\Component\Serializer\Encoder\DecoderInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use App\Repository\ThingRepository;
 use App\Dto\ThingInput;
+use ApiPlatform\Api\IriConverterInterface;
 
 final readonly class ThingUpdateProcessor implements ProcessorInterface
 {
@@ -24,7 +25,8 @@ final readonly class ThingUpdateProcessor implements ProcessorInterface
         private ProcessorInterface $mercureProcessor,
         private HttpClientInterface $client,
         private DecoderInterface $decoder,
-        private ThingRepository $repository
+        private ThingRepository $repository,
+        private IriConverterInterface $iriConverter
     ) {
     }
 
@@ -41,13 +43,16 @@ final readonly class ThingUpdateProcessor implements ProcessorInterface
             }
         }*/
 
-        $thing->setName($data->getName());
-        $thing->setDateCreated($data->getDateCreated());
+        $thing->setName('TEST UPDATE');
+        //$thing->setId(new UUid::v4());
+        //$thing->setDateCreated($data->getDateCreated());
+        $thing->setDateCreated(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
         $thing->setDateModified(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
         // TODO: only update changed properties
         $thing->setProperties([$data]);
 
         //$data->setProperties($data->getBody());
+        $thing->setIri($this->iriConverter->getIriFromResource($thing));
         
         // save entity
         $data = $this->persistProcessor->process($data, $operation, $uriVariables, $context);
