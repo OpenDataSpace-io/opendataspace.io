@@ -7,6 +7,7 @@ use Symfony\Component\Serializer\Normalizer\CacheableSupportsMethodInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Uid\Uuid;
+use App\Repository\ThingRepository;
 
 //https://api-platform.com/docs/v3.1/core/content-negotiation/#writing-a-custom-normalizer
 
@@ -15,7 +16,8 @@ class ThingNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
     public function __construct(
         //private RouterInterface $router,
         private ObjectNormalizer $normalizer,
-        private IriConverterInterface $iriConverter)
+        private IriConverterInterface $iriConverter,
+        private ThingRepository $repository)
     {
         $this->iriConverter = $iriConverter;
     }
@@ -53,7 +55,23 @@ class ThingNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
         /** @var array $data */
         $data = $this->normalizer->normalize($object, $format, $context);
 
-        $data = $data['properties'];
+        $thing = $this->repository->find($object->getId());
+
+        $data = $thing->getProperties();
+        
+        $date['@context'] = 'https://schema.org/';
+        $data['@id'] = '/things/'.$object->getId();
+        // TODO Set Type from properties['@type']
+        //$data['@type'] = 'Thing';
+        $data['identifier'] = $object->getId();
+
+        /*if($format === 'jsonld'){
+            unset($data['hydra:totalItems']);
+            unset($data['hydra:member']);
+            unset($data['hydra:search']);
+        }*/
+
+        ksort($data);
 
         return $data;
     }

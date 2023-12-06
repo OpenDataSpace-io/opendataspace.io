@@ -15,11 +15,14 @@ class ThingFixtures extends Fixture
             $thing = new Thing();
             $id = Uuid::v4();
             $thing->setId($id);
-            $thing->setName('Thing '.$i);
+            $name = 'Thing '.$i;
+            $thing->setName($name);
             $thing->setDateCreated(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
             $thing->setDateModified(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
             $thing->setProperties([
-                'name' => 'Thing '.$i,
+                '@context' => 'https://schema.org',
+                '@type' => 'Thing',
+                'name' => $name,
                 'description' => 'Description of Thing '.$i.'. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Condimentum vitae sapien pellentesque habitant. Lacus suspendisse faucibus interdum posuere lorem ipsum. Tristique senectus et netus et malesuada. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Nibh mauris cursus mattis molestie a. Elementum eu facilisis sed odio morbi quis. Fames ac turpis egestas sed tempus. Consectetur purus ut faucibus pulvinar elementum integer. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. In ornare quam viverra orci sagittis eu volutpat odio. Sit amet luctus venenatis lectus magna fringilla. Pretium nibh ipsum consequat nisl vel. Nunc id cursus metus aliquam eleifend mi.',
                 "url" => "http://www.example.com/thing15",
                 "logo" => "http://www.example.com/thing15/logo.png",
