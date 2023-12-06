@@ -66,7 +66,7 @@ const CustomAppBar = ({ ...props }: AppBarProps) => {
   return (
     <AppBar userMenu={
       <UserMenu>
-        <Logout redirectTo={`${window.location.origin}/books`}/>
+        <Logout redirectTo={`${window.location.origin}/things`}/>
       </UserMenu>
     } {...props}>
       <Typography
