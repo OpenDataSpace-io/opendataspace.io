@@ -50,18 +50,10 @@ final readonly class ThingUpdateProcessor implements ProcessorInterface
         $thingProperties = $thing->getProperties();
         $mergedProperties = array_merge($thingProperties, $body);
         //$uniqueProperties = array_unique($mergedProperties);
-        $thing->setProperties($mergedProperties);
+        $thing->setProperties($mergedProperties[0]);
         
         // save entity
         $data = $this->persistProcessor->process($thing, $operation, $uriVariables, $context);
-
-        /*$debug['data'] = $data;
-        $debug['thing'] = $thing;
-        $debug['body'] = $body;
-        $debug['operation'] = $operation;
-        $debug['uriVariables'] = $uriVariables;
-        $debug['context'] = $context;
-        */
 
         // TODO: save in Elasticsearch / Algolia
         // TODO: save History
