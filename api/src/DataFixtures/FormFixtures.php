@@ -10,6 +10,13 @@ class FormFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
+        $this->setPlaceForm($manager);
+        $this->setOpeningHoursForm($manager);
+        $this->setMapForm($manager);
+    }
+
+    public function setPlaceForm(ObjectManager $manager)
+    {
         $form = new Form();
         $form->setName('Place Form');
         $form->setCode('place');
@@ -201,5 +208,214 @@ class FormFixtures extends Fixture
         $manager->persist($form);
 
         $manager->flush();
+    }
+
+    public function setOpeningHoursForm(ObjectManager $manager)
+    {
+        $form = new Form();
+        $form->setName('OpeningHours Form');
+        $form->setCode('openinghours');
+        $form->setDateCreated(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
+        $form->setDateModified(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
+        $form->setJSONSchema(
+            [
+                "title" => "OpeningHours Form",
+                "description" => "A simple form example.",
+                "type" => "object",
+                "properties" => [
+                    "openingHours" => [
+                        "type" => "array",
+                        "title" => "Öffnungszeiten",
+                        "items" => [
+                        "type" => "object",
+                        "properties" => [
+                            "dayOfWeek" => [
+                                "type" => "string",
+                                "title" => "Wochentag",
+                                "enum" => [
+                                    "Monday",
+                                    "Tuesday",
+                                        "Wednesday",
+                                        "Thursday",
+                                        "Friday",
+                                        "Saturday",
+                                        "Sunday"
+                                ],
+                                "enumNames" => [
+                                    "Montag",
+                                    "Dienstag",
+                                    "Mittwoch",
+                                    "Donnerstag",
+                                    "Freitag",
+                                    "Samstag",
+                                    "Sonntag"
+                                ]
+                            ],
+                            "opens" => [
+                                "type" => "string",
+                                "title" => "Öffnet",
+                                "format" => "time"
+                            ],
+                            "closes" => [
+                                "type" => "string",
+                                "title" => "Schließt",
+                                "format" => "time"
+                            ]
+                        ]
+                        ]
+                    ],
+                    "openingHoursSpecification" => [
+                        "type" => "array",
+                        "title" => "spezifische Öffnungszeiten",
+                        "items" => [
+                            "type" => "object",
+                            "properties" => [
+                                "@type" => [
+                                    "type" => "string",
+                                    "title" => "Typ",
+                                    "enum" => [
+                                        "OpeningHoursSpecification"
+                                    ],
+                                    "enumNames" => [
+                                        "Öffnungszeiten Spezifikation"
+                                    ]
+                                ],
+                                "validFrom" => [
+                                    "type" => "string",
+                                    "title" => "Datum von",
+                                    "format" => "date"
+                                ],
+                                "validThrough" => [
+                                    "type" => "string",
+                                    "title" => "Datum bis",
+                                    "format" => "date"
+                                ],
+                                "opens" => [
+                                    "type" => "string",
+                                    "title" => "Öffnet",
+                                    "format" => "time"
+                                ],
+                                "closes" => [
+                                    "type" => "string",
+                                    "title" => "Schließt",
+                                    "format" => "time"
+                                ],
+                                "closed" => [
+                                    "type" => "boolean",
+                                    "title" => "Geschlossen",
+                                    "default" => false
+                                ]
+                            ]
+                        ]
+                    ],
+                ]
+            ]
+        );
+        $form->setUISchema([
+            "@type" => [ 'ui:widget' => 'hidden' ],
+        ]);
+        $form->setFormData([
+            "openingHours" =>  [
+                    [
+                        "dayOfWeek" => "Monday",
+                        "opens" => "10:00:00",
+                        "closes" => "16:00:00"
+                    ],
+                    [
+                        "dayOfWeek"=> "Tuesday",
+                        "opens" => "09:00:00",
+                        "closes" => "17:00:00"
+                    ],
+                    [
+                        "dayOfWeek"=> "Wednesday",
+                        "opens" => "09:00:00",
+                        "closes" => "17:00:00"
+                    ],
+                    [
+                        "dayOfWeek"=> "Thursday",
+                        "opens" => "09:00:00",
+                        "closes" => "17:00:00"
+                    ],
+                    [
+                        "dayOfWeek"=> "Friday",
+                        "opens" => "09:00:00",
+                        "closes" => "17:00:00"
+                    ]
+                ],
+                "openingHoursSpecification" => [
+                    [
+                        "@type" => "OpeningHoursSpecification",
+                        "validFrom" => "2021-01-01",
+                        "validThrough" => "2021-12-31",
+                        "opens" => "10:00:00",
+                        "closes" => "16:00:00"
+                    ],
+                    [
+                        "@type" => "OpeningHoursSpecification",
+                        "validFrom" => "2021-01-01",
+                        "validThrough" => "2021-12-31",
+                        "opens" => "09:00:00",
+                        "closes" => "17:00:00"
+                    ]
+                ]
+            ]
+        );
+        $manager->persist($form);
+
+        $manager->flush();
+    }
+
+    public function setMapForm(ObjectManager $manager)
+    {
+        $form = new Form();
+        $form->setName('Map Form');
+        $form->setCode('map');
+        $form->setDateCreated(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
+        $form->setDateModified(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
+        $form->setJSONSchema([
+            "title" => "Map Form",
+            "description" => "A simple form example.",
+            "type" => "object",
+            "required" => [
+                "latitude",
+                "longitude",
+            ],
+            "properties" => [
+                "geo" => [
+                    "type" => "object",
+                    "title" => "Geo Location",
+                    "properties" => [
+                        "latitude" => [
+                            "type" => "number",
+                            "title" => "Latitude",
+                        ],
+                        "longitude" => [
+                            "type" => "number",
+                            "title" => "Longitude",
+                        ]
+                    ]
+                ]
+            ]
+        ]);
+        $form->setUISchema([
+            "geo" => [
+                "latitude" => [
+                    "ui:autofocus" => true,
+                    "ui:emptyValue" => "",
+                    "ui:autocomplete" => "latitude"
+                ],
+                "longitude" => [
+                    "ui:autofocus" => true,
+                    "ui:emptyValue" => "",
+                    "ui:autocomplete" => "longitude"
+                ]
+            ]
+        ]);
+        $form->setFormData([
+            "geo" => [
+                "latitude" => 52.520008,
+                "longitude" => 13.404954
+            ]
+        ]);
     }
 }
