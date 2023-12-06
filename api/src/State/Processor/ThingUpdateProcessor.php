@@ -9,12 +9,9 @@ use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProcessorInterface;
 use App\Entity\Thing;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Serializer\Encoder\DecoderInterface;
-use Symfony\Contracts\HttpClient\HttpClientInterface;
 use App\Repository\ThingRepository;
 use App\Dto\ThingInput;
-use ApiPlatform\Api\IriConverterInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 final readonly class ThingUpdateProcessor implements ProcessorInterface
 {
@@ -23,39 +20,48 @@ final readonly class ThingUpdateProcessor implements ProcessorInterface
         private ProcessorInterface $persistProcessor,
         #[Autowire(service: MercureProcessor::class)]
         private ProcessorInterface $mercureProcessor,
-        private HttpClientInterface $client,
-        private DecoderInterface $decoder,
         private ThingRepository $repository,
-        private IriConverterInterface $iriConverter
+        private RequestStack $requestStack
     ) {
     }
 
     // https://github.com/api-platform/api-platform/issues/2303
     /**
-     * @param Thing $data
+     * @param ThingInput $data
      */
-    public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = []): Thing
+    public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = [])
     {
-        $thing = new Thing();
-        /*foreach ($data as $property => $value) {
-            if (property_exists($thing, $property)) {
-                $thing->$property = $value;
-            }
-        }*/
 
-        $thing->setName('TEST UPDATE');
-        //$thing->setId(new UUid::v4());
-        //$thing->setDateCreated($data->getDateCreated());
-        $thing->setDateCreated(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
+        $thing = $this->repository->find($uriVariables['id']);
+        if (!$thing) {
+            throw new \Exception('Thing not found');
+        }
+
+        $request = $this->requestStack->getCurrentRequest();
+        if ($request) {
+            $body = json_decode($request->getContent(), true);
+        }
+        
+        if (isset($body['name'])) {
+            $thing->setName($body['name']);
+        }
         $thing->setDateModified(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
-        // TODO: only update changed properties
-        $thing->setProperties([$data]);
-
-        //$data->setProperties($data->getBody());
-        $thing->setIri($this->iriConverter->getIriFromResource($thing));
+        // TODO: only update changed properties --> add changed properties to $thing->getProperties() and save it
+        $thingProperties = $thing->getProperties();
+        $mergedProperties = array_merge($thingProperties, $body);
+        //$uniqueProperties = array_unique($mergedProperties);
+        $thing->setProperties($mergedProperties);
         
         // save entity
-        $data = $this->persistProcessor->process($data, $operation, $uriVariables, $context);
+        $data = $this->persistProcessor->process($thing, $operation, $uriVariables, $context);
+
+        /*$debug['data'] = $data;
+        $debug['thing'] = $thing;
+        $debug['body'] = $body;
+        $debug['operation'] = $operation;
+        $debug['uriVariables'] = $uriVariables;
+        $debug['context'] = $context;
+        */
 
         // TODO: save in Elasticsearch / Algolia
         // TODO: save History
