@@ -61,12 +61,6 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
                 <Button href={item['@id']+"/preview"}>Preview</Button>
                 <Button href={item['@id']+"/history"}>History</Button>
               </ButtonGroup>
-               - Export:
-              <ButtonGroup variant="contained" aria-label="outlined primary button group">
-              <Button href={item['@id']+".json"}>Json</Button>
-                <Button href={item['@id']+".jsonld"}>JsonLD</Button>
-              </ButtonGroup>
-
               <Button
                 id="basic-button"
                 aria-controls={open ? 'basic-menu' : undefined}
