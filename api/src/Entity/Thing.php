@@ -27,7 +27,6 @@ use App\State\Processor\ThingCreateProcessor;
 use App\State\Processor\ThingUpdateProcessor;
 use App\State\Processor\ThingRemoveProcessor;
 use App\State\Processor\ThingPersistProcessor;
-use App\Dto\ThingInput;
 
 #[ApiResource(
     uriTemplate: '/admin/things{._format}',
@@ -120,7 +119,6 @@ use App\Dto\ThingInput;
         ),
         new Put(
             uriTemplate: '/things/{id}{._format}',
-            input:ThingInput::class,
             processor: ThingUpdateProcessor::class
         ),
         new Delete(

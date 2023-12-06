@@ -10,7 +10,6 @@ use ApiPlatform\State\ProcessorInterface;
 use App\Entity\Thing;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use App\Repository\ThingRepository;
-use App\Dto\ThingInput;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 final readonly class ThingUpdateProcessor implements ProcessorInterface
