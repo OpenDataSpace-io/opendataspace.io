@@ -26,11 +26,12 @@ use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
 use App\State\Processor\ThingCreateProcessor;
 use App\State\Processor\ThingUpdateProcessor;
 use App\State\Processor\ThingRemoveProcessor;
+use App\State\Processor\ThingPersistProcessor;
 use App\Dto\ThingInput;
 
 #[ApiResource(
     uriTemplate: '/admin/things{._format}',
-    //types: ['https://schema.org/Thing'],
+    types: ['https://schema.org/Thing'],
     operations: [
         new GetCollection(
             itemUriTemplate: '/admin/things/{id}{._format}',
@@ -38,7 +39,7 @@ use App\Dto\ThingInput;
         ),
         new Post(
             // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
-            //processor: ThingCreateProcessor::class,
+            processor: ThingPersistProcessor::class,
             itemUriTemplate: '/admin/things/{id}{._format}'
         ),
         new Get(
@@ -48,7 +49,7 @@ use App\Dto\ThingInput;
         new Put(
             uriTemplate: '/admin/things/{id}{._format}',
             // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
-            //processor: ThingUpdateProcessor::class
+            processor: ThingPersistProcessor::class
         ),
         new Delete(
             uriTemplate: '/admin/things/{id}{._format}',
@@ -104,7 +105,7 @@ use App\Dto\ThingInput;
     //security: 'is_granted("ROLE_USER")'
 )]
 #[ApiResource(
-    //types: ['https://schema.org/Thing',],
+    types: ['https://schema.org/Thing',],
     operations: [
         new GetCollection(
             itemUriTemplate: '/things/{id}{._format}'

@@ -13,6 +13,7 @@ use Symfony\Component\Uid\Uuid;
 class ThingNormalizer implements NormalizerInterface, CacheableSupportsMethodInterface
 {
     public function __construct(
+        //private RouterInterface $router,
         private ObjectNormalizer $normalizer,
         private IriConverterInterface $iriConverter)
     {
@@ -20,24 +21,23 @@ class ThingNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
     }
 
     public function normalize($object, string $format = null, array $context = []): array
-    {
-        $data = $this->normalizer->normalize($object, $format, $context);
-        
-        $dateCreated = $data['dateCreated'];
+    {   
+        /*$dateCreated = $object->dateCreated;
         $dateModified = $data['dateModified'];
+        */
 
-        $data = $object->getProperties();
+        //$data = $object->getProperties();
 
-        if($format === 'jsonld'){
+        /*if($format === 'jsonld'){
             /*if (isset($data['properties']['hydra:member'][0])){
                 $data = $data['properties']['hydra:member'][0];
             }*/
             //$data['@id'] = $this->iriConverter->getIriFromResource($object);
-            $data['@id'] = $object->getId();
-            $data["@context"] = "https://schema.org/";
+            //$data['@id'] = '/things/'.$object->getId();
+            //$data["@context"] = "https://schema.org/";
             // TODO: Set Type from properties['@type']
             //$data['@type'] = 'Thing';
-            if(isset($object->getProperties()['@type'])){
+            /*if(isset($object->getProperties()['@type'])){
                 $data['@type'] = $object->getProperties()['@type'];
             }
         }
@@ -49,6 +49,11 @@ class ThingNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
         //$data['format'] = $format;
 
         ksort($data);
+
+        /** @var array $data */
+        $data = $this->normalizer->normalize($object, $format, $context);
+
+        $data = $data['properties'];
 
         return $data;
     }
