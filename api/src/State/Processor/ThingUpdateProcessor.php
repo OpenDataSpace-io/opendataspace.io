@@ -27,9 +27,9 @@ final readonly class ThingUpdateProcessor implements ProcessorInterface
 
     // https://github.com/api-platform/api-platform/issues/2303
     /**
-     * @param ThingInput $data
+     * @param Thing $data
      */
-    public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = [])
+    public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = []):Thing
     {
 
         $thing = $this->repository->find($uriVariables['id']);
@@ -50,7 +50,7 @@ final readonly class ThingUpdateProcessor implements ProcessorInterface
         $thingProperties = $thing->getProperties();
         $mergedProperties = array_merge($thingProperties, $body);
         //$uniqueProperties = array_unique($mergedProperties);
-        $thing->setProperties($mergedProperties[0]);
+        $thing->setProperties($mergedProperties);
         
         // save entity
         $data = $this->persistProcessor->process($thing, $operation, $uriVariables, $context);
@@ -75,6 +75,6 @@ final readonly class ThingUpdateProcessor implements ProcessorInterface
 
     public function supports(mixed $data, Operation $operation, array $uriVariables = [], array $context = []): bool
     {
-        return $data instanceof Thing && $data instanceof ThingInput;
+        return $data instanceof Thing;
     }
 }
