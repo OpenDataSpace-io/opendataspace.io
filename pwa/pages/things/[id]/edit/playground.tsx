@@ -1,203 +1,184 @@
-import { ComponentType, FormEvent, useCallback, useEffect, useRef, useState } from 'react';
-import { FormProps, IChangeEvent, withTheme } from '@rjsf/core';
-import { ErrorSchema, RJSFSchema, RJSFValidationError, UiSchema, ValidatorType } from '@rjsf/utils';
+import { RJSFSchema } from '@rjsf/utils';
+import validator from '@rjsf/validator-ajv8';
+import Form from '@rjsf/mui';
+import Head from "next/head";
 
-import { samples } from './samples';
-import Header, { LiveSettings } from './Header';
-import DemoFrame from './DemoFrame';
-import ErrorBoundary from './ErrorBoundary';
-import GeoPosition from './GeoPosition';
-import { ThemesType } from './ThemeSelector';
-import Editors from './Editors';
-import SpecialInput from './SpecialInput';
-import { Sample } from '../samples/Sample';
+// https://rjsf-team.github.io/react-jsonschema-form/docs/
 
-export interface PlaygroundProps {
-  themes: { [themeName: string]: ThemesType };
-  validators: { [validatorName: string]: ValidatorType };
+const schema: RJSFSchema = {
+  title: 'Todo',
+  type: 'object',
+  required: ['title'],
+  properties: {
+    title: { type: 'string', title: 'Title', default: 'A new task' },
+    done: { type: 'boolean', title: 'Done?', default: false },
+  },
+};
+
+const schema2: RJSFSchema = {
+  "title": "Test Place Form",
+  "description": "A simple form example.",
+  "type": "object",
+  "required": [
+    "name",
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name",
+      "default": "Test Thing"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description",
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "streetAddress": {
+          "type": "string",
+        },
+        "addressLocality": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "string"
+        },
+        "addressCountry": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "street_address",
+        "city",
+      ]
+    },
+    "geo": {
+      "type": "object",
+      "title": "Geo Location",
+      "properties": {
+        "latitude": {
+          "type": "number",
+          "title": "Latitude",
+        },
+        "longitude": {
+          "type": "number",
+          "title": "Longitude",
+        }
+      }
+    },
+    "telephone": {
+      "type": "string",
+      "title": "Telephone",
+      "minLength": 10
+    },
+    "email": {
+      "type": "string",
+      "title": "Email",
+      "format": "email"
+    },
+    "website": {
+      "type": "string",
+      "title": "Website",
+      "format": "uri"
+    },
+    "openingHours": {
+      "type": "array",
+      "title": "Öffnungszeiten",
+      "items": {
+        "type": "object",
+        "properties": {
+          "dayOfWeek": {
+            "type": "string",
+            "title": "Wochentag",
+            "enum": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "enumNames": [
+              "Montag",
+              "Dienstag",
+              "Mittwoch",
+              "Donnerstag",
+              "Freitag",
+              "Samstag",
+              "Sonntag"
+            ]
+          },
+          "opens": {
+            "type": "string",
+            "title": "Öffnet",
+            "format": "time"
+          },
+          "closes": {
+            "type": "string",
+            "title": "Schließt",
+            "format": "time"
+          }
+        }
+      }
+    },
+    "openingHoursSpecification":{
+      "type": "array",
+      "title": "spezifische Öffnungszeiten",
+      "items": {
+        "type": "object",
+        "properties": {
+          "validFrom": {
+            "type": "string",
+            "title": "Von",
+            "format": "date"
+          },
+          "validThrough": {
+            "type": "string",
+            "title": "Bis",
+            "format": "date"
+          },
+          "opens": {
+            "type": "string",
+            "title": "Öffnet",
+            "format": "time"
+          },
+          "closes": {
+            "type": "string",
+            "title": "Schließt",
+            "format": "time"
+          },
+          "closed": {
+            "type": "boolean",
+            "title": "Geschlossen",
+            "default": false
+          }
+        }
+      }
+    },
+  }
 }
 
-export default function Playground({ themes, validators }: PlaygroundProps) {
-  const [loaded, setLoaded] = useState(false);
-  const [schema, setSchema] = useState<RJSFSchema>([] as RJSFSchema);
-  const [uiSchema, setUiSchema] = useState<UiSchema>([]!);
-  const [formData, setFormData] = useState<any>([]);
-  const [extraErrors, setExtraErrors] = useState<ErrorSchema | undefined>();
-  const [shareURL, setShareURL] = useState<string | null>(null);
-  const [theme, setTheme] = useState<string>('default');
-  const [subtheme, setSubtheme] = useState<string | null>(null);
-  const [stylesheet, setStylesheet] = useState<string | null>(null);
-  const [validator, setValidator] = useState<string>('AJV8');
-  const [showForm, setShowForm] = useState(false);
-  const [liveSettings, setLiveSettings] = useState<LiveSettings>({
-    showErrorList: 'top',
-    validate: false,
-    disabled: false,
-    noHtml5Validate: false,
-    readonly: false,
-    omitExtraData: false,
-    liveOmit: false,
-    experimental_defaultFormStateBehavior: { arrayMinItems: 'populate', emptyObjectFields: 'populateAllDefaults' },
-  });
-  const [FormComponent, setFormComponent] = useState<ComponentType<FormProps>>(withTheme({}));
-  const [otherFormProps, setOtherFormProps] = useState<Partial<FormProps>>({});
+const log = (type:any) => console.log.bind(console, type);
 
-  const playGroundFormRef = useRef<any>(null);
+const Playground = () => {
+    return (
+      <>
+        <Head>
+          <title>Form Playground!</title>
+        </Head>
+        <div className="container mx-auto max-w-7xl items-center justify-between p-6 lg:px-8">
+          <Form
+              schema={schema2}
+              validator={validator}
+              onChange={log('changed')}
+              onSubmit={log('submitted')}
+              onError={log('errors')}
+          />
+        </div>
+      </>
+    );
+};
 
-  const onThemeSelected = useCallback(
-    (theme: string, { stylesheet, theme: themeObj }: ThemesType) => {
-      setTheme(theme);
-      setSubtheme(null);
-      setFormComponent(withTheme(themeObj));
-      setStylesheet(stylesheet);
-    },
-    [setTheme, setSubtheme, setFormComponent, setStylesheet]
-  );
-
-  const load = useCallback(
-    (data: Sample & { theme: string; liveSettings: LiveSettings }) => {
-      const {
-        schema,
-        // uiSchema is missing on some examples. Provide a default to
-        // clear the field in all cases.
-        uiSchema = {},
-        // Always reset templates and fields
-        templates = {},
-        fields = {},
-        formData,
-        theme: dataTheme = theme,
-        extraErrors,
-        liveSettings,
-        ...rest
-      } = data;
-
-      onThemeSelected(dataTheme, themes[dataTheme]);
-
-      // force resetting form component instance
-      setShowForm(false);
-      setSchema(schema);
-      setUiSchema(uiSchema);
-      setFormData(formData);
-      setExtraErrors(extraErrors);
-      setTheme(dataTheme);
-      setShowForm(true);
-      setLiveSettings(liveSettings);
-      setOtherFormProps({ fields, templates, ...rest });
-    },
-    [theme, onThemeSelected, themes]
-  );
-
-  useEffect(() => {
-    const hash = document.location.hash.match(/#(.*)/);
-
-    if (hash && typeof hash[1] === 'string' && hash[1].length > 0 && !loaded) {
-      try {
-        load(JSON.parse(atob(hash[1])));
-        setLoaded(true);
-      } catch (error) {
-        alert('Unable to load form setup data.');
-        console.error(error);
-      }
-
-      return;
-    }
-
-    // initialize theme
-    onThemeSelected(theme, themes[theme]);
-
-    setShowForm(true);
-  }, [onThemeSelected, load, loaded, setShowForm, theme, themes]);
-
-  const onFormDataChange = useCallback(
-    ({ formData }: IChangeEvent, id?: string) => {
-      if (id) {
-        console.log('Field changed, id: ', id);
-      }
-
-      setFormData(formData);
-      setShareURL(null);
-    },
-    [setFormData, setShareURL]
-  );
-
-  const onFormDataSubmit = useCallback(({ formData }: IChangeEvent, event: FormEvent<any>) => {
-    console.log('submitted formData', formData);
-    console.log('submit event', event);
-    window.alert('Form submitted');
-  }, []);
-
-  return (
-    <>
-      <Header
-        schema={schema}
-        uiSchema={uiSchema}
-        formData={formData}
-        shareURL={shareURL}
-        themes={themes}
-        theme={theme}
-        subtheme={subtheme}
-        validators={validators}
-        validator={validator}
-        liveSettings={liveSettings}
-        playGroundFormRef={playGroundFormRef}
-        load={load}
-        onThemeSelected={onThemeSelected}
-        setSubtheme={setSubtheme}
-        setStylesheet={setStylesheet}
-        setValidator={setValidator}
-        setLiveSettings={setLiveSettings}
-        setShareURL={setShareURL}
-      />
-      <Editors
-        formData={formData}
-        setFormData={setFormData}
-        schema={schema}
-        setSchema={setSchema}
-        uiSchema={uiSchema}
-        setUiSchema={setUiSchema}
-        extraErrors={extraErrors}
-        setExtraErrors={setExtraErrors}
-        setShareURL={setShareURL}
-      />
-      <div className='col-sm-5'>
-        <ErrorBoundary>
-          {showForm && (
-            <DemoFrame
-              head={
-                <>
-                  <link rel='stylesheet' id='theme' href={stylesheet || ''} />
-                </>
-              }
-              style={{
-                width: '100%',
-                height: 1000,
-                border: 0,
-              }}
-              theme={theme}
-            >
-              <FormComponent
-                {...otherFormProps}
-                {...liveSettings}
-                extraErrors={extraErrors}
-                schema={schema}
-                uiSchema={uiSchema}
-                formData={formData}
-                fields={{
-                  geo: GeoPosition,
-                  '/schemas/specialString': SpecialInput,
-                }}
-                validator={validators[validator]}
-                onChange={onFormDataChange}
-                onSubmit={onFormDataSubmit}
-                onBlur={(id: string, value: string) => console.log(`Touched ${id} with value ${value}`)}
-                onFocus={(id: string, value: string) => console.log(`Focused ${id} with value ${value}`)}
-                onError={(errorList: RJSFValidationError[]) => console.log('errors', errorList)}
-                ref={playGroundFormRef}
-              />
-            </DemoFrame>
-          )}
-        </ErrorBoundary>
-      </div>
-    </>
-  );
-}
+export default Playground;
