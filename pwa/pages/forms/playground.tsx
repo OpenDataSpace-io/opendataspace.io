@@ -129,9 +129,14 @@ const schema2: RJSFSchema = {
       "items": {
         "type": "object",
         "properties": {
-          "date": {
+          "validFrom": {
             "type": "string",
-            "title": "Datum",
+            "title": "Von",
+            "format": "date"
+          },
+          "validThrough": {
+            "type": "string",
+            "title": "Bis",
             "format": "date"
           },
           "opens": {
