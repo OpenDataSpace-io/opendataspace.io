@@ -64,6 +64,8 @@ class ThingNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
         // TODO Set Type from properties['@type']
         //$data['@type'] = 'Thing';
         $data['identifier'] = $object->getId();
+        $data['dateCreated'] = $thing->getDateCreated()->format('Y-m-d\TH:i:s\Z');
+        $data['dateModified'] = $thing->getDateModified()->format('Y-m-d\TH:i:s\Z');
 
         /*if($format === 'jsonld'){
             unset($data['hydra:totalItems']);
