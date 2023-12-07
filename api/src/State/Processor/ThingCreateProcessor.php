@@ -10,9 +10,7 @@ use ApiPlatform\State\ProcessorInterface;
 use App\Entity\Thing;
 use Symfony\Component\Uid\Uuid;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Serializer\Encoder\DecoderInterface;
-use Symfony\Contracts\HttpClient\HttpClientInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 final readonly class ThingCreateProcessor implements ProcessorInterface
 {
@@ -21,8 +19,7 @@ final readonly class ThingCreateProcessor implements ProcessorInterface
         private ProcessorInterface $persistProcessor,
         #[Autowire(service: MercureProcessor::class)]
         private ProcessorInterface $mercureProcessor,
-        private HttpClientInterface $client,
-        private DecoderInterface $decoder
+        private RequestStack $requestStack
     ) {
     }
 
@@ -32,11 +29,28 @@ final readonly class ThingCreateProcessor implements ProcessorInterface
      */
     public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = []): Thing
     {
-        // TODO: Import Properties from Level 1 in Json
-        //$data->setName($data->getName());
+        $request = $this->requestStack->getCurrentRequest();
+        if ($request) {
+            $body = json_decode($request->getContent(), true);
+        }
+
+        $thing = new Thing();
+        
+        if (isset($body['name'])) {
+            $thing->setName($body['name']);
+        }
+
+        $id = Uuid::v4();
+
+        $thing->setId($id);
+        $thing->setDateCreated(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
+        $thing->setDateModified(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
+        $thing->setProperties($body);
+
+        $data->setId($id);
         $data->setDateCreated(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
         $data->setDateModified(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
-        //$data->setProperties($data->getProperties());
+        $data->setProperties($body);
 
         // save entity
         $data = $this->persistProcessor->process($data, $operation, $uriVariables, $context);
@@ -52,6 +66,10 @@ final readonly class ThingCreateProcessor implements ProcessorInterface
                 ]
             );
         }*/
+
+        //$data['debug']['body'] = $body;
+        //$data['debug']['request'] = $request;
+        //$data['debug']['thing'] = $thing;
 
         return $data;
     }

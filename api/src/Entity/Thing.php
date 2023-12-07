@@ -114,8 +114,8 @@ use App\State\Processor\ThingPersistProcessor;
         ),
         // TODO: remove if bug fixed with token
         new Post(
-            uriTemplate: '/things/{id}{._format}',
-            processor: ThingCreateProcessor::class
+            processor: ThingCreateProcessor::class,
+            itemUriTemplate: '/things/{id}{._format}',
         ),
         new Put(
             uriTemplate: '/things/{id}{._format}',
