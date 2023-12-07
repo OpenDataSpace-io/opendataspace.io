@@ -65,6 +65,13 @@ jobs:
       -
         name: Run PHPUnit
         run: docker compose exec -T php bin/phpunit --coverage-clover ./coverage.xml
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        with:
+          flags: unittests
+          files: ./coverage.xml
       -
         name: Doctrine Schema Validator
         run: docker compose exec -T php bin/console -e test doctrine:schema:validate
@@ -74,14 +81,7 @@ jobs:
       -
         name: Lint PWA
         run: docker compose exec -T pwa pnpm lint
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-        with:
-          flags: unittests
-          files: coverage.xml
-
+      
   # run e2e tests iso-prod
   e2e-tests:
     name: E2E Tests
