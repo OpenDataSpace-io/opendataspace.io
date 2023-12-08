@@ -13,6 +13,7 @@ class FormFixtures extends Fixture
         $this->setPlaceForm($manager);
         $this->setOpeningHoursForm($manager);
         $this->setMapForm($manager);
+        $this->setImageForm($manager);
     }
 
     public function setPlaceForm(ObjectManager $manager)
@@ -416,6 +417,44 @@ class FormFixtures extends Fixture
                 "latitude" => 52.520008,
                 "longitude" => 13.404954
             ]
+        ]);
+    }
+
+    public function setImageForm(ObjectManager $manager)
+    {
+        $form = new Form();
+        $form->setName('Image Form');
+        $form->setCode('image');
+        $form->setDateCreated(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
+        $form->setDateModified(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
+        $form->setJSONSchema([
+            "title" => "Image Form",
+            "description" => "A simple form example.",
+            "type" => "object",
+            "required" => [
+                "image",
+            ],
+            "properties" => [
+                "image" => [
+                    "type" => "string",
+                    "title" => "Image",
+                    "format" => "data-url",
+                    "media" => [
+                        "type" => "image/*"
+                    ]
+                ]
+            ]
+        ]);
+        $form->setUISchema([
+            "image" => [
+                "ui:widget" => "image",
+                "ui:options" => [
+                    "accept" => ".jpg,.jpeg,.png,.gif,.bmp,.tif,.tiff"
+                ]
+            ]
+        ]);
+        $form->setFormData([
+            "image" => "https://picsum.photos/200/300"
         ]);
     }
 }
