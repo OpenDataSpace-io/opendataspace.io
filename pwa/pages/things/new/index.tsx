@@ -38,6 +38,7 @@ const NewThingForm = () => {
                 setSelectedForm(defaultForm[0].id)
                 setSchema(defaultForm[0].JSONSchema);
                 setUiSchema(defaultForm[0].UISchema);
+                setFormData(defaultForm[0].formData);
 
             } catch (error) {
                 console.error('Error fetching form list:', error);
@@ -55,7 +56,7 @@ const NewThingForm = () => {
                 const data = await response.json();
                 setSchema(data.JSONSchema);
                 setUiSchema(data.UISchema);
-                //setFormData(data.formData);
+                setFormData(data.formData);
             } catch (error) {
                 console.error('Error fetching form:', error);
             }
@@ -125,16 +126,16 @@ const NewThingForm = () => {
                             {selectedForm && (
                                 <>
                                     <Editors
-                                    formData={formData}
-                                    setFormData={setFormData}
-                                    schema={schema}
-                                    setSchema={setSchema}
-                                    uiSchema={uiSchema}
-                                    setUiSchema={setUiSchema}
-                                    extraErrors={extraErrors}
-                                    setExtraErrors={setExtraErrors}
-                                    setShareURL={setShareURL}
-                                />
+                                        formData={formData}
+                                        setFormData={setFormData}
+                                        schema={schema}
+                                        setSchema={setSchema}
+                                        uiSchema={uiSchema}
+                                        setUiSchema={setUiSchema}
+                                        extraErrors={extraErrors}
+                                        setExtraErrors={setExtraErrors}
+                                        setShareURL={setShareURL}
+                                    />
                                 </>
                             )}
                         </Grid>
