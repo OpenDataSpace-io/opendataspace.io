@@ -4,7 +4,7 @@ import validator from '@rjsf/validator-ajv8';
 import Form from '@rjsf/mui';
 import Head from "next/head";
 import Editors from '@/components/form/Editors';
-import { Container } from '@mui/material';
+import { Container, Grid, Button } from '@mui/material';
 
 const NewThingForm = () => {
     const [schema, setSchema] = useState({});
@@ -14,6 +14,11 @@ const NewThingForm = () => {
     const [formList, setFormList] = useState([]);
     const [extraErrors, setExtraErrors] = useState<ErrorSchema | undefined>();
     const [shareURL, setShareURL] = useState<string | null>(null);
+    const [isGridVisible, setGridVisible] = useState(true);
+
+    const handleButtonClick = () => {
+        setGridVisible(!isGridVisible);
+    };
     
     // Fetch the list of available forms from the API
     useEffect(() => {
@@ -88,42 +93,53 @@ const NewThingForm = () => {
             <Head>
                 <title>New Thing</title>
             </Head>
-            <Container fixed>
-            <div className="container mx-auto max-w-7xl items-center justify-between p-6 lg:px-8">
-            <div>
-                <h2>Select Form</h2>
-                <select value={selectedForm} onChange={handleFormSelect}>
-                    <option value="">Select a form</option>
-                    {formList.map(form => (
-                        <option key={form.id} value={form.id}>{form.name}</option>
-                    ))}
-                </select>
-            </div>
-            {selectedForm && (
-                <>
-                    <div>
-                     <Editors
-                        formData={formData}
-                        setFormData={setFormData}
-                        schema={schema}
-                        setSchema={setSchema}
-                        uiSchema={uiSchema}
-                        setUiSchema={setUiSchema}
-                        extraErrors={extraErrors}
-                        setExtraErrors={setExtraErrors}
-                        setShareURL={setShareURL}
-                    />
-                    <Form
-                        schema={schema}
-                        uiSchema={uiSchema}
-                        formData={formData}
-                        validator={validator}
-                        onSubmit={handleSubmit}
-                    />
-                    </div>
-                </>
-            )}
-            </div>
+            <Container maxWidth="xl">
+            <Button onClick={handleButtonClick}>
+                {isGridVisible ? 'Hide Grid' : 'Show Grid'}
+            </Button>
+                <Grid container spacing={2}>
+                    <Grid item xs={isGridVisible ? 6 : 12} md={isGridVisible ? 8 : 12}>
+                        {selectedForm && (
+                        <>
+                            <div>
+                                <Form
+                                    schema={schema}
+                                    uiSchema={uiSchema}
+                                    formData={formData}
+                                    validator={validator}
+                                    onSubmit={handleSubmit}
+                                />
+                            </div>
+                        </>
+                        )}
+                    </Grid>
+                    {isGridVisible && (
+                        <Grid item xs={6} md={4}>
+                            <h2>Select Form</h2>
+                            <select value={selectedForm} onChange={handleFormSelect}>
+                                <option value="">Select a form</option>
+                                {formList.map(form => (
+                                    <option key={form.id} value={form.id}>{form.name}</option>
+                                ))}
+                            </select>
+                            {selectedForm && (
+                                <>
+                                    <Editors
+                                    formData={formData}
+                                    setFormData={setFormData}
+                                    schema={schema}
+                                    setSchema={setSchema}
+                                    uiSchema={uiSchema}
+                                    setUiSchema={setUiSchema}
+                                    extraErrors={extraErrors}
+                                    setExtraErrors={setExtraErrors}
+                                    setShareURL={setShareURL}
+                                />
+                                </>
+                            )}
+                        </Grid>
+                    )}
+                </Grid>
             </Container>
         </>
     );
