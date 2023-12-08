@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { RJSFSchema } from '@rjsf/utils';
+import { ErrorSchema, RJSFSchema, RJSFValidationError, UiSchema, ValidatorType } from '@rjsf/utils';
 import validator from '@rjsf/validator-ajv8';
 import Form from '@rjsf/mui';
+import Head from "next/head";
+import Editors from '@/components/form/Editors';
+import { Container } from '@mui/material';
 
 const NewThingForm = () => {
     const [schema, setSchema] = useState({});
@@ -9,7 +12,9 @@ const NewThingForm = () => {
     const [formData, setFormData] = useState({});
     const [selectedForm, setSelectedForm] = useState('');
     const [formList, setFormList] = useState([]);
-
+    const [extraErrors, setExtraErrors] = useState<ErrorSchema | undefined>();
+    const [shareURL, setShareURL] = useState<string | null>(null);
+    
     // Fetch the list of available forms from the API
     useEffect(() => {
         const fetchFormList = async () => {
@@ -76,9 +81,15 @@ const NewThingForm = () => {
         console.log(formData);
     };
 
+
+
     return (
-        <div className="min-w-[270px] max-w-[300px] w-full mr-10 text-center">
-            <h1>New Thing Form</h1>
+        <>
+            <Head>
+                <title>New Thing</title>
+            </Head>
+            <Container fixed>
+            <div className="container mx-auto max-w-7xl items-center justify-between p-6 lg:px-8">
             <div>
                 <h2>Select Form</h2>
                 <select value={selectedForm} onChange={handleFormSelect}>
@@ -91,22 +102,17 @@ const NewThingForm = () => {
             {selectedForm && (
                 <>
                     <div>
-                    <h2>JSONSchema</h2>
-                        <textarea
-                            value={JSON.stringify(schema, null, 2)}
-                            onChange={handleFormDataChange}
-                        />
-                        <h2>UISchema</h2>
-                        <textarea
-                            value={JSON.stringify(uiSchema, null, 2)}
-                            onChange={handleFormDataChange}
-                        />
-                        <h2>formData</h2>
-                        <textarea
-                            value={JSON.stringify(formData, null, 2)}
-                            onChange={handleFormDataChange}
-                        />
-                    </div>
+                     <Editors
+                        formData={formData}
+                        setFormData={setFormData}
+                        schema={schema}
+                        setSchema={setSchema}
+                        uiSchema={uiSchema}
+                        setUiSchema={setUiSchema}
+                        extraErrors={extraErrors}
+                        setExtraErrors={setExtraErrors}
+                        setShareURL={setShareURL}
+                    />
                     <Form
                         schema={schema}
                         uiSchema={uiSchema}
@@ -114,9 +120,12 @@ const NewThingForm = () => {
                         validator={validator}
                         onSubmit={handleSubmit}
                     />
+                    </div>
                 </>
             )}
-        </div>
+            </div>
+            </Container>
+        </>
     );
 };
 
