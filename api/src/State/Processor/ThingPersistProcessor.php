@@ -26,7 +26,7 @@ final readonly class ThingPersistProcessor implements ProcessorInterface
     }
 
     /**
-     * @param Book $data
+     * @param Thing $data
      */
     public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = []): Thing
     {
