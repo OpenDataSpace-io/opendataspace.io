@@ -66,14 +66,9 @@ jobs:
         name: Run PHPUnit
         run: docker compose exec -T php bin/phpunit --coverage-clover coverage.xml
       - 
-        name: Copy coverage reports
-        run: docker compose exec -T php cp php:/app/coverage.xml coverage.xml
-      - 
         name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v4-beta
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-      -
+        run: docker compose exec -T php bash -c "curl -Os https://uploader.codecov.io/latest/linux/codecov && chmod +x codecov && ./codecov -t ${{ secrets.CODECOV_TOKEN }} -f coverage.xml"
+      - 
         name: Doctrine Schema Validator
         run: docker compose exec -T php bin/console -e test doctrine:schema:validate
       -
