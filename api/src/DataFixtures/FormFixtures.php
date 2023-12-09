@@ -58,8 +58,8 @@ class FormFixtures extends Fixture
                         ]
                     ],
                     "required" => [
-                        "street_address",
-                        "city",
+                        "streetAddress",
+                        "addressLocality",
                     ]
                 ],
                 "geo" => [
