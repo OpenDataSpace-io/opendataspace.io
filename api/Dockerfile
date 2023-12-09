@@ -71,6 +71,7 @@ RUN set -eux; \
     ;
 
 COPY --link frankenphp/conf.d/app.dev.ini $PHP_INI_DIR/conf.d/
+COPY --link frankenphp/conf.d/custom-php.ini $PHP_INI_DIR/conf.d/
 
 CMD [ "frankenphp", "run", "--config", "/etc/caddy/Caddyfile", "--watch" ]
 
