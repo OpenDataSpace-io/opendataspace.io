@@ -8,19 +8,19 @@ import Typography from "@mui/material/Typography";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import Button from "@mui/material/Button";
-import ButtonGroup from "@mui/material/ButtonGroup";
+import { Container, Grid, Button } from '@mui/material';
 import { signIn, useSession } from "next-auth/react";
 
 import { type Thing } from "@/types/Thing";
 import { useMercure } from "@/utils/mercure";
 import { useThing } from "@/utils/thing";
-import { fetch, type FetchError, type FetchResponse } from "@/utils/dataAccess";
+//import { fetch, type FetchError, type FetchResponse } from "@/utils/dataAccess";
 import { type PagedCollection } from "@/types/collection";
 import { Loading } from "@/components/common/Loading";
 import ShowProperties from "./ShowProperties";
+import Editors from '@/components/form/Editors';
 
-import { RJSFSchema } from '@rjsf/utils';
+import { ErrorSchema, RJSFSchema, RJSFValidationError, UiSchema, ValidatorType } from '@rjsf/utils';
 import validator from '@rjsf/validator-ajv8';
 import Form from '@rjsf/mui';
 
@@ -32,205 +32,115 @@ interface Props {
 
 // https://rjsf-team.github.io/react-jsonschema-form/docs/
 
-const schema2: RJSFSchema = {
-  "title": "Test Place Form",
-  //"description": "A simple form example.",
-  "type": "object",
-  "required": [
-    "name",
-  ],
-  "properties": {
-    "name": {
-      "type": "string",
-      "title": "Name",
-      "default": "Test Thing"
-    },
-    "description": {
-      "type": "string",
-      "title": "Description",
-    },
-    "address": {
-      "type": "object",
-      "properties": {
-        "streetAddress": {
-          "type": "string",
-        },
-        "addressLocality": {
-          "type": "string"
-        },
-        "postalCode": {
-          "type": "string"
-        },
-        "addressCountry": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "street_address",
-        "city",
-      ]
-    },
-    "geo": {
-      "type": "object",
-      "title": "Geo Location",
-      "properties": {
-        "latitude": {
-          "type": "number",
-          "title": "Latitude",
-        },
-        "longitude": {
-          "type": "number",
-          "title": "Longitude",
-        }
-      }
-    },
-    "telephone": {
-      "type": "string",
-      "title": "Telephone",
-      "minLength": 10
-    },
-    "email": {
-      "type": "string",
-      "title": "Email",
-      "format": "email"
-    },
-    "website": {
-      "type": "string",
-      "title": "Website",
-      "format": "uri"
-    },
-    "openingHours": {
-      "type": "array",
-      "title": "Öffnungszeiten",
-      "items": {
-        "type": "object",
-        "properties": {
-          "dayOfWeek": {
-            "type": "string",
-            "title": "Wochentag",
-            "enum": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday",
-              "Saturday",
-              "Sunday"
-            ],
-            "enumNames": [
-              "Montag",
-              "Dienstag",
-              "Mittwoch",
-              "Donnerstag",
-              "Freitag",
-              "Samstag",
-              "Sonntag"
-            ]
-          },
-          "opens": {
-            "type": "string",
-            "title": "Öffnet",
-            "format": "time"
-          },
-          "closes": {
-            "type": "string",
-            "title": "Schließt",
-            "format": "time"
-          }
-        }
-      }
-    },
-    "openingHoursSpecification":{
-      "type": "array",
-      "title": "spezifische Öffnungszeiten",
-      "items": {
-        "type": "object",
-        "properties": {
-          "date": {
-            "type": "string",
-            "title": "Datum",
-            "format": "date"
-          },
-          "opens": {
-            "type": "string",
-            "title": "Öffnet",
-            "format": "time"
-          },
-          "closes": {
-            "type": "string",
-            "title": "Schließt",
-            "format": "time"
-          },
-          "closed": {
-            "type": "boolean",
-            "title": "Geschlossen",
-            "default": false
-          }
-        }
-      }
-    },
-  }
-}
-
-const uiSchema = {
-  "description": {
-    "ui:widget": "textarea"
-  },
-}
-
-const generateSchema = (data: any, excludeFields = []) => {
-  const schema = {
-    //title: "Dynamisches Formular",
-    type: "object",
-    properties: {} as { [key: string]: { type: string, title: string } },
-  };
-
-  for (const key in data) {
-    if (!excludeFields.includes(key)) {
-      if (typeof data[key] === 'object' && data[key] !== null && !Array.isArray(data[key])) {
-        schema.properties[key] = generateSchema(data[key]);
-      } else {
-        schema.properties[key] = {
-          type: typeof data[key],
-          title: key,
-        };
-      }
-    }
-  }
-
-
-  return schema;
-};
-
-const generateFromData = (data: any) => {
-  const formData: { [key: string]: any } = {};
-
-  for (const key in data) {
-    if (typeof data[key] === 'object' && data[key] !== null && !Array.isArray(data[key])) {
-      formData[key] = generateFromData(data[key]);
-    } else {
-      formData[key] = data[key];
-    }
-  }
-
-  return formData;
-};
-
-const log = (type: any) => console.log.bind(console, type);
-
 export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
   const { data: session, status } = useSession();
   const item = useMercure(data, hubURL);
+  const [schema, setSchema] = useState({});
+  const [uiSchema, setUiSchema] = useState({});
+  const [formData, setFormData] = useState({});
+  const [selectedForm, setSelectedForm] = useState('');
+  const [formList, setFormList] = useState([]);
+  const [extraErrors, setExtraErrors] = useState<ErrorSchema | undefined>();
+  const [shareURL, setShareURL] = useState<string | null>(null);
+  const [isGridVisible, setGridVisible] = useState(true);
 
-  for (let index = 0; index < item.length; index++) {
-    const element = item[index];
-    
-  }
+  const handleButtonClick = () => {
+    setGridVisible(!isGridVisible);
+  };
 
-  /*const formData = {
-    name: item["name"],
-    description: item["description"],
-  };*/
+  // Fetch the list of available forms from the API
+  useEffect(() => {
+      const fetchFormList = async () => {
+          try {
+              const response = await fetch('/forms.json');
+              const data = await response.json();
+              console.log("set form list");
+              setFormList(data);
+
+              const defaultForm = data.filter((element: { code: string }) =>
+                  element.code === "place"
+              );
+
+              console.log("defaultForm");
+              console.log(defaultForm);
+              setSelectedForm(defaultForm[0].id)
+              setSchema(defaultForm[0].JSONSchema);
+              setUiSchema(defaultForm[0].UISchema);
+              setFormData(item);
+
+          } catch (error) {
+              console.error('Error fetching form list:', error);
+          }
+      };
+
+      fetchFormList();
+  }, []);
+
+  useEffect(() => {
+    // Fetch the JSONSchema and UISchema from the API based on the selected form
+    const fetchForm = async () => {
+        try {
+            const response = await fetch(`/forms/${selectedForm}.json`);
+            const data = await response.json();
+            setSchema(data.JSONSchema);
+            setUiSchema(data.UISchema);
+            setFormData(item);
+        } catch (error) {
+            console.error('Error fetching form:', error);
+        }
+    };
+
+    if (selectedForm) {
+        fetchForm();
+    } else {
+        console.log("no form selected");
+    }
+  }, [selectedForm]);
+
+  const handleFormSelect = (e) => {
+      setSelectedForm(e.target.value);
+  };
+
+  const handleFormDataChange = (e) => {
+      try {
+          const newFormData = JSON.parse(e.target.value);
+          setFormData(newFormData);
+      } catch (error) {
+          console.error('Invalid JSON');
+      }
+  };
+
+  const handleSubmit = async (data: any) => {
+      // Handle form submission here
+      console.log(data);
+      console.log(data["formData"]);
+      console.log(item);
+
+      const id = item['@id'];
+      console.log(id);
+
+      try {
+          const token = session.accessToken; // Get the authentication token from the session
+          const response = await fetch(`${id}`, {
+              method: 'PUT',
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${token}` // Include the authentication token in the request headers
+              },
+              body: JSON.stringify(data["formData"]) // Set the request body as data["formData"]
+          });
+
+          if (response.ok) {
+              // Handle successful response
+              console.log('Thing created successfully');
+          } else {
+              // Handle error response
+              console.error('Error creating thing:', response.statusText);
+          }
+      } catch (error) {
+          console.error('Error creating thing:', error);
+      }
+  };
 
   const excludeFields: Array<string | never[]> = [
     "@context",
@@ -238,9 +148,6 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
     //"@type",
     "id",
   ];
-
-  const schema = generateSchema(data, excludeFields as never[]);
-  const formData = generateFromData(data);
 
   if (status === "loading") {
     return <Loading />;
@@ -253,22 +160,58 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
   if (item) {
     return (
       <>
-        <Head>
-          <title>{`${item["name"]}`}</title>
-        </Head>
-        <div className="container mx-auto max-w-7xl items-center justify-between p-6 lg:px-8">
-          <Form
-              schema={schema}
-              uiSchema={uiSchema}
-              formData={formData}
-              validator={validator}
-              onChange={log('changed')}
-              onSubmit={log('submitted')}
-              onError={log('errors')}
-          />
-        </div>
+          <Head>
+              <title>New Thing</title>
+          </Head>
+          <Container maxWidth="xl">
+          <Button onClick={handleButtonClick}>
+              {isGridVisible ? 'Hide Expert Mode' : 'Show Expert Mode'}
+          </Button>
+              <Grid container spacing={2}>
+                  <Grid item xs={isGridVisible ? 6 : 12} md={isGridVisible ? 8 : 12}>
+                      {selectedForm && (
+                      <>
+                          <div>
+                              <Form
+                                  schema={schema}
+                                  uiSchema={uiSchema}
+                                  formData={formData}
+                                  validator={validator}
+                                  onSubmit={handleSubmit}
+                              />
+                          </div>
+                      </>
+                      )}
+                  </Grid>
+                  {isGridVisible && (
+                      <Grid item xs={6} md={4}>
+                          <h2>Select Form</h2>
+                          <select value={selectedForm} onChange={handleFormSelect}>
+                              <option value="">Select a form</option>
+                              {formList.map(form => (
+                                  <option key={form.id} value={form.id}>{form.name}</option>
+                              ))}
+                          </select>
+                          {selectedForm && (
+                              <>
+                                  <Editors
+                                      formData={formData}
+                                      setFormData={setFormData}
+                                      schema={schema}
+                                      setSchema={setSchema}
+                                      uiSchema={uiSchema}
+                                      setUiSchema={setUiSchema}
+                                      extraErrors={extraErrors}
+                                      setExtraErrors={setExtraErrors}
+                                      setShareURL={setShareURL}
+                                  />
+                              </>
+                          )}
+                      </Grid>
+                  )}
+              </Grid>
+          </Container>
       </>
     );
-
   }
 };
