@@ -96,7 +96,7 @@ const NewThingForm = () => {
             </Head>
             <Container maxWidth="xl">
             <Button onClick={handleButtonClick}>
-                {isGridVisible ? 'Hide Grid' : 'Show Grid'}
+                {isGridVisible ? 'Hide Expert Mode' : 'Show Expert Mode'}
             </Button>
                 <Grid container spacing={2}>
                     <Grid item xs={isGridVisible ? 6 : 12} md={isGridVisible ? 8 : 12}>
