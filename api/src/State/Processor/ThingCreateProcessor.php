@@ -11,6 +11,8 @@ use App\Entity\Thing;
 use Symfony\Component\Uid\Uuid;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\HttpFoundation\RequestStack;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Util\IRIConverterInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 final readonly class ThingCreateProcessor implements ProcessorInterface
 {
@@ -46,11 +48,14 @@ final readonly class ThingCreateProcessor implements ProcessorInterface
         $thing->setDateCreated(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
         $thing->setDateModified(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
         $thing->setProperties($body);
+        $thing->setIri('/things/'.$id);
 
         $data->setId($id);
         $data->setDateCreated(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
         $data->setDateModified(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
         $data->setProperties($body);
+        $data->setIri('/things/'.$id);
+
 
         // save entity
         $data = $this->persistProcessor->process($data, $operation, $uriVariables, $context);
