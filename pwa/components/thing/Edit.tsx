@@ -191,6 +191,7 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
                               {formList.map(form => (
                                   <option key={form.id} value={form.id}>{form.name}</option>
                               ))}
+                              <option value="dynamic">TODO: Dynamic Form by Fields*</option>
                           </select>
                           {selectedForm && (
                               <>
