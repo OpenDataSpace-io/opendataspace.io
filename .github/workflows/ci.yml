@@ -66,11 +66,8 @@ jobs:
         name: Run PHPUnit
         run: docker compose exec -T php bin/phpunit --coverage-clover coverage.xml
       - 
-        name: List files
-        run: docker compose exec -T php ls -la
-      - 
-        name: List files
-        run: docker compose exec -T php find . -name 'coverage.xml'
+        name: Copy coverage reports
+        run: docker cp php:/app/coverage.xml coverage.xml
       - 
         name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4-beta
