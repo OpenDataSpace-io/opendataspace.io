@@ -28,38 +28,17 @@ class ThingNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
 
     public function normalize($object, string $format = null, array $context = []): array
     {   
-        /*$dateCreated = $object->dateCreated;
-        $dateModified = $data['dateModified'];
-        */
-
-        //$data = $object->getProperties();
-
-        /*if($format === 'jsonld'){
-            /*if (isset($data['properties']['hydra:member'][0])){
-                $data = $data['properties']['hydra:member'][0];
-            }*/
-            //$data['@id'] = $this->iriConverter->getIriFromResource($object);
-            //$data['@id'] = '/things/'.$object->getId();
-            //$data["@context"] = "https://schema.org/";
-            // TODO: Set Type from properties['@type']
-            //$data['@type'] = 'Thing';
-            /*if(isset($object->getProperties()['@type'])){
-                $data['@type'] = $object->getProperties()['@type'];
-            }
+        $request = $this->requestStack->getCurrentRequest();
+        if ($request) {
+            $body = json_decode($request->getContent(), true);
         }
-        $data['identifier'] = $object->getId();
-        $data['dateCreated'] = $dateCreated;
-        $data['dateModified'] = $dateModified;
-        // DEBUG
-        //$data['context'] = $context;
-        //$data['format'] = $format;
-
-        ksort($data);
-
-        /** @var array $data */
-        $data = $this->normalizer->normalize($object, $format, $context);
 
         $thing = $this->repository->find($object->getId());
+
+        $data = $this->iriConverter->getIriFromResource(resource: Thing::class, context: ['uri_variables' => ['id' => $thing->getId()]]);
+
+        /** @var array $data */
+        //$data = $this->normalizer->normalize($object, $format, $context);
 
         $data = $thing->getProperties();
         
@@ -70,12 +49,6 @@ class ThingNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
         $data['identifier'] = $object->getId();
         $data['dateCreated'] = $thing->getDateCreated()->format('Y-m-d\TH:i:s\Z');
         $data['dateModified'] = $thing->getDateModified()->format('Y-m-d\TH:i:s\Z');
-
-        /*if($format === 'jsonld'){
-            unset($data['hydra:totalItems']);
-            unset($data['hydra:member']);
-            unset($data['hydra:search']);
-        }*/
 
         ksort($data);
 
