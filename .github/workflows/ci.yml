@@ -64,10 +64,13 @@ jobs:
         run: docker compose exec -T php bin/console -e test doctrine:migrations:migrate --no-interaction
       -
         name: Run PHPUnit
-        run: docker compose exec -T php bin/phpunit --coverage-clover coverage.xml .
+        run: docker compose exec -T php bin/phpunit --coverage-clover coverage.xml
       - 
         name: List files
         run: docker compose exec -T php ls -la
+      - 
+        name: List files
+        run: docker compose exec -T php find . -name 'coverage.xml'
       - 
         name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4-beta
