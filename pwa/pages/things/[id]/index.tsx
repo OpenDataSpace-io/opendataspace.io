@@ -12,6 +12,7 @@ export const getServerSideProps: GetServerSideProps<{
   try {
     const response: FetchResponse<Thing> | undefined = await fetch(`/things/${id}`, {
       headers: {
+        Accept: "application/ld+json",
       }
     });
     if (!response?.data) {

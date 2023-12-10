@@ -91,7 +91,7 @@ const AppUI = ({ session, children }: { session: Session, children?: React.React
       // @ts-ignore
       dataProvider={dataProvider.current}
       entrypoint={window.origin}
-      docEntrypoint={`${window.origin}/docs.json`}
+      docEntrypoint={`${window.origin}/docs.jsonopenapi`}
       i18nProvider={i18nProvider}
       layout={MyLayout}
     >
