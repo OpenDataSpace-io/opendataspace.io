@@ -4,10 +4,10 @@ import { type AppBarProps } from "react-admin";
 import { Button, Menu, MenuItem, Typography } from "@mui/material";
 
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import DocContext from "@/components/admin/DocContext";
-import HydraLogo from "@/components/admin/HydraLogo";
-import OpenApiLogo from "@/components/admin/OpenApiLogo";
-import Logo from "@/components/admin/Logo";
+import DocContext from "@/components/app/DocContext";
+import HydraLogo from "@/components/app/HydraLogo";
+import OpenApiLogo from "@/components/app/OpenApiLogo";
+import Logo from "@/components/app/Logo";
 
 const DocTypeMenuButton = () => {
   const [anchorEl, setAnchorEl] = useState(null);

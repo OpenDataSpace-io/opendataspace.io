@@ -8,7 +8,7 @@ import {
 } from "react-admin";
 import JsonTextInput from './JsonTextInput';
 
-import { ThingInput } from "@/components/admin/thing/ThingInput";
+import { ThingInput } from "@/components/app/thing/ThingInput";
 
 export const Form = () => (
   <>

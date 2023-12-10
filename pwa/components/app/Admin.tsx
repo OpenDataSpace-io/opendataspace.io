@@ -10,23 +10,15 @@ import frenchMessages from "ra-language-french";
 import { fetchHydra, HydraAdmin, hydraDataProvider, OpenApiAdmin, ResourceGuesser } from "@api-platform/admin";
 import { parseHydraDocumentation } from "@api-platform/api-doc-parser";
 
-import DocContext from "@/components/admin/DocContext";
+import DocContext from "@/components/app/DocContext";
 import authProvider from "@/components/authProvider";
-import AppBar from "@/components/admin/AppBar";
-import Menu from "@/components/admin/Menu";
+import AppBar from "@/components/app/AppBar";
+import Menu from "@/components/app/Menu";
 import { ENTRYPOINT } from "@/config/entrypoint";
-import { List as BooksList } from "@/components/admin/book/List";
-import { Create as BooksCreate } from "@/components/admin/book/Create";
-import { Edit as BooksEdit } from "@/components/admin/book/Edit";
-import { List as ReviewsList } from "@/components/admin/review/List";
-import { Show as ReviewsShow } from "@/components/admin/review/Show";
-import { Edit as ReviewsEdit } from "@/components/admin/review/Edit";
-import { List as ThingsList } from "@/components/admin/thing/List";
-import { Create as ThingsCreate } from "@/components/admin/thing/Create";
-import { Edit as ThingsEdit } from "@/components/admin/thing/Edit";
-import { type Book } from "@/types/Book";
+import { List as ThingsList } from "@/components/app/thing/List";
+import { Create as ThingsCreate } from "@/components/app/thing/Create";
+import { Edit as ThingsEdit } from "@/components/app/thing/Edit";
 import { type Thing } from "@/types/Thing";
-import { type Review } from "@/types/Review";
 
 const apiDocumentationParser = (session: Session) => async () => {
   try {
@@ -63,7 +55,7 @@ const i18nProvider = polyglotI18nProvider(
 
 const MyLayout = (props: React.JSX.IntrinsicAttributes & LayoutProps) => <Layout {...props} appBar={AppBar} menu={Menu}/>;
 
-const AdminUI = ({ session, children }: { session: Session, children?: React.ReactNode | undefined }) => {
+const AppUI = ({ session, children }: { session: Session, children?: React.ReactNode | undefined }) => {
   // @ts-ignore
   const dataProvider = useRef<DataProvider>();
   const { docType } = useContext(DocContext);
@@ -120,10 +112,10 @@ const AdminWithContext = ({ session }: { session: Session }) => {
         docType,
         setDocType,
       }}>
-      <AdminUI session={session}>
+      <AppUI session={session}>
         <ResourceGuesser name="app/things" list={ThingsList} create={ThingsCreate} edit={ThingsEdit} hasShow={false}
                          recordRepresentation={(record: Thing) => record.name}/>
-      </AdminUI>
+      </AppUI>
     </DocContext.Provider>
   );
 };
