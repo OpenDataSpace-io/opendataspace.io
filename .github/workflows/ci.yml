@@ -66,6 +66,9 @@ jobs:
         name: Run PHPUnit
         run: docker compose exec -T php bin/phpunit --coverage-clover /app/reports/coverage.xml
       - 
+        name: Check if coverage.xml was created
+        run: docker compose exec -T php ls /app/reports/
+      - 
         name: Upload coverage reports to Codecov
         run: docker compose exec -T php sh -c "curl -Os https://uploader.codecov.io/latest/linux/codecov && chmod +x codecov && ./codecov -t ${{ secrets.CODECOV_TOKEN }} -f /app/reports/coverage.xml"
       - 
