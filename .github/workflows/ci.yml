@@ -64,7 +64,7 @@ jobs:
         run: docker compose exec -T php bin/console -e test doctrine:migrations:migrate --no-interaction
       -
         name: Run PHPUnit
-        run: docker compose exec -T php bin/phpunit --coverage-clover /app/reports/coverage.xml
+        run: docker compose exec -T -e XDEBUG_MODE=coverage php bin/phpunit --coverage-clover /app/reports/coverage.xml
       - 
         name: Check if coverage.xml was created
         run: docker compose exec -T php ls /app/reports/
