@@ -68,40 +68,43 @@ use App\State\Processor\ThingPersistProcessor;
     security: 'is_granted("ROLE_ADMIN")'
 )]
 #[ApiResource(
-    uriTemplate: '/dashboard/things{._format}',
-    //types: ['https://schema.org/Thing'],
+    uriTemplate: '/app/things{._format}',
+    types: ['https://schema.org/Thing'],
     operations: [
         new GetCollection(
-            itemUriTemplate: '/dashboard/things/{id}{._format}',
-            paginationClientItemsPerPage: true,
+            itemUriTemplate: '/app/things/{id}{._format}',
+            paginationClientItemsPerPage: true
         ),
         new Post(
             // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
-            processor: ThingCreateProcessor::class,
-            itemUriTemplate: '/dashboard/things/{id}{._format}',
-            security: 'is_granted("ROLE_USER")'
+            processor: ThingPersistProcessor::class,
+            itemUriTemplate: '/app/things/{id}{._format}'
         ),
         new Get(
-            uriTemplate: '/dashboard/things/{id}{._format}'
+            uriTemplate: '/app/things/{id}{._format}'
         ),
         // https://github.com/api-platform/admin/issues/370
         new Put(
-            uriTemplate: '/dashboard/things/{id}{._format}',
+            uriTemplate: '/app/things/{id}{._format}',
             // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
-            processor: ThingUpdateProcessor::class,
-            security: 'is_granted("ROLE_USER")'
+            processor: ThingPersistProcessor::class
+        ),
+        new Delete(
+            uriTemplate: '/app/things/{id}{._format}',
+            // Mercure publish is done manually in MercureProcessor through BookRemoveProcessor
+            processor: ThingRemoveProcessor::class
         ),
     ],
     normalizationContext: [
-        AbstractNormalizer::GROUPS => ['Thing:read'],
+        AbstractNormalizer::GROUPS => ['Thing:read:app'],
         AbstractObjectNormalizer::SKIP_NULL_VALUES => true,
     ],
     denormalizationContext: [
         AbstractNormalizer::GROUPS => ['Thing:write'],
     ],
     // todo waiting for https://github.com/api-platform/core/pull/5844
-    //    collectDenormalizationErrors: true,
-    //security: 'is_granted("ROLE_USER")'
+//    collectDenormalizationErrors: true,
+    security: 'is_granted("ROLE_USER")'
 )]
 #[ApiResource(
     types: ['https://schema.org/Thing',],
