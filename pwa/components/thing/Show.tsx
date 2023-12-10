@@ -92,30 +92,14 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
         <>
           <div className="flex">
             <div className="min-w-[270px] max-w-[300px] w-full mr-10 text-center">
-              {!!item["images"] && (
-                <Image alt={item["name"]} width={300} height={300} src={item["images"]["large"]} priority={true} data-testid="thing-cover"/>
+              {!!item["image"] && (
+                <Image alt={item["name"]} width={300} height={300} src={item["image"]} priority={true} data-testid="thing-cover"/>
               ) || (
                 <span className="h-40 text-slate-300">No image</span>
               )}
             </div>
             <div className="w-full">
               <h1 className="font-bold text-2xl text-gray-700">{item["name"]}</h1>
-              <p className="text-gray-600 mt-4" data-testid="thing-metadata">
-                <span className="flex">
-                  {!!item["dateCreated"] && (
-                    <span className="ml-1">Created on {item["dateCreated"]}</span>
-                  )}
-                </span>
-                <span className="flex">
-                  <span className="ml-1">ID: {item['@id']}</span>
-                </span>
-                <span className="flex">
-                  <span className="ml-1">Type: {item['@type']}</span>
-                </span>
-              </p>
-              <p className="text-justify leading-7 my-8" data-testid="thing-description">
-                {item["description"] ?? "This thing has no description."}
-              </p>
               <h2>Data View</h2>
               <p className="text-gray-600 mt-4" data-testid="thing-metadata">
                 {Object.entries(item).map(([key, value]) => {
@@ -125,7 +109,7 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
                         {value.map((item, index) => (
                           <p>
                           <span className="ml-1" key={index}>
-                            <strong>{key}[{index}]:</strong>
+                            <h3>{key}[{index}]:</h3>
                             <br/>
                             {JSON.stringify(item)}
                           </span>
@@ -139,7 +123,7 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
                         {Object.entries(value).map(([subKey, subValue]) => (
                           <p>
                           <span className="ml-1" key={subKey}>
-                            <strong>{key}.{subKey}:</strong>
+                            <h3>{key}.{subKey}:</h3>
                             <br/>
                             {JSON.stringify(subValue)}
                           </span>
@@ -152,9 +136,9 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
                       <span key={key}>
                         <p>
                         <span className="ml-1">
-                          <strong>{key}:
+                          <h3>{key}:</h3>
                           <br/>
-                          </strong> {value}
+                          {value}
                         </span>
                         </p>
                       </span>
