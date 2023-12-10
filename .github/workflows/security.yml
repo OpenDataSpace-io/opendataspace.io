@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  GKE_CLUSTER: api-platform-demo
+  GKE_CLUSTER: opendataspace-demo
   GCE_ZONE: europe-west1-c
 
 jobs:
@@ -45,7 +45,7 @@ jobs:
         name: Setup gcloud
         uses: google-github-actions/setup-gcloud@v1
         with:
-          project_id: ${{ secrets.gke-project }}
+          project_id: ${{ secrets.GKE_PROJECT }}
       -
         name: Configure gcloud
         run: |

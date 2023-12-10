@@ -64,10 +64,10 @@ jobs:
         run: docker compose exec -T php bin/console -e test doctrine:migrations:migrate --no-interaction
       -
         name: Run PHPUnit
-        run: docker compose exec -T php bin/phpunit --coverage-clover coverage.xml
+        run: docker compose exec -T php bin/phpunit --coverage-clover /app/reports/coverage.xml
       - 
         name: Upload coverage reports to Codecov
-        run: docker compose exec -T php sh -c "curl -Os https://uploader.codecov.io/latest/linux/codecov && chmod +x codecov && ./codecov -t ${{ secrets.CODECOV_TOKEN }} -f coverage.xml"
+        run: docker compose exec -T php sh -c "curl -Os https://uploader.codecov.io/latest/linux/codecov && chmod +x codecov && ./codecov -t ${{ secrets.CODECOV_TOKEN }} -f /app/reports/coverage.xml"
       - 
         name: Doctrine Schema Validator
         run: docker compose exec -T php bin/console -e test doctrine:schema:validate
