@@ -12,7 +12,7 @@ concurrency:
 
 env:
   GKE_CLUSTER: api-platform-demo
-  GCE_ZONE: europe-west1-c
+  GCE_ZONE: europe-west1
 
 jobs:
   scan:
@@ -50,7 +50,7 @@ jobs:
         name: Configure gcloud
         run: |
           gcloud --quiet auth configure-docker
-          gcloud container clusters get-credentials api-platform-demo --zone europe-west1-c
+          gcloud container clusters get-credentials api-platform-demo --zone europe-west1
       -
         name: Pull Docker Image
         run: docker pull eu.gcr.io/${{ secrets.GKE_PROJECT }}/${{ matrix.image }}:latest
