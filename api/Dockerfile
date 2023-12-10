@@ -70,6 +70,9 @@ RUN set -eux; \
     	xdebug \
     ;
 
+RUN pecl install xdebug \
+    && docker-php-ext-enable xdebug
+
 COPY --link frankenphp/conf.d/app.dev.ini $PHP_INI_DIR/conf.d/
 COPY --link frankenphp/conf.d/custom-php.ini $PHP_INI_DIR/conf.d/
 
