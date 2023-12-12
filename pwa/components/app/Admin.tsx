@@ -123,10 +123,6 @@ const AdminWithContext = ({ session }: { session: Session }) => {
       <AdminUI session={session}>
         <ResourceGuesser name="admin/books" list={BooksList} create={BooksCreate} edit={BooksEdit} hasShow={false}
                          recordRepresentation={(record: Book) => `${record.title} - ${record.author}`}/>
-        <ResourceGuesser name="admin/reviews" list={ReviewsList} show={ReviewsShow} edit={ReviewsEdit} hasCreate={false}
-                         recordRepresentation={(record: Review) => record.user.name}/>
-        <ResourceGuesser name="admin/things" list={ThingsList} create={ThingsCreate} edit={ThingsEdit} hasShow={false}
-                         recordRepresentation={(record: Thing) => record.name}/>
       </AdminUI>
     </DocContext.Provider>
   );
