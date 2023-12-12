@@ -153,66 +153,66 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
     return <Loading />;
   }
 
-  if (session?.error) {
-    return <div>{session.error}</div>;
-  }
-
-  if (item) {
-    return (
-      <>
-          <Head>
-              <title>New Thing</title>
-          </Head>
-          <Container maxWidth="xl">
-          <Button onClick={handleButtonClick}>
-              {isGridVisible ? 'Hide Expert Mode' : 'Show Expert Mode'}
-          </Button>
-              <Grid container spacing={2}>
-                  <Grid item xs={isGridVisible ? 6 : 12} md={isGridVisible ? 8 : 12}>
-                      {selectedForm && (
-                      <>
-                          <div>
-                              <Form
-                                  schema={schema}
-                                  uiSchema={uiSchema}
-                                  formData={formData}
-                                  validator={validator}
-                                  onSubmit={handleSubmit}
-                              />
-                          </div>
-                      </>
-                      )}
-                  </Grid>
-                  {isGridVisible && (
-                      <Grid item xs={6} md={4}>
-                          <h2>Select Form</h2>
-                          <select value={selectedForm} onChange={handleFormSelect}>
-                              <option value="">Select a form</option>
-                              {formList.map(form => (
-                                  <option key={form.id} value={form.id}>{form.name}</option>
-                              ))}
-                              <option value="dynamic">TODO: Dynamic Form by Fields*</option>
-                          </select>
-                          {selectedForm && (
-                              <>
-                                  <Editors
-                                      formData={formData}
-                                      setFormData={setFormData}
-                                      schema={schema}
-                                      setSchema={setSchema}
-                                      uiSchema={uiSchema}
-                                      setUiSchema={setUiSchema}
-                                      extraErrors={extraErrors}
-                                      setExtraErrors={setExtraErrors}
-                                      setShareURL={setShareURL}
-                                  />
-                              </>
-                          )}
-                      </Grid>
-                  )}
-              </Grid>
-          </Container>
-      </>
-    );
-  }
+  if (session?.error || session === undefined || session === null) {
+    signIn();
+  } else{
+    if (item) {
+        return (
+        <>
+            <Head>
+                <title>New Thing</title>
+            </Head>
+            <Container maxWidth="xl">
+            <Button onClick={handleButtonClick}>
+                {isGridVisible ? 'Hide Expert Mode' : 'Show Expert Mode'}
+            </Button>
+                <Grid container spacing={2}>
+                    <Grid item xs={isGridVisible ? 6 : 12} md={isGridVisible ? 8 : 12}>
+                        {selectedForm && (
+                        <>
+                            <div>
+                                <Form
+                                    schema={schema}
+                                    uiSchema={uiSchema}
+                                    formData={formData}
+                                    validator={validator}
+                                    onSubmit={handleSubmit}
+                                />
+                            </div>
+                        </>
+                        )}
+                    </Grid>
+                    {isGridVisible && (
+                        <Grid item xs={6} md={4}>
+                            <h2>Select Form</h2>
+                            <select value={selectedForm} onChange={handleFormSelect}>
+                                <option value="">Select a form</option>
+                                {formList.map(form => (
+                                    <option key={form.id} value={form.id}>{form.name}</option>
+                                ))}
+                                <option value="dynamic">TODO: Dynamic Form by Fields*</option>
+                            </select>
+                            {selectedForm && (
+                                <>
+                                    <Editors
+                                        formData={formData}
+                                        setFormData={setFormData}
+                                        schema={schema}
+                                        setSchema={setSchema}
+                                        uiSchema={uiSchema}
+                                        setUiSchema={setUiSchema}
+                                        extraErrors={extraErrors}
+                                        setExtraErrors={setExtraErrors}
+                                        setShareURL={setShareURL}
+                                    />
+                                </>
+                            )}
+                        </Grid>
+                    )}
+                </Grid>
+            </Container>
+        </>
+        );
+    }
+   }
 };

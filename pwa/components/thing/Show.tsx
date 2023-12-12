@@ -109,7 +109,6 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
                         {value.map((item, index) => (
                             <span key={index} className="ml-1">
                               <h3>{key}[{index}]:</h3>
-                              <br/>
                               {JSON.stringify(item)}
                             </span>
                         ))}
@@ -121,7 +120,6 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
                         {Object.entries(value).map(([subKey, subValue]) => (
                             <span key={subKey} className="ml-1">
                               <h3>{key}.{subKey}:</h3>
-                              <br/>
                               {JSON.stringify(subValue)}
                             </span>
                         ))}
@@ -132,7 +130,6 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
                       <span key={key}>
                           <span className="ml-1">
                             <h3>{key}:</h3>
-                            <br/>
                             {value}
                           </span>
                       </span>
