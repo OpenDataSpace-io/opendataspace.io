@@ -107,12 +107,12 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
                     return (
                       <span key={key}>
                         {value.map((item, index) => (
-                          <p>
-                          <span className="ml-1" key={index}>
-                            <h3>{key}[{index}]:</h3>
-                            <br/>
-                            {JSON.stringify(item)}
-                          </span>
+                          <p key={index}>
+                            <span className="ml-1">
+                              <h3>{key}[{index}]:</h3>
+                              <br/>
+                              {JSON.stringify(item)}
+                            </span>
                           </p>
                         ))}
                       </span>
@@ -121,12 +121,12 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
                     return (
                       <span key={key}>
                         {Object.entries(value).map(([subKey, subValue]) => (
-                          <p>
-                          <span className="ml-1" key={subKey}>
-                            <h3>{key}.{subKey}:</h3>
-                            <br/>
-                            {JSON.stringify(subValue)}
-                          </span>
+                          <p key={subKey}>
+                            <span className="ml-1">
+                              <h3>{key}.{subKey}:</h3>
+                              <br/>
+                              {JSON.stringify(subValue)}
+                            </span>
                           </p>
                         ))}
                       </span>
@@ -135,11 +135,11 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
                     return (
                       <span key={key}>
                         <p>
-                        <span className="ml-1">
-                          <h3>{key}:</h3>
-                          <br/>
-                          {value}
-                        </span>
+                          <span className="ml-1">
+                            <h3>{key}:</h3>
+                            <br/>
+                            {value}
+                          </span>
                         </p>
                       </span>
                     );
