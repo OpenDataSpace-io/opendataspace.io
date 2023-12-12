@@ -161,6 +161,15 @@ class FormFixtures extends Fixture
                     ]
                     ]
                 ],
+                "sameAs" => [
+                    "type" => "array",
+                    "title" => "Links",
+                    "items" => [
+                        "type" => "string",
+                        "title" => "Link",
+                        "format" => "uri"
+                    ]
+                ]
                 ]
             ]
         );
@@ -188,6 +197,27 @@ class FormFixtures extends Fixture
                     "inputType" => "url"
                 ]
             ],
+            "openingHours" => [
+                "ui:options" => [
+                    "addable" => false,
+                    "orderable" => false,
+                    "removable" => false
+                ]
+            ],
+            "openingHoursSpecification" => [
+                "ui:options" => [
+                    "addable" => false,
+                    "orderable" => false,
+                    "removable" => false
+                ]
+            ],
+            "sameAs" => [
+                "ui:options" => [
+                    "addable" => false,
+                    "orderable" => false,
+                    "removable" => false
+                ]
+            ]
         ]);
         $form->setFormData([
             "name" => "Thing TEST",
@@ -205,7 +235,50 @@ class FormFixtures extends Fixture
             "telephone" => "+49 30 12345678",
             "email" => "example@test.ch",
             "url" => "https://example.com",
-        ]);
+            "openingHours" =>  [
+                    [
+                        "dayOfWeek" => "Monday",
+                        "opens" => "10:00:00",
+                        "closes" => "16:00:00"
+                    ],
+                    [
+                        "dayOfWeek"=> "Tuesday",
+                        "opens" => "09:00:00",
+                        "closes" => "17:00:00"
+                    ],
+                    [
+                        "dayOfWeek"=> "Wednesday",
+                        "opens" => "09:00:00",
+                        "closes" => "17:00:00"
+                    ],
+                    [
+                        "dayOfWeek"=> "Thursday",
+                        "opens" => "09:00:00",
+                        "closes" => "17:00:00"
+                    ],
+                    [
+                        "dayOfWeek"=> "Friday",
+                        "opens" => "09:00:00",
+                        "closes" => "17:00:00"
+                    ]
+                ],
+                "openingHoursSpecification" => [
+                    [
+                        "date" => "2021-01-01",
+                        "opens" => "10:00:00",
+                        "closes" => "16:00:00"
+                    ],
+                    [
+                        "date" => "2021-01-01",
+                        "opens" => "09:00:00",
+                        "closes" => "17:00:00"
+                    ]
+                ],
+                "sameAs" => [
+                    "https://example.com"
+                ]
+            ]
+        );
         $manager->persist($form);
 
         $manager->flush();
