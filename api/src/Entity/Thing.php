@@ -68,29 +68,29 @@ use App\State\Processor\ThingPersistProcessor;
     security: 'is_granted("ROLE_ADMIN")'
 )]
 #[ApiResource(
-    uriTemplate: '/app/things{._format}',
+    uriTemplate: '/user/things{._format}',
     types: ['https://schema.org/Thing'],
     operations: [
         new GetCollection(
-            itemUriTemplate: '/app/things/{id}{._format}',
+            itemUriTemplate: '/user/things/{id}{._format}',
             paginationClientItemsPerPage: true
         ),
         new Post(
             // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
             processor: ThingPersistProcessor::class,
-            itemUriTemplate: '/app/things/{id}{._format}'
+            itemUriTemplate: '/user/things/{id}{._format}'
         ),
         new Get(
-            uriTemplate: '/app/things/{id}{._format}'
+            uriTemplate: '/user/things/{id}{._format}'
         ),
         // https://github.com/api-platform/admin/issues/370
         new Put(
-            uriTemplate: '/app/things/{id}{._format}',
+            uriTemplate: '/user/things/{id}{._format}',
             // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
             processor: ThingPersistProcessor::class
         ),
         new Delete(
-            uriTemplate: '/app/things/{id}{._format}',
+            uriTemplate: '/user/things/{id}{._format}',
             // Mercure publish is done manually in MercureProcessor through BookRemoveProcessor
             processor: ThingRemoveProcessor::class
         ),
