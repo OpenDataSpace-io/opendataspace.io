@@ -101,19 +101,17 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
             <div className="w-full">
               <h1 className="font-bold text-2xl text-gray-700">{item["name"]}</h1>
               <h2>Data View</h2>
-              <p className="text-gray-600 mt-4" data-testid="thing-metadata">
+              <div className="text-gray-600 mt-4" data-testid="thing-metadata">
                 {Object.entries(item).map(([key, value]) => {
                   if (Array.isArray(value)) {
                     return (
                       <span key={key}>
                         {value.map((item, index) => (
-                          <p key={index}>
-                            <span className="ml-1">
+                            <span key={index} className="ml-1">
                               <h3>{key}[{index}]:</h3>
                               <br/>
                               {JSON.stringify(item)}
                             </span>
-                          </p>
                         ))}
                       </span>
                     );
@@ -121,31 +119,27 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
                     return (
                       <span key={key}>
                         {Object.entries(value).map(([subKey, subValue]) => (
-                          <p key={subKey}>
-                            <span className="ml-1">
+                            <span key={subKey} className="ml-1">
                               <h3>{key}.{subKey}:</h3>
                               <br/>
                               {JSON.stringify(subValue)}
                             </span>
-                          </p>
                         ))}
                       </span>
                     );
                   } else {
                     return (
                       <span key={key}>
-                        <p>
                           <span className="ml-1">
                             <h3>{key}:</h3>
                             <br/>
                             {value}
                           </span>
-                        </p>
                       </span>
                     );
                   }
                 })}
-              </p>
+              </div>
             </div>
           </div>
         </>
