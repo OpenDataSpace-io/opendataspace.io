@@ -45,7 +45,7 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
   const [isGridVisible, setGridVisible] = useState(true);
 
   const handleButtonClick = () => {
-    setGridVisible(!isGridVisible);
+    setGridVisible(isGridVisible);
   };
 
   // Fetch the list of available forms from the API
@@ -149,14 +149,14 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
     "id",
   ];
 
-  if (status === "loading") {
-    return <Loading />;
-  }
+  
 
-  if (session?.error || session === undefined || session === null) {
+  if (session?.error || session === null) {
     signIn();
   } else{
-    if (item) {
+    if (status === "loading") {
+        return <Loading />;
+    } else if (item) {
         return (
         <>
             <Head>
