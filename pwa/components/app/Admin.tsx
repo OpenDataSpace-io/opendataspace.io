@@ -15,10 +15,18 @@ import authProvider from "@/components/authProvider";
 import AppBar from "@/components/app/AppBar";
 import Menu from "@/components/app/Menu";
 import { ENTRYPOINT } from "@/config/entrypoint";
+import { List as BooksList } from "@/components/app/book/List";
+import { Create as BooksCreate } from "@/components/app/book/Create";
+import { Edit as BooksEdit } from "@/components/app/book/Edit";
+import { List as ReviewsList } from "@/components/app/review/List";
+import { Show as ReviewsShow } from "@/components/app/review/Show";
+import { Edit as ReviewsEdit } from "@/components/app/review/Edit";
 import { List as ThingsList } from "@/components/app/thing/List";
 import { Create as ThingsCreate } from "@/components/app/thing/Create";
 import { Edit as ThingsEdit } from "@/components/app/thing/Edit";
+import { type Book } from "@/types/Book";
 import { type Thing } from "@/types/Thing";
+import { type Review } from "@/types/Review";
 
 const apiDocumentationParser = (session: Session) => async () => {
   try {
@@ -55,7 +63,7 @@ const i18nProvider = polyglotI18nProvider(
 
 const MyLayout = (props: React.JSX.IntrinsicAttributes & LayoutProps) => <Layout {...props} appBar={AppBar} menu={Menu}/>;
 
-const AppUI = ({ session, children }: { session: Session, children?: React.ReactNode | undefined }) => {
+const AdminUI = ({ session, children }: { session: Session, children?: React.ReactNode | undefined }) => {
   // @ts-ignore
   const dataProvider = useRef<DataProvider>();
   const { docType } = useContext(DocContext);
@@ -91,7 +99,7 @@ const AppUI = ({ session, children }: { session: Session, children?: React.React
       // @ts-ignore
       dataProvider={dataProvider.current}
       entrypoint={window.origin}
-      docEntrypoint={`${window.origin}/docs.jsonopenapi`}
+      docEntrypoint={`${window.origin}/docs.json`}
       i18nProvider={i18nProvider}
       layout={MyLayout}
     >
@@ -112,10 +120,14 @@ const AdminWithContext = ({ session }: { session: Session }) => {
         docType,
         setDocType,
       }}>
-      <AppUI session={session}>
-        <ResourceGuesser name="user/things" list={ThingsList} create={ThingsCreate} edit={ThingsEdit} hasShow={false}
+      <AdminUI session={session}>
+        <ResourceGuesser name="admin/books" list={BooksList} create={BooksCreate} edit={BooksEdit} hasShow={false}
+                         recordRepresentation={(record: Book) => `${record.title} - ${record.author}`}/>
+        <ResourceGuesser name="admin/reviews" list={ReviewsList} show={ReviewsShow} edit={ReviewsEdit} hasCreate={false}
+                         recordRepresentation={(record: Review) => record.user.name}/>
+        <ResourceGuesser name="admin/things" list={ThingsList} create={ThingsCreate} edit={ThingsEdit} hasShow={false}
                          recordRepresentation={(record: Thing) => record.name}/>
-      </AppUI>
+      </AdminUI>
     </DocContext.Provider>
   );
 };
@@ -141,7 +153,7 @@ const AdminWithOIDC = () => {
 const Admin = () => (
   <>
     <Head>
-      <title>App OpenDataSpace.io</title>
+      <title>API Platform Admin</title>
     </Head>
 
     {/*@ts-ignore*/}
