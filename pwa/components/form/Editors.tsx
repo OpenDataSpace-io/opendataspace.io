@@ -83,7 +83,7 @@ export default function Editors({
   setUiSchema,
 }: EditorsProps) {
   const onSchemaEdited = useCallback(
-    (newSchema) => {
+    (newSchema: RJSFSchema) => {
       setSchema(newSchema);
       setShareURL(null);
     },
@@ -91,7 +91,7 @@ export default function Editors({
   );
 
   const onUISchemaEdited = useCallback(
-    (newUiSchema) => {
+    (newUiSchema: UiSchema) => {
       setUiSchema(newUiSchema);
       setShareURL(null);
     },
@@ -99,7 +99,7 @@ export default function Editors({
   );
 
   const onFormDataEdited = useCallback(
-    (newFormData) => {
+    (newFormData: any) => {
       if (
         !isEqualWith(newFormData, formData, (newValue, oldValue) => {
           // Since this is coming from the editor which uses JSON.stringify to trim undefined values compare the values
@@ -116,7 +116,7 @@ export default function Editors({
   );
 
   const onExtraErrorsEdited = useCallback(
-    (newExtraErrors) => {
+    (newExtraErrors: ErrorSchema | undefined) => {
       setExtraErrors(newExtraErrors);
       setShareURL(null);
     },
