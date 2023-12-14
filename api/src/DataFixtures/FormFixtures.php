@@ -524,7 +524,6 @@ class FormFixtures extends Fixture
         ]);
         $form->setUISchema([
             "image" => [
-                "ui:widget" => "image",
                 "ui:options" => [
                     "accept" => ".jpg,.jpeg,.png,.gif,.bmp,.tif,.tiff"
                 ]
