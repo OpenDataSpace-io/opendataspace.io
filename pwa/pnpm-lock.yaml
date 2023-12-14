@@ -50,6 +50,9 @@ dependencies:
   isomorphic-unfetch:
     specifier: ^4.0.2
     version: 4.0.2
+  leaflet:
+    specifier: ^1.9.4
+    version: 1.9.4
   next:
     specifier: ^13.5.6
     version: 13.5.6(@babel/core@7.23.2)(react-dom@18.2.0)(react@18.2.0)
@@ -2946,6 +2949,10 @@ packages:
     dependencies:
       language-subtag-registry: 0.3.22
     dev: true
+
+  /leaflet@1.9.4:
+    resolution: {integrity: sha512-nxS1ynzJOmOlHp+iL3FyWqK89GtNL8U8rvlMOsQdTTssxZwCXh8N2NB3GDQOL+YR3XnWyZAxwQixURb+FA74PA==}
+    dev: false
 
   /levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
