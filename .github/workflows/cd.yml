@@ -104,6 +104,9 @@ jobs:
   feature-deploy:
     name: Feature Deploy
     needs: [ build ]
+    permissions:
+      id-token: write
+      contents: read
     if: github.event_name == 'pull_request'
     uses: ./.github/workflows/deploy.yml
     with:
