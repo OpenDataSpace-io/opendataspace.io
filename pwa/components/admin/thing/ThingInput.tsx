@@ -29,7 +29,27 @@ export const ThingInput = (props: ThingInputProps) => {
   const [value, setValue] = useState<Result | null | undefined>(
     !!name && !!dateCreated && !!dateModified && !!field.value ? { name: name, value: field.value } : undefined
   );
-  const { isLoading, data, isFetched } = useQuery<Result[]>(["search", searchQuery]);
+  const { isLoading, data, isFetched } = useQuery<Result[]>(
+    ["search", searchQuery],
+    async () => {
+      if (controller.current) {
+        controller.current.abort();
+      }
+      controller.current = new AbortController();
+
+      return {
+        // @ts-ignore
+        name,
+        // @ts-ignore
+        dateCreated,
+        // @ts-ignore
+        dateModified
+      }
+    },
+    {
+      enabled: !!searchQuery,
+    }
+  );
   const onInputChange = useMemo(() =>
       debounce((event: SyntheticEvent, value: string) => setSearchQuery(value), 400),
       []
