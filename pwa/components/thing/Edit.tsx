@@ -19,8 +19,6 @@ import { type PagedCollection } from "@/types/collection";
 import { Loading } from "@/components/common/Loading";
 import ShowProperties from "./ShowProperties";
 import Editors from '@/components/form/Editors';
-import FileUpload from '@/components/form/FileUpload';
-import GeoWidget from "@/components/form/Geo";
 
 import { ErrorSchema, RJSFSchema, RJSFValidationError, UiSchema, ValidatorType } from '@rjsf/utils';;
 import validator from '@rjsf/validator-ajv8';
