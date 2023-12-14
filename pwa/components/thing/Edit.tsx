@@ -197,7 +197,7 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
                                             onSubmit={handleSubmit}
                                             fields={{
                                                 // Override the default field component for fields with format "data-url"
-                                                'data-url': Upload,
+                                                'data-url': isDataUrlField,
                                             }}
                                         />
                                     </div>
