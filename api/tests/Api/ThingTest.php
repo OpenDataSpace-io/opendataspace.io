@@ -28,7 +28,7 @@ final class ThingTest extends ApiTestCase
      */
     public function testAsAnonymousICanGetACollectionOfThings(FactoryCollection $factory, string $url, int $hydraTotalItems): void
     {
-        // Cannot use Factory as data provider because BookFactory has a service dependency
+        // Cannot use Factory as data provider because ThingFactory has a service dependency
         $factory->create();
 
         $response = $this->client->request('GET', $url);
@@ -39,7 +39,7 @@ final class ThingTest extends ApiTestCase
             'hydra:totalItems' => $hydraTotalItems,
         ]);
         self::assertCount(min($hydraTotalItems, 30), $response->toArray()['hydra:member']);
-        self::assertMatchesJsonSchema(file_get_contents(__DIR__.'/schemas/Book/collection.json'));
+        self::assertMatchesJsonSchema(file_get_contents(__DIR__.'/schemas/Thing/collection.json'));
     }
 
     public function getUrls(): iterable
@@ -56,7 +56,7 @@ final class ThingTest extends ApiTestCase
                     yield [];
                 }
             }),
-            '/books?title=yperio',
+            '/things?name=yperio',
             1,
         ];
     }
