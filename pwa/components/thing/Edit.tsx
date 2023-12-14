@@ -134,6 +134,7 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
         console.log(id);
 
         try {
+            if (!session) return; // Guard against missing session
             const token = session.accessToken; // Get the authentication token from the session
             const response = await fetch(`${id}`, {
                 method: 'PUT',
