@@ -196,11 +196,11 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
                                             validator={validator}
                                             onChange={onFormDataChange}
                                             onSubmit={handleSubmit}
-                                            fields={{
+                                            /*fields={{
                                                 // Override the default field component for fields with format "data-url"
                                                 'data-url': FileUpload,
                                                 'geo': GeoWidget,
-                                            }}
+                                            }}*/
                                         />
                                     </div>
                                 </>
