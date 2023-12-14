@@ -68,22 +68,12 @@ jobs:
       - 
         name: Check if coverage.xml was created
         run: docker compose exec -T php ls /app/reports/
-      - 
-        name: Install Codecov in Docker-Container
-        run: docker compose exec -T php sh -c "curl -Os https://uploader.codecov.io/latest/linux/codecov && chmod +x codecov"
-      - 
-        name: Install gpg in Docker-Container
-        run: docker compose exec -T php sh -c "apt-get update && apt-get install -y gnupg"
-      -
-        # https://docs.codecov.com/docs/codecov-uploader#integrity-checking-the-uploader
-        name: Check gpg --version
-        run: docker compose exec -T php "gpg --version"
-      -
-        name: SHASUM of Codecov
-        run: docker compose exec -T php sh -c "curl https://keybase.io/codecovsecurity/pgp_keys.asc | gpg --no-default-keyring --import && curl -Os https://uploader.codecov.io/latest/linux/codecov && curl -Os https://uploader.codecov.io/latest/linux/codecov.SHA256SUM && curl -Os https://uploader.codecov.io/latest/linux/codecov.SHA256SUM.sig && gpg --verify codecov.SHA256SUM.sig codecov.SHA256SUM && shasum -a 256 -c codecov.SHA256SUM && chmod +x codecov"
       -
         name: Upload coverage reports to Codecov
-        run: docker compose exec -T php sh -c "./codecov -t ${{ secrets.CODECOV_TOKEN }} -f /app/reports/coverage.xml"
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: /app/reports/coverage.xml
       - 
         name: Doctrine Schema Validator
         run: docker compose exec -T php bin/console -e test doctrine:schema:validate
