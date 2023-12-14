@@ -71,17 +71,17 @@ final class ThingTest extends ApiTestCase
 
     public function testAsAdminUserICanGetACollectionOfThingsOrderedByName(): void
     {
-        ThingFactory::createOne(['name' => 'Thing Hyperion']);
-        ThingFactory::createOne(['name' => 'Thing The Wandering Earth']);
-        ThingFactory::createOne(['name' => 'Thing Ball Lightning']);
+        ThingFactory::createOne(['name' => 'AC Thing Hyperion']);
+        ThingFactory::createOne(['name' => 'AB Thing The Wandering Earth']);
+        ThingFactory::createOne(['name' => 'AA Thing Ball Lightning']);
 
         $response = $this->client->request('GET', '/things?order[name]=asc');
 
         self::assertResponseIsSuccessful();
         self::assertResponseHeaderSame('content-type', 'application/ld+json; charset=utf-8');
-        self::assertEquals('Thing Ball Lightning', $response->toArray()['hydra:member'][0]['name']);
-        self::assertEquals('Thing Hyperion', $response->toArray()['hydra:member'][1]['name']);
-        self::assertEquals('Thing The Wandering Earth', $response->toArray()['hydra:member'][2]['name']);
+        self::assertEquals('AA Thing Ball Lightning', $response->toArray()['hydra:member'][0]['name']);
+        self::assertEquals('AC Thing Hyperion', $response->toArray()['hydra:member'][1]['name']);
+        self::assertEquals('AB Thing The Wandering Earth', $response->toArray()['hydra:member'][2]['name']);
         //self::assertMatchesJsonSchema(file_get_contents(__DIR__.'/schemas/Thing/collection.json'));
     }
 
