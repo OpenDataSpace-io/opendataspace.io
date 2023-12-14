@@ -10,10 +10,10 @@ class FormFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        $this->loadMapForm($manager);
-        $this->loadImageForm($manager);
         $this->loadPlaceForm($manager);
         $this->loadOpeningHoursForm($manager);
+        $this->loadMapForm($manager);
+        $this->loadImageForm($manager);
     }
 
     public function loadPlaceForm(ObjectManager $manager)
@@ -491,6 +491,10 @@ class FormFixtures extends Fixture
                 "longitude" => 13.404954
             ]
         ]);
+
+        $manager->persist($form);
+
+        $manager->flush();
     }
 
     public function loadImageForm(ObjectManager $manager)
@@ -529,5 +533,9 @@ class FormFixtures extends Fixture
         $form->setFormData([
             "image" => "https://picsum.photos/200/300"
         ]);
+
+        $manager->persist($form);
+
+        $manager->flush();
     }
 }
