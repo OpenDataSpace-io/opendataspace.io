@@ -64,16 +64,16 @@ jobs:
         run: docker compose exec -T php bin/console -e test doctrine:migrations:migrate --no-interaction
       -
         name: Run PHPUnit
-        run: docker compose exec -T -e XDEBUG_MODE=coverage php bin/phpunit --coverage-clover /app/reports/coverage.xml
+        run: docker compose exec -T -e XDEBUG_MODE=coverage php bin/phpunit --coverage-clover coverage.xml
       - 
         name: Check if coverage.xml was created
-        run: docker compose exec -T php ls /app/reports/
+        run: docker compose exec -T php ls -l 
       -
         name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          file: /app/reports/coverage.xml
+          file: coverage.xml
       - 
         name: Doctrine Schema Validator
         run: docker compose exec -T php bin/console -e test doctrine:schema:validate
