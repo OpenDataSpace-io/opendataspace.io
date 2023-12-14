@@ -19,6 +19,7 @@ import { type PagedCollection } from "@/types/collection";
 import { Loading } from "@/components/common/Loading";
 import ShowProperties from "./ShowProperties";
 import Editors from '@/components/form/Editors';
+import Upload from '@/components/form/Upload'; // Import the Upload component
 
 import { ErrorSchema, RJSFSchema, RJSFValidationError, UiSchema, ValidatorType } from '@rjsf/utils';;
 import validator from '@rjsf/validator-ajv8';
@@ -52,64 +53,64 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
 
     // Fetch the list of available forms from the API
     useEffect(() => {
-            const fetchFormList = async () => {
-                    try {
-                            const response = await fetch('/forms.json');
-                            const data = await response.json();
-                            console.log("set form list");
-                            setFormList(data);
+        const fetchFormList = async () => {
+            try {
+                const response = await fetch('/forms.json');
+                const data = await response.json();
+                console.log("set form list");
+                setFormList(data);
 
-                            const defaultForm = data.filter((element: { code: string }) =>
-                                    element.code === "place"
-                            );
+                const defaultForm = data.filter((element: { code: string }) =>
+                    element.code === "place"
+                );
 
-                            console.log("defaultForm");
-                            console.log(defaultForm);
-                            setSelectedForm(defaultForm[0].id)
-                            setSchema(defaultForm[0].JSONSchema);
-                            setUiSchema(defaultForm[0].UISchema);
-                            setFormData(item);
+                console.log("defaultForm");
+                console.log(defaultForm);
+                setSelectedForm(defaultForm[0].id)
+                setSchema(defaultForm[0].JSONSchema);
+                setUiSchema(defaultForm[0].UISchema);
+                setFormData(item);
 
-                    } catch (error) {
-                            console.error('Error fetching form list:', error);
-                    }
-            };
+            } catch (error) {
+                console.error('Error fetching form list:', error);
+            }
+        };
 
-            fetchFormList();
+        fetchFormList();
     }, []);
 
     useEffect(() => {
         // Fetch the JSONSchema and UISchema from the API based on the selected form
         const fetchForm = async () => {
-                try {
-                        const response = await fetch(`/forms/${selectedForm}.json`);
-                        const data = await response.json();
-                        setSchema(data.JSONSchema);
-                        setUiSchema(data.UISchema);
-                        setFormData(item);
-                } catch (error) {
-                        console.error('Error fetching form:', error);
-                }
+            try {
+                const response = await fetch(`/forms/${selectedForm}.json`);
+                const data = await response.json();
+                setSchema(data.JSONSchema);
+                setUiSchema(data.UISchema);
+                setFormData(item);
+            } catch (error) {
+                console.error('Error fetching form:', error);
+            }
         };
 
         if (selectedForm) {
-                fetchForm();
+            fetchForm();
         } else {
-                console.log("no form selected");
+            console.log("no form selected");
         }
     }, [selectedForm]);
 
     const handleFormSelect = (e) => {
-            setSelectedForm(e.target.value);
+        setSelectedForm(e.target.value);
     };
 
     const handleFormDataChange = (e) => {
-            try {
-                    const newFormData = JSON.parse(e.target.value);
-                    setFormData(newFormData);
-            } catch (error) {
-                    console.error('Invalid JSON');
-            }
+        try {
+            const newFormData = JSON.parse(e.target.value);
+            setFormData(newFormData);
+        } catch (error) {
+            console.error('Invalid JSON');
+        }
     };
 
     const onFormDataChange = useCallback(
@@ -125,35 +126,35 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
     );
 
     const handleSubmit = async (data: any) => {
-            // Handle form submission here
-            console.log(data);
-            console.log(data["formData"]);
-            console.log(item);
+        // Handle form submission here
+        console.log(data);
+        console.log(data["formData"]);
+        console.log(item);
 
-            const id = item['@id'];
-            console.log(id);
+        const id = item['@id'];
+        console.log(id);
 
-            try {
-                    const token = session.accessToken; // Get the authentication token from the session
-                    const response = await fetch(`${id}`, {
-                            method: 'PUT',
-                            headers: {
-                                    'Content-Type': 'application/json',
-                                    'Authorization': `Bearer ${token}` // Include the authentication token in the request headers
-                            },
-                            body: JSON.stringify(data["formData"]) // Set the request body as data["formData"]
-                    });
+        try {
+            const token = session.accessToken; // Get the authentication token from the session
+            const response = await fetch(`${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}` // Include the authentication token in the request headers
+                },
+                body: JSON.stringify(data["formData"]) // Set the request body as data["formData"]
+            });
 
-                    if (response.ok) {
-                            // Handle successful response
-                            console.log('Thing created successfully');
-                    } else {
-                            // Handle error response
-                            console.error('Error creating thing:', response.statusText);
-                    }
-            } catch (error) {
-                    console.error('Error creating thing:', error);
+            if (response.ok) {
+                // Handle successful response
+                console.log('Thing created successfully');
+            } else {
+                // Handle error response
+                console.error('Error creating thing:', response.statusText);
             }
+        } catch (error) {
+            console.error('Error creating thing:', error);
+        }
     };
 
     const excludeFields: Array<string | never[]> = [
@@ -163,7 +164,10 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
         "id",
     ];
 
-    
+    // Function to check if a field has the format "data-url"
+    const isDataUrlField = (field: any) => {
+        return field.format === "data-url";
+    };
 
     if (status === "loading" || !schema || !uiSchema) {
         return <Loading />;
@@ -191,6 +195,10 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
                                             validator={validator}
                                             onChange={onFormDataChange}
                                             onSubmit={handleSubmit}
+                                            fields={{
+                                                // Override the default field component for fields with format "data-url"
+                                                'data-url': Upload,
+                                            }}
                                         />
                                     </div>
                                 </>
