@@ -10,13 +10,13 @@ class FormFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        $this->setPlaceForm($manager);
-        $this->setOpeningHoursForm($manager);
-        $this->setMapForm($manager);
-        $this->setImageForm($manager);
+        $this->loadMapForm($manager);
+        $this->loadImageForm($manager);
+        $this->loadPlaceForm($manager);
+        $this->loadOpeningHoursForm($manager);
     }
 
-    public function setPlaceForm(ObjectManager $manager)
+    public function loadPlaceForm(ObjectManager $manager)
     {
         $form = new Form();
         $form->setName('Place Form');
@@ -284,7 +284,7 @@ class FormFixtures extends Fixture
         $manager->flush();
     }
 
-    public function setOpeningHoursForm(ObjectManager $manager)
+    public function loadOpeningHoursForm(ObjectManager $manager)
     {
         $form = new Form();
         $form->setName('OpeningHours Form');
@@ -439,7 +439,7 @@ class FormFixtures extends Fixture
         $manager->flush();
     }
 
-    public function setMapForm(ObjectManager $manager)
+    public function loadMapForm(ObjectManager $manager)
     {
         $form = new Form();
         $form->setName('Map Form');
@@ -493,7 +493,7 @@ class FormFixtures extends Fixture
         ]);
     }
 
-    public function setImageForm(ObjectManager $manager)
+    public function loadImageForm(ObjectManager $manager)
     {
         $form = new Form();
         $form->setName('Image Form');
