@@ -19,7 +19,7 @@ import { type PagedCollection } from "@/types/collection";
 import { Loading } from "@/components/common/Loading";
 import ShowProperties from "./ShowProperties";
 import Editors from '@/components/form/Editors';
-import Upload from '@/components/form/Upload'; // Import the Upload component
+import FileUpload from '@/components/form/Upload'; // Import the Upload component
 
 import { ErrorSchema, RJSFSchema, RJSFValidationError, UiSchema, ValidatorType } from '@rjsf/utils';;
 import validator from '@rjsf/validator-ajv8';
@@ -197,7 +197,7 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
                                             onSubmit={handleSubmit}
                                             fields={{
                                                 // Override the default field component for fields with format "data-url"
-                                                'data-url': isDataUrlField,
+                                                'data-url': FileUpload,
                                             }}
                                         />
                                     </div>
