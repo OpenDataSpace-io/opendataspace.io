@@ -99,11 +99,11 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
         }
     }, [selectedForm]);
 
-    const handleFormSelect = (e) => {
+    const handleFormSelect = (e : any) => {
         setSelectedForm(e.target.value);
     };
 
-    const handleFormDataChange = (e) => {
+    const handleFormDataChange = (e : any) => {
         try {
             const newFormData = JSON.parse(e.target.value);
             setFormData(newFormData);
