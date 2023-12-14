@@ -7,11 +7,15 @@ import { useWatch } from "react-hook-form";
 
 interface Result {
   name: string;
+  dateCreated: string;
+  dateModified: string;
   value: string;
 }
 
 interface ThingInputProps extends TextInputProps {
   name?: string;
+  dateCreated?: string;
+  dateModified?: string;
   value?: string;
 }
 
