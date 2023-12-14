@@ -45,7 +45,7 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
   const [isGridVisible, setGridVisible] = useState(true);
 
   const handleButtonClick = () => {
-    setGridVisible(isGridVisible);
+    setGridVisible(!isGridVisible);
   };
 
   // Fetch the list of available forms from the API

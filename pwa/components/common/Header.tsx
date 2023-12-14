@@ -4,7 +4,6 @@ import Link from "next/link";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import PersonIcon from '@mui/icons-material/Person';
-import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 
 import { signOut } from "@/utils/security";
 
@@ -27,7 +26,7 @@ export const Header = () => {
             <FavoriteBorderIcon className="w-6 h-6 mr-1"/>
             My Things
           </Link>
-          <PersonOutlineOutlinedIcon className="w-6 h-6 mr-1"/>
+          <PersonIcon className="w-6 h-6 mr-1"/>
           {/* @ts-ignore */}
           {!!session && !session.error && (
             <a href="#" className="font-semibold text-gray-900" role="menuitem" onClick={(e) => {
