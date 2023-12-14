@@ -82,7 +82,6 @@ final class ThingTest extends ApiTestCase
         self::assertEquals('AA Thing Ball Lightning', $response->toArray()['hydra:member'][0]['name']);
         self::assertEquals('AC Thing Hyperion', $response->toArray()['hydra:member'][1]['name']);
         self::assertEquals('AB Thing The Wandering Earth', $response->toArray()['hydra:member'][2]['name']);
-        //self::assertMatchesJsonSchema(file_get_contents(__DIR__.'/schemas/Thing/collection.json'));
     }
 
     public function testAsAnonymousICanGetAThing(): void
@@ -97,6 +96,5 @@ final class ThingTest extends ApiTestCase
             '@id' => '/things/'.$thing->getId(),
             'name' => $thing->getName(),
         ]);
-        //self::assertMatchesJsonSchema(file_get_contents(__DIR__.'/schemas/Thing/item.json'));
     }
 }
