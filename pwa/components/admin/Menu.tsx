@@ -7,7 +7,6 @@ const Menu = () => (
   <ReactAdminMenu>
     <ReactAdminMenu.Item to="/admin/books" primaryText="Books" leftIcon={<MenuBookIcon/>}/>
     <ReactAdminMenu.Item to="/admin/reviews" primaryText="Reviews" leftIcon={<CommentIcon/>}/>
-    <ReactAdminMenu.Item to="/admin/things" primaryText="Things" leftIcon={<DataObjectIcon/>}/>
   </ReactAdminMenu>
 );
 export default Menu;
