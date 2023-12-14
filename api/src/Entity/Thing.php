@@ -119,14 +119,17 @@ use App\State\Processor\ThingPersistProcessor;
         new Post(
             processor: ThingCreateProcessor::class,
             itemUriTemplate: '/things/{id}{._format}',
+            security: 'is_granted("ROLE_USER")'
         ),
         new Put(
             uriTemplate: '/things/{id}{._format}',
-            processor: ThingUpdateProcessor::class
+            processor: ThingUpdateProcessor::class,
+            security: 'is_granted("ROLE_USER")'
         ),
         new Delete(
             uriTemplate: '/things/{id}{._format}',
-            processor: ThingRemoveProcessor::class
+            processor: ThingRemoveProcessor::class,
+            security: 'is_granted("ROLE_ADMIN")'
         ),
     ],
     normalizationContext: [
