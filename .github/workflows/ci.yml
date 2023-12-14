@@ -69,8 +69,14 @@ jobs:
         name: Check if coverage.xml was created
         run: docker compose exec -T php ls /app/reports/
       - 
+        name: Install Codecov in Docker-Container
+        run: docker compose exec -T php sh -c "curl -Os https://uploader.codecov.io/latest/linux/codecov && chmod +x codecov"
+      -
+        name: SHASUM of Codecov
+        run: docker compose exec -T php sh -c "curl https://keybase.io/codecovsecurity/pgp_keys.asc | gpg --no-default-keyring --import && curl -Os https://uploader.codecov.io/latest/linux/codecov && curl -Os https://uploader.codecov.io/latest/linux/codecov.SHA256SUM && curl -Os https://uploader.codecov.io/latest/linux/codecov.SHA256SUM.sig && gpg --verify codecov.SHA256SUM.sig codecov.SHA256SUM && sha256sum -c codecov.SHA256SUM && chmod +x codecov"
+      -
         name: Upload coverage reports to Codecov
-        run: docker compose exec -T php sh -c "curl -Os https://uploader.codecov.io/latest/linux/codecov && chmod +x codecov && ./codecov -t ${{ secrets.CODECOV_TOKEN }} -f /app/reports/coverage.xml"
+        run: docker compose exec -T php sh -c "./codecov -t ${{ secrets.CODECOV_TOKEN }} -f /app/reports/coverage.xml"
       - 
         name: Doctrine Schema Validator
         run: docker compose exec -T php bin/console -e test doctrine:schema:validate
