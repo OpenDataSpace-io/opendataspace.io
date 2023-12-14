@@ -18,6 +18,6 @@ export const Form = () => (
     <TextInput source="name" validate={required()}/>
     <DateTimeInput source="dateCreated" validate={required()} />
     <DateTimeInput source="dateModified" validate={required()}/>
-    <JsonTextInput multiline fullWidth/>
+    <JsonTextInput />
   </>
 );
