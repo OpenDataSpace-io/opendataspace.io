@@ -83,6 +83,7 @@ export default function Editors({
   setUiSchema,
 }: EditorsProps) {
   const onSchemaEdited = useCallback(
+    // @ts-ignore
     (newSchema: RJSFSchema) => {
       setSchema(newSchema);
       setShareURL(null);
@@ -91,6 +92,7 @@ export default function Editors({
   );
 
   const onUISchemaEdited = useCallback(
+    // @ts-ignore
     (newUiSchema: UiSchema) => {
       setUiSchema(newUiSchema);
       setShareURL(null);
@@ -99,6 +101,7 @@ export default function Editors({
   );
 
   const onFormDataEdited = useCallback(
+    // @ts-ignore
     (newFormData: any) => {
       if (
         !isEqualWith(newFormData, formData, (newValue, oldValue) => {
