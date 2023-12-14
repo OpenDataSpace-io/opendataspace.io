@@ -2,7 +2,7 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, ComponentType } from "react";
 import { useMutation } from "react-query";
 import Typography from "@mui/material/Typography";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
@@ -20,8 +20,9 @@ import { Loading } from "@/components/common/Loading";
 import ShowProperties from "./ShowProperties";
 import Editors from '@/components/form/Editors';
 
-import { ErrorSchema, RJSFSchema, RJSFValidationError, UiSchema, ValidatorType } from '@rjsf/utils';
+import { ErrorSchema, RJSFSchema, RJSFValidationError, UiSchema, ValidatorType } from '@rjsf/utils';;
 import validator from '@rjsf/validator-ajv8';
+import { FormProps, IChangeEvent, withTheme } from '@rjsf/core';
 import Form from '@rjsf/mui';
 
 interface Props {
@@ -43,6 +44,7 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
   const [extraErrors, setExtraErrors] = useState<ErrorSchema | undefined>();
   const [shareURL, setShareURL] = useState<string | null>(null);
   const [isGridVisible, setGridVisible] = useState(true);
+  const [FormComponent, setFormComponent] = useState<ComponentType<FormProps>>(withTheme({}));
 
   const handleButtonClick = () => {
     setGridVisible(!isGridVisible);
@@ -110,6 +112,18 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
       }
   };
 
+  const onFormDataChange = useCallback(
+    ({ formData }: IChangeEvent, id?: string) => {
+      if (id) {
+        console.log('Field changed, id: ', id);
+      }
+
+      setFormData(formData);
+      setShareURL(null);
+    },
+    [setFormData, setShareURL]
+  );
+
   const handleSubmit = async (data: any) => {
       // Handle form submission here
       console.log(data);
@@ -176,6 +190,7 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
                                     uiSchema={uiSchema}
                                     formData={formData}
                                     validator={validator}
+                                    onChange={onFormDataChange}
                                     onSubmit={handleSubmit}
                                 />
                             </div>
