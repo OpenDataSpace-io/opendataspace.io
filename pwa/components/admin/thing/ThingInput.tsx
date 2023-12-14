@@ -22,10 +22,12 @@ interface ThingInputProps extends TextInputProps {
 export const ThingInput = (props: ThingInputProps) => {
   const { field: { ref, ...field} } = useInput(props);
   const name = useWatch({ name: "name" });
+  const dateCreated = useWatch({ name: "dateCreated" });
+  const dateModified = useWatch({ name: "dateModified" });
   const controller = useRef<AbortController | undefined>();
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [value, setValue] = useState<Result | null | undefined>(
-    !!name && !!field.value ? { name: name, value: field.value } : undefined
+    !!name && !!dateCreated && !!dateModified && !!field.value ? { name: name, value: field.value } : undefined
   );
   const { isLoading, data, isFetched } = useQuery<Result[]>(
     ["search", searchQuery],
