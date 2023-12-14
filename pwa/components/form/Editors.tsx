@@ -116,7 +116,7 @@ export default function Editors({
   );
 
   const onExtraErrorsEdited = useCallback(
-    (newExtraErrors: ErrorSchema | undefined) => {
+    (newExtraErrors: any) => {
       setExtraErrors(newExtraErrors);
       setShareURL(null);
     },
