@@ -69,11 +69,6 @@ final class ThingFactory extends ModelFactory
         $name = self::faker()->text(20);
         // TODO: id Entity = Properties @id
         $id = Uuid::v4();
-        echo "Loading ThingFactory\n";
-        echo $id;
-        echo "\n";
-        echo $name;
-        echo "\n";
         $data = [
             '@context' => 'https://schema.org/',
             '@type' => 'Thing',
@@ -123,7 +118,6 @@ final class ThingFactory extends ModelFactory
             ]
         ];
 
-        echo "Returing ThingFactory\n";
         return [
             'name' => $name,
             'dateCreated' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')),
@@ -149,6 +143,7 @@ final class ThingFactory extends ModelFactory
                      // A Thing can have no author
                      //$thing->author ??= $datum['author'] ?? self::faker()->name();
                      $name = self::faker()->text(20);
+                     
                      //$id = Uuid::v4();
                      $id = $thing->getId();
 
