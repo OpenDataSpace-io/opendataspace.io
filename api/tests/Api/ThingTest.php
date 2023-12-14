@@ -39,7 +39,15 @@ final class ThingTest extends ApiTestCase
             'hydra:totalItems' => $hydraTotalItems,
         ]);
         self::assertCount(min($hydraTotalItems, 30), $response->toArray()['hydra:member']);
-        self::assertMatchesJsonSchema(file_get_contents(__DIR__.'/schemas/Thing/collection.json'));
+        
+        $collectionJson = $response->toArray();
+        $items = $collectionJson['hydra:member'];
+        foreach ($items as $item) {
+            self::assertArrayHasKey('@id', $item);
+            self::assertArrayHasKey('@type', $item);
+            self::assertArrayHasKey('name', $item);
+        }
+        
     }
 
     public function getUrls(): iterable

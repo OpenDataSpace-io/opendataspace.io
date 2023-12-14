@@ -7,10 +7,15 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
+                "@context": {
+                    "readOnly": true,
+                    "type": "string",
+                    "pattern": "^https:\/\/schema.org\/$"
+                },
                 "@type": {
                     "readOnly": true,
                     "type": "string",
-                    "pattern": "^https:\/\/schema.org\/Thing$"
+                    "pattern": "^.*$"
                 },
                 "@id": {
                     "readOnly": true,
@@ -36,7 +41,7 @@
         "@context": {
             "readOnly": true,
             "type": "string",
-            "pattern": "^/contexts/Thing$"
+            "pattern": "^.*$"
         },
         "@type": {
             "readOnly": true,

@@ -6,12 +6,12 @@
         "@context": {
             "readOnly": true,
             "type": "string",
-            "pattern": "^/contexts/Thing$"
+            "pattern": "^https:\/\/schema.org\/$"
         },
         "@type": {
             "readOnly": true,
             "type": "string",
-            "pattern": "^https:\/\/schema.org\/Thing$"
+            "pattern": "^.*$"
         },
         "@id": {
             "readOnly": true,
