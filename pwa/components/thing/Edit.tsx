@@ -31,10 +31,6 @@ interface Props {
     page: number;
 }
 
-interface Session {
-    accessToken: string;
-}
-
 // https://rjsf-team.github.io/react-jsonschema-form/docs/
 
 export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
@@ -139,6 +135,7 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
 
         try {
             if (!session) return; // Guard against missing session
+            //@ts-ignore
             const token = session.accessToken; // Get the authentication token from the session
             const response = await fetch(`${id}`, {
                 method: 'PUT',
