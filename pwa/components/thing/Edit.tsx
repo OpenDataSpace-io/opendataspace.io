@@ -31,10 +31,21 @@ interface Props {
     page: number;
 }
 
+interface Session {
+    accessToken: string;
+}
+
+const METHOD = 'PUT';
+const CONTENT_TYPE_HEADER = 'Content-Type';
+const AUTHORIZATION_HEADER = 'Authorization';
+const BEARER_PREFIX = 'Bearer';
+const APPLICATION_JSON = 'application/json';
+
 // https://rjsf-team.github.io/react-jsonschema-form/docs/
 
 export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
-    const { data: session, status } = useSession();
+    const { data: session = { accessToken: '' }, status } = useSession();
+    //const session: Session | null = useSession();
     const item = useMercure(data, hubURL);
     const [schema, setSchema] = useState({});
     const [uiSchema, setUiSchema] = useState({});
@@ -138,10 +149,10 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
             //@ts-ignore
             const token = session.accessToken; // Get the authentication token from the session
             const response = await fetch(`${id}`, {
-                method: 'PUT',
+                method: METHOD,
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}` // Include the authentication token in the request headers
+                    [CONTENT_TYPE_HEADER]: APPLICATION_JSON,
+                    [AUTHORIZATION_HEADER]: `${BEARER_PREFIX} ${token}` // Include the authentication token in the request headers
                 },
                 body: JSON.stringify(data["formData"]) // Set the request body as data["formData"]
             });
@@ -151,7 +162,7 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
                 console.log('Thing created successfully');
             } else {
                 // Handle error response
-                console.error('Error creating thing:', response.statusText);
+                throw new Error(`Error creating thing: ${response.statusText}`);
             }
         } catch (error) {
             console.error('Error creating thing:', error);
