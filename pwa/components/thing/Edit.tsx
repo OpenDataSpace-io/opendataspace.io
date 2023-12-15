@@ -184,7 +184,7 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
 
     if (status === "loading" || !schema || !uiSchema) {
         return <Loading />;
-    } else if (session?.error || session === null) {
+    } else if (!session) {
         signIn();
     } else if (item) {
         return (
