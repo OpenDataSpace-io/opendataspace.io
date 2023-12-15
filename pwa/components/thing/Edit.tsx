@@ -33,6 +33,7 @@ interface Props {
 
 interface Session {
     accessToken: string;
+    error: string;
 }
 
 const METHOD = 'PUT';
