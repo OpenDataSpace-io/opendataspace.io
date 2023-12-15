@@ -44,7 +44,7 @@ const APPLICATION_JSON = 'application/json';
 // https://rjsf-team.github.io/react-jsonschema-form/docs/
 
 export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
-    const { data: session = { accessToken: '' }, status } = useSession();
+    const { data: session = { accessToken: '', error: '' }, status } = useSession();
     //const session: Session | null = useSession();
     const item = useMercure(data, hubURL);
     const [schema, setSchema] = useState({});
