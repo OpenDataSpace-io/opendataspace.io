@@ -30,6 +30,11 @@ interface Props {
   page: number;
 }
 
+interface Session {
+  accessToken: string;
+  error: string;
+}
+
 // https://rjsf-team.github.io/react-jsonschema-form/docs/
 
 const uiSchema = {
@@ -46,7 +51,7 @@ const generateSchema = (data: any, excludeFields = []) => {
   };
 
   for (const key in data) {
-    if (!excludeFields.includes(key)) {
+    if (!excludeFields.includes(key as string)) {
       if (typeof data[key] === 'object' && data[key] !== null && !Array.isArray(data[key])) {
         schema.properties[key] = generateSchema(data[key]);
       } else {
@@ -79,7 +84,7 @@ const generateFromData = (data: any) => {
 const log = (type: any) => console.log.bind(console, type);
 
 export const EditForm: NextPage<Props> = ({ data, hubURL, page }) => {
-  const { data: session, status } = useSession();
+  const { data: session = { accessToken: '', error: '' }, status } = useSession() || {};
   const item = useMercure(data, hubURL);
 
   for (let index = 0; index < item.length; index++) {
@@ -106,8 +111,8 @@ export const EditForm: NextPage<Props> = ({ data, hubURL, page }) => {
     return <Loading />;
   }
 
-  if (session?.error) {
-    return <div>{session.error}</div>;
+  if (!session) {
+    signIn();
   }
 
   if (item) {
