@@ -31,6 +31,10 @@ interface Props {
     page: number;
 }
 
+interface Session {
+    accessToken: string;
+}
+
 // https://rjsf-team.github.io/react-jsonschema-form/docs/
 
 export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
