@@ -5,7 +5,7 @@ const totalBooks = 31;
 test.describe("Bookmarks list", () => {
   test.beforeEach(async ({ bookmarkPage, page }) => {
     await bookmarkPage.gotoList();
-  }).timeout(60000);
+  }, 60000);
 
   test("I can navigate through the list using the pagination @read @login", async ({ bookmarkPage, page }) => {
     // test list display
