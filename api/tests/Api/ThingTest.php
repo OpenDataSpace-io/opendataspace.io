@@ -63,7 +63,7 @@ final class ThingTest extends ApiTestCase
             ThingFactory::new()->sequence(function () {
                 yield ['name' => 'Thing'];
                 foreach (range(1, 10) as $i) {
-                    yield [];
+                    yield ['name' => 'Thing'];
                 }
             }),
             '/things?name=Thing',
