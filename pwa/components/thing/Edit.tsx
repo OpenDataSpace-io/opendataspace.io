@@ -17,7 +17,6 @@ import { useThing } from "@/utils/thing";
 //import { fetch, type FetchError, type FetchResponse } from "@/utils/dataAccess";
 import { type PagedCollection } from "@/types/collection";
 import { Loading } from "@/components/common/Loading";
-import ShowProperties from "./ShowProperties";
 import Editors from '@/components/form/Editors';
 
 import { ErrorSchema, RJSFSchema, RJSFValidationError, UiSchema, ValidatorType } from '@rjsf/utils';;
