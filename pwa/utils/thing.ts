@@ -8,8 +8,6 @@ import { type Thing } from "@/types/Thing";
 
 interface OrderFilter {
   name: string;
-  dateCreated: string;
-  dateModified: string;
 }
 
 export interface FiltersProps {
