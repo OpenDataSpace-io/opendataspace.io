@@ -15,7 +15,7 @@ export class Thing implements Item {
     public id?: string,
     //public slug?: string,
     //public images?: Thumbnails,
-    public image?: Thumbnails,
+    public image?: string,
     //public description?: string,
     public dateCreated?: string,
     public dateModified?: string,
