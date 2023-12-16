@@ -48,14 +48,11 @@ final readonly class ThingCreateProcessor implements ProcessorInterface
         $thing->setDateCreated(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
         $thing->setDateModified(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
         $thing->setProperties($body);
-        $thing->setIri('/things/'.$id);
 
         $data->setId($id);
         $data->setDateCreated(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
         $data->setDateModified(new \DateTimeImmutable('now', new \DateTimeZone('UTC')));
         $data->setProperties($body);
-        $data->setIri('/things/'.$id);
-
 
         // save entity
         $data = $this->persistProcessor->process($data, $operation, $uriVariables, $context);
