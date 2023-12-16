@@ -18,7 +18,6 @@ import { useThing } from "@/utils/thing";
 import { fetch, type FetchError, type FetchResponse } from "@/utils/dataAccess";
 import { type PagedCollection } from "@/types/collection";
 import { Loading } from "@/components/common/Loading";
-import ShowProperties from "./ShowProperties";
 //import { ExportMenu } from "@/components/common/Export";
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
