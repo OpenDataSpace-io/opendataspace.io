@@ -55,8 +55,7 @@ final class ThingTest extends ApiTestCase
     public function getUrls(): iterable
     {
         yield 'all things' => [
-            //ThingFactory::new()->many(35),
-            ThingFactory::createMany(35),
+            ThingFactory::new()->many(35),
             '/things',
             35,
         ];
