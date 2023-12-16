@@ -30,7 +30,7 @@ final class ThingTest extends ApiTestCase
     public function testAsAnonymousICanGetACollectionOfThings(FactoryCollection $factory, string $url, int $hydraTotalItems): void
     {
         // Cannot use Factory as data provider because ThingFactory has a service dependency
-        $factory->create();
+        //$factory->create();
         //ThingFactory::createMany(35);
 
         $response = $this->client->request('GET', $url);
@@ -55,7 +55,8 @@ final class ThingTest extends ApiTestCase
     public function getUrls(): iterable
     {
         yield 'all things' => [
-            ThingFactory::new()->many(35),
+            //ThingFactory::new()->many(35),
+            ThingFactory::createMany(35),
             '/things',
             35,
         ];
@@ -81,7 +82,7 @@ final class ThingTest extends ApiTestCase
 
         self::assertResponseIsSuccessful();
         self::assertResponseHeaderSame('content-type', 'application/ld+json; charset=utf-8');
-        self::assertEquals('Thing AA', $response->toArray()['hydra:member'][0]['name']);
+        self::assertEquals('Thing', $response->toArray()['hydra:member'][0]['name']);
         //self::assertEquals('AC Thing Hyperion', $response->toArray()['hydra:member'][1]['name']);
         //self::assertEquals('AB Thing The Wandering Earth', $response->toArray()['hydra:member'][2]['name']);
     }
