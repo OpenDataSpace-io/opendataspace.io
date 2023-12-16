@@ -26,48 +26,6 @@ export const useThing = <TData extends Thing>(data: TData) => {
   }
 
   data["id"] = data["@id"]?.replace("/things/", "");
-  //data["slug"] = slugify(`${data["title"]}-${data["author"]}`, { lower: true, trim: true, remove: /[*+~.(),;'"!:@]/g });
-  //data["condition"] = data["condition"].substring(19, data["condition"].length-9);
-
-  /*return useQuery(data["book"], async () => {
-    const response = await fetch(data["book"], { method: "GET" });
-    const book: OLBook = await response.json();
-
-    if (typeof book["publish_date"] !== "undefined") {
-      data["publicationDate"] = book["publish_date"];
-    }
-
-    if (typeof book["covers"] !== "undefined") {
-      data["images"] = {
-        medium: `https://covers.openlibrary.org/b/id/${book["covers"][0]}-M.jpg`,
-        large: `https://covers.openlibrary.org/b/id/${book["covers"][0]}-L.jpg`,
-      };
-    }
-
-    if (typeof book["description"] !== "undefined") {
-      data["description"] = (typeof book["description"] === "string" ? book["description"] : book["description"]["value"]).replace( /(<([^>]+)>)/ig, '');
-    }
-
-    // retrieve data from work if necessary
-    if ((!data["description"] || !data["images"]) && typeof book["works"] !== "undefined" && book["works"].length > 0) {
-      const response = await fetch(`https://openlibrary.org${book["works"][0]["key"]}.json`);
-      const work: Work = await response.json();
-
-      if (!data["description"] && typeof work["description"] !== "undefined") {
-        data["description"] = (typeof work["description"] === "string" ? work["description"] : work["description"]["value"]).replace( /(<([^>]+)>)/ig, '');
-      }
-
-      if (!data["images"] && typeof work["covers"] !== "undefined") {
-        data["images"] = {
-          medium: `https://covers.openlibrary.org/b/id/${work["covers"][0]}-M.jpg`,
-          large: `https://covers.openlibrary.org/b/id/${work["covers"][0]}-L.jpg`,
-        };
-      }
-    }
-    
-    return data;
-  });
-  */
   data["name"] = data["name"];
   data["dateCreated"] = data["dateCreated"];
   data["dateModified"] = data["dateModified"];
