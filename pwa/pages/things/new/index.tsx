@@ -71,11 +71,11 @@ const NewThingForm = () => {
         }
     }, [selectedForm]);
 
-    const handleFormSelect = (e) => {
+    const handleFormSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedForm(e.target.value);
     };
 
-    const handleFormDataChange = (e) => {
+    const handleFormDataChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         try {
             const newFormData = JSON.parse(e.target.value);
             setFormData(newFormData);
