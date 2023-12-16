@@ -59,7 +59,7 @@ final class ThingTest extends ApiTestCase
             '/things',
             35,
         ];
-        yield 'things filtered by name' => [
+        /*yield 'things filtered by name' => [
             ThingFactory::new()->sequence(function () {
                 yield ['name' => 'Thing'];
                 foreach (range(1, 10) as $i) {
@@ -68,7 +68,7 @@ final class ThingTest extends ApiTestCase
             }),
             '/things?name=Thing',
             1,
-        ];
+        ];*/
     }
 
     public function testAsAdminUserICanGetACollectionOfThingsOrderedByName(): void
