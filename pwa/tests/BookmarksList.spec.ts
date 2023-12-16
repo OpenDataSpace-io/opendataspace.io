@@ -5,7 +5,7 @@ const totalBooks = 31;
 test.describe("Bookmarks list", () => {
   test.beforeEach(async ({ bookmarkPage, page }) => {
     await bookmarkPage.gotoList();
-  }, 60000);
+  });
 
   test("I can navigate through the list using the pagination @read @login", async ({ bookmarkPage, page }) => {
     // test list display
@@ -98,7 +98,7 @@ test.describe("Bookmarks list", () => {
     await expect(page.getByLabel("Go to previous page")).toBeEnabled();
     await expect(page.getByLabel("Go to next page")).toBeDisabled();
     await expect(page.getByLabel("Go to last page")).toBeDisabled();
-  });
+  }, { timeout: 60000 });
 
   test("I can go to the books store filtered by author @read @login", async ({ bookmarkPage, page }) => {
     await (await bookmarkPage.getDefaultBook()).getByText("Dan Simmons").click();
