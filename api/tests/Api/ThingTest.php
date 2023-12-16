@@ -31,7 +31,7 @@ final class ThingTest extends ApiTestCase
     {
         // Cannot use Factory as data provider because ThingFactory has a service dependency
         //$factory->create();
-        ThingFactory::createMany(10);
+        ThingFactory::createMany(35);
 
         $response = $this->client->request('GET', $url);
 

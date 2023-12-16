@@ -13,14 +13,14 @@ final class ThingStory extends Story
 {
     public function __construct(private readonly DecoderInterface $decoder)
     {
-        echo "ThingStory::__construct()\n";
+        
     }
 
     public function build(): void
     {
         // Create default book (must be created first to appear first in list)
         $defaultThing = ThingFactory::createOne([
-            'name' => ThingFactory::faker()->text(20),
+            'name' => 'Thing',
             'dateCreated' => \DateTimeImmutable::createFromMutable(ThingFactory::faker()->dateTime('-1 month')),
             'dateModified' => \DateTimeImmutable::createFromMutable(ThingFactory::faker()->dateTime('-1 month')),
             'properties' => [
