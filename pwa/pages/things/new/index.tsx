@@ -155,7 +155,7 @@ const NewThingForm = () => {
                             <h2>Select Form</h2>
                             <select value={selectedForm} onChange={handleFormSelect}>
                                 <option value="">Select a form</option>
-                                {formList.map(form => (
+                                {formList.map((form: { id: string, name: string }) => (
                                     <option key={form.id} value={form.id}>{form.name}</option>
                                 ))}
                             </select>
