@@ -30,7 +30,7 @@ final class ThingTest extends ApiTestCase
     public function testAsAnonymousICanGetACollectionOfThings(FactoryCollection $factory, string $url, int $hydraTotalItems): void
     {
         // Cannot use Factory as data provider because ThingFactory has a service dependency
-        //$factory->create();
+        $factory->create();
         //ThingFactory::createMany(35);
 
         $response = $this->client->request('GET', $url);
