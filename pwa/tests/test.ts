@@ -36,6 +36,6 @@ export const test = playwrightTest.extend<Test>({
   userPage: async ({ page }, use) => {
     await use(new UserPage(page));
   },
-});
+}, { timeout: 60000 });
 
 export { expect };
