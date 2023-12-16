@@ -7,6 +7,17 @@ import Editors from '@/components/form/Editors';
 import { Container, Grid, Button } from '@mui/material';
 import { signIn, useSession } from "next-auth/react";
 
+interface Session {
+    accessToken: string;
+    error: string;
+}
+
+const METHOD = 'POST';
+const CONTENT_TYPE_HEADER = 'Content-Type';
+const AUTHORIZATION_HEADER = 'Authorization';
+const BEARER_PREFIX = 'Bearer';
+const APPLICATION_JSON = 'application/json';
+
 const NewThingForm = () => {
     const [schema, setSchema] = useState({});
     const [uiSchema, setUiSchema] = useState({});
@@ -16,7 +27,7 @@ const NewThingForm = () => {
     const [extraErrors, setExtraErrors] = useState<ErrorSchema | undefined>();
     const [shareURL, setShareURL] = useState<string | null>(null);
     const [isGridVisible, setGridVisible] = useState(true);
-    const { data: session } = useSession();
+    const { data: session = { accessToken: '', error: '' }, status } = useSession() || {};
 
     const handleButtonClick = () => {
         setGridVisible(!isGridVisible);
@@ -90,12 +101,14 @@ const NewThingForm = () => {
         console.log(data["formData"]);
 
         try {
+            if (!session) return;
+            //@ts-ignore
             const token = session.accessToken; // Get the authentication token from the session
             const response = await fetch('/things', {
-                method: 'POST',
+                method: METHOD,
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}` // Include the authentication token in the request headers
+                    [CONTENT_TYPE_HEADER]: APPLICATION_JSON,
+                    [AUTHORIZATION_HEADER]: `${BEARER_PREFIX} ${token}` // Include the authentication token in the request headers
                 },
                 body: JSON.stringify(data["formData"]) // Set the request body as data["formData"]
             });
