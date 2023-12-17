@@ -1,10 +1,7 @@
 import NextAuth, { type AuthOptions, type SessionOptions, type DefaultUser, type TokenSet } from "next-auth";
 import KeycloakProvider from "next-auth/providers/keycloak";
-import GitHubProvider from "next-auth/providers/github";
-import { OIDC_CLIENT_ID, OIDC_SERVER_URL } from "@/config/keycloak";
-import { OPENSTREETMAP_CLIENT_ID, OPENSTREETMAP_CLIENT_SECRET } from "@/config/openstreetmap";
-import { GITHUB_CLIENT_ID, GITHUB_SECRET } from "@/config/github";
 
+import { OIDC_CLIENT_ID, OIDC_SERVER_URL } from "@/config/keycloak";
 
 interface Session extends SessionOptions {
   accessToken: string
@@ -34,58 +31,6 @@ interface Account {
 }
 
 export const authOptions: AuthOptions = {
-  providers: [
-    KeycloakProvider({
-      id: 'keycloak',
-      clientId: OIDC_CLIENT_ID,
-      issuer: OIDC_SERVER_URL,
-      authorization: {
-        // https://authjs.dev/guides/basics/refresh-token-rotation#jwt-strategy
-        params: {
-          access_type: "offline",
-          prompt: "consent",
-        },
-      },
-      // https://github.com/nextauthjs/next-auth/issues/685#issuecomment-785212676
-      protection: "pkce",
-      // https://github.com/nextauthjs/next-auth/issues/4707
-      // @ts-ignore
-      clientSecret: null,
-      client: {
-        token_endpoint_auth_method: "none"
-      },
-    }),
-    GitHubProvider({
-      clientId: GITHUB_CLIENT_ID,
-      clientSecret: GITHUB_SECRET
-    }),
-    {
-      id: "openstreetmap",
-      name: "OpenStreetMap",
-      type: "oauth",
-      version: "2.0",
-      issuer: "https://www.openstreetmap.org",
-      authorization: {
-        params: { grant_type: "authorization_code" },
-      },
-      token: "https://www.openstreetmap.org/oauth/request_token",
-      accessTokenUrl: "https://www.openstreetmap.org/oauth/request_token",
-      requestTokenUrl: "https://www.openstreetmap.org/oauth/access_token",
-      //authorizationUrl: "https://www.openstreetmap.org/oauth/authorize",
-      profileUrl: "https://api.openstreetmap.org/api/0.6/user/details",
-      //userinfo: "https://api.openstreetmap.org/api/0.6/user/details",
-      clientId: OPENSTREETMAP_CLIENT_ID,
-      clientSecret: OPENSTREETMAP_CLIENT_SECRET,
-      profile: (profile) => {
-        return {
-          id: profile.id,
-          name: profile.display_name,
-          email: profile.email,
-          image: null,
-        };
-      },
-    },
-  ],
   callbacks: {
     // @ts-ignore
     async jwt({ token, account }: { token: JWT, account: Account }): Promise<JWT> {
@@ -114,7 +59,7 @@ export const authOptions: AuthOptions = {
             }),
             method: "POST",
           });
-          
+
           const tokens: TokenSet = await response.json();
 
           if (!response.ok) throw tokens;
@@ -142,7 +87,7 @@ export const authOptions: AuthOptions = {
       }
     },
     // @ts-ignore
-    async session({ session, token, user }: { session: Session, token: JWT }): Promise<Session> {
+    async session({ session, token }: { session: Session, token: JWT }): Promise<Session> {
       // Save the access token in the Session for API calls
       if (token) {
         session.accessToken = token.accessToken;
@@ -153,14 +98,31 @@ export const authOptions: AuthOptions = {
         }
       }
 
-      if (session.error === "RefreshAccessTokenError") {
-        console.log("Session abgelaufen. Bitte loggen Sie sich erneut ein.");
-      }
-
       return session;
     }
   },
-  
+  providers: [
+    KeycloakProvider({
+      id: 'keycloak',
+      clientId: OIDC_CLIENT_ID,
+      issuer: OIDC_SERVER_URL,
+      authorization: {
+        // https://authjs.dev/guides/basics/refresh-token-rotation#jwt-strategy
+        params: {
+          access_type: "offline",
+          prompt: "consent",
+        },
+      },
+      // https://github.com/nextauthjs/next-auth/issues/685#issuecomment-785212676
+      protection: "pkce",
+      // https://github.com/nextauthjs/next-auth/issues/4707
+      // @ts-ignore
+      clientSecret: null,
+      client: {
+        token_endpoint_auth_method: "none"
+      },
+    }),
+  ],
 };
 
 export default NextAuth(authOptions);

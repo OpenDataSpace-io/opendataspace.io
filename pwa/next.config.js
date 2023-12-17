@@ -9,13 +9,7 @@ const nextConfig = {
         hostname: "covers.openlibrary.org",
         port: "",
         pathname: "/b/id/**"
-      },
-      {
-        protocol: "https",
-        hostname: "dummyimage.com",
-        port: "",
-        pathname: "/**"
-      },
+      }
     ]
   }
 }

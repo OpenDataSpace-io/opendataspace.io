@@ -37,8 +37,4 @@
     <extensions>
         <extension class="DAMA\DoctrineTestBundle\PHPUnit\PHPUnitExtension" />
     </extensions>
-
-    <logging>
-        <log type="coverage-clover" target="/app/reports/coverage.xml"/>
-    </logging>
 </phpunit>
