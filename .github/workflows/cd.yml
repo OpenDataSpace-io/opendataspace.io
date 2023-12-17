@@ -82,6 +82,9 @@ jobs:
   deploy:
     name: Deploy
     needs: [ build ]
+    permissions:
+      contents: 'read'
+      id-token: 'write'
     uses: ./.github/workflows/deploy.yml
     with:
       docker-images-version: ${{ github.sha }}
@@ -97,6 +100,9 @@ jobs:
   check:
     name: Check
     needs: [ deploy ]
+    permissions:
+      contents: 'read'
+      id-token: 'write'
     uses: ./.github/workflows/check.yml
     with:
       url: ${{needs.deploy.outputs.url}}
