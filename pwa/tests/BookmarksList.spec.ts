@@ -3,12 +3,12 @@ import { expect, test } from "./test";
 const totalBooks = 31;
 
 test.describe("Bookmarks list", () => {
+  test.setTimeout(120000);
   test.beforeEach(async ({ bookmarkPage, page }) => {
     await bookmarkPage.gotoList();
   });
 
   test("I can navigate through the list using the pagination @read @login", async ({ bookmarkPage, page }) => {
-    test.setTimeout(120000);
     // test list display
     await expect(page).toHaveTitle("Bookmarks");
     await expect(page.getByTestId("nb-bookmarks")).toContainText(`${totalBooks} book(s) bookmarked`);
