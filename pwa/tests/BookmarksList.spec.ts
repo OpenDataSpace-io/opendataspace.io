@@ -3,7 +3,6 @@ import { expect, test } from "./test";
 const totalBooks = 31;
 
 test.describe("Bookmarks list", () => {
-  test.setTimeout(120000);
   test.beforeEach(async ({ bookmarkPage, page }) => {
     await bookmarkPage.gotoList();
   });
