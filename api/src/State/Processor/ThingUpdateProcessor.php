@@ -58,7 +58,7 @@ final readonly class ThingUpdateProcessor implements ProcessorInterface
         // TODO: save History
 
         // publish on Mercure
-        /*foreach (['/admin/things/{id}{._format}', '/things/{id}{._format}'] as $uriTemplate) {
+        foreach (['/admin/things/{id}{._format}', '/things/{id}{._format}'] as $uriTemplate) {
             $this->mercureProcessor->process(
                 $data,
                 $operation,
@@ -67,7 +67,7 @@ final readonly class ThingUpdateProcessor implements ProcessorInterface
                     'item_uri_template' => $uriTemplate,
                 ]
             );
-        }*/
+        }
 
         return $thing;
     }

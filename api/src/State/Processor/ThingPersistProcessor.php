@@ -9,9 +9,7 @@ use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProcessorInterface;
 use App\Entity\Thing;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Serializer\Encoder\DecoderInterface;
-use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 final readonly class ThingPersistProcessor implements ProcessorInterface
 {
@@ -20,7 +18,6 @@ final readonly class ThingPersistProcessor implements ProcessorInterface
         private ProcessorInterface $persistProcessor,
         #[Autowire(service: MercureProcessor::class)]
         private ProcessorInterface $mercureProcessor,
-        private HttpClientInterface $client,
         private DecoderInterface $decoder
     ) {
     }
