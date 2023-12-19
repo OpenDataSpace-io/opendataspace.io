@@ -29,8 +29,7 @@ final readonly class ThingRemoveProcessor implements ProcessorInterface
         private ProcessorInterface $mercureProcessor,
         private ResourceMetadataCollectionFactoryInterface $resourceMetadataCollectionFactory,
         private IriConverterInterface $iriConverter
-    ) {
-    }
+    ) {}
 
     /**
      * @param Thing $data

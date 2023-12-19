@@ -27,8 +27,7 @@ final readonly class ThingCreateProcessor implements ProcessorInterface
         #[Autowire(service: MercureProcessor::class)]
         private ProcessorInterface $mercureProcessor,
         private RequestStack $requestStack
-    ) {
-    }
+    ) {}
 
     // https://github.com/api-platform/api-platform/issues/2303
     /**

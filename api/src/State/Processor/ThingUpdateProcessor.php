@@ -28,8 +28,7 @@ final readonly class ThingUpdateProcessor implements ProcessorInterface
         private ProcessorInterface $mercureProcessor,
         private ThingRepository $repository,
         private RequestStack $requestStack
-    ) {
-    }
+    ) {}
 
     // https://github.com/api-platform/api-platform/issues/2303
     /**
