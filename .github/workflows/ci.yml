@@ -56,15 +56,21 @@ jobs:
       -
         name: Check PWA reachability
         run: "curl -vk -o /dev/null -H 'Accept: text/html' https://localhost"
+      - 
+        name: Give right for bin/console
+        run: docker compose exec -T php chmod +x bin/console
       -
         name: Create test database
         run: docker compose exec -T php bin/console -e test doctrine:database:create
       -
         name: Run migrations
         run: docker compose exec -T php bin/console -e test doctrine:migrations:migrate --no-interaction
+      - 
+        name: Give right for bin/console
+        run: docker compose exec -T php chmod +x bin/phpunit
       -
         name: Run PHPUnit
-        run: docker compose exec -T php bin/phpunit
+        run: docker compose exec -T php bin/phpunit --memory-limit=256M
       -
         name: Doctrine Schema Validator
         run: docker compose exec -T php bin/console -e test doctrine:schema:validate
