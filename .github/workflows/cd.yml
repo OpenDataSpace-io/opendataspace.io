@@ -12,7 +12,7 @@ on:
 jobs:
   build:
     name: Build
-    if: ${{ github.repository == 'api-platform/demo' && (github.event_name != 'pull_request' || contains(github.event.pull_request.labels.*.name, 'deploy')) }}
+    if: ${{ github.repository == 'OpenDataSpace-io/opendataspace.io' && (github.event_name != 'pull_request' || contains(github.event.pull_request.labels.*.name, 'deploy')) }}
     runs-on: ubuntu-latest
     env:
       PHP_DOCKER_IMAGE: europe-west1-docker.pkg.dev/${{ secrets.GKE_PROJECT }}/${{ secrets.GKE_PROJECT }}/php:${{ github.sha }}
@@ -88,7 +88,7 @@ jobs:
     uses: ./.github/workflows/deploy.yml
     with:
       docker-images-version: ${{ github.sha }}
-      gke-cluster: api-platform-demo
+      gke-cluster: opendataspace
       gke-zone: europe-west1
     secrets:
       gke-credentials: ${{ secrets.GKE_SA_KEY }}

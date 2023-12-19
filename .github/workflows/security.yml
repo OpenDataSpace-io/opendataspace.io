@@ -11,8 +11,8 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  GKE_CLUSTER: api-platform-demo
-  GCE_ZONE: europe-west1-c
+  GKE_CLUSTER: opendataspace
+  GCE_ZONE: europe-west1
 
 jobs:
   scan:
@@ -50,7 +50,7 @@ jobs:
         name: Configure gcloud
         run: |
           gcloud --quiet auth configure-docker
-          gcloud container clusters get-credentials api-platform-demo --zone europe-west1-c
+          gcloud container clusters get-credentials opendataspace --zone europe-west1
       -
         name: Pull Docker Image
         run: docker pull europe-west1-docker.pkg.dev/${{ secrets.GKE_PROJECT }}/${{ secrets.GKE_PROJECT }}/${{ matrix.image }}:latest

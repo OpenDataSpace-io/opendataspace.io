@@ -91,11 +91,11 @@ jobs:
           if [ "${{ github.event_name }}" == "push" ]; then
             release=prod
             namespace=$release
-            url=demo.opendataspace.io
+            url=opendataspace.io
           else
             release=pr-${{ github.event.pull_request.number }}
             namespace=$release
-            url=$release-demo.opendataspace.io
+            url=$release-opendataspace.io
           fi
           echo "url=$url" >> "$GITHUB_OUTPUT"
           cors="https://$url|http://localhost|https://localhost|http://localhost:3000"
