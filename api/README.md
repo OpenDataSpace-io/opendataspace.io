@@ -1,4 +1,4 @@
-# API2
+# API
 
 The API will be here.
 
