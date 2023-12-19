@@ -1,4 +1,4 @@
-name: Deploy
+name: Check
 
 on:
   workflow_call:
@@ -18,8 +18,8 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v4
-
-      - name: Run local k6 test
+      -
+        name: Run local k6 test
         uses: grafana/k6-action@v0.3.1
         with:
           filename: k6/script.js

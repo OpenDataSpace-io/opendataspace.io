@@ -52,11 +52,6 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v4
-      # gcloud does not work with Python 3.10 because "collections.Mappings" was removed in Python 3.10.
-      -
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.9.15
       -
         name: Auth gcloud
         uses: google-github-actions/auth@v2
@@ -64,7 +59,7 @@ jobs:
           credentials_json: ${{ secrets.gke-credentials }}
       -
         name: Setup gcloud
-        uses: google-github-actions/setup-gcloud@v2
+        uses: google-github-actions/setup-gcloud@v1
         with:
           project_id: ${{ secrets.gke-project }}
       -
@@ -73,16 +68,20 @@ jobs:
           gcloud components install gke-gcloud-auth-plugin
           gcloud --quiet auth configure-docker
           gcloud container clusters get-credentials ${{ inputs.gke-cluster }} --zone ${{ inputs.gke-zone }}
-      # https://github.com/helm/helm/issues/8036
       -
-        name: Build helm dependencies
+        name: Cache Helm Dependencies
+        uses: actions/cache@v3
+        with:
+          path: helm/api-platform/charts/
+          key: ${{ runner.os }}-helm-dependencies-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-helm-dependencies-
+      -
+        name: Build Helm Dependencies
         run: |
           helm repo add bitnami https://charts.bitnami.com/bitnami/
           helm repo add stable https://charts.helm.sh/stable/
           helm dependency build ./helm/api-platform
-      -
-        name: Lint Helm
-        run: helm lint ./helm/api-platform/
       # Release name MUST start with a letter
       -
         name: Deploy
@@ -91,11 +90,11 @@ jobs:
           if [ "${{ github.event_name }}" == "push" ]; then
             release=prod
             namespace=$release
-            url=opendataspace.io
+            url=demo.api-platform.com
           else
             release=pr-${{ github.event.pull_request.number }}
             namespace=$release
-            url=$release-opendataspace.io
+            url=$release-demo.api-platform.com
           fi
           echo "url=$url" >> "$GITHUB_OUTPUT"
           cors="https://$url|http://localhost|https://localhost|http://localhost:3000"
