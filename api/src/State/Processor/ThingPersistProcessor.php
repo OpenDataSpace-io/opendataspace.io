@@ -11,8 +11,15 @@ use App\Entity\Thing;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\Serializer\Encoder\DecoderInterface;
 
+/**
+ * @implements ProcessorInterface<Thing>
+ */
 final readonly class ThingPersistProcessor implements ProcessorInterface
 {
+    /**
+     * @param PersistProcessor $persistProcessor
+     * @param MercureProcessor $mercureProcessor
+     */
     public function __construct(
         #[Autowire(service: PersistProcessor::class)]
         private ProcessorInterface $persistProcessor,

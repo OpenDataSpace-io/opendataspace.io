@@ -13,8 +13,15 @@ use ApiPlatform\State\ProcessorInterface;
 use App\Entity\Thing;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 
+/**
+ * @implements ProcessorInterface<Thing>
+ */
 final readonly class ThingRemoveProcessor implements ProcessorInterface
 {
+    /**
+     * @param RemoveProcessor $removeProcessor
+     * @param MercureProcessor $mercureProcessor
+     */
     public function __construct(
         #[Autowire(service: RemoveProcessor::class)]
         private ProcessorInterface $removeProcessor,
