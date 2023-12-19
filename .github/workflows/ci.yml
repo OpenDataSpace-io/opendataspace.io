@@ -57,6 +57,12 @@ jobs:
         name: Check PWA reachability
         run: "curl -vk -o /dev/null -H 'Accept: text/html' https://localhost"
       -
+        name: Give Rights to bin/console
+        run: docker compose exec -T php chmod +x bin/console
+      -
+        name: Test bin/console
+        run: docker compose exec -T php bin/console
+      -
         name: Create test database
         run: docker compose exec -T php bin/console -e test doctrine:database:create
       -
