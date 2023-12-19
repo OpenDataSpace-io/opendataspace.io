@@ -12,10 +12,9 @@ use ApiPlatform\Doctrine\Orm\Filter\OrderFilter;
 use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
 use ApiPlatform\Metadata\ApiFilter;
 use Symfony\Component\Serializer\Annotation\Groups;
-use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Uid\Uuid;
 use Symfony\Bridge\Doctrine\Types\UuidType;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Bridge\Doctrine\IdGenerator\UuidGenerator;
 use ApiPlatform\Metadata\Delete;
 use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\GetCollection;
@@ -23,10 +22,6 @@ use ApiPlatform\Metadata\Post;
 use ApiPlatform\Metadata\Put;
 use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
-use App\State\Processor\ThingCreateProcessor;
-use App\State\Processor\ThingUpdateProcessor;
-use App\State\Processor\ThingRemoveProcessor;
-use App\State\Processor\ThingPersistProcessor;
 
 #[ApiResource(
     uriTemplate: '/admin/things{._format}',
@@ -38,7 +33,7 @@ use App\State\Processor\ThingPersistProcessor;
         ),
         new Post(
             // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
-            processor: ThingPersistProcessor::class,
+            //processor: ThingPersistProcessor::class,
             itemUriTemplate: '/admin/things/{id}{._format}'
         ),
         new Get(
