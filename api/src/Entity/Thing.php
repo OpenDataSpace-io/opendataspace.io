@@ -48,12 +48,12 @@ use App\State\Processor\ThingPersistProcessor;
         new Put(
             uriTemplate: '/admin/things/{id}{._format}',
             // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
-            processor: ThingPersistProcessor::class
+            //processor: ThingPersistProcessor::class
         ),
         new Delete(
             uriTemplate: '/admin/things/{id}{._format}',
             // Mercure publish is done manually in MercureProcessor through BookRemoveProcessor
-            processor: ThingRemoveProcessor::class
+            //processor: ThingRemoveProcessor::class
         ),
     ],
     normalizationContext: [
@@ -77,18 +77,18 @@ use App\State\Processor\ThingPersistProcessor;
             uriTemplate: '/things/{id}{._format}'
         ),
         new Post(
-            processor: ThingCreateProcessor::class,
+            //processor: ThingCreateProcessor::class,
             itemUriTemplate: '/things/{id}{._format}',
             security: 'is_granted("ROLE_USER")'
         ),
         new Put(
             uriTemplate: '/things/{id}{._format}',
-            processor: ThingUpdateProcessor::class,
+            //processor: ThingUpdateProcessor::class,
             security: 'is_granted("ROLE_USER")'
         ),
         new Delete(
             uriTemplate: '/things/{id}{._format}',
-            processor: ThingRemoveProcessor::class,
+            //processor: ThingRemoveProcessor::class,
             security: 'is_granted("ROLE_ADMIN")'
         ),
     ],
