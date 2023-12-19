@@ -89,7 +89,7 @@ jobs:
     with:
       docker-images-version: ${{ github.sha }}
       gke-cluster: api-platform-demo
-      gke-zone: europe-west1-c
+      gke-zone: europe-west1
     secrets:
       gke-credentials: ${{ secrets.GKE_SA_KEY }}
       gke-project: ${{ secrets.GKE_PROJECT }}
