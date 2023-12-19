@@ -12,7 +12,7 @@ concurrency:
 
 env:
   GKE_CLUSTER: api-platform-demo
-  GCE_ZONE: europe-west1-c
+  GCE_ZONE: europe-west1
 
 jobs:
   scan:
