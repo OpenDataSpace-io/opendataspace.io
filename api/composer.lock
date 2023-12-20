@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "api-platform/core",
-            "version": "dev-fix/item_uri_template",
+            "version": "v3.2.8",
             "source": {
                 "type": "git",
-                "url": "https://github.com/vincentchalamon/core.git",
-                "reference": "b628e4fe6b35ff5ff2eb3704c9b152aa944420ee"
+                "url": "https://github.com/api-platform/core.git",
+                "reference": "ff1f2825879a3cf21fc65fa1beafee47f9a6dace"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vincentchalamon/core/zipball/b628e4fe6b35ff5ff2eb3704c9b152aa944420ee",
-                "reference": "b628e4fe6b35ff5ff2eb3704c9b152aa944420ee",
+                "url": "https://api.github.com/repos/api-platform/core/zipball/ff1f2825879a3cf21fc65fa1beafee47f9a6dace",
+                "reference": "ff1f2825879a3cf21fc65fa1beafee47f9a6dace",
                 "shasum": ""
             },
             "require": {
