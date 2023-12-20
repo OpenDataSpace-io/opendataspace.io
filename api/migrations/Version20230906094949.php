@@ -50,6 +50,13 @@ final class Version20230906094949 extends AbstractMigration
         $this->addSql('ALTER TABLE bookmark ADD CONSTRAINT FK_DA62921D16A2B381 FOREIGN KEY (book_id) REFERENCES book (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE review ADD CONSTRAINT FK_794381C6A76ED395 FOREIGN KEY (user_id) REFERENCES "user" (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE review ADD CONSTRAINT FK_794381C616A2B381 FOREIGN KEY (book_id) REFERENCES book (id) ON DELETE CASCADE NOT DEFERRABLE INITIALLY IMMEDIATE');
+        // Migraiton for form and thing
+        $this->addSql('CREATE SEQUENCE form_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
+        $this->addSql('CREATE TABLE form (id INT NOT NULL, code VARCHAR(255) NOT NULL, name VARCHAR(255) NOT NULL, date_created TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, date_modified TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, jsonschema JSON DEFAULT NULL, uischema JSON DEFAULT NULL, form_data JSON DEFAULT NULL, PRIMARY KEY(id))');
+        $this->addSql('CREATE TABLE thing (id UUID NOT NULL, name TEXT NOT NULL, date_created TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, date_modified TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, properties JSON NOT NULL, PRIMARY KEY(id))');
+        $this->addSql('COMMENT ON COLUMN thing.id IS \'(DC2Type:uuid)\'');
+        $this->addSql('COMMENT ON COLUMN thing.date_created IS \'(DC2Type:datetime_immutable)\'');
+        $this->addSql('COMMENT ON COLUMN thing.date_modified IS \'(DC2Type:datetime_immutable)\'');
     }
 
     public function down(Schema $schema): void
@@ -65,5 +72,10 @@ final class Version20230906094949 extends AbstractMigration
         $this->addSql('DROP TABLE parchment');
         $this->addSql('DROP TABLE review');
         $this->addSql('DROP TABLE "user"');
+
+        // Migraiton for form and thing
+        $this->addSql('DROP SEQUENCE form_id_seq CASCADE');
+        $this->addSql('DROP TABLE form');
+        $this->addSql('DROP TABLE thing');
     }
 }
