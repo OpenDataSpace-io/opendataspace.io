@@ -15,7 +15,7 @@ env:
 jobs:
   cleanup:
     name: Uninstall K8s Release for Closed Pull Request
-    if: ${{ github.repository == 'api-platform/demo' }}
+    if: ${{ github.repository == 'OpenDataSpace-io/opendataspace.io' }}
     runs-on: ubuntu-latest
     permissions:
       contents: 'read'
