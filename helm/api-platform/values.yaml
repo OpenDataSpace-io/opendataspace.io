@@ -228,19 +228,19 @@ ingress:
       oidcpaths:
         - path: /oidc/
           pathType: Prefix
-          backend:
-            service:
-              name: prod-keycloak
-              port:
-                number: 80
+          #backend:
+          #  service:
+          #    name: main-keycloak
+          #    port:
+          #      number: 80
       paths:
         - path: /
           pathType: Prefix
-          backend:
-            service:
-              name: prod-api-platform
-              port:
-                number: 80
+          #backend:
+          #  service:
+          #    name: main-api-platform
+          #    port:
+          #      number: 80
   tls:
     - secretName: opendataspace-tls
       hosts:
