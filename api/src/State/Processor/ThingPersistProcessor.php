@@ -13,8 +13,15 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Serializer\Encoder\DecoderInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
+/**
+ * @implements ProcessorInterface<Thing>
+ */
 final readonly class ThingPersistProcessor implements ProcessorInterface
 {
+    /**
+     * @param PersistProcessor $persistProcessor
+     * @param MercureProcessor $mercureProcessor
+     */
     public function __construct(
         #[Autowire(service: PersistProcessor::class)]
         private ProcessorInterface $persistProcessor,

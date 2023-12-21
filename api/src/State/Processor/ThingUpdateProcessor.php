@@ -12,8 +12,15 @@ use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use App\Repository\ThingRepository;
 use Symfony\Component\HttpFoundation\RequestStack;
 
+/**
+ * @implements ProcessorInterface<Thing>
+ */
 final readonly class ThingUpdateProcessor implements ProcessorInterface
 {
+    /**
+     * @param PersistProcessor $persistProcessor
+     * @param MercureProcessor $mercureProcessor
+     */
     public function __construct(
         #[Autowire(service: PersistProcessor::class)]
         private ProcessorInterface $persistProcessor,

@@ -14,8 +14,15 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Util\IRIConverterInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
+/**
+ * @implements ProcessorInterface<Thing>
+ */
 final readonly class ThingCreateProcessor implements ProcessorInterface
 {
+    /**
+     * @param PersistProcessor $persistProcessor
+     * @param MercureProcessor $mercureProcessor
+     */
     public function __construct(
         #[Autowire(service: PersistProcessor::class)]
         private ProcessorInterface $persistProcessor,
