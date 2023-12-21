@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Factory;
+declare(strict_types=1);
+
+namespace App\DataFixtures\Factory;
 
 use App\Entity\Form;
 use App\Repository\FormRepository;
