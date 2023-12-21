@@ -14,7 +14,7 @@ use App\Entity\Thing;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 
 /**
- * @implements ProcessorInterface<Thing>
+ * @implements ProcessorInterface<void>
  */
 final readonly class ThingRemoveProcessor implements ProcessorInterface
 {
@@ -29,8 +29,7 @@ final readonly class ThingRemoveProcessor implements ProcessorInterface
         private ProcessorInterface $mercureProcessor,
         private ResourceMetadataCollectionFactoryInterface $resourceMetadataCollectionFactory,
         private IriConverterInterface $iriConverter
-    ) {
-    }
+    ) {}
 
     /**
      * @param Thing $data
