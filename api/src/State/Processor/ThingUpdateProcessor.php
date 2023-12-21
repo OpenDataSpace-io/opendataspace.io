@@ -36,7 +36,7 @@ final readonly class ThingUpdateProcessor implements ProcessorInterface
      */
     public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = []):Thing
     {
-
+        $body = [];
         $thing = $this->repository->find($uriVariables['id']);
         if (!$thing) {
             throw new \Exception('Thing not found');

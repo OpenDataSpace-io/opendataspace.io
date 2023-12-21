@@ -35,7 +35,7 @@ final readonly class ThingRemoveProcessor implements ProcessorInterface
     /**
      * @param Thing $data
      */
-    public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = []): Thing
+    public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = []): void
     {
         $object = clone $data;
 
