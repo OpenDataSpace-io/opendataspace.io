@@ -1,0 +1,928 @@
+[
+    {
+        "@context": "http://schema.org",
+        "@type": "Place",
+        "name": "Thing 1",
+        "properties":[
+            {
+                "@context": "http://schema.org",
+                "@type": "Place",
+                "name": "Thing 1",
+                "url": "http://www.example.com/thing15",
+                "logo": "http://www.example.com/thing15/logo.png",
+                "image": "http://www.example.com/thing15/image.png",
+                "description": "This is Thing 15",
+                "telephone": "1234567890",
+                "email": "",
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "12.345",
+                    "longitude": "67.890"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "123 Main St",
+                    "addressLocality": "City",
+                    "addressRegion": "State",
+                    "postalCode": "12345",
+                    "addressCountry": "US"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/thing15",
+                    "https://twitter.com/thing15",
+                    "https://www.youtube.com/thing15",
+                    "https://plus.google.com/thing15",
+                    "https://www.instagram.com/thing15/",
+                    "https://www.pinterest.com/thing15/",
+                    "https://www.linkedin.com/company/thing15"
+                ]
+            }
+        ]
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "Place",
+        "name": "Thing 2",
+        "properties":[
+            {
+                "@context": "http://schema.org",
+                "@type": "Place",
+                "name": "Thing 1",
+                "url": "http://www.example.com/thing15",
+                "logo": "http://www.example.com/thing15/logo.png",
+                "image": "http://www.example.com/thing15/image.png",
+                "description": "This is Thing 15",
+                "telephone": "1234567890",
+                "email": "",
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "12.345",
+                    "longitude": "67.890"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "123 Main St",
+                    "addressLocality": "City",
+                    "addressRegion": "State",
+                    "postalCode": "12345",
+                    "addressCountry": "US"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/thing15",
+                    "https://twitter.com/thing15",
+                    "https://www.youtube.com/thing15",
+                    "https://plus.google.com/thing15",
+                    "https://www.instagram.com/thing15/",
+                    "https://www.pinterest.com/thing15/",
+                    "https://www.linkedin.com/company/thing15"
+                ]
+            }
+        ]
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "Place",
+        "name": "Thing 3",
+        "properties":[
+            {
+                "@context": "http://schema.org",
+                "@type": "Place",
+                "name": "Thing 1",
+                "url": "http://www.example.com/thing15",
+                "logo": "http://www.example.com/thing15/logo.png",
+                "image": "http://www.example.com/thing15/image.png",
+                "description": "This is Thing 15",
+                "telephone": "1234567890",
+                "email": "",
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "12.345",
+                    "longitude": "67.890"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "123 Main St",
+                    "addressLocality": "City",
+                    "addressRegion": "State",
+                    "postalCode": "12345",
+                    "addressCountry": "US"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/thing15",
+                    "https://twitter.com/thing15",
+                    "https://www.youtube.com/thing15",
+                    "https://plus.google.com/thing15",
+                    "https://www.instagram.com/thing15/",
+                    "https://www.pinterest.com/thing15/",
+                    "https://www.linkedin.com/company/thing15"
+                ]
+            }
+        ]
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "Place",
+        "name": "Thing 4",
+        "properties":[
+            {
+                "@context": "http://schema.org",
+                "@type": "Place",
+                "name": "Thing 4",
+                "url": "http://www.example.com/thing15",
+                "logo": "http://www.example.com/thing15/logo.png",
+                "image": "http://www.example.com/thing15/image.png",
+                "description": "This is Thing 15",
+                "telephone": "1234567890",
+                "email": "",
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "12.345",
+                    "longitude": "67.890"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "123 Main St",
+                    "addressLocality": "City",
+                    "addressRegion": "State",
+                    "postalCode": "12345",
+                    "addressCountry": "US"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/thing15",
+                    "https://twitter.com/thing15",
+                    "https://www.youtube.com/thing15",
+                    "https://plus.google.com/thing15",
+                    "https://www.instagram.com/thing15/",
+                    "https://www.pinterest.com/thing15/",
+                    "https://www.linkedin.com/company/thing15"
+                ]
+            }
+        ]
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "Place",
+        "name": "Thing 5",
+        "properties":[
+            {
+                "@context": "http://schema.org",
+                "@type": "Place",
+                "name": "Thing 5",
+                "url": "http://www.example.com/thing15",
+                "logo": "http://www.example.com/thing15/logo.png",
+                "image": "http://www.example.com/thing15/image.png",
+                "description": "This is Thing 15",
+                "telephone": "1234567890",
+                "email": "",
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "12.345",
+                    "longitude": "67.890"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "123 Main St",
+                    "addressLocality": "City",
+                    "addressRegion": "State",
+                    "postalCode": "12345",
+                    "addressCountry": "US"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/thing15",
+                    "https://twitter.com/thing15",
+                    "https://www.youtube.com/thing15",
+                    "https://plus.google.com/thing15",
+                    "https://www.instagram.com/thing15/",
+                    "https://www.pinterest.com/thing15/",
+                    "https://www.linkedin.com/company/thing15"
+                ]
+            }
+        ]
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "Place",
+        "name": "Thing 6",
+        "properties":[
+            {
+                "@context": "http://schema.org",
+                "@type": "Place",
+                "name": "Thing 6",
+                "url": "http://www.example.com/thing15",
+                "logo": "http://www.example.com/thing15/logo.png",
+                "image": "http://www.example.com/thing15/image.png",
+                "description": "This is Thing 15",
+                "telephone": "1234567890",
+                "email": "",
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "12.345",
+                    "longitude": "67.890"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "123 Main St",
+                    "addressLocality": "City",
+                    "addressRegion": "State",
+                    "postalCode": "12345",
+                    "addressCountry": "US"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/thing15",
+                    "https://twitter.com/thing15",
+                    "https://www.youtube.com/thing15",
+                    "https://plus.google.com/thing15",
+                    "https://www.instagram.com/thing15/",
+                    "https://www.pinterest.com/thing15/",
+                    "https://www.linkedin.com/company/thing15"
+                ]
+            }
+        ]
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "Place",
+        "name": "Thing 7",
+        "properties":[
+            {
+                "@context": "http://schema.org",
+                "@type": "Place",
+                "name": "Thing 7",
+                "url": "http://www.example.com/thing15",
+                "logo": "http://www.example.com/thing15/logo.png",
+                "image": "http://www.example.com/thing15/image.png",
+                "description": "This is Thing 15",
+                "telephone": "1234567890",
+                "email": "",
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "12.345",
+                    "longitude": "67.890"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "123 Main St",
+                    "addressLocality": "City",
+                    "addressRegion": "State",
+                    "postalCode": "12345",
+                    "addressCountry": "US"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/thing15",
+                    "https://twitter.com/thing15",
+                    "https://www.youtube.com/thing15",
+                    "https://plus.google.com/thing15",
+                    "https://www.instagram.com/thing15/",
+                    "https://www.pinterest.com/thing15/",
+                    "https://www.linkedin.com/company/thing15"
+                ]
+            }
+        ]
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "Place",
+        "name": "Thing 8",
+        "properties":[
+            {
+                "@context": "http://schema.org",
+                "@type": "Place",
+                "name": "Thing 8",
+                "url": "http://www.example.com/thing15",
+                "logo": "http://www.example.com/thing15/logo.png",
+                "image": "http://www.example.com/thing15/image.png",
+                "description": "This is Thing 15",
+                "telephone": "1234567890",
+                "email": "",
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "12.345",
+                    "longitude": "67.890"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "123 Main St",
+                    "addressLocality": "City",
+                    "addressRegion": "State",
+                    "postalCode": "12345",
+                    "addressCountry": "US"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/thing15",
+                    "https://twitter.com/thing15",
+                    "https://www.youtube.com/thing15",
+                    "https://plus.google.com/thing15",
+                    "https://www.instagram.com/thing15/",
+                    "https://www.pinterest.com/thing15/",
+                    "https://www.linkedin.com/company/thing15"
+                ]
+            }
+        ]
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "Place",
+        "name": "Thing 9",
+        "properties":[
+            {
+                "@context": "http://schema.org",
+                "@type": "Place",
+                "name": "Thing 9",
+                "url": "http://www.example.com/thing15",
+                "logo": "http://www.example.com/thing15/logo.png",
+                "image": "http://www.example.com/thing15/image.png",
+                "description": "This is Thing 15",
+                "telephone": "1234567890",
+                "email": "",
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "12.345",
+                    "longitude": "67.890"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "123 Main St",
+                    "addressLocality": "City",
+                    "addressRegion": "State",
+                    "postalCode": "12345",
+                    "addressCountry": "US"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/thing15",
+                    "https://twitter.com/thing15",
+                    "https://www.youtube.com/thing15",
+                    "https://plus.google.com/thing15",
+                    "https://www.instagram.com/thing15/",
+                    "https://www.pinterest.com/thing15/",
+                    "https://www.linkedin.com/company/thing15"
+                ]
+            }
+        ]
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "Place",
+        "name": "Thing 10",
+        "properties":[
+            {
+                "@context": "http://schema.org",
+                "@type": "Place",
+                "name": "Thing 1",
+                "url": "http://www.example.com/thing15",
+                "logo": "http://www.example.com/thing15/logo.png",
+                "image": "http://www.example.com/thing15/image.png",
+                "description": "This is Thing 15",
+                "telephone": "1234567890",
+                "email": "",
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "12.345",
+                    "longitude": "67.890"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "123 Main St",
+                    "addressLocality": "City",
+                    "addressRegion": "State",
+                    "postalCode": "12345",
+                    "addressCountry": "US"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/thing15",
+                    "https://twitter.com/thing15",
+                    "https://www.youtube.com/thing15",
+                    "https://plus.google.com/thing15",
+                    "https://www.instagram.com/thing15/",
+                    "https://www.pinterest.com/thing15/",
+                    "https://www.linkedin.com/company/thing15"
+                ]
+            }
+        ]
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "Place",
+        "name": "Thing 11",
+        "properties":[
+            {
+                "@context": "http://schema.org",
+                "@type": "Place",
+                "name": "Thing 1",
+                "url": "http://www.example.com/thing15",
+                "logo": "http://www.example.com/thing15/logo.png",
+                "image": "http://www.example.com/thing15/image.png",
+                "description": "This is Thing 15",
+                "telephone": "1234567890",
+                "email": "",
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "12.345",
+                    "longitude": "67.890"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "123 Main St",
+                    "addressLocality": "City",
+                    "addressRegion": "State",
+                    "postalCode": "12345",
+                    "addressCountry": "US"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/thing15",
+                    "https://twitter.com/thing15",
+                    "https://www.youtube.com/thing15",
+                    "https://plus.google.com/thing15",
+                    "https://www.instagram.com/thing15/",
+                    "https://www.pinterest.com/thing15/",
+                    "https://www.linkedin.com/company/thing15"
+                ]
+            }
+        ]
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "Place",
+        "name": "Thing 12",
+        "properties":[
+            {
+                "@context": "http://schema.org",
+                "@type": "Place",
+                "name": "Thing 12",
+                "url": "http://www.example.com/thing15",
+                "logo": "http://www.example.com/thing15/logo.png",
+                "image": "http://www.example.com/thing15/image.png",
+                "description": "This is Thing 15",
+                "telephone": "1234567890",
+                "email": "",
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "12.345",
+                    "longitude": "67.890"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "123 Main St",
+                    "addressLocality": "City",
+                    "addressRegion": "State",
+                    "postalCode": "12345",
+                    "addressCountry": "US"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/thing15",
+                    "https://twitter.com/thing15",
+                    "https://www.youtube.com/thing15",
+                    "https://plus.google.com/thing15",
+                    "https://www.instagram.com/thing15/",
+                    "https://www.pinterest.com/thing15/",
+                    "https://www.linkedin.com/company/thing15"
+                ]
+            }
+        ]
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "Place",
+        "name": "Thing 13",
+        "properties":[
+            {
+                "@context": "http://schema.org",
+                "@type": "Place",
+                "name": "Thing 13",
+                "url": "http://www.example.com/thing15",
+                "logo": "http://www.example.com/thing15/logo.png",
+                "image": "http://www.example.com/thing15/image.png",
+                "description": "This is Thing 15",
+                "telephone": "1234567890",
+                "email": "",
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "12.345",
+                    "longitude": "67.890"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "123 Main St",
+                    "addressLocality": "City",
+                    "addressRegion": "State",
+                    "postalCode": "12345",
+                    "addressCountry": "US"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/thing15",
+                    "https://twitter.com/thing15",
+                    "https://www.youtube.com/thing15",
+                    "https://plus.google.com/thing15",
+                    "https://www.instagram.com/thing15/",
+                    "https://www.pinterest.com/thing15/",
+                    "https://www.linkedin.com/company/thing15"
+                ]
+            }
+        ]
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "Place",
+        "name": "Thing 14",
+        "properties":[
+            {
+                "@context": "http://schema.org",
+                "@type": "Place",
+                "name": "Thing 14",
+                "url": "http://www.example.com/thing15",
+                "logo": "http://www.example.com/thing15/logo.png",
+                "image": "http://www.example.com/thing15/image.png",
+                "description": "This is Thing 15",
+                "telephone": "1234567890",
+                "email": "",
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "12.345",
+                    "longitude": "67.890"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "123 Main St",
+                    "addressLocality": "City",
+                    "addressRegion": "State",
+                    "postalCode": "12345",
+                    "addressCountry": "US"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/thing15",
+                    "https://twitter.com/thing15",
+                    "https://www.youtube.com/thing15",
+                    "https://plus.google.com/thing15",
+                    "https://www.instagram.com/thing15/",
+                    "https://www.pinterest.com/thing15/",
+                    "https://www.linkedin.com/company/thing15"
+                ]
+            }
+        ]
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "Place",
+        "name": "Thing 15",
+        "properties":[
+            {
+                "name": "Thing 15",
+                "url": "http://www.example.com/thing15",
+                "logo": "http://www.example.com/thing15/logo.png",
+                "image": "http://www.example.com/thing15/image.png",
+                "description": "This is Thing 15",
+                "telephone": "1234567890",
+                "email": "",
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "12.345",
+                    "longitude": "67.890"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "123 Main St",
+                    "addressLocality": "City",
+                    "addressRegion": "State",
+                    "postalCode": "12345",
+                    "addressCountry": "US"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/thing15",
+                    "https://twitter.com/thing15",
+                    "https://www.youtube.com/thing15",
+                    "https://plus.google.com/thing15",
+                    "https://www.instagram.com/thing15/",
+                    "https://www.pinterest.com/thing15/",
+                    "https://www.linkedin.com/company/thing15"
+                ]
+            }
+        ]
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "Place",
+        "name": "Theatre Royal 26",
+        "properties":[
+            {
+                "name": "Theatre Royal 26",
+                "url": "http://www.theatreroyalnorwich.co.uk/",
+                "logo": "http://www.theatreroyalnorwich.co.uk/images/logo.png",
+                "image": "http://www.theatreroyalnorwich.co.uk/images/logo.png",
+                "description": "Theatre Royal Norwich is a 1300 seat art-deco theatre, presenting a high quality mix of drama, comedy, dance, opera and family shows. It is the regional home of the Royal Shakespeare Company, the National Theatre, the Royal Philharmonic Orchestra and the English Touring Opera.",
+                "telephone": "01603 630000",
+                "email": "",
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 10:00-20:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "52.628",
+                    "longitude": "1.293"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Theatre Street",
+                    "addressLocality": "Norwich",
+                    "addressRegion": "Norfolk",
+                    "postalCode": "NR2 1RL",
+                    "addressCountry": "GB"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/theatreroyalnorwich",
+                    "https://twitter.com/TheatreRNorwich",
+                    "https://www.youtube.com/user/TheatreRoyalNorwich",
+                    "https://plus.google.com/100115377993168660095",
+                    "https://www.instagram.com/theatreroyalnorwich/",
+                    "https://www.pinterest.com/theatreroyalnorwich/",
+                    "https://www.linkedin.com/company/theatre-royal-norwich"
+                ]
+            }
+        ]
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "Place",
+        "name": "Thing 16",
+        "properties":[
+            {
+                "name": "Thing 16",
+                "url": "http://www.example.com/thing16",
+                "logo": "http://www.example.com/thing16/logo.png",
+                "image": "http://www.example.com/thing16/image.png",
+                "description": "This is Thing 16",
+                "telephone": "1234567890",
+                "email": "thing16@example.com",
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "12.345",
+                    "longitude": "67.890"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "123 Main St",
+                    "addressLocality": "City",
+                    "addressRegion": "State",
+                    "postalCode": "12345",
+                    "addressCountry": "US"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/thing16",
+                    "https://twitter.com/thing16",
+                    "https://www.youtube.com/thing16",
+                    "https://plus.google.com/thing16",
+                    "https://www.instagram.com/thing16/",
+                    "https://www.pinterest.com/thing16/",
+                    "https://www.linkedin.com/company/thing16"
+                ]
+            }
+        ]
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "Place",
+        "name": "Thing 17",
+        "properties":[
+            {
+                "name": "Thing 17",
+                "url": "http://www.example.com/thing17",
+                "logo": "http://www.example.com/thing17/logo.png",
+                "image": "http://www.example.com/thing17/image.png",
+                "description": "This is Thing 17",
+                "telephone": "1234567890",
+                "email": "thing17@example.com",
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "12.345",
+                    "longitude": "67.890"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "123 Main St",
+                    "addressLocality": "City",
+                    "addressRegion": "State",
+                    "postalCode": "12345",
+                    "addressCountry": "US"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/thing17",
+                    "https://twitter.com/thing17",
+                    "https://www.youtube.com/thing17",
+                    "https://plus.google.com/thing17",
+                    "https://www.instagram.com/thing17/",
+                    "https://www.pinterest.com/thing17/",
+                    "https://www.linkedin.com/company/thing17"
+                ]
+            }
+        ]
+    },
+    // Add 48 more things here with different names and dates for schema.org/Places type
+    {
+        "@context": "http://schema.org",
+        "@type": "Place",
+        "name": "Thing 18",
+        "properties": [
+            {
+                "name": "Thing 18",
+                "url": "http://www.example.com/thing18",
+                "logo": "http://www.example.com/thing18/logo.png",
+                "image": "http://www.example.com/thing18/image.png",
+                "description": "This is Thing 18",
+                "telephone": "1234567890",
+                "email": "thing18@example.com",
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "12.345",
+                    "longitude": "67.890"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "123 Main St",
+                    "addressLocality": "City",
+                    "addressRegion": "State",
+                    "postalCode": "12345",
+                    "addressCountry": "US"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/thing18",
+                    "https://twitter.com/thing18",
+                    "https://www.youtube.com/thing18",
+                    "https://plus.google.com/thing18",
+                    "https://www.instagram.com/thing18/",
+                    "https://www.pinterest.com/thing18/",
+                    "https://www.linkedin.com/company/thing18"
+                ]
+            }
+        ]
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "Place",
+        "name": "Thing 19",
+        "properties": [
+            {
+                "name": "Thing 19",
+                "url": "http://www.example.com/thing19",
+                "logo": "http://www.example.com/thing19/logo.png",
+                "image": "http://www.example.com/thing19/image.png",
+                "description": "This is Thing 19",
+                "telephone": "1234567890",
+                "email": "thing19@example.com",
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "12.345",
+                    "longitude": "67.890"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "123 Main St",
+                    "addressLocality": "City",
+                    "addressRegion": "State",
+                    "postalCode": "12345",
+                    "addressCountry": "US"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/thing19",
+                    "https://twitter.com/thing19",
+                    "https://www.youtube.com/thing19",
+                    "https://plus.google.com/thing19",
+                    "https://www.instagram.com/thing19/",
+                    "https://www.pinterest.com/thing19/",
+                    "https://www.linkedin.com/company/thing19"
+                ]
+            }
+        ]
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "Place",
+        "name": "Thing 20",
+        "properties": [
+            {
+                "name": "Thing 20",
+                "url": "http://www.example.com/thing20",
+                "logo": "http://www.example.com/thing20/logo.png",
+                "image": "http://www.example.com/thing20/image.png",
+                "description": "This is Thing 20",
+                "telephone": "1234567890",
+                "email": "thing20@example.com",
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "12.345",
+                    "longitude": "67.890"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "123 Main St",
+                    "addressLocality": "City",
+                    "addressRegion": "State",
+                    "postalCode": "12345",
+                    "addressCountry": "US"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/thing20",
+                    "https://twitter.com/thing20",
+                    "https://www.youtube.com/thing20",
+                    "https://plus.google.com/thing20",
+                    "https://www.instagram.com/thing20/",
+                    "https://www.pinterest.com/thing20/",
+                    "https://www.linkedin.com/company/thing20"
+                ]
+            }
+        ]
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "Place",
+        "name": "Thing 21",
+        "properties": [
+            {
+                "name": "Thing 21",
+                "url": "http://www.example.com/thing21",
+                "logo": "http://www.example.com/thing21/logo.png",
+                "image": "http://www.example.com/thing21/image.png",
+                "description": "This is Thing 21",
+                "telephone": "1234567890",
+                "email": "mail@mail.com",
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "12.345",
+                    "longitude": "67.890"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "123 Main St",
+                    "addressLocality": "City",
+                    "addressRegion": "State",
+                    "postalCode": "12345",
+                    "addressCountry": "US"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/thing21",
+                    "https://twitter.com/thing21",
+                    "https://www.youtube.com/thing21",
+                    "https://plus.google.com/thing21",
+                    "https://www.instagram.com/thing21/",
+                    "https://www.pinterest.com/thing21/",
+                    "https://www.linkedin.com/company/thing21"
+                ]
+            }
+        ]
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "Place",
+        "name": "Thing 22",
+        "properties": [
+            {
+                "name": "Thing 22",
+                "url": "http://www.example.com/thing22",
+                "logo": "http://www.example.com/thing22/logo.png",
+                "image": "http://www.example.com/thing22/image.png",
+                "description": "This is Thing 22",
+                "telephone": "1234567890",
+                "email": "thing22@example.com",
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "12.345",
+                    "longitude": "67.890"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "123 Main St",
+                    "addressLocality": "City",
+                    "addressRegion": "State",
+                    "postalCode": "12345",
+                    "addressCountry": "US"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/thing22",
+                    "https://twitter.com/thing22",
+                    "https://www.youtube.com/thing22",
+                    "https://plus.google.com/thing22",
+                    "https://www.instagram.com/thing22/",
+                    "https://www.pinterest.com/thing22/",
+                    "https://www.linkedin.com/company/thing22"
+                ]
+            }
+        ]
+    }
+]
