@@ -21,13 +21,12 @@ final readonly class ThingCreateProcessor implements ProcessorInterface
 {
     /**
      * @param PersistProcessor $persistProcessor
-     * @param MercureProcessor $mercureProcessor
      */
     public function __construct(
         #[Autowire(service: PersistProcessor::class)]
         private ProcessorInterface $persistProcessor,
-        #[Autowire(service: MercureProcessor::class)]
-        private ProcessorInterface $mercureProcessor,
+        //#[Autowire(service: MercureProcessor::class)]
+        //private ProcessorInterface $mercureProcessor,
         private RequestStack $requestStack
     ) {
     }
@@ -39,6 +38,7 @@ final readonly class ThingCreateProcessor implements ProcessorInterface
     public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = []): Thing
     {
         $request = $this->requestStack->getCurrentRequest();
+        $body = [];
         if ($request) {
             $body = json_decode($request->getContent(), true);
         }
