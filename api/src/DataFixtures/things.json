@@ -729,7 +729,6 @@
             }
         ]
     },
-    // Add 48 more things here with different names and dates for schema.org/Places type
     {
         "@context": "http://schema.org",
         "@type": "Place",
