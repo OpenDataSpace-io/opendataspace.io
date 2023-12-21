@@ -19,7 +19,7 @@ use Symfony\Component\DependencyInjection\Attribute\Autowire;
 final readonly class ThingRemoveProcessor implements ProcessorInterface
 {
     /**
-     * @param PersistProcessor $removeProcessor
+     * @param RemoveProcessor $removeProcessor
      * @param MercureProcessor $mercureProcessor
      */
     public function __construct(
