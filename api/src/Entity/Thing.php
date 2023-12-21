@@ -22,6 +22,10 @@ use ApiPlatform\Metadata\Post;
 use ApiPlatform\Metadata\Put;
 use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
+use App\State\Processor\ThingRemoveProcessor;
+use App\State\Processor\ThingPersistProcessor;
+use App\State\Processor\ThingCreateProcessor;
+use App\State\Processor\ThingUpdateProcessor;
 
 #[ApiResource(
     uriTemplate: '/admin/things{._format}',
@@ -32,9 +36,9 @@ use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
             paginationClientItemsPerPage: true
         ),
         new Post(
-            // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
-            //processor: ThingPersistProcessor::class,
-            itemUriTemplate: '/admin/things/{id}{._format}'
+            itemUriTemplate: '/admin/things/{id}{._format}',
+            // Mercure publish is done manually in MercureProcessor through ThingPersistProcessor
+            processor: ThingPersistProcessor::class,
         ),
         new Get(
             uriTemplate: '/admin/things/{id}{._format}'
@@ -42,13 +46,14 @@ use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
         // https://github.com/api-platform/admin/issues/370
         new Put(
             uriTemplate: '/admin/things/{id}{._format}',
-            // Mercure publish is done manually in MercureProcessor through BookPersistProcessor
-            //processor: ThingPersistProcessor::class
+            // Mercure publish is done manually in MercureProcessor through ThingPersistProcessor
+            processor: ThingPersistProcessor::class
+            
         ),
         new Delete(
             uriTemplate: '/admin/things/{id}{._format}',
-            // Mercure publish is done manually in MercureProcessor through BookRemoveProcessor
-            //processor: ThingRemoveProcessor::class
+            // Mercure publish is done manually in MercureProcessor through ThingRemoveProcessor
+            processor: ThingRemoveProcessor::class
         ),
     ],
     normalizationContext: [
@@ -72,18 +77,18 @@ use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
             uriTemplate: '/things/{id}{._format}'
         ),
         new Post(
-            //processor: ThingCreateProcessor::class,
+            processor: ThingCreateProcessor::class,
             itemUriTemplate: '/things/{id}{._format}',
             //security: 'is_granted("ROLE_USER")'
         ),
         new Put(
             uriTemplate: '/things/{id}{._format}',
-            //processor: ThingUpdateProcessor::class,
+            processor: ThingUpdateProcessor::class,
             //security: 'is_granted("ROLE_USER")'
         ),
         new Delete(
             uriTemplate: '/things/{id}{._format}',
-            //processor: ThingRemoveProcessor::class,
+            processor: ThingRemoveProcessor::class,
             //security: 'is_granted("ROLE_ADMIN")'
         ),
     ],
