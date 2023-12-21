@@ -9,7 +9,6 @@ use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProcessorInterface;
 use App\Entity\Thing;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
-use Symfony\Component\Serializer\Encoder\DecoderInterface;
 
 /**
  * @implements ProcessorInterface<Thing>
@@ -24,8 +23,7 @@ final readonly class ThingPersistProcessor implements ProcessorInterface
         #[Autowire(service: PersistProcessor::class)]
         private ProcessorInterface $persistProcessor,
         #[Autowire(service: MercureProcessor::class)]
-        private ProcessorInterface $mercureProcessor,
-        private DecoderInterface $decoder
+        private ProcessorInterface $mercureProcessor
     ) {
     }
 

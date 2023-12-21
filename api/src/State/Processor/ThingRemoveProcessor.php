@@ -19,7 +19,7 @@ use Symfony\Component\DependencyInjection\Attribute\Autowire;
 final readonly class ThingRemoveProcessor implements ProcessorInterface
 {
     /**
-     * @param PersistProcessor $persistProcessor
+     * @param PersistProcessor $removeProcessor
      * @param MercureProcessor $mercureProcessor
      */
     public function __construct(
@@ -35,7 +35,7 @@ final readonly class ThingRemoveProcessor implements ProcessorInterface
     /**
      * @param Thing $data
      */
-    public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = []): void
+    public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = []): Thing
     {
         $object = clone $data;
 
