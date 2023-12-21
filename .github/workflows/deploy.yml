@@ -99,7 +99,7 @@ jobs:
           echo "url=$url" >> "$GITHUB_OUTPUT"
           cors="https://$url|http://localhost|https://localhost|http://localhost:3000"
           set -o pipefail
-          helm upgrade $release ./helm/api-platform -f ./helm/api-platform/values.yaml \
+          helm upgrade --debug $release ./helm/api-platform -f ./helm/api-platform/values.yaml \
             --install \
             --create-namespace \
             --debug \
