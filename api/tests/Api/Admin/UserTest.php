@@ -29,11 +29,8 @@ final class UserTest extends ApiTestCase
         $this->client = self::createClient();
     }
 
-    /**
-     * @dataProvider getNonAdminUsers
-     *
-     * @test
-     */
+    #[DataProvider('getNonAdminUsers')]
+    #[Test]
     public function asNonAdminUserICannotGetACollectionOfUsers(int $expectedCode, string $hydraDescription, ?UserFactory $userFactory): void
     {
         $options = [];
@@ -56,11 +53,8 @@ final class UserTest extends ApiTestCase
         ]);
     }
 
-    /**
-     * @dataProvider getAdminUrls
-     *
-     * @test
-     */
+    #[DataProvider('getAdminUrls')]
+    #[Test]
     public function asAdminUserICanGetACollectionOfUsers(FactoryCollection $factory, callable|string $url, int $hydraTotalItems, int $itemsPerPage = null): void
     {
         $factory->create();
@@ -109,11 +103,8 @@ final class UserTest extends ApiTestCase
         ];
     }
 
-    /**
-     * @dataProvider getNonAdminUsers
-     *
-     * @test
-     */
+    #[DataProvider('getNonAdminUsers')]
+    #[Test]
     public function asNonAdminUserICannotGetAUser(int $expectedCode, string $hydraDescription, ?UserFactory $userFactory): void
     {
         $user = UserFactory::createOne();
@@ -138,9 +129,7 @@ final class UserTest extends ApiTestCase
         ]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function asAdminUserICanGetAUser(): void
     {
         $user = UserFactory::createOne();
@@ -160,9 +149,7 @@ final class UserTest extends ApiTestCase
         self::assertMatchesJsonSchema(file_get_contents(__DIR__ . '/schemas/User/item.json'));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function asAUserIAmUpdatedOnLogin(): void
     {
         $user = UserFactory::createOne([
