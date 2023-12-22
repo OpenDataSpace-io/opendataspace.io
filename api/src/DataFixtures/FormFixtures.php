@@ -344,14 +344,26 @@ class FormFixtures extends Fixture
                         "items" => [
                             "type" => "object",
                             "properties" => [
-                                "@type" => [
+                                "dayOfWeek" => [
                                     "type" => "string",
-                                    "title" => "Typ",
+                                    "title" => "Wochentag",
                                     "enum" => [
-                                        "OpeningHoursSpecification"
+                                        "Monday",
+                                        "Tuesday",
+                                            "Wednesday",
+                                            "Thursday",
+                                            "Friday",
+                                            "Saturday",
+                                            "Sunday"
                                     ],
                                     "enumNames" => [
-                                        "Öffnungszeiten Spezifikation"
+                                        "Montag",
+                                        "Dienstag",
+                                        "Mittwoch",
+                                        "Donnerstag",
+                                        "Freitag",
+                                        "Samstag",
+                                        "Sonntag"
                                     ]
                                 ],
                                 "validFrom" => [
