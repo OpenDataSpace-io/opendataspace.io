@@ -101,7 +101,7 @@ const NewThingForm = () => {
         console.log(data["formData"]);
 
         try {
-            if (!session) return;
+            //if (!session) return;
             //@ts-ignore
             const token = session.accessToken; // Get the authentication token from the session
             const response = await fetch('/things', {
