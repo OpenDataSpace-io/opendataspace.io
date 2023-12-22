@@ -17,12 +17,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mercure\Update;
 use Zenstruck\Foundry\FactoryCollection;
 use Zenstruck\Foundry\Test\Factories;
-use Zenstruck\Foundry\Test\ResetDatabase;
+//use Zenstruck\Foundry\Test\ResetDatabase;
 
 final class ThingTest extends ApiTestCase
 {
     use Factories;
-    use ResetDatabase;
+    //use ResetDatabase;
     use SecurityTrait;
     use SerializerTrait;
     use UsersDataProviderTrait;
