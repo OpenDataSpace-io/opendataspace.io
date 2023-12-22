@@ -24,11 +24,8 @@ final class ThingTest extends ApiTestCase
         $this->client = self::createClient();
     }
 
-    /**
-     * @dataProvider getUrls
-     *
-     * @test
-     */
+    #[DataProvider('getUrls')]
+    #[Test]
     public function asAnonymousICanGetACollectionOfThings(FactoryCollection $factory, string $url, int $hydraTotalItems): void
     {
         // Cannot use Factory as data provider because ThingFactory has a service dependency
@@ -63,9 +60,7 @@ final class ThingTest extends ApiTestCase
         ];
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function asAnonymousICannotGetAnInvalidThing(): void
     {
         ThingFactory::createOne();
@@ -75,9 +70,7 @@ final class ThingTest extends ApiTestCase
         self::assertResponseStatusCodeSame(Response::HTTP_NOT_FOUND);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function asAnonymousICanGetAThing(): void
     {
         $thing = ThingFactory::createOne();

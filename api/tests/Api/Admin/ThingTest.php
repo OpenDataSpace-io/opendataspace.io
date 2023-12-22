@@ -34,11 +34,8 @@ final class ThingTest extends ApiTestCase
         $this->client = self::createClient();
     }
 
-    /**
-     * @dataProvider getNonAdminUsers
-     *
-     * @test
-     */
+    #[DataProvider('getNonAdminUsers')]
+    #[Test]
     public function asNonAdminUserICannotGetACollectionOfThings(int $expectedCode, string $hydraDescription, ?UserFactory $userFactory): void
     {
         $options = [];
@@ -61,11 +58,7 @@ final class ThingTest extends ApiTestCase
         ]);
     }
 
-    /**
-     * @dataProvider getUrls
-     *
-     * @test
-     */
+    #[Test]
     public function asAdminUserICanGetACollectionOfThings(FactoryCollection $factory, string $url, int $hydraTotalItems, int $itemsPerPage = null): void
     {
         // Cannot use Factory as data provider because ThingFactory has a service dependency
@@ -110,11 +103,8 @@ final class ThingTest extends ApiTestCase
         ];
     }
 
-    /**
-     * @dataProvider getAllUsers
-     *
-     * @test
-     */
+    #[DataProvider('getAllUsers')]
+    #[Test]
     public function asAnyUserICannotGetAnInvalidThing(?UserFactory $userFactory): void
     {
         ThingFactory::createOne();
@@ -139,11 +129,8 @@ final class ThingTest extends ApiTestCase
         yield [UserFactory::new(['roles' => ['ROLE_ADMIN']])];
     }
 
-    /**
-     * @dataProvider getNonAdminUsers
-     *
-     * @test
-     */
+    #[DataProvider('getNonAdminUsers')]
+    #[Test]
     public function asNonAdminUserICannotGetAThing(int $expectedCode, string $hydraDescription, ?UserFactory $userFactory): void
     {
         $thing = ThingFactory::createOne();
@@ -168,11 +155,8 @@ final class ThingTest extends ApiTestCase
         ]);
     }
 
-    /**
-     * @dataProvider getNonAdminUsers
-     *
-     * @test
-     */
+    #[DataProvider('getNonAdminUsers')]
+    #[Test]
     public function asAdminUserICanGetAThing(): void
     {
         $thing = ThingFactory::createOne();
@@ -191,11 +175,8 @@ final class ThingTest extends ApiTestCase
         ]);
     }
 
-    /**
-     * @dataProvider getNonAdminUsers
-     *
-     * @test
-     */
+    #[DataProvider('getNonAdminUsers')]
+    #[Test]
     public function asNonAdminUserICannotCreateAThing(int $expectedCode, string $hydraDescription, ?UserFactory $userFactory): void
     {
         $options = [];
@@ -226,11 +207,8 @@ final class ThingTest extends ApiTestCase
         ]);
     }
 
-    /**
-     * @dataProvider getInvalidDataOnCreate
-     *
-     * @test
-     */
+    #[DataProvider('getInvalidDataOnCreate')]
+    #[Test]
     public function asAdminUserICannotCreateAThingWithInvalidData(array $data, int $statusCode, array $expected): void
     {
         $token = $this->generateToken([
@@ -291,12 +269,9 @@ final class ThingTest extends ApiTestCase
         ];
     }
 
-    /**
-     * @group apiCall
-     * @group mercure
-     *
-     * @test
-     */
+    #[Group('ApiCall')]
+    #[Group('mercure')]
+    #[Test]
     public function asAdminUserICanCreateAThing(): void
     {
         $token = $this->generateToken([
@@ -347,11 +322,8 @@ final class ThingTest extends ApiTestCase
         );
     }
 
-    /**
-     * @dataProvider getNonAdminUsers
-     *
-     * @test
-     */
+    #[DataProvider('getNonAdminUsers')]
+    #[Test]
     public function asNonAdminUserICannotUpdateThing(int $expectedCode, string $hydraDescription, ?UserFactory $userFactory): void
     {
         $thing = ThingFactory::createOne();
@@ -384,9 +356,7 @@ final class ThingTest extends ApiTestCase
         ]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function asAdminUserICannotUpdateAnInvalidThing(): void
     {
         ThingFactory::createOne();
@@ -409,11 +379,8 @@ final class ThingTest extends ApiTestCase
         self::assertResponseStatusCodeSame(Response::HTTP_NOT_FOUND);
     }
 
-    /**
-     * @dataProvider getInvalidData
-     *
-     * @test
-     */
+    #[DataProvider('getInvalidData')]
+    #[Test]
     public function asAdminUserICannotUpdateAThingWithInvalidData(array $data, int $statusCode, array $expected): void
     {
         $thing = ThingFactory::createOne();
@@ -437,12 +404,9 @@ final class ThingTest extends ApiTestCase
         self::assertJsonContains($expected);
     }
 
-    /**
-     * @group apiCall
-     * @group mercure
-     *
-     * @test
-     */
+    #[Group('ApiCall')]
+    #[Group('mercure')]
+    #[Test]
     public function asAdminUserICanUpdateAThing(): void
     {
         $thing = ThingFactory::createOne([
@@ -497,11 +461,8 @@ final class ThingTest extends ApiTestCase
         );
     }
 
-    /**
-     * @dataProvider getNonAdminUsers
-     *
-     * @test
-     */
+    #[DataProvider('getNonAdminUsers')]
+    #[Test]
     public function asNonAdminUserICannotDeleteAThing(int $expectedCode, string $hydraDescription, ?UserFactory $userFactory): void
     {
         $thing = ThingFactory::createOne();
@@ -526,9 +487,7 @@ final class ThingTest extends ApiTestCase
         ]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function asAdminUserICannotDeleteAnInvalidThing(): void
     {
         ThingFactory::createOne();
@@ -542,11 +501,8 @@ final class ThingTest extends ApiTestCase
         self::assertResponseStatusCodeSame(Response::HTTP_NOT_FOUND);
     }
 
-    /**
-     * @group mercure
-     *
-     * @test
-     */
+    #[Group('mercure')]
+    #[Test]
     public function asAdminUserICanDeleteAThing(): void
     {
         $thing = ThingFactory::createOne(['name' => 'Thing']);
