@@ -17,7 +17,7 @@ export const Header = () => {
       <nav className="container mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="block text-4xl font-bold">
           <Link href="/things" className="text-gray-700 hover:text-gray-900">
-            Thing Store
+            OpenDataSpace
           </Link>
         </div>
         <div className="lg:flex lg:flex-1 lg:justify-end lg:gap-x-12">
