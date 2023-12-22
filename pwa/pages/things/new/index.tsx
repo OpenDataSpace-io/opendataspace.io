@@ -36,7 +36,7 @@ const NewThingForm = () => {
     const [formList, setFormList] = useState([]);
     const [extraErrors, setExtraErrors] = useState<ErrorSchema | undefined>();
     const [shareURL, setShareURL] = useState<string | null>(null);
-    const [isGridVisible, setGridVisible] = useState(true);
+    const [isGridVisible, setGridVisible] = useState(false);
     const { data: session = { accessToken: '', error: '' }, status } = useSession() || {};
 
     const handleButtonClick = () => {
