@@ -442,7 +442,31 @@ class FormFixtures extends Fixture
                         "validThrough" => "2021-12-31",
                         "opens" => "09:00:00",
                         "closes" => "17:00:00"
-                    ]
+                    ],
+                    [
+                        "@type" => "OpeningHoursSpecification",
+                        "dayOfWeek" => "Monday",
+                        "opens" => "09:00:00",
+                        "closes" => "12:00:00"
+                    ],
+                    [
+                        "@type" => "OpeningHoursSpecification",
+                        "dayOfWeek" => "Monday",
+                        "opens" => "13:00:00",
+                        "closes" => "17:00:00"
+                    ],
+                    [
+                        "@type" => "OpeningHoursSpecification",
+                        "dayOfWeek" => "Tuesday",
+                        "opens" => "09:00:00",
+                        "closes" => "12:00:00"
+                    ],
+                    [
+                        "@type" => "OpeningHoursSpecification",
+                        "dayOfWeek" => "Tuesday",
+                        "opens" => "13:00:00",
+                        "closes" => "17:00:00"
+                    ],
                 ]
             ]
         );
