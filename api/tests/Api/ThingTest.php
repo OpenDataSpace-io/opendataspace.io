@@ -10,12 +10,10 @@ use App\DataFixtures\Factory\ThingFactory;
 use Symfony\Component\HttpFoundation\Response;
 use Zenstruck\Foundry\FactoryCollection;
 use Zenstruck\Foundry\Test\Factories;
-//use Zenstruck\Foundry\Test\ResetDatabase;
 
 final class ThingTest extends ApiTestCase
 {
     use Factories;
-    //use ResetDatabase;
 
     private Client $client;
 
