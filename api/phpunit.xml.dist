@@ -37,4 +37,8 @@
     <extensions>
         <extension class="DAMA\DoctrineTestBundle\PHPUnit\PHPUnitExtension" />
     </extensions>
+
+    <logging>
+        <junit outputFile="coverage.xml"/>
+    </logging>
 </phpunit>

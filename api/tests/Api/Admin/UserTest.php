@@ -13,12 +13,12 @@ use App\Tests\Api\Trait\SecurityTrait;
 use Symfony\Component\Uid\Uuid;
 use Zenstruck\Foundry\FactoryCollection;
 use Zenstruck\Foundry\Test\Factories;
-use Zenstruck\Foundry\Test\ResetDatabase;
+//use Zenstruck\Foundry\Test\ResetDatabase;
 
 final class UserTest extends ApiTestCase
 {
     use Factories;
-    use ResetDatabase;
+    //use ResetDatabase;
     use SecurityTrait;
     use UsersDataProviderTrait;
 
