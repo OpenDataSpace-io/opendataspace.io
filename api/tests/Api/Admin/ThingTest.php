@@ -6,11 +6,10 @@ namespace App\Tests\Api\Admin;
 
 use ApiPlatform\Symfony\Bundle\Test\ApiTestCase;
 use ApiPlatform\Symfony\Bundle\Test\Client;
-use App\DataFixtures\Factory\BookFactory;
+use App\DataFixtures\Factory\ThingFactory;
 use App\DataFixtures\Factory\UserFactory;
-use App\Entity\Book;
-use App\Enum\BookCondition;
-use App\Repository\BookRepository;
+use App\Entity\Thing;
+use App\Repository\ThingRepository;
 use App\Tests\Api\Admin\Trait\UsersDataProviderTrait;
 use App\Tests\Api\Trait\SecurityTrait;
 use App\Tests\Api\Trait\SerializerTrait;
@@ -20,7 +19,7 @@ use Zenstruck\Foundry\FactoryCollection;
 use Zenstruck\Foundry\Test\Factories;
 use Zenstruck\Foundry\Test\ResetDatabase;
 
-final class BookTest extends ApiTestCase
+final class ThingTest extends ApiTestCase
 {
     use Factories;
     use ResetDatabase;
@@ -40,7 +39,7 @@ final class BookTest extends ApiTestCase
      *
      * @test
      */
-    public function asNonAdminUserICannotGetACollectionOfBooks(int $expectedCode, string $hydraDescription, ?UserFactory $userFactory): void
+    public function asNonAdminUserICannotGetACollectionOfThings(int $expectedCode, string $hydraDescription, ?UserFactory $userFactory): void
     {
         $options = [];
         if ($userFactory) {
@@ -50,7 +49,7 @@ final class BookTest extends ApiTestCase
             $options['auth_bearer'] = $token;
         }
 
-        $this->client->request('GET', '/admin/books', $options);
+        $this->client->request('GET', '/admin/things', $options);
 
         self::assertResponseStatusCodeSame($expectedCode);
         self::assertResponseHeaderSame('content-type', 'application/problem+json; charset=utf-8');
@@ -67,9 +66,9 @@ final class BookTest extends ApiTestCase
      *
      * @test
      */
-    public function asAdminUserICanGetACollectionOfBooks(FactoryCollection $factory, string $url, int $hydraTotalItems, int $itemsPerPage = null): void
+    public function asAdminUserICanGetACollectionOfThings(FactoryCollection $factory, string $url, int $hydraTotalItems, int $itemsPerPage = null): void
     {
-        // Cannot use Factory as data provider because BookFactory has a service dependency
+        // Cannot use Factory as data provider because ThingFactory has a service dependency
         $factory->create();
 
         $token = $this->generateToken([
@@ -84,75 +83,31 @@ final class BookTest extends ApiTestCase
             'hydra:totalItems' => $hydraTotalItems,
         ]);
         self::assertCount(min($itemsPerPage ?? $hydraTotalItems, 30), $response->toArray()['hydra:member']);
-        self::assertMatchesJsonSchema(file_get_contents(__DIR__ . '/schemas/Book/collection.json'));
     }
 
     public static function getUrls(): iterable
     {
-        yield 'all books' => [
-            BookFactory::new()->many(35),
-            '/admin/books',
+        yield 'all things' => [
+            ThingsFactory::new()->many(35),
+            '/admin/things',
             35,
         ];
-        yield 'all books using itemsPerPage' => [
-            BookFactory::new()->many(35),
-            '/admin/books?itemsPerPage=10',
+        yield 'all things using itemsPerPage' => [
+            ThingsFactory::new()->many(35),
+            '/admin/things?itemsPerPage=10',
             35,
             10,
         ];
-        yield 'books filtered by title' => [
-            BookFactory::new()->sequence(static function () {
-                yield ['title' => 'Hyperion'];
+        yield 'things filtered by name' => [
+            ThingFactory::new()->sequence(static function () {
+                yield ['name' => 'Thing'];
                 foreach (range(1, 10) as $i) {
                     yield [];
                 }
             }),
-            '/admin/books?title=yperio',
+            '/admin/things?name=yperio',
             1,
         ];
-        yield 'books filtered by author' => [
-            BookFactory::new()->sequence(static function () {
-                yield ['author' => 'Dan Simmons'];
-                foreach (range(1, 10) as $i) {
-                    yield [];
-                }
-            }),
-            '/admin/books?author=simmons',
-            1,
-        ];
-        yield 'books filtered by condition' => [
-            BookFactory::new()->sequence(static function () {
-                foreach (range(1, 100) as $i) {
-                    // 33% of books are damaged
-                    yield ['condition' => $i % 3 ? BookCondition::NewCondition : BookCondition::DamagedCondition];
-                }
-            }),
-            '/admin/books?condition=' . BookCondition::DamagedCondition->value,
-            33,
-        ];
-    }
-
-    /**
-     * @test
-     */
-    public function asAdminUserICanGetACollectionOfBooksOrderedByTitle(): void
-    {
-        BookFactory::createOne(['title' => 'Hyperion']);
-        BookFactory::createOne(['title' => 'The Wandering Earth']);
-        BookFactory::createOne(['title' => 'Ball Lightning']);
-
-        $token = $this->generateToken([
-            'email' => UserFactory::createOneAdmin()->email,
-        ]);
-
-        $response = $this->client->request('GET', '/admin/books?order[title]=asc', ['auth_bearer' => $token]);
-
-        self::assertResponseIsSuccessful();
-        self::assertResponseHeaderSame('content-type', 'application/ld+json; charset=utf-8');
-        self::assertEquals('Ball Lightning', $response->toArray()['hydra:member'][0]['title']);
-        self::assertEquals('Hyperion', $response->toArray()['hydra:member'][1]['title']);
-        self::assertEquals('The Wandering Earth', $response->toArray()['hydra:member'][2]['title']);
-        self::assertMatchesJsonSchema(file_get_contents(__DIR__ . '/schemas/Book/collection.json'));
     }
 
     /**
@@ -160,9 +115,9 @@ final class BookTest extends ApiTestCase
      *
      * @test
      */
-    public function asAnyUserICannotGetAnInvalidBook(?UserFactory $userFactory): void
+    public function asAnyUserICannotGetAnInvalidThing(?UserFactory $userFactory): void
     {
-        BookFactory::createOne();
+        ThingFactory::createOne();
 
         $options = [];
         if ($userFactory) {
@@ -172,7 +127,7 @@ final class BookTest extends ApiTestCase
             $options['auth_bearer'] = $token;
         }
 
-        $this->client->request('GET', '/admin/books/invalid', $options);
+        $this->client->request('GET', '/admin/thing/invalid', $options);
 
         self::assertResponseStatusCodeSame(Response::HTTP_NOT_FOUND);
     }
@@ -189,9 +144,9 @@ final class BookTest extends ApiTestCase
      *
      * @test
      */
-    public function asNonAdminUserICannotGetABook(int $expectedCode, string $hydraDescription, ?UserFactory $userFactory): void
+    public function asNonAdminUserICannotGetAThing(int $expectedCode, string $hydraDescription, ?UserFactory $userFactory): void
     {
-        $book = BookFactory::createOne();
+        $thing = ThingFactory::createOne();
 
         $options = [];
         if ($userFactory) {
@@ -201,7 +156,7 @@ final class BookTest extends ApiTestCase
             $options['auth_bearer'] = $token;
         }
 
-        $this->client->request('GET', '/admin/books/' . $book->getId(), $options);
+        $this->client->request('GET', '/admin/thing/' . $thing->getId(), $options);
 
         self::assertResponseStatusCodeSame($expectedCode);
         self::assertResponseHeaderSame('content-type', 'application/problem+json; charset=utf-8');
@@ -218,26 +173,22 @@ final class BookTest extends ApiTestCase
      *
      * @test
      */
-    public function asAdminUserICanGetABook(): void
+    public function asAdminUserICanGetAThing(): void
     {
-        $book = BookFactory::createOne();
+        $thing = ThingFactory::createOne();
 
         $token = $this->generateToken([
             'email' => UserFactory::createOneAdmin()->email,
         ]);
 
-        $this->client->request('GET', '/admin/books/' . $book->getId(), ['auth_bearer' => $token]);
+        $this->client->request('GET', '/admin/things/' . $thing->getId(), ['auth_bearer' => $token]);
 
         self::assertResponseIsSuccessful();
         self::assertResponseHeaderSame('content-type', 'application/ld+json; charset=utf-8');
         self::assertJsonContains([
-            '@id' => '/admin/books/' . $book->getId(),
-            'book' => $book->book,
-            'condition' => $book->condition->value,
-            'title' => $book->title,
-            'author' => $book->author,
+            '@id' => '/admin/things/' . $thing->getId(),
+            'name' => $thing->getName(),
         ]);
-        self::assertMatchesJsonSchema(file_get_contents(__DIR__ . '/schemas/Book/item.json'));
     }
 
     /**
@@ -245,7 +196,7 @@ final class BookTest extends ApiTestCase
      *
      * @test
      */
-    public function asNonAdminUserICannotCreateABook(int $expectedCode, string $hydraDescription, ?UserFactory $userFactory): void
+    public function asNonAdminUserICannotCreateAThing(int $expectedCode, string $hydraDescription, ?UserFactory $userFactory): void
     {
         $options = [];
         if ($userFactory) {
@@ -255,10 +206,9 @@ final class BookTest extends ApiTestCase
             $options['auth_bearer'] = $token;
         }
 
-        $this->client->request('POST', '/admin/books', $options + [
+        $this->client->request('POST', '/admin/things', $options + [
             'json' => [
-                'book' => 'https://openlibrary.org/books/OL28346544M.json',
-                'condition' => BookCondition::NewCondition->value,
+                'name' => 'Thing',
             ],
             'headers' => [
                 'Content-Type' => 'application/ld+json',
@@ -281,13 +231,13 @@ final class BookTest extends ApiTestCase
      *
      * @test
      */
-    public function asAdminUserICannotCreateABookWithInvalidData(array $data, int $statusCode, array $expected): void
+    public function asAdminUserICannotCreateAThingWithInvalidData(array $data, int $statusCode, array $expected): void
     {
         $token = $this->generateToken([
             'email' => UserFactory::createOneAdmin()->email,
         ]);
 
-        $this->client->request('POST', '/admin/books', [
+        $this->client->request('POST', '/admin/things', [
             'auth_bearer' => $token,
             'json' => $data,
             'headers' => [
@@ -312,13 +262,9 @@ final class BookTest extends ApiTestCase
                 'hydra:title' => 'An error occurred',
                 'violations' => [
                     [
-                        'propertyPath' => 'book',
+                        'propertyPath' => 'name',
                         'message' => 'This value should not be blank.',
-                    ],
-                    [
-                        'propertyPath' => 'condition',
-                        'message' => 'This value should not be null.',
-                    ],
+                    ]
                 ],
             ],
         ];
@@ -327,46 +273,9 @@ final class BookTest extends ApiTestCase
 
     public static function getInvalidData(): iterable
     {
-        yield 'empty data' => [
+        yield 'invalid thing' => [
             [
-                'book' => '',
-                'condition' => '',
-            ],
-            Response::HTTP_UNPROCESSABLE_ENTITY,
-            [
-                '@type' => 'ConstraintViolationList',
-                'hydra:title' => 'An error occurred',
-                'hydra:description' => 'condition: This value should be of type '.BookCondition::class.'.',
-                'violations' => [
-                    [
-                        'propertyPath' => 'condition',
-                        'hint' => 'The data must belong to a backed enumeration of type '.BookCondition::class,
-                    ],
-                ],
-            ],
-        ];
-        yield 'invalid condition' => [
-            [
-                'book' => 'https://openlibrary.org/books/OL28346544M.json',
-                'condition' => 'invalid condition',
-            ],
-            Response::HTTP_UNPROCESSABLE_ENTITY,
-            [
-                '@type' => 'ConstraintViolationList',
-                'hydra:title' => 'An error occurred',
-                'hydra:description' => 'condition: This value should be of type '.BookCondition::class.'.',
-                'violations' => [
-                    [
-                        'propertyPath' => 'condition',
-                        'hint' => 'The data must belong to a backed enumeration of type '.BookCondition::class,
-                    ],
-                ],
-            ],
-        ];
-        yield 'invalid book' => [
-            [
-                'book' => 'invalid book',
-                'condition' => BookCondition::NewCondition->value,
+                'thing' => 'invalid thing',
             ],
             Response::HTTP_UNPROCESSABLE_ENTITY,
             [
@@ -374,7 +283,7 @@ final class BookTest extends ApiTestCase
                 'hydra:title' => 'An error occurred',
                 'violations' => [
                     [
-                        'propertyPath' => 'book',
+                        'propertyPath' => 'thing',
                         'message' => 'This value is not a valid URL.',
                     ],
                 ],
@@ -388,17 +297,16 @@ final class BookTest extends ApiTestCase
      *
      * @test
      */
-    public function asAdminUserICanCreateABook(): void
+    public function asAdminUserICanCreateAThing(): void
     {
         $token = $this->generateToken([
             'email' => UserFactory::createOneAdmin()->email,
         ]);
 
-        $response = $this->client->request('POST', '/admin/books', [
+        $response = $this->client->request('POST', '/admin/things', [
             'auth_bearer' => $token,
             'json' => [
-                'book' => 'https://openlibrary.org/books/OL28346544M.json',
-                'condition' => BookCondition::NewCondition->value,
+                'name' => 'Thing',
             ],
             'headers' => [
                 'Content-Type' => 'application/ld+json',
@@ -409,34 +317,30 @@ final class BookTest extends ApiTestCase
         self::assertResponseStatusCodeSame(Response::HTTP_CREATED);
         self::assertResponseHeaderSame('content-type', 'application/ld+json; charset=utf-8');
         self::assertJsonContains([
-            'book' => 'https://openlibrary.org/books/OL28346544M.json',
-            'condition' => BookCondition::NewCondition->value,
-            'title' => 'Foundation',
-            'author' => 'Isaac Asimov',
+            'nmae' => 'Thing',
         ]);
-        self::assertMatchesJsonSchema(file_get_contents(__DIR__ . '/schemas/Book/item.json'));
         $id = preg_replace('/^.*\/(.+)$/', '$1', $response->toArray()['@id']);
-        /** @var Book $book */
-        $book = self::getContainer()->get(BookRepository::class)->find($id);
+        /** @var Thhing $thing */
+        $thing = self::getContainer()->get(ThingRepository::class)->find($id);
         self::assertCount(2, self::getMercureMessages());
         self::assertEquals(
             new Update(
-                topics: ['http://localhost/admin/books/' . $book->getId()],
+                topics: ['http://localhost/admin/things/' . $thing->getId()],
                 data: self::serialize(
-                    $book,
+                    $thing,
                     'jsonld',
-                    self::getOperationNormalizationContext(Book::class, '/admin/books/{id}{._format}')
+                    self::getOperationNormalizationContext(Thing::class, '/admin/things/{id}{._format}')
                 ),
             ),
             self::getMercureMessage()
         );
         self::assertEquals(
             new Update(
-                topics: ['http://localhost/books/' . $book->getId()],
+                topics: ['http://localhost/things/' . $thing->getId()],
                 data: self::serialize(
-                    $book,
+                    $thing,
                     'jsonld',
-                    self::getOperationNormalizationContext(Book::class, '/books/{id}{._format}')
+                    self::getOperationNormalizationContext(Thing::class, '/things/{id}{._format}')
                 ),
             ),
             self::getMercureMessage(1)
@@ -448,9 +352,9 @@ final class BookTest extends ApiTestCase
      *
      * @test
      */
-    public function asNonAdminUserICannotUpdateBook(int $expectedCode, string $hydraDescription, ?UserFactory $userFactory): void
+    public function asNonAdminUserICannotUpdateThing(int $expectedCode, string $hydraDescription, ?UserFactory $userFactory): void
     {
-        $book = BookFactory::createOne();
+        $thing = ThingFactory::createOne();
 
         $options = [];
         if ($userFactory) {
@@ -460,10 +364,9 @@ final class BookTest extends ApiTestCase
             $options['auth_bearer'] = $token;
         }
 
-        $this->client->request('PUT', '/admin/books/' . $book->getId(), $options + [
+        $this->client->request('PUT', '/admin/things/' . $thing->getId(), $options + [
             'json' => [
-                'book' => 'https://openlibrary.org/books/OL28346544M.json',
-                'condition' => BookCondition::NewCondition->value,
+                'name' => 'Thing',
             ],
             'headers' => [
                 'Content-Type' => 'application/ld+json',
@@ -484,18 +387,18 @@ final class BookTest extends ApiTestCase
     /**
      * @test
      */
-    public function asAdminUserICannotUpdateAnInvalidBook(): void
+    public function asAdminUserICannotUpdateAnInvalidThing(): void
     {
-        BookFactory::createOne();
+        ThingFactory::createOne();
 
         $token = $this->generateToken([
             'email' => UserFactory::createOneAdmin()->email,
         ]);
 
-        $this->client->request('PUT', '/admin/books/invalid', [
+        $this->client->request('PUT', '/admin/things/invalid', [
             'auth_bearer' => $token,
             'json' => [
-                'condition' => BookCondition::DamagedCondition->value,
+                'name' => 'Thing',
             ],
             'headers' => [
                 'Content-Type' => 'application/ld+json',
@@ -511,15 +414,15 @@ final class BookTest extends ApiTestCase
      *
      * @test
      */
-    public function asAdminUserICannotUpdateABookWithInvalidData(array $data, int $statusCode, array $expected): void
+    public function asAdminUserICannotUpdateAThingWithInvalidData(array $data, int $statusCode, array $expected): void
     {
-        $book = BookFactory::createOne();
+        $thing = ThingFactory::createOne();
 
         $token = $this->generateToken([
             'email' => UserFactory::createOneAdmin()->email,
         ]);
 
-        $this->client->request('PUT', '/admin/books/' . $book->getId(), [
+        $this->client->request('PUT', '/admin/things/' . $thing->getId(), [
             'auth_bearer' => $token,
             'json' => $data,
             'headers' => [
@@ -540,10 +443,10 @@ final class BookTest extends ApiTestCase
      *
      * @test
      */
-    public function asAdminUserICanUpdateABook(): void
+    public function asAdminUserICanUpdateAThing(): void
     {
-        $book = BookFactory::createOne([
-            'book' => 'https://openlibrary.org/books/OL28346544M.json',
+        $thing = ThingFactory::createOne([
+            'name' => 'Thing',
         ]);
         self::getMercureHub()->reset();
 
@@ -551,13 +454,12 @@ final class BookTest extends ApiTestCase
             'email' => UserFactory::createOneAdmin()->email,
         ]);
 
-        $this->client->request('PUT', '/admin/books/' . $book->getId(), [
+        $this->client->request('PUT', '/admin/things/' . $thing->getId(), [
             'auth_bearer' => $token,
             'json' => [
-                '@id' => '/books/' . $book->getId(),
+                '@id' => '/things/' . $thing->getId(),
                 // Must set all data because of standard PUT
-                'book' => 'https://openlibrary.org/books/OL28346544M.json',
-                'condition' => BookCondition::DamagedCondition->value,
+                'name' => 'Thing',
             ],
             'headers' => [
                 'Content-Type' => 'application/ld+json',
@@ -568,31 +470,27 @@ final class BookTest extends ApiTestCase
         self::assertResponseStatusCodeSame(Response::HTTP_OK);
         self::assertResponseHeaderSame('content-type', 'application/ld+json; charset=utf-8');
         self::assertJsonContains([
-            'book' => 'https://openlibrary.org/books/OL28346544M.json',
-            'condition' => BookCondition::DamagedCondition->value,
-            'title' => 'Foundation',
-            'author' => 'Isaac Asimov',
+            'name' => 'Thing',
         ]);
-        self::assertMatchesJsonSchema(file_get_contents(__DIR__ . '/schemas/Book/item.json'));
         self::assertCount(2, self::getMercureMessages());
         self::assertEquals(
             new Update(
-                topics: ['http://localhost/admin/books/' . $book->getId()],
+                topics: ['http://localhost/admin/things/' . $thing->getId()],
                 data: self::serialize(
-                    $book->object(),
+                    $thing->object(),
                     'jsonld',
-                    self::getOperationNormalizationContext(Book::class, '/admin/books/{id}{._format}')
+                    self::getOperationNormalizationContext(Thing::class, '/admin/things/{id}{._format}')
                 ),
             ),
             self::getMercureMessage()
         );
         self::assertEquals(
             new Update(
-                topics: ['http://localhost/books/' . $book->getId()],
+                topics: ['http://localhost/things/' . $thing->getId()],
                 data: self::serialize(
-                    $book->object(),
+                    $thing->object(),
                     'jsonld',
-                    self::getOperationNormalizationContext(Book::class, '/books/{id}{._format}')
+                    self::getOperationNormalizationContext(Thing::class, '/things/{id}{._format}')
                 ),
             ),
             self::getMercureMessage(1)
@@ -604,9 +502,9 @@ final class BookTest extends ApiTestCase
      *
      * @test
      */
-    public function asNonAdminUserICannotDeleteABook(int $expectedCode, string $hydraDescription, ?UserFactory $userFactory): void
+    public function asNonAdminUserICannotDeleteAThing(int $expectedCode, string $hydraDescription, ?UserFactory $userFactory): void
     {
-        $book = BookFactory::createOne();
+        $thing = ThingFactory::createOne();
 
         $options = [];
         if ($userFactory) {
@@ -616,7 +514,7 @@ final class BookTest extends ApiTestCase
             $options['auth_bearer'] = $token;
         }
 
-        $this->client->request('DELETE', '/admin/books/' . $book->getId(), $options);
+        $this->client->request('DELETE', '/admin/things/' . $thing->getId(), $options);
 
         self::assertResponseStatusCodeSame($expectedCode);
         self::assertResponseHeaderSame('content-type', 'application/problem+json; charset=utf-8');
@@ -631,15 +529,15 @@ final class BookTest extends ApiTestCase
     /**
      * @test
      */
-    public function asAdminUserICannotDeleteAnInvalidBook(): void
+    public function asAdminUserICannotDeleteAnInvalidThing(): void
     {
-        BookFactory::createOne();
+        ThingFactory::createOne();
 
         $token = $this->generateToken([
             'email' => UserFactory::createOneAdmin()->email,
         ]);
 
-        $this->client->request('DELETE', '/admin/books/invalid', ['auth_bearer' => $token]);
+        $this->client->request('DELETE', '/admin/things/invalid', ['auth_bearer' => $token]);
 
         self::assertResponseStatusCodeSame(Response::HTTP_NOT_FOUND);
     }
@@ -649,34 +547,34 @@ final class BookTest extends ApiTestCase
      *
      * @test
      */
-    public function asAdminUserICanDeleteABook(): void
+    public function asAdminUserICanDeleteAThing(): void
     {
-        $book = BookFactory::createOne(['title' => 'Hyperion']);
+        $thing = ThingFactory::createOne(['name' => 'Thing']);
         self::getMercureHub()->reset();
-        $id = $book->getId();
+        $id = $thing->getId();
 
         $token = $this->generateToken([
             'email' => UserFactory::createOneAdmin()->email,
         ]);
 
-        $response = $this->client->request('DELETE', '/admin/books/' . $id, ['auth_bearer' => $token]);
+        $response = $this->client->request('DELETE', '/admin/things/' . $id, ['auth_bearer' => $token]);
 
         self::assertResponseStatusCodeSame(Response::HTTP_NO_CONTENT);
         self::assertEmpty($response->getContent());
-        BookFactory::assert()->notExists(['title' => 'Hyperion']);
+        ThingFactory::assert()->notExists(['name' => 'Thing']);
         self::assertCount(2, self::getMercureMessages());
         // todo how to ensure it's a delete update
         self::assertEquals(
             new Update(
-                topics: ['http://localhost/admin/books/' . $id],
-                data: json_encode(['@id' => 'http://localhost/admin/books/' . $id])
+                topics: ['http://localhost/admin/things/' . $id],
+                data: json_encode(['@id' => 'http://localhost/admin/things/' . $id])
             ),
             self::getMercureMessage()
         );
         self::assertEquals(
             new Update(
-                topics: ['http://localhost/books/' . $id],
-                data: json_encode(['@id' => 'http://localhost/books/' . $id])
+                topics: ['http://localhost/things/' . $id],
+                data: json_encode(['@id' => 'http://localhost/things/' . $id])
             ),
             self::getMercureMessage(1)
         );
