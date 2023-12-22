@@ -18,16 +18,6 @@ const AUTHORIZATION_HEADER = 'Authorization';
 const BEARER_PREFIX = 'Bearer';
 const APPLICATION_JSON = 'application/json';
 
-const CustomForm: React.FC<any> = (props) => {
-    return (
-      <Form {...props}>
-        <button type="submit">Submit</button>
-        {props.children}
-        <button type="submit">Submit</button>
-      </Form>
-    );
-  };
-
 const NewThingForm = () => {
     const [schema, setSchema] = useState({});
     const [uiSchema, setUiSchema] = useState({});
@@ -149,8 +139,9 @@ const NewThingForm = () => {
                         {selectedForm && (
                         <>
                             <div>
-                                <CustomForm 
+                                <Form
                                     schema={schema}
+                                    uiSchema={uiSchema}
                                     formData={formData}
                                     validator={validator}
                                     onSubmit={handleSubmit}
