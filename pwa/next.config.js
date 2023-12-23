@@ -6,9 +6,15 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "sos-ch-dk-2.exo.io",
+        port: "",
+        pathname: "/opendataspace/**"
+      },
+      {
+        protocol: "https",
         hostname: "covers.openlibrary.org",
         port: "",
-        pathname: "/b/id/**"
+        pathname: "/b/olid/**"
       }
     ]
   }
