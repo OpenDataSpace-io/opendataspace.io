@@ -70,7 +70,7 @@ jobs:
         run: docker compose exec -T php chmod +x bin/phpunit
       -
         name: Run PHPUnit
-        run: docker compose exec -T -e XDEBUG_MODE=coverage php bin/phpunit --coverage-clover coverage.xml
+        run: docker compose exec -T php bin/phpunit
       -
         name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
