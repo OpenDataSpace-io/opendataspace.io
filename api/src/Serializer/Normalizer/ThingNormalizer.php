@@ -60,7 +60,7 @@ class ThingNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
         return $data instanceof \App\Entity\Thing;
     }
 
-    public function denormalize($data, $class, $format = null, array $context = [])
+    public function denormalize($data, $class, $format = null, array $context = []): Thing
     {
         $request = $this->requestStack->getCurrentRequest();
         if ($request) {
@@ -86,7 +86,7 @@ class ThingNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
         return $data;
     }
 
-    public function supportsDenormalization($data, $type, $format = null)
+    public function supportsDenormalization($data, $type, $format = null): bool
     {
         return $data instanceof \App\Entity\Thing;
     }
