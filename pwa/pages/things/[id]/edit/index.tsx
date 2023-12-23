@@ -1,6 +1,6 @@
 import { GetServerSideProps } from "next";
 
-import { Edit } from "@/components/thing/EditTest";
+import { Edit } from "@/components/thing/Edit";
 import { Thing } from "@/types/Thing";
 import { type FetchResponse, fetch } from "@/utils/dataAccess";
 
