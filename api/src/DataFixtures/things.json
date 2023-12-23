@@ -1,3306 +1,1224 @@
 [
     {
-        "@context": "http://schema.org",
         "@type": "Place",
-        "name": "Thing 1",
-        "properties":[
-            {
-                "@context": "http://schema.org",
-                "@type": "Place",
-                "name": "Thing 1",
-                "url": "http://www.example.com/thing15",
-                "logo": "http://www.example.com/thing15/logo.png",
-                "image": "http://www.example.com/thing15/image.png",
-                "description": "This is Thing 15",
-                "telephone": "1234567890",
-                "email": "",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing15",
-                    "https://twitter.com/thing15",
-                    "https://www.youtube.com/thing15",
-                    "https://plus.google.com/thing15",
-                    "https://www.instagram.com/thing15/",
-                    "https://www.pinterest.com/thing15/",
-                    "https://www.linkedin.com/company/thing15"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing 2",
-        "properties":[
-            {
-                "@context": "http://schema.org",
-                "@type": "Place",
-                "name": "Thing 1",
-                "url": "http://www.example.com/thing15",
-                "logo": "http://www.example.com/thing15/logo.png",
-                "image": "http://www.example.com/thing15/image.png",
-                "description": "This is Thing 15",
-                "telephone": "1234567890",
-                "email": "",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing15",
-                    "https://twitter.com/thing15",
-                    "https://www.youtube.com/thing15",
-                    "https://plus.google.com/thing15",
-                    "https://www.instagram.com/thing15/",
-                    "https://www.pinterest.com/thing15/",
-                    "https://www.linkedin.com/company/thing15"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing 3",
-        "properties":[
-            {
-                "@context": "http://schema.org",
-                "@type": "Place",
-                "name": "Thing 1",
-                "url": "http://www.example.com/thing15",
-                "logo": "http://www.example.com/thing15/logo.png",
-                "image": "http://www.example.com/thing15/image.png",
-                "description": "This is Thing 15",
-                "telephone": "1234567890",
-                "email": "",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing15",
-                    "https://twitter.com/thing15",
-                    "https://www.youtube.com/thing15",
-                    "https://plus.google.com/thing15",
-                    "https://www.instagram.com/thing15/",
-                    "https://www.pinterest.com/thing15/",
-                    "https://www.linkedin.com/company/thing15"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing 4",
-        "properties":[
-            {
-                "@context": "http://schema.org",
-                "@type": "Place",
-                "name": "Thing 4",
-                "url": "http://www.example.com/thing15",
-                "logo": "http://www.example.com/thing15/logo.png",
-                "image": "http://www.example.com/thing15/image.png",
-                "description": "This is Thing 15",
-                "telephone": "1234567890",
-                "email": "",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing15",
-                    "https://twitter.com/thing15",
-                    "https://www.youtube.com/thing15",
-                    "https://plus.google.com/thing15",
-                    "https://www.instagram.com/thing15/",
-                    "https://www.pinterest.com/thing15/",
-                    "https://www.linkedin.com/company/thing15"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing 5",
-        "properties":[
-            {
-                "@context": "http://schema.org",
-                "@type": "Place",
-                "name": "Thing 5",
-                "url": "http://www.example.com/thing15",
-                "logo": "http://www.example.com/thing15/logo.png",
-                "image": "http://www.example.com/thing15/image.png",
-                "description": "This is Thing 15",
-                "telephone": "1234567890",
-                "email": "",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing15",
-                    "https://twitter.com/thing15",
-                    "https://www.youtube.com/thing15",
-                    "https://plus.google.com/thing15",
-                    "https://www.instagram.com/thing15/",
-                    "https://www.pinterest.com/thing15/",
-                    "https://www.linkedin.com/company/thing15"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing 6",
-        "properties":[
-            {
-                "@context": "http://schema.org",
-                "@type": "Place",
-                "name": "Thing 6",
-                "url": "http://www.example.com/thing15",
-                "logo": "http://www.example.com/thing15/logo.png",
-                "image": "http://www.example.com/thing15/image.png",
-                "description": "This is Thing 15",
-                "telephone": "1234567890",
-                "email": "",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing15",
-                    "https://twitter.com/thing15",
-                    "https://www.youtube.com/thing15",
-                    "https://plus.google.com/thing15",
-                    "https://www.instagram.com/thing15/",
-                    "https://www.pinterest.com/thing15/",
-                    "https://www.linkedin.com/company/thing15"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing 7",
-        "properties":[
-            {
-                "@context": "http://schema.org",
-                "@type": "Place",
-                "name": "Thing 7",
-                "url": "http://www.example.com/thing15",
-                "logo": "http://www.example.com/thing15/logo.png",
-                "image": "http://www.example.com/thing15/image.png",
-                "description": "This is Thing 15",
-                "telephone": "1234567890",
-                "email": "",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing15",
-                    "https://twitter.com/thing15",
-                    "https://www.youtube.com/thing15",
-                    "https://plus.google.com/thing15",
-                    "https://www.instagram.com/thing15/",
-                    "https://www.pinterest.com/thing15/",
-                    "https://www.linkedin.com/company/thing15"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing 8",
-        "properties":[
-            {
-                "@context": "http://schema.org",
-                "@type": "Place",
-                "name": "Thing 8",
-                "url": "http://www.example.com/thing15",
-                "logo": "http://www.example.com/thing15/logo.png",
-                "image": "http://www.example.com/thing15/image.png",
-                "description": "This is Thing 15",
-                "telephone": "1234567890",
-                "email": "",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing15",
-                    "https://twitter.com/thing15",
-                    "https://www.youtube.com/thing15",
-                    "https://plus.google.com/thing15",
-                    "https://www.instagram.com/thing15/",
-                    "https://www.pinterest.com/thing15/",
-                    "https://www.linkedin.com/company/thing15"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing 9",
-        "properties":[
-            {
-                "@context": "http://schema.org",
-                "@type": "Place",
-                "name": "Thing 9",
-                "url": "http://www.example.com/thing15",
-                "logo": "http://www.example.com/thing15/logo.png",
-                "image": "http://www.example.com/thing15/image.png",
-                "description": "This is Thing 15",
-                "telephone": "1234567890",
-                "email": "",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing15",
-                    "https://twitter.com/thing15",
-                    "https://www.youtube.com/thing15",
-                    "https://plus.google.com/thing15",
-                    "https://www.instagram.com/thing15/",
-                    "https://www.pinterest.com/thing15/",
-                    "https://www.linkedin.com/company/thing15"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing 10",
-        "properties":[
-            {
-                "@context": "http://schema.org",
-                "@type": "Place",
-                "name": "Thing 1",
-                "url": "http://www.example.com/thing15",
-                "logo": "http://www.example.com/thing15/logo.png",
-                "image": "http://www.example.com/thing15/image.png",
-                "description": "This is Thing 15",
-                "telephone": "1234567890",
-                "email": "",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing15",
-                    "https://twitter.com/thing15",
-                    "https://www.youtube.com/thing15",
-                    "https://plus.google.com/thing15",
-                    "https://www.instagram.com/thing15/",
-                    "https://www.pinterest.com/thing15/",
-                    "https://www.linkedin.com/company/thing15"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing 11",
-        "properties":[
-            {
-                "@context": "http://schema.org",
-                "@type": "Place",
-                "name": "Thing 1",
-                "url": "http://www.example.com/thing15",
-                "logo": "http://www.example.com/thing15/logo.png",
-                "image": "http://www.example.com/thing15/image.png",
-                "description": "This is Thing 15",
-                "telephone": "1234567890",
-                "email": "",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing15",
-                    "https://twitter.com/thing15",
-                    "https://www.youtube.com/thing15",
-                    "https://plus.google.com/thing15",
-                    "https://www.instagram.com/thing15/",
-                    "https://www.pinterest.com/thing15/",
-                    "https://www.linkedin.com/company/thing15"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing 12",
-        "properties":[
-            {
-                "@context": "http://schema.org",
-                "@type": "Place",
-                "name": "Thing 12",
-                "url": "http://www.example.com/thing15",
-                "logo": "http://www.example.com/thing15/logo.png",
-                "image": "http://www.example.com/thing15/image.png",
-                "description": "This is Thing 15",
-                "telephone": "1234567890",
-                "email": "",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing15",
-                    "https://twitter.com/thing15",
-                    "https://www.youtube.com/thing15",
-                    "https://plus.google.com/thing15",
-                    "https://www.instagram.com/thing15/",
-                    "https://www.pinterest.com/thing15/",
-                    "https://www.linkedin.com/company/thing15"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing 13",
-        "properties":[
-            {
-                "@context": "http://schema.org",
-                "@type": "Place",
-                "name": "Thing 13",
-                "url": "http://www.example.com/thing15",
-                "logo": "http://www.example.com/thing15/logo.png",
-                "image": "http://www.example.com/thing15/image.png",
-                "description": "This is Thing 15",
-                "telephone": "1234567890",
-                "email": "",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing15",
-                    "https://twitter.com/thing15",
-                    "https://www.youtube.com/thing15",
-                    "https://plus.google.com/thing15",
-                    "https://www.instagram.com/thing15/",
-                    "https://www.pinterest.com/thing15/",
-                    "https://www.linkedin.com/company/thing15"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing 14",
-        "properties":[
-            {
-                "@context": "http://schema.org",
-                "@type": "Place",
-                "name": "Thing 14",
-                "url": "http://www.example.com/thing15",
-                "logo": "http://www.example.com/thing15/logo.png",
-                "image": "http://www.example.com/thing15/image.png",
-                "description": "This is Thing 15",
-                "telephone": "1234567890",
-                "email": "",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing15",
-                    "https://twitter.com/thing15",
-                    "https://www.youtube.com/thing15",
-                    "https://plus.google.com/thing15",
-                    "https://www.instagram.com/thing15/",
-                    "https://www.pinterest.com/thing15/",
-                    "https://www.linkedin.com/company/thing15"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing 15",
-        "properties":[
-            {
-                "name": "Thing 15",
-                "url": "http://www.example.com/thing15",
-                "logo": "http://www.example.com/thing15/logo.png",
-                "image": "http://www.example.com/thing15/image.png",
-                "description": "This is Thing 15",
-                "telephone": "1234567890",
-                "email": "",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing15",
-                    "https://twitter.com/thing15",
-                    "https://www.youtube.com/thing15",
-                    "https://plus.google.com/thing15",
-                    "https://www.instagram.com/thing15/",
-                    "https://www.pinterest.com/thing15/",
-                    "https://www.linkedin.com/company/thing15"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Theatre Royal 26",
-        "properties":[
-            {
-                "name": "Theatre Royal 26",
-                "url": "http://www.theatreroyalnorwich.co.uk/",
-                "logo": "http://www.theatreroyalnorwich.co.uk/images/logo.png",
-                "image": "http://www.theatreroyalnorwich.co.uk/images/logo.png",
-                "description": "Theatre Royal Norwich is a 1300 seat art-deco theatre, presenting a high quality mix of drama, comedy, dance, opera and family shows. It is the regional home of the Royal Shakespeare Company, the National Theatre, the Royal Philharmonic Orchestra and the English Touring Opera.",
-                "telephone": "01603 630000",
-                "email": "",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 10:00-20:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "52.628",
-                    "longitude": "1.293"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "Theatre Street",
-                    "addressLocality": "Norwich",
-                    "addressRegion": "Norfolk",
-                    "postalCode": "NR2 1RL",
-                    "addressCountry": "GB"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/theatreroyalnorwich",
-                    "https://twitter.com/TheatreRNorwich",
-                    "https://www.youtube.com/user/TheatreRoyalNorwich",
-                    "https://plus.google.com/100115377993168660095",
-                    "https://www.instagram.com/theatreroyalnorwich/",
-                    "https://www.pinterest.com/theatreroyalnorwich/",
-                    "https://www.linkedin.com/company/theatre-royal-norwich"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing 16",
-        "properties":[
-            {
-                "name": "Thing 16",
-                "url": "http://www.example.com/thing16",
-                "logo": "http://www.example.com/thing16/logo.png",
-                "image": "http://www.example.com/thing16/image.png",
-                "description": "This is Thing 16",
-                "telephone": "1234567890",
-                "email": "thing16@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing16",
-                    "https://twitter.com/thing16",
-                    "https://www.youtube.com/thing16",
-                    "https://plus.google.com/thing16",
-                    "https://www.instagram.com/thing16/",
-                    "https://www.pinterest.com/thing16/",
-                    "https://www.linkedin.com/company/thing16"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing 17",
-        "properties":[
-            {
-                "name": "Thing 17",
-                "url": "http://www.example.com/thing17",
-                "logo": "http://www.example.com/thing17/logo.png",
-                "image": "http://www.example.com/thing17/image.png",
-                "description": "This is Thing 17",
-                "telephone": "1234567890",
-                "email": "thing17@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing17",
-                    "https://twitter.com/thing17",
-                    "https://www.youtube.com/thing17",
-                    "https://plus.google.com/thing17",
-                    "https://www.instagram.com/thing17/",
-                    "https://www.pinterest.com/thing17/",
-                    "https://www.linkedin.com/company/thing17"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing 18",
-        "properties": [
-            {
-                "name": "Thing 18",
-                "url": "http://www.example.com/thing18",
-                "logo": "http://www.example.com/thing18/logo.png",
-                "image": "http://www.example.com/thing18/image.png",
-                "description": "This is Thing 18",
-                "telephone": "1234567890",
-                "email": "thing18@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing18",
-                    "https://twitter.com/thing18",
-                    "https://www.youtube.com/thing18",
-                    "https://plus.google.com/thing18",
-                    "https://www.instagram.com/thing18/",
-                    "https://www.pinterest.com/thing18/",
-                    "https://www.linkedin.com/company/thing18"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing 19",
-        "properties": [
-            {
-                "name": "Thing 19",
-                "url": "http://www.example.com/thing19",
-                "logo": "http://www.example.com/thing19/logo.png",
-                "image": "http://www.example.com/thing19/image.png",
-                "description": "This is Thing 19",
-                "telephone": "1234567890",
-                "email": "thing19@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing19",
-                    "https://twitter.com/thing19",
-                    "https://www.youtube.com/thing19",
-                    "https://plus.google.com/thing19",
-                    "https://www.instagram.com/thing19/",
-                    "https://www.pinterest.com/thing19/",
-                    "https://www.linkedin.com/company/thing19"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing 20",
-        "properties": [
-            {
-                "name": "Thing 20",
-                "url": "http://www.example.com/thing20",
-                "logo": "http://www.example.com/thing20/logo.png",
-                "image": "http://www.example.com/thing20/image.png",
-                "description": "This is Thing 20",
-                "telephone": "1234567890",
-                "email": "thing20@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing20",
-                    "https://twitter.com/thing20",
-                    "https://www.youtube.com/thing20",
-                    "https://plus.google.com/thing20",
-                    "https://www.instagram.com/thing20/",
-                    "https://www.pinterest.com/thing20/",
-                    "https://www.linkedin.com/company/thing20"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing 21",
-        "properties": [
-            {
-                "name": "Thing 21",
-                "url": "http://www.example.com/thing21",
-                "logo": "http://www.example.com/thing21/logo.png",
-                "image": "http://www.example.com/thing21/image.png",
-                "description": "This is Thing 21",
-                "telephone": "1234567890",
-                "email": "mail@mail.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing21",
-                    "https://twitter.com/thing21",
-                    "https://www.youtube.com/thing21",
-                    "https://plus.google.com/thing21",
-                    "https://www.instagram.com/thing21/",
-                    "https://www.pinterest.com/thing21/",
-                    "https://www.linkedin.com/company/thing21"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
-        ]
-    },
-    {
-        "@context": "http://schema.org",
+        "name": "Eiger",
+        "description": "The Eiger is a famous mountain in the Bernese Alps.",
+        "image": "https://example.com/eiger.jpg",
+        "url": "https://example.com/eiger",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bernese Alps",
+            "addressCountry": "Switzerland"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 46.5775,
+            "longitude": 8.005
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                ],
+                "opens": "09:00",
+                "closes": "18:00"
+            }
+        ],
+        "telephone": "+41 123 456 789",
+        "priceRange": "$$$",
+        "review": {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": 4.5,
+                "bestRating": 5
+            },
+            "author": {
+                "@type": "Person",
+                "name": "John Doe"
+            },
+            "datePublished": "2022-01-01",
+            "reviewBody": "The Eiger is a must-visit destination with breathtaking views."
+        }
+    },
+    {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+            "@type": "Place",
+            "name": "Lake Geneva",
+            "description": "Lake Geneva is a beautiful lake located in Switzerland.",
+            "image": "https://example.com/lake-geneva.jpg",
+            "url": "https://example.com/lake-geneva",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Switzerland"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 46.2044,
+                "longitude": 6.1432
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday",
+                        "Sunday"
+                    ],
+                    "opens": "00:00",
+                    "closes": "23:59"
+                }
+            ],
+            "telephone": "+41 987 654 321",
+            "priceRange": "$$",
+            "review": {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": 4.8,
+                    "bestRating": 5
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Jane Smith"
+                },
+                "datePublished": "2022-01-02",
+                "reviewBody": "Lake Geneva is a stunning destination with crystal-clear waters."
+            }
+        }
+    },
+    {
         "@type": "Place",
-        "name": "Thing",
-        "properties": [
-            {
-                "name": "Thing",
-                "url": "http://www.example.com/thing22",
-                "logo": "http://www.example.com/thing22/logo.png",
-                "image": "http://www.example.com/thing22/image.png",
-                "description": "This is Thing 22",
-                "telephone": "1234567890",
-                "email": "thing22@example.com",
-                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00",
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "12.345",
-                    "longitude": "67.890"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "123 Main St",
-                    "addressLocality": "City",
-                    "addressRegion": "State",
-                    "postalCode": "12345",
-                    "addressCountry": "US"
-                },
-                "sameAs": [
-                    "https://www.facebook.com/thing22",
-                    "https://twitter.com/thing22",
-                    "https://www.youtube.com/thing22",
-                    "https://plus.google.com/thing22",
-                    "https://www.instagram.com/thing22/",
-                    "https://www.pinterest.com/thing22/",
-                    "https://www.linkedin.com/company/thing22"
-                ]
-            }
+        "name": "Chillon Castle",
+        "description": "Chillon Castle is a medieval fortress on the shores of Lake Geneva.",
+        "image": "https://example.com/chillon-castle.jpg",
+        "url": "https://example.com/chillon-castle",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lake Geneva",
+            "addressCountry": "Switzerland"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 46.409,
+            "longitude": 6.927
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                ],
+                "opens": "10:00",
+                "closes": "18:00"
+            }
+        ],
+        "telephone": "+41 555 123 456",
+        "priceRange": "$$",
+        "review": {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": 4.7,
+                "bestRating": 5
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Robert Johnson"
+            },
+            "datePublished": "2022-01-03",
+            "reviewBody": "Chillon Castle is a fascinating historical site with stunning architecture."
+        }
+    },
+    {
+        "@type": "Place",
+        "name": "Zermatt",
+        "description": "Zermatt is a popular ski resort town in the Swiss Alps.",
+        "image": "https://example.com/zermatt.jpg",
+        "url": "https://example.com/zermatt",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Swiss Alps",
+            "addressCountry": "Switzerland"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 45.9833,
+            "longitude": 7.7847
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                ],
+                "opens": "08:00",
+                "closes": "17:00"
+            }
+        ],
+        "telephone": "+41 111 222 333",
+        "priceRange": "$$$",
+        "review": {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": 4.9,
+                "bestRating": 5
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Sarah Williams"
+            },
+            "datePublished": "2022-01-04",
+            "reviewBody": "Zermatt is a paradise for skiing enthusiasts with breathtaking mountain views."
+        }
+    },
+    {
+        "@type": "Place",
+        "name": "Lucerne",
+        "description": "Lucerne is a picturesque city located on the shores of Lake Lucerne.",
+        "image": "https://example.com/lucerne.jpg",
+        "url": "https://example.com/lucerne",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lake Lucerne",
+            "addressCountry": "Switzerland"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 47.0502,
+            "longitude": 8.3093
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                ],
+                "opens": "09:30",
+                "closes": "17:30"
+            }
+        ],
+        "telephone": "+41 444 555 666",
+        "priceRange": "$$",
+        "review": {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": 4.6,
+                "bestRating": 5
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Emily Davis"
+            },
+            "datePublished": "2022-01-05",
+            "reviewBody": "Lucerne is a charming city with a rich history and stunning landscapes."
+        }
+    },
+    {
+        "@type": "Place",
+        "name": "Rhine Falls",
+        "description": "Rhine Falls is the largest waterfall in Switzerland.",
+        "image": "https://example.com/rhine-falls.jpg",
+        "url": "https://example.com/rhine-falls",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Schaffhausen",
+            "addressCountry": "Switzerland"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 47.6779,
+            "longitude": 8.6155
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                ],
+                "opens": "09:00",
+                "closes": "19:00"
+            }
+        ],
+        "telephone": "+41 777 888 999",
+        "priceRange": "$",
+        "review": {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": 4.4,
+                "bestRating": 5
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Michael Brown"
+            },
+            "datePublished": "2022-01-06",
+            "reviewBody": "Rhine Falls is a magnificent natural wonder that should not be missed."
+        }
+    },
+    {
+        "@type": "Place",
+        "name": "Jungfraujoch",
+        "description": "Jungfraujoch is the 'Top of Europe' and offers stunning views of the Swiss Alps.",
+        "image": "https://example.com/jungfraujoch.jpg",
+        "url": "https://example.com/jungfraujoch",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bernese Alps",
+            "addressCountry": "Switzerland"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 46.547,
+            "longitude": 7.985
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                ],
+                "opens": "07:30",
+                "closes": "18:00"
+            }
+        ],
+        "telephone": "+41 666 777 888",
+        "priceRange": "$$$",
+        "review": {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": 4.9,
+                "bestRating": 5
+            },
+            "author": {
+                "@type": "Person",
+                "name": "David Wilson"
+            },
+            "datePublished": "2022-01-07",
+            "reviewBody": "Jungfraujoch is a breathtaking experience that offers panoramic views of the Swiss Alps."
+        }
+    },{
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Aarbergerhof",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Aarbergergasse 40",
+            "addressLocality": "Bern",
+            "addressRegion": "BE",
+            "postalCode": "3011",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 31 311 33 33",
+        "priceRange": "$$$",
+        "servesCuisine": "Swiss",
+        "openingHours": "Mo-Su 11:30-14:00, 18:00-22:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.5"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.aarbergerhof.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Les Armures",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rue du Puits-Saint-Pierre 1",
+            "addressLocality": "Geneva",
+            "addressRegion": "GE",
+            "postalCode": "1204",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 22 310 34 42",
+        "priceRange": "$$$",
+        "servesCuisine": "French",
+        "openingHours": "Mo-Su 12:00-14:00, 19:00-22:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.6"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.restaurant-les-armures.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant La Cucina",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Seefeldstrasse 82",
+            "addressLocality": "Zurich",
+            "addressRegion": "ZH",
+            "postalCode": "8008",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 44 388 34 34",
+        "priceRange": "$$$",
+        "servesCuisine": "Italian",
+        "openingHours": "Mo-Su 11:30-14:00, 18:30-23:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.7"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.lacucina-zurich.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Bären",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Marktgasse 4",
+            "addressLocality": "Bern",
+            "addressRegion": "BE",
+            "postalCode": "3011",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 31 311 22 11",
+        "priceRange": "$$",
+        "servesCuisine": "Swiss",
+        "openingHours": "Mo-Su 11:30-14:00, 18:00-22:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.2"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.baeren-bern.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Chez Fritz",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rue de Lausanne 45",
+            "addressLocality": "Geneva",
+            "addressRegion": "GE",
+            "postalCode": "1202",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 22 312 34 56",
+        "priceRange": "$$",
+        "servesCuisine": "French",
+        "openingHours": "Mo-Su 12:00-14:00, 19:00-22:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.3"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.chez-fritz.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Pizzeria Roma",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Bahnhofstrasse 10",
+            "addressLocality": "Zurich",
+            "addressRegion": "ZH",
+            "postalCode": "8001",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 44 333 22 11",
+        "priceRange": "$$",
+        "servesCuisine": "Italian",
+        "openingHours": "Mo-Su 11:30-14:00, 18:30-23:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.1"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.pizzeria-roma.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Schwellenmätteli",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Dalmaziquai 11",
+            "addressLocality": "Bern",
+            "addressRegion": "BE",
+            "postalCode": "3005",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 31 311 44 55",
+        "priceRange": "$$$",
+        "servesCuisine": "Swiss",
+        "openingHours": "Mo-Su 11:30-14:00, 18:00-22:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.4"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.schwellenmaetteli.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Le Relais de l'Entrecôte",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rue Pierre-Fatio 15",
+            "addressLocality": "Geneva",
+            "addressRegion": "GE",
+            "postalCode": "1204",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 22 312 34 56",
+        "priceRange": "$$$",
+        "servesCuisine": "French",
+        "openingHours": "Mo-Su 12:00-14:00, 19:00-22:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.8"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.relais-entrecote.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Trattoria Romana",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Seefeldstrasse 123",
+            "addressLocality": "Zurich",
+            "addressRegion": "ZH",
+            "postalCode": "8008",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 44 388 55 66",
+        "priceRange": "$$$",
+        "servesCuisine": "Italian",
+        "openingHours": "Mo-Su 11:30-14:00, 18:30-23:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.9"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.trattoria-romana.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Altes Tramdepot",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Grosser Muristalden",
+            "addressLocality": "Bern",
+            "addressRegion": "BE",
+            "postalCode": "3006",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 31 311 55 66",
+        "priceRange": "$$$",
+        "servesCuisine": "Swiss",
+        "openingHours": "Mo-Su 11:30-14:00, 18:00-22:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.3"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.altes-tramdepot.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Le Chat-Botté",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Quai du Mont-Blanc 13",
+            "addressLocality": "Geneva",
+            "addressRegion": "GE",
+            "postalCode": "1201",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 22 312 34 56",
+        "priceRange": "$$$",
+        "servesCuisine": "French",
+        "openingHours": "Mo-Su 12:00-14:00, 19:00-22:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.7"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.chat-botte.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Da Angela",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Seefeldstrasse 200",
+            "addressLocality": "Zurich",
+            "addressRegion": "ZH",
+            "postalCode": "8008",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 44 388 66 77",
+        "priceRange": "$$$",
+        "servesCuisine": "Italian",
+        "openingHours": "Mo-Su 11:30-14:00, 18:30-23:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.6"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.da-angela.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Kornhauskeller",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Kornhausplatz 18",
+            "addressLocality": "Bern",
+            "addressRegion": "BE",
+            "postalCode": "3011",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 31 311 77 88",
+        "priceRange": "$$$",
+        "servesCuisine": "Swiss",
+        "openingHours": "Mo-Su 11:30-14:00, 18:00-22:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.5"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.kornhauskeller.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Le Flacon",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rue Vautier 45",
+            "addressLocality": "Geneva",
+            "addressRegion": "GE",
+            "postalCode": "1227",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 22 312 34 56",
+        "priceRange": "$$$",
+        "servesCuisine": "French",
+        "openingHours": "Mo-Su 12:00-14:00, 19:00-22:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.9"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.le-flacon.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Da Michelangelo",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Seefeldstrasse 300",
+            "addressLocality": "Zurich",
+            "addressRegion": "ZH",
+            "postalCode": "8008",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 44 388 88 99",
+        "priceRange": "$$$",
+        "servesCuisine": "Italian",
+        "openingHours": "Mo-Su 11:30-14:00, 18:30-23:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.7"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.da-michelangelo.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Schweizer Alpenhotel",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Musterstraße 123",
+            "addressLocality": "Zürich",
+            "postalCode": "8000",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 123 456 789",
+        "email": "info@schweizeralpenhotel.ch",
+        "url": "https://www.schweizeralpenhotel.ch",
+        "description": "Das Schweizer Alpenhotel bietet komfortable Unterkünfte in den atemberaubenden Schweizer Alpen.",
+        "image": "https://www.schweizeralpenhotel.ch/images/logo.png",
+        "priceRange": "$$$",
+        "paymentAccepted": "Cash, Credit Card",
+        "currenciesAccepted": "CHF, EUR",
+        "areaServed": "Schweiz",
+        "legalName": "Schweizer Alpenhotel",
+        "founder": "Max Mustermann",
+        "foundingDate": "2000-01-01",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 123 456 789",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/schweizeralpenhotel",
+            "https://www.instagram.com/schweizeralpenhotel",
+            "https://twitter.com/schweizeralpen"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Hotel am See",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Seestraße 456",
+            "addressLocality": "Genf",
+            "postalCode": "1200",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 987 654 321",
+        "email": "info@hotelamsee.ch",
+        "url": "https://www.hotelamsee.ch",
+        "description": "Das Hotel am See bietet einen malerischen Blick auf den Genfer See.",
+        "image": "https://www.hotelamsee.ch/images/logo.png",
+        "priceRange": "$$",
+        "paymentAccepted": "Cash, Credit Card",
+        "currenciesAccepted": "CHF, EUR",
+        "areaServed": "Schweiz",
+        "legalName": "Hotel am See",
+        "founder": "Erika Musterfrau",
+        "foundingDate": "1995-05-10",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 987 654 321",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/hotelamsee",
+            "https://www.instagram.com/hotelamsee",
+            "https://twitter.com/hotelamsee"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Hotel XYZ",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Beispielstraße 789",
+            "addressLocality": "Bern",
+            "postalCode": "3000",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 111 222 333",
+        "email": "info@hotelxyz.ch",
+        "url": "https://www.hotelxyz.ch",
+        "description": "Das Hotel XYZ bietet eine gemütliche Unterkunft im Herzen von Bern.",
+        "image": "https://www.hotelxyz.ch/images/logo.png",
+        "priceRange": "$$",
+        "paymentAccepted": "Cash, Credit Card",
+        "currenciesAccepted": "CHF, EUR",
+        "areaServed": "Schweiz",
+        "legalName": "Hotel XYZ",
+        "founder": "John Doe",
+        "foundingDate": "2005-07-15",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 111 222 333",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/hotelxyz",
+            "https://www.instagram.com/hotelxyz",
+            "https://twitter.com/hotelxyz"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Berggasthof",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Bergstraße 1",
+            "addressLocality": "Interlaken",
+            "postalCode": "3800",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 444 555 666",
+        "email": "info@berggasthof.ch",
+        "url": "https://www.berggasthof.ch",
+        "description": "Der Berggasthof bietet eine rustikale Unterkunft mit herrlichem Bergblick.",
+        "image": "https://www.berggasthof.ch/images/logo.png",
+        "priceRange": "$$",
+        "paymentAccepted": "Cash, Credit Card",
+        "currenciesAccepted": "CHF, EUR",
+        "areaServed": "Schweiz",
+        "legalName": "Berggasthof",
+        "founder": "Maria Müller",
+        "foundingDate": "1990-12-20",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 444 555 666",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/berggasthof",
+            "https://www.instagram.com/berggasthof",
+            "https://twitter.com/berggasthof"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Stadthotel",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hauptstraße 789",
+            "addressLocality": "Zürich",
+            "postalCode": "8000",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 999 888 777",
+        "email": "info@stadthotel.ch",
+        "url": "https://www.stadthotel.ch",
+        "description": "Das Stadthotel bietet moderne Unterkünfte im Zentrum von Zürich.",
+        "image": "https://www.stadthotel.ch/images/logo.png",
+        "priceRange": "$$$",
+        "paymentAccepted": "Cash, Credit Card",
+        "currenciesAccepted": "CHF, EUR",
+        "areaServed": "Schweiz",
+        "legalName": "Stadthotel",
+        "founder": "Thomas Schmidt",
+        "foundingDate": "2008-03-01",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 999 888 777",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/stadthotel",
+            "https://www.instagram.com/stadthotel",
+            "https://twitter.com/stadthotel"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Strandhotel",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Strandstraße 123",
+            "addressLocality": "Luzern",
+            "postalCode": "6000",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 777 888 999",
+        "email": "info@strandhotel.ch",
+        "url": "https://www.strandhotel.ch",
+        "description": "Das Strandhotel bietet einen entspannten Aufenthalt am Ufer des Vierwaldstättersees.",
+        "image": "https://www.strandhotel.ch/images/logo.png",
+        "priceRange": "$$$",
+        "paymentAccepted": "Cash, Credit Card",
+        "currenciesAccepted": "CHF, EUR",
+        "areaServed": "Schweiz",
+        "legalName": "Strandhotel",
+        "founder": "Anna Müller",
+        "foundingDate": "1998-09-05",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 777 888 999",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/strandhotel",
+            "https://www.instagram.com/strandhotel",
+            "https://twitter.com/strandhotel"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Boutique Hotel",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hügelstraße 456",
+            "addressLocality": "Basel",
+            "postalCode": "4000",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 666 777 888",
+        "email": "info@boutiquehotel.ch",
+        "url": "https://www.boutiquehotel.ch",
+        "description": "Das Boutique Hotel bietet individuell gestaltete Zimmer in einem charmanten historischen Gebäude.",
+        "image": "https://www.boutiquehotel.ch/images/logo.png",
+        "priceRange": "$$$",
+        "paymentAccepted": "Cash, Credit Card",
+        "currenciesAccepted": "CHF, EUR",
+        "areaServed": "Schweiz",
+        "legalName": "Boutique Hotel",
+        "founder": "Sophie Meier",
+        "foundingDate": "2012-11-30",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 666 777 888",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/boutiquehotel",
+            "https://www.instagram.com/boutiquehotel",
+            "https://twitter.com/boutiquehotel"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Landhotel",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Dorfstraße 789",
+            "addressLocality": "St. Moritz",
+            "postalCode": "7500",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 222 333 444",
+        "email": "info@landhotel.ch",
+        "url": "https://www.landhotel.ch",
+        "description": "Das Landhotel bietet eine idyllische Unterkunft inmitten der Schweizer Alpen.",
+        "image": "https://www.landhotel.ch/images/logo.png",
+        "priceRange": "$$",
+        "paymentAccepted": "Cash, Credit Card",
+        "currenciesAccepted": "CHF, EUR",
+        "areaServed": "Schweiz",
+        "legalName": "Landhotel",
+        "founder": "Hans Müller",
+        "foundingDate": "1992-06-25",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 222 333 444",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/landhotel",
+            "https://www.instagram.com/landhotel",
+            "https://twitter.com/landhotel"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Ferienhaus",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Bergweg 123",
+            "addressLocality": "Davos",
+            "postalCode": "7260",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 555 666 777",
+        "email": "info@ferienhaus.ch",
+        "url": "https://www.ferienhaus.ch",
+        "description": "Das Ferienhaus bietet eine gemütliche Unterkunft in den Schweizer Bergen.",
+        "image": "https://www.ferienhaus.ch/images/logo.png",
+        "priceRange": "$$",
+        "paymentAccepted": "Cash, Credit Card",
+        "currenciesAccepted": "CHF, EUR",
+        "areaServed": "Schweiz",
+        "legalName": "Ferienhaus",
+        "founder": "Peter Müller",
+        "foundingDate": "1997-04-12",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 555 666 777",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/ferienhaus",
+            "https://www.instagram.com/ferienhaus",
+            "https://twitter.com/ferienhaus"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Gästehaus",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hauptplatz 789",
+            "addressLocality": "Lugano",
+            "postalCode": "6900",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 888 999 000",
+        "email": "info@gastehaus.ch",
+        "url": "https://www.gastehaus.ch",
+        "description": "Das Gästehaus bietet eine freundliche Unterkunft im Herzen von Lugano.",
+        "image": "https://www.gastehaus.ch/images/logo.png",
+        "priceRange": "$$",
+        "paymentAccepted": "Cash, Credit Card",
+        "currenciesAccepted": "CHF, EUR",
+        "areaServed": "Schweiz",
+        "legalName": "Gästehaus",
+        "founder": "Martina Meier",
+        "foundingDate": "2003-08-18",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 888 999 000",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/gastehaus",
+            "https://www.instagram.com/gastehaus",
+            "https://twitter.com/gastehaus"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Pension",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Dorfplatz 123",
+            "addressLocality": "Lausanne",
+            "postalCode": "1000",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 777 888 999",
+        "email": "info@pension.ch",
+        "url": "https://www.pension.ch",
+        "description": "Die Pension bietet eine erschwingliche Unterkunft in Lausanne.",
+        "image": "https://www.pension.ch/images/logo.png",
+        "priceRange": "$",
+        "paymentAccepted": "Cash",
+        "currenciesAccepted": "CHF",
+        "areaServed": "Schweiz",
+        "legalName": "Pension",
+        "founder": "Hans Meier",
+        "foundingDate": "1980-09-15",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 777 888 999",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/pension",
+            "https://www.instagram.com/pension",
+            "https://twitter.com/pension"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Chalet",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Bergweg 456",
+            "addressLocality": "Verbier",
+            "postalCode": "1936",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 222 333 444",
+        "email": "info@chalet.ch",
+        "url": "https://www.chalet.ch",
+        "description": "Das Chalet bietet eine luxuriöse Unterkunft in den Schweizer Alpen.",
+        "image": "https://www.chalet.ch/images/logo.png",
+        "priceRange": "$$$",
+        "paymentAccepted": "Cash, Credit Card",
+        "currenciesAccepted": "CHF, EUR",
+        "areaServed": "Schweiz",
+        "legalName": "Chalet",
+        "founder": "Michael Müller",
+        "foundingDate": "2003-02-28",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 222 333 444",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/chalet",
+            "https://www.instagram.com/chalet",
+            "https://twitter.com/chalet"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Hostel",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Jugendstraße 789",
+            "addressLocality": "Zug",
+            "postalCode": "6300",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 555 666 777",
+        "email": "info@hostel.ch",
+        "url": "https://www.hostel.ch",
+        "description": "Das Hostel bietet eine preiswerte Unterkunft für junge Reisende.",
+        "image": "https://www.hostel.ch/images/logo.png",
+        "priceRange": "$",
+        "paymentAccepted": "Cash",
+        "currenciesAccepted": "CHF",
+        "areaServed": "Schweiz",
+        "legalName": "Hostel",
+        "founder": "Laura Müller",
+        "foundingDate": "1999-11-22",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 555 666 777",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/hostel",
+            "https://www.instagram.com/hostel",
+            "https://twitter.com/hostel"
         ]
     }
 ]
