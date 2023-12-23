@@ -1,9 +1,9 @@
 import { expect, test } from "./test";
 
 test.describe("User authentication", () => {
-  test.beforeEach(async ({ bookPage }) => {
+  /*test.beforeEach(async ({ bookPage }) => {
     await bookPage.gotoList();
-  });
+  });*/
 
   test("I can log in @login", async ({ userPage, page }) => {
     await expect(page.getByText("Log in")).toBeVisible();
