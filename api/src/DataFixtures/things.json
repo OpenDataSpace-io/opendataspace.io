@@ -1,5 +1,6 @@
 [
     {
+        "@context": "https://schema.org",
         "@type": "Place",
         "name": "Eiger",
         "description": "The Eiger is a famous mountain in the Bernese Alps.",
@@ -49,54 +50,56 @@
         }
     },
     {
-            "@type": "Place",
-            "name": "Lake Geneva",
-            "description": "Lake Geneva is a beautiful lake located in Switzerland.",
-            "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/lake-geneva.jpeg",
-            "url": "https://example.com/lake-geneva",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Switzerland"
-            },
-            "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 46.2044,
-                "longitude": 6.1432
-            },
-            "openingHoursSpecification": [
-                {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": [
-                        "Monday",
-                        "Tuesday",
-                        "Wednesday",
-                        "Thursday",
-                        "Friday",
-                        "Saturday",
-                        "Sunday"
-                    ],
-                    "opens": "00:00",
-                    "closes": "23:59"
-                }
-            ],
-            "telephone": "+41 987 654 321",
-            "priceRange": "$$",
-            "review": {
-                "@type": "Review",
-                "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": 4.8,
-                    "bestRating": 5
-                },
-                "author": {
-                    "@type": "Person",
-                    "name": "Jane Smith"
-                },
-                "datePublished": "2022-01-02",
-                "reviewBody": "Lake Geneva is a stunning destination with crystal-clear waters."
+        "@context": "https://schema.org",
+        "@type": "Place",
+        "name": "Lake Geneva",
+        "description": "Lake Geneva is a beautiful lake located in Switzerland.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/lake-geneva.jpeg",
+        "url": "https://example.com/lake-geneva",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Switzerland"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 46.2044,
+            "longitude": 6.1432
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                ],
+                "opens": "00:00",
+                "closes": "23:59"
             }
+        ],
+        "telephone": "+41 987 654 321",
+        "priceRange": "$$",
+        "review": {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": 4.8,
+                "bestRating": 5
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Jane Smith"
+            },
+            "datePublished": "2022-01-02",
+            "reviewBody": "Lake Geneva is a stunning destination with crystal-clear waters."
+        }
     },
     {
+        "@context": "https://schema.org",
         "@type": "Place",
         "name": "Chillon Castle",
         "description": "Chillon Castle is a medieval fortress on the shores of Lake Geneva.",
@@ -146,6 +149,7 @@
         }
     },
     {
+        "@context": "https://schema.org",
         "@type": "Place",
         "name": "Zermatt",
         "description": "Zermatt is a popular ski resort town in the Swiss Alps.",
@@ -195,6 +199,7 @@
         }
     },
     {
+        "@context": "https://schema.org",
         "@type": "Place",
         "name": "Lucerne",
         "description": "Lucerne is a picturesque city located on the shores of Lake Lucerne.",
@@ -244,6 +249,7 @@
         }
     },
     {
+        "@context": "https://schema.org",
         "@type": "Place",
         "name": "Rhine Falls",
         "description": "Rhine Falls is the largest waterfall in Switzerland.",
@@ -293,6 +299,7 @@
         }
     },
     {
+        "@context": "https://schema.org",
         "@type": "Place",
         "name": "Jungfraujoch",
         "description": "Jungfraujoch is the 'Top of Europe' and offers stunning views of the Swiss Alps.",
@@ -340,7 +347,8 @@
             "datePublished": "2022-01-07",
             "reviewBody": "Jungfraujoch is a breathtaking experience that offers panoramic views of the Swiss Alps."
         }
-    },{
+    },
+    {
         "@context": "https://schema.org",
         "@type": "Restaurant",
         "name": "Restaurant Aarbergerhof",

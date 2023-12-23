@@ -12,9 +12,9 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "covers.openlibrary.org",
+        hostname: "opendataspace.sos-ch-dk-2.exoscale-cdn.com",
         port: "",
-        pathname: "/b/olid/**"
+        pathname: "/**"
       }
     ]
   }
