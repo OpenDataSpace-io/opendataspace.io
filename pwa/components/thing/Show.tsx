@@ -29,7 +29,7 @@ interface Props {
 }
 
 export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
-  
+
   const item = useMercure(data, hubURL);
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -41,6 +41,7 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
     setAnchorEl(null);
   };
 
+  const [showMetadata, setShowMetadata] = useState(false); // Add state to control metadata visibility
 
   return (
     <div className="container mx-auto max-w-7xl items-center justify-between p-6 lg:px-8">
@@ -55,36 +56,36 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
           <Typography color="text.primary">{item["name"]}</Typography>
         </Breadcrumbs>
         <div className="lg:flex lg:flex-1 lg:justify-end lg:gap-x-12">
-        <ButtonGroup variant="contained" aria-label="outlined primary button group">
-                <Button href={item['@id']+"/edit"}>Edit</Button>
-                <Button href={item['@id']+"/preview"}>Preview</Button>
-                <Button href={item['@id']+"/history"}>History</Button>
-              </ButtonGroup>
-              <Button
-                id="basic-button"
-                aria-controls={open ? 'basic-menu' : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? 'true' : undefined}
-                onClick={handleClick}
-              >
-                Export
-              </Button>
-              <Menu
-                id="basic-menu"
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-                MenuListProps={{
-                  'aria-labelledby': 'basic-button',
-                }}
-              >
-                <MenuItem onClick={handleClose}>
-                  <Link href={item['@id']+".json"}>Json</Link>
-                </MenuItem>
-                <MenuItem href={item['@id']+".jsonld"} onClick={handleClose}>
-                  <Link href={item['@id']+".jsonld"}>JsonLD</Link>
-                </MenuItem>
-              </Menu>
+          <ButtonGroup variant="contained" aria-label="outlined primary button group">
+            <Button href={item['@id'] + "/edit"}>Edit</Button>
+            <Button href={item['@id'] + "/preview"}>Preview</Button>
+            <Button href={item['@id'] + "/history"}>History</Button>
+          </ButtonGroup>
+          <Button
+            id="basic-button"
+            aria-controls={open ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? 'true' : undefined}
+            onClick={handleClick}
+          >
+            Export
+          </Button>
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              'aria-labelledby': 'basic-button',
+            }}
+          >
+            <MenuItem onClick={handleClose}>
+              <Link href={item['@id'] + ".json"}>Json</Link>
+            </MenuItem>
+            <MenuItem href={item['@id'] + ".jsonld"} onClick={handleClose}>
+              <Link href={item['@id'] + ".jsonld"}>JsonLD</Link>
+            </MenuItem>
+          </Menu>
         </div>
       </div>
       {!!item && (
@@ -92,56 +93,68 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
           <div className="flex">
             <div className="min-w-[270px] max-w-[300px] w-full mr-10 text-center">
               {!!item["image"] && (
-                <Image alt={item["name"]} width={300} height={300} src={item["image"]} priority={true} data-testid="thing-cover"/>
+                <Image alt={item["name"]} width={300} height={300} src={item["image"]} priority={true} data-testid="thing-cover" />
               ) || (
-                <span className="h-40 text-slate-300">No image</span>
-              )}
+                  <span className="h-40 text-slate-300">No image</span>
+                )}
             </div>
             <div className="w-full">
               <h1 className="font-bold text-2xl text-gray-700">{item["name"]}</h1>
-              <h2>Data View</h2>
-              <div className="text-gray-600 mt-4" data-testid="thing-metadata">
-                {Object.entries(item).map(([key, value]) => {
-                  if (Array.isArray(value)) {
-                    return (
-                      <span key={key}>
-                        {value.map((item, index) => (
-                            <span key={index} className="ml-1">
-                              <h3>{key}[{index}]:</h3>
-                              {JSON.stringify(item)}
-                            </span>
-                        ))}
-                      </span>
-                    );
-                  } else if (typeof value === 'object' && value !== null) {
-                    return (
-                      <span key={key}>
-                        {Object.entries(value).map(([subKey, subValue]) => (
-                            <span key={subKey} className="ml-1">
-                              <h3>{key}.{subKey}:</h3>
-                              {JSON.stringify(subValue)}
-                            </span>
-                        ))}
-                      </span>
-                    );
-                  } else {
-                    return (
-                      <span key={key}>
-                          <span className="ml-1">
-                            <h3>{key}:</h3>
-                            {value}
+              <p className="text-justify leading-7 my-8" data-testid="thing-description">
+                {item["description"] ?? "This book has no description."}
+              </p>
+              <div className="px-4 sm:px-0">
+                <h3 className="text-base font-semibold leading-7 text-gray-900">Metadaten</h3>
+                <p className="mt-1 max-w-2xl text-sm leading-6 text-gray-500"></p>
+              </div>
+              <div className="mt-6 border-t border-gray-10" data-testid="thing-metadata">
+              {showMetadata && (<Button onClick={() => setShowMetadata(false)}>Close Metadata</Button>)}
+                {showMetadata && ( // Render metadata only if showMetadata is true
+                  <dl className="divide-y divide-gray-100">
+                    {Object.entries(item).map(([key, value]) => {
+                      if (Array.isArray(value)) {
+                        return (
+                          <span key={key}>
+                            {value.map((item, index) => (
+                              <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0" key={index}>
+                                <dt className="text-sm font-medium leading-6 text-gray-900">{key}[{index}]</dt>
+                                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{JSON.stringify(item)}</dd>
+                              </div>
+                            ))}
                           </span>
-                      </span>
-                    );
-                  }
-                })}
+                        );
+                      } else if (typeof value === 'object' && value !== null) {
+                        return (
+                          <span key={key}>
+                            {Object.entries(value).map(([subKey, subValue]) => (
+                              <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0" key={subKey}>
+                                <dt className="text-sm font-medium leading-6 text-gray-900">{key}.{subKey}</dt>
+                                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{JSON.stringify(subValue)}</dd>
+                              </div>
+                            ))}
+                          </span>
+                        );
+                      } else {
+                        return (
+                          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0" key={key}>
+                            <dt className="text-sm font-medium leading-6 text-gray-900">{key}</dt>
+                            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{value}</dd>
+                          </div>
+                        );
+                      }
+                    })}
+                  </dl>
+                )}
+                {!showMetadata && ( // Render a button to show metadata if showMetadata is false
+                  <Button onClick={() => setShowMetadata(true)}>Show Metadata</Button>
+                )}
               </div>
             </div>
           </div>
         </>
       ) || (
-        <Loading/>
-      )}
+          <Loading />
+        )}
     </div>
   );
 };
