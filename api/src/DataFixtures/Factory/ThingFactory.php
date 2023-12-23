@@ -82,11 +82,26 @@ final class ThingFactory extends ModelFactory
     protected function initialize(): self
     {
         return $this
-            ->published() // published by default
-            ->instantiateWith(function (array $attributes) {
-                return new Thing(); // custom instantiation for this factory
+            ->afterInstantiate(function (Thing $thing): void {
+                // An Open Library book URI has been specified: try to find it in the array of books
+                $data = array_filter($this->data, static function (array $datum) use ($thing) {
+                    $thing->setName($datum['name']);
+                    $thing->setDateCreated(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')));
+                    $thing->setDateModified(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')));
+                    $thing->setProperties($datum);
+                    return $thing;
+                });
+
+                if ($data) {
+                    $datum = current($data);
+                    $thing->getName($datum['name']);
+                    $thing->setDateCreated(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')));
+                    $thing->setDateModified(\DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')));
+                    $thing->setProperties($datum);
+
+                    return;
+                }
             })
-            ->afterPersist(function () {}) // default event for this factory
         ;
     }
 

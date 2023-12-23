@@ -12,6 +12,6 @@ final class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        DefaultStory::load();
+        //DefaultStory::load();
     }
 }

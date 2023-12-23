@@ -3,7 +3,7 @@
         "@type": "Place",
         "name": "Eiger",
         "description": "The Eiger is a famous mountain in the Bernese Alps.",
-        "image": "https://example.com/eiger.jpg",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/eiger.jpeg",
         "url": "https://example.com/eiger",
         "address": {
             "@type": "PostalAddress",
@@ -49,13 +49,10 @@
         }
     },
     {
-        "@type": "ListItem",
-        "position": 2,
-        "item": {
             "@type": "Place",
             "name": "Lake Geneva",
             "description": "Lake Geneva is a beautiful lake located in Switzerland.",
-            "image": "https://example.com/lake-geneva.jpg",
+            "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/lake-geneva.jpeg",
             "url": "https://example.com/lake-geneva",
             "address": {
                 "@type": "PostalAddress",
@@ -98,13 +95,12 @@
                 "datePublished": "2022-01-02",
                 "reviewBody": "Lake Geneva is a stunning destination with crystal-clear waters."
             }
-        }
     },
     {
         "@type": "Place",
         "name": "Chillon Castle",
         "description": "Chillon Castle is a medieval fortress on the shores of Lake Geneva.",
-        "image": "https://example.com/chillon-castle.jpg",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/chillon-castle.jpeg",
         "url": "https://example.com/chillon-castle",
         "address": {
             "@type": "PostalAddress",
@@ -153,7 +149,7 @@
         "@type": "Place",
         "name": "Zermatt",
         "description": "Zermatt is a popular ski resort town in the Swiss Alps.",
-        "image": "https://example.com/zermatt.jpg",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/zermatt.jpeg",
         "url": "https://example.com/zermatt",
         "address": {
             "@type": "PostalAddress",
@@ -202,7 +198,7 @@
         "@type": "Place",
         "name": "Lucerne",
         "description": "Lucerne is a picturesque city located on the shores of Lake Lucerne.",
-        "image": "https://example.com/lucerne.jpg",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/lucerne.jpeg",
         "url": "https://example.com/lucerne",
         "address": {
             "@type": "PostalAddress",
@@ -251,7 +247,7 @@
         "@type": "Place",
         "name": "Rhine Falls",
         "description": "Rhine Falls is the largest waterfall in Switzerland.",
-        "image": "https://example.com/rhine-falls.jpg",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/rhinefalls.jpeg",
         "url": "https://example.com/rhine-falls",
         "address": {
             "@type": "PostalAddress",
@@ -300,7 +296,7 @@
         "@type": "Place",
         "name": "Jungfraujoch",
         "description": "Jungfraujoch is the 'Top of Europe' and offers stunning views of the Swiss Alps.",
-        "image": "https://example.com/jungfraujoch.jpg",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/jungfraujoch.jpeg",
         "url": "https://example.com/jungfraujoch",
         "address": {
             "@type": "PostalAddress",
@@ -348,6 +344,7 @@
         "@context": "https://schema.org",
         "@type": "Restaurant",
         "name": "Restaurant Aarbergerhof",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/image1.jpeg",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Aarbergergasse 40",
@@ -377,6 +374,7 @@
         "@context": "https://schema.org",
         "@type": "Restaurant",
         "name": "Restaurant Les Armures",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/image5.jpeg",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Rue du Puits-Saint-Pierre 1",
@@ -406,6 +404,7 @@
         "@context": "https://schema.org",
         "@type": "Restaurant",
         "name": "Restaurant La Cucina",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/image2.jpeg",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Seefeldstrasse 82",
@@ -435,6 +434,7 @@
         "@context": "https://schema.org",
         "@type": "Restaurant",
         "name": "Restaurant Bären",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/image4.jpeg",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Marktgasse 4",
@@ -464,6 +464,7 @@
         "@context": "https://schema.org",
         "@type": "Restaurant",
         "name": "Restaurant Chez Fritz",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/image6.jpeg",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Rue de Lausanne 45",
@@ -493,6 +494,7 @@
         "@context": "https://schema.org",
         "@type": "Restaurant",
         "name": "Restaurant Pizzeria Roma",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/image7.jpeg",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Bahnhofstrasse 10",
@@ -522,6 +524,7 @@
         "@context": "https://schema.org",
         "@type": "Restaurant",
         "name": "Restaurant Schwellenmätteli",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/image8.jpeg",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Dalmaziquai 11",
@@ -551,6 +554,7 @@
         "@context": "https://schema.org",
         "@type": "Restaurant",
         "name": "Restaurant Le Relais de l'Entrecôte",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/image9.jpeg",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Rue Pierre-Fatio 15",
@@ -580,6 +584,7 @@
         "@context": "https://schema.org",
         "@type": "Restaurant",
         "name": "Restaurant Trattoria Romana",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/image3.jpeg",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Seefeldstrasse 123",
@@ -609,6 +614,7 @@
         "@context": "https://schema.org",
         "@type": "Restaurant",
         "name": "Restaurant Altes Tramdepot",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/image11.jpeg",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Grosser Muristalden",
@@ -783,6 +789,7 @@
         "@context": "https://schema.org",
         "@type": "Accommodation",
         "name": "Schweizer Alpenhotel",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/image11.jpeg",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Musterstraße 123",
@@ -794,7 +801,6 @@
         "email": "info@schweizeralpenhotel.ch",
         "url": "https://www.schweizeralpenhotel.ch",
         "description": "Das Schweizer Alpenhotel bietet komfortable Unterkünfte in den atemberaubenden Schweizer Alpen.",
-        "image": "https://www.schweizeralpenhotel.ch/images/logo.png",
         "priceRange": "$$$",
         "paymentAccepted": "Cash, Credit Card",
         "currenciesAccepted": "CHF, EUR",
@@ -817,6 +823,7 @@
         "@context": "https://schema.org",
         "@type": "Accommodation",
         "name": "Hotel am See",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/image14.jpeg",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Seestraße 456",
@@ -828,7 +835,6 @@
         "email": "info@hotelamsee.ch",
         "url": "https://www.hotelamsee.ch",
         "description": "Das Hotel am See bietet einen malerischen Blick auf den Genfer See.",
-        "image": "https://www.hotelamsee.ch/images/logo.png",
         "priceRange": "$$",
         "paymentAccepted": "Cash, Credit Card",
         "currenciesAccepted": "CHF, EUR",
@@ -850,7 +856,8 @@
     {
         "@context": "https://schema.org",
         "@type": "Accommodation",
-        "name": "Hotel XYZ",
+        "name": "Hotel Walhalla",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/image12.jpeg",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Beispielstraße 789",
@@ -862,7 +869,6 @@
         "email": "info@hotelxyz.ch",
         "url": "https://www.hotelxyz.ch",
         "description": "Das Hotel XYZ bietet eine gemütliche Unterkunft im Herzen von Bern.",
-        "image": "https://www.hotelxyz.ch/images/logo.png",
         "priceRange": "$$",
         "paymentAccepted": "Cash, Credit Card",
         "currenciesAccepted": "CHF, EUR",
@@ -896,7 +902,7 @@
         "email": "info@berggasthof.ch",
         "url": "https://www.berggasthof.ch",
         "description": "Der Berggasthof bietet eine rustikale Unterkunft mit herrlichem Bergblick.",
-        "image": "https://www.berggasthof.ch/images/logo.png",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/image10.jpeg",
         "priceRange": "$$",
         "paymentAccepted": "Cash, Credit Card",
         "currenciesAccepted": "CHF, EUR",
@@ -930,7 +936,7 @@
         "email": "info@stadthotel.ch",
         "url": "https://www.stadthotel.ch",
         "description": "Das Stadthotel bietet moderne Unterkünfte im Zentrum von Zürich.",
-        "image": "https://www.stadthotel.ch/images/logo.png",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/image13.jpeg",
         "priceRange": "$$$",
         "paymentAccepted": "Cash, Credit Card",
         "currenciesAccepted": "CHF, EUR",
@@ -964,7 +970,7 @@
         "email": "info@strandhotel.ch",
         "url": "https://www.strandhotel.ch",
         "description": "Das Strandhotel bietet einen entspannten Aufenthalt am Ufer des Vierwaldstättersees.",
-        "image": "https://www.strandhotel.ch/images/logo.png",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/strandhotel.jpeg",
         "priceRange": "$$$",
         "paymentAccepted": "Cash, Credit Card",
         "currenciesAccepted": "CHF, EUR",
@@ -998,7 +1004,7 @@
         "email": "info@boutiquehotel.ch",
         "url": "https://www.boutiquehotel.ch",
         "description": "Das Boutique Hotel bietet individuell gestaltete Zimmer in einem charmanten historischen Gebäude.",
-        "image": "https://www.boutiquehotel.ch/images/logo.png",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/boutique.jpeg",
         "priceRange": "$$$",
         "paymentAccepted": "Cash, Credit Card",
         "currenciesAccepted": "CHF, EUR",
@@ -1032,7 +1038,7 @@
         "email": "info@landhotel.ch",
         "url": "https://www.landhotel.ch",
         "description": "Das Landhotel bietet eine idyllische Unterkunft inmitten der Schweizer Alpen.",
-        "image": "https://www.landhotel.ch/images/logo.png",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/landhotel.jpeg",
         "priceRange": "$$",
         "paymentAccepted": "Cash, Credit Card",
         "currenciesAccepted": "CHF, EUR",
@@ -1066,7 +1072,7 @@
         "email": "info@ferienhaus.ch",
         "url": "https://www.ferienhaus.ch",
         "description": "Das Ferienhaus bietet eine gemütliche Unterkunft in den Schweizer Bergen.",
-        "image": "https://www.ferienhaus.ch/images/logo.png",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/ferienhaus.jpeg",
         "priceRange": "$$",
         "paymentAccepted": "Cash, Credit Card",
         "currenciesAccepted": "CHF, EUR",
@@ -1100,7 +1106,7 @@
         "email": "info@gastehaus.ch",
         "url": "https://www.gastehaus.ch",
         "description": "Das Gästehaus bietet eine freundliche Unterkunft im Herzen von Lugano.",
-        "image": "https://www.gastehaus.ch/images/logo.png",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/gaestehaus.jpeg",
         "priceRange": "$$",
         "paymentAccepted": "Cash, Credit Card",
         "currenciesAccepted": "CHF, EUR",
@@ -1134,7 +1140,7 @@
         "email": "info@pension.ch",
         "url": "https://www.pension.ch",
         "description": "Die Pension bietet eine erschwingliche Unterkunft in Lausanne.",
-        "image": "https://www.pension.ch/images/logo.png",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/pension.jpeg",
         "priceRange": "$",
         "paymentAccepted": "Cash",
         "currenciesAccepted": "CHF",
@@ -1168,7 +1174,7 @@
         "email": "info@chalet.ch",
         "url": "https://www.chalet.ch",
         "description": "Das Chalet bietet eine luxuriöse Unterkunft in den Schweizer Alpen.",
-        "image": "https://www.chalet.ch/images/logo.png",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/chalet.jpeg",
         "priceRange": "$$$",
         "paymentAccepted": "Cash, Credit Card",
         "currenciesAccepted": "CHF, EUR",
@@ -1202,7 +1208,7 @@
         "email": "info@hostel.ch",
         "url": "https://www.hostel.ch",
         "description": "Das Hostel bietet eine preiswerte Unterkunft für junge Reisende.",
-        "image": "https://www.hostel.ch/images/logo.png",
+        "image": "https://sos-ch-dk-2.exo.io/opendataspace/examples/images/hostel.jpeg",
         "priceRange": "$",
         "paymentAccepted": "Cash",
         "currenciesAccepted": "CHF",

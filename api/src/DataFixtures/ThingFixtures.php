@@ -5,13 +5,17 @@ namespace App\DataFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use App\Entity\Thing;
+use App\DataFixtures\Story\ThingStory;
+
 use Symfony\Component\Uid\Uuid;
 
 class ThingFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        for ($i = 0; $i < 50; $i++) {
+        ThingStory::load();
+
+        /*for ($i = 0; $i < 50; $i++) {
             $thing = new Thing();
             $id = Uuid::v4();
             $thing->setId($id);
@@ -73,5 +77,6 @@ class ThingFixtures extends Fixture
         }
 
         $manager->flush();
+        */
     }
 }
