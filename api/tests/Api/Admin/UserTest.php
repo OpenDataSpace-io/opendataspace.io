@@ -13,12 +13,12 @@ use App\Tests\Api\Trait\SecurityTrait;
 use Symfony\Component\Uid\Uuid;
 use Zenstruck\Foundry\FactoryCollection;
 use Zenstruck\Foundry\Test\Factories;
-//use Zenstruck\Foundry\Test\ResetDatabase;
+use Zenstruck\Foundry\Test\ResetDatabase;
 
 final class UserTest extends ApiTestCase
 {
     use Factories;
-    //use ResetDatabase;
+    use ResetDatabase;
     use SecurityTrait;
     use UsersDataProviderTrait;
 
@@ -29,8 +29,11 @@ final class UserTest extends ApiTestCase
         $this->client = self::createClient();
     }
 
-    #[DataProvider('getNonAdminUsers')]
-    #[Test]
+    /**
+     * @dataProvider getNonAdminUsers
+     *
+     * @test
+     */
     public function asNonAdminUserICannotGetACollectionOfUsers(int $expectedCode, string $hydraDescription, ?UserFactory $userFactory): void
     {
         $options = [];
@@ -53,8 +56,11 @@ final class UserTest extends ApiTestCase
         ]);
     }
 
-    #[DataProvider('getAdminUrls')]
-    #[Test]
+    /**
+     * @dataProvider getAdminUrls
+     *
+     * @test
+     */
     public function asAdminUserICanGetACollectionOfUsers(FactoryCollection $factory, callable|string $url, int $hydraTotalItems, int $itemsPerPage = null): void
     {
         $factory->create();
@@ -103,8 +109,11 @@ final class UserTest extends ApiTestCase
         ];
     }
 
-    #[DataProvider('getNonAdminUsers')]
-    #[Test]
+    /**
+     * @dataProvider getNonAdminUsers
+     *
+     * @test
+     */
     public function asNonAdminUserICannotGetAUser(int $expectedCode, string $hydraDescription, ?UserFactory $userFactory): void
     {
         $user = UserFactory::createOne();
@@ -129,7 +138,9 @@ final class UserTest extends ApiTestCase
         ]);
     }
 
-    #[Test]
+    /**
+     * @test
+     */
     public function asAdminUserICanGetAUser(): void
     {
         $user = UserFactory::createOne();
@@ -149,7 +160,9 @@ final class UserTest extends ApiTestCase
         self::assertMatchesJsonSchema(file_get_contents(__DIR__ . '/schemas/User/item.json'));
     }
 
-    #[Test]
+    /**
+     * @test
+     */
     public function asAUserIAmUpdatedOnLogin(): void
     {
         $user = UserFactory::createOne([
