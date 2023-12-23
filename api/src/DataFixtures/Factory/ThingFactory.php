@@ -66,60 +66,10 @@ final class ThingFactory extends ModelFactory
      */
     protected function getDefaults(): array
     {
-        $name = 'Thing';
-        // TODO: id Entity = Properties @id
-        $id = Uuid::v4();
-        $data = [
-            '@context' => 'https://schema.org/',
-            '@type' => 'Thing',
-            '@id' => '/things/'.$id,
-            'name' => $name,
-            'description' => self::faker()->text(),
-            "url" => self::faker()->url(),
-            "logo" => self::faker()->imageUrl(),
-            "image" => self::faker()->imageUrl(),
-            "telephone" => self::faker()->phoneNumber(),
-            "email" => self::faker()->email(),
-            "openingHours" => "Mo,Tu,We,Th,Fr,Sa,Su 10:00-20:00",
-            "openingHoursSpecification" => [
-                [
-                    "@type" => "OpeningHoursSpecification",
-                    "validFrom" => "2023-12-24",
-                    "validThrough" => "2023-12-25",
-                    "opens" => "10:00",
-                    "closes" => "20:00"
-                ]
-            ],
-            "priceRange" => "££",
-            "paymentAccepted" => "Cash, Credit Card",
-            "geo" => [
-                "@type" => "GeoCoordinates",
-                "latitude" => "52.628",
-                "longitude" => "1.293"
-            ],
-            // "latitude" => "52.628",
-            // "longitude" => "1.293"
-            "address" => [
-                "@type" => "PostalAddress",
-                "streetAddress" => "Theatre Street",
-                "addressLocality" => "Norwich",
-                "addressRegion"=> "Norfolk",
-                "postalCode" => "NR2 1RL",
-                "addressCountry" => "GB"
-            ],
-            "sameAs" => [
-                "https://www.facebook.com/theatreroyalnorwich",
-                "https://twitter.com/TheatreRNorwich",
-                "https://www.youtube.com/user/TheatreRoyalNorwich",
-                "https://plus.google.com/100115377993168660095",
-                "https://www.instagram.com/theatreroyalnorwich/",
-                "https://www.pinterest.com/theatreroyalnorwich/",
-                "https://www.linkedin.com/company/theatre-royal-norwich"
-            ]
-        ];
+        $data = $this->data[array_rand($this->data)];
 
         return [
-            'name' => $name,
+            'name' => $data['name'],
             'dateCreated' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')),
             'dateModified' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime('-1 month')),
             'properties' => $data
