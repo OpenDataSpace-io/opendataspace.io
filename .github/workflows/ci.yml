@@ -70,7 +70,7 @@ jobs:
         run: docker compose exec -T php chmod +x bin/phpunit
       -
         name: Run PHPUnit
-        run: docker compose exec -T php bin/phpunit
+        run: docker compose exec -T php bin/phpunit --coverage-clover coverage.xml
         # ToDo Bug-fix: Call to undefined method PhpParser\ParserFactory::createForHostVersion()
         # run: docker compose exec -T -e XDEBUG_MODE=coverage php bin/phpunit --coverage-clover coverage.xml
       -
