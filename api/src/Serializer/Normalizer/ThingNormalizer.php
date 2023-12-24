@@ -16,18 +16,22 @@ use Symfony\Component\HttpFoundation\RequestStack;
 
 class ThingNormalizer implements NormalizerInterface, CacheableSupportsMethodInterface
 {
+    /**
+     * @param ThingRepository $repository
+     */
     public function __construct(
-        //private RouterInterface $router,
         private ObjectNormalizer $normalizer,
         private IriConverterInterface $iriConverter,
         private ThingRepository $repository,
         private RequestStack $requestStack)
-    {
-        $this->iriConverter = $iriConverter;
-    }
+    {}
 
-    public function normalize($object, string $format = null, array $context = []): array
+    /**
+     * @param Thing $object
+     */
+    public function normalize(mixed $object, string $format = null, array $context = []): array
     {   
+        $body = [];
         $request = $this->requestStack->getCurrentRequest();
         if ($request) {
             $body = json_decode($request->getContent(), true);
@@ -55,13 +59,17 @@ class ThingNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
         return $data;
     }
 
-    public function supportsNormalization($data, string $format = null, array $context = []): bool
+    public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
     {
         return $data instanceof \App\Entity\Thing;
     }
 
-    public function denormalize($data, $class, $format = null, array $context = []): Thing
+    /**
+     * @param Thing $object
+     */
+    public function denormalize(mixed $data, mixed $class, string $format = null, array $context = []): Thing
     {
+        $body = [];
         $request = $this->requestStack->getCurrentRequest();
         if ($request) {
             $body = json_decode($request->getContent(), true);
@@ -86,7 +94,7 @@ class ThingNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
         return $data;
     }
 
-    public function supportsDenormalization($data, $type, $format = null): bool
+    public function supportsDenormalization(mixed $data, mixed $type, string $format = null): bool
     {
         return $data instanceof \App\Entity\Thing;
     }
