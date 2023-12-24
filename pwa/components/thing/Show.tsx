@@ -21,6 +21,8 @@ import { Loading } from "@/components/common/Loading";
 //import { ExportMenu } from "@/components/common/Export";
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import Grid from '@mui/material/Grid';
 
 interface Props {
   data: Thing;
@@ -55,38 +57,6 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
           </Link>
           <Typography color="text.primary">{item["name"]}</Typography>
         </Breadcrumbs>
-        <div className="lg:flex lg:flex-1 lg:justify-end lg:gap-x-12">
-          <ButtonGroup variant="contained" aria-label="outlined primary button group">
-            <Button href={item['@id'] + "/edit"}>Edit</Button>
-            <Button href={item['@id'] + "/preview"}>Preview</Button>
-            <Button href={item['@id'] + "/history"}>History</Button>
-          </ButtonGroup>
-          <Button
-            id="basic-button"
-            aria-controls={open ? 'basic-menu' : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? 'true' : undefined}
-            onClick={handleClick}
-          >
-            Export
-          </Button>
-          <Menu
-            id="basic-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              'aria-labelledby': 'basic-button',
-            }}
-          >
-            <MenuItem onClick={handleClose}>
-              <Link href={item['@id'] + ".json"}>Json</Link>
-            </MenuItem>
-            <MenuItem href={item['@id'] + ".jsonld"} onClick={handleClose}>
-              <Link href={item['@id'] + ".jsonld"}>JsonLD</Link>
-            </MenuItem>
-          </Menu>
-        </div>
       </div>
       {!!item && (
         <>
@@ -99,7 +69,45 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
                 )}
             </div>
             <div className="w-full">
-              <h1 className="font-bold text-2xl text-gray-700">{item["name"]}</h1>
+            <Grid container spacing={2}>
+              <Grid item xs={8}>
+                <h1 className="font-bold text-2xl text-gray-700">{item["name"]}</h1>
+              </Grid>
+              <Grid item xs={4}>
+              <div className="lg:flex lg:flex-1 lg:justify-end lg:gap-x-12">
+                <Button
+                  id="basic-button"
+                  aria-controls={open ? 'basic-menu' : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? 'true' : undefined}
+                  onClick={handleClick}
+                >
+                 < MoreVertIcon />
+                </Button>
+                <Menu
+                  id="basic-menu"
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleClose}
+                  MenuListProps={{
+                    'aria-labelledby': 'basic-button',
+                  }}
+                >
+                  <MenuItem onClick={handleClose}>
+                    <Link href={item['@id'] + "/edit"}>Edit</Link>
+                  </MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    <Link href={item['@id'] + ".json"}>Export Json</Link>
+                  </MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    <Link href={item['@id'] + ".jsonld"}>Export JsonLD</Link>
+                  </MenuItem>
+                </Menu>
+              </div>
+              </Grid>
+            </Grid>
+              
+              
               <p className="text-justify leading-7 my-8" data-testid="thing-description">
                 {item["description"] ?? "This book has no description."}
               </p>

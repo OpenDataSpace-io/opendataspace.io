@@ -13,7 +13,6 @@ import { signIn, useSession } from "next-auth/react";
 
 import { type Thing } from "@/types/Thing";
 import { useMercure } from "@/utils/mercure";
-import { useThing } from "@/utils/thing";
 //import { fetch, type FetchError, type FetchResponse } from "@/utils/dataAccess";
 import { type PagedCollection } from "@/types/collection";
 import { Loading } from "@/components/common/Loading";
