@@ -13,6 +13,16 @@ interface Props {
 }
 
 export const Item: FunctionComponent<Props> = ({ thing }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (thing) {
+      setIsLoading(false);
+    }
+  }, [thing]);
+
+  if (isLoading || !thing) return <Loading />;
+
   return (
     <div className="relative p-4 bg-white hover:drop-shadow-xl border-b border-gray-200 text-center" data-testid="thing">
       <div className="h-40 mb-2">

@@ -65,7 +65,7 @@ class ThingNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
     }
 
     /**
-     * @param Thing $object
+     * @param Thing $data
      */
     public function denormalize(mixed $data, mixed $class, string $format = null, array $context = []): Thing
     {

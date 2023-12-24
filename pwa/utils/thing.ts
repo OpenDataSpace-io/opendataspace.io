@@ -16,20 +16,6 @@ export interface FiltersProps {
   page?: number | undefined;
 }
 
-export const useThing = <TData extends Thing>(data: TData) => {
-  if (!isItem(data)) {
-    throw new Error("Object sent is not in JSON-LD format.");
-  }
-
-  data["id"] = data["@id"]?.replace("/things/", "");
-  data["name"] = data["name"];
-  data["dateCreated"] = data["dateCreated"];
-  data["dateModified"] = data["dateModified"];
-  data["properties"] = data["properties"];
-  console.log(data);
-  return data;
-};
-
 const filterObject = (object: object) => Object.fromEntries(Object.entries(object).filter(([, value]) => {
   return typeof value === "object" ? Object.keys(value).length > 0 : value?.length > 0;
 }));
