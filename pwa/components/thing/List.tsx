@@ -13,6 +13,8 @@ import { type PagedCollection } from "@/types/collection";
 import { type FiltersProps, buildUriFromFilters } from "@/utils/thing";
 import { type FetchError, type FetchResponse } from "@/utils/dataAccess";
 import { useMercure } from "@/utils/mercure";
+//import { useTranslation } from '@/i18n/next-i18next';
+import { useTranslation } from 'next-i18next';
 
 interface Props {
   data: PagedCollection<Thing> | null;
@@ -26,6 +28,7 @@ const getPagePath = (page: number): string => `/things?page=${page}`;
 export const List: NextPage<Props> = ({ data, hubURL, filters, page }) => {
   const collection = useMercure(data, hubURL);
   const router = useRouter();
+  const { t } = useTranslation();
 
   const filtersMutation = useMutation<
     FetchResponse<PagedCollection<Thing>> | undefined,
@@ -39,7 +42,7 @@ export const List: NextPage<Props> = ({ data, hubURL, filters, page }) => {
   return (
     <div className="container mx-auto max-w-7xl items-center justify-between p-6 lg:px-8">
       <Head>
-        <title>Things</title>
+        <title>{t('pageTitleThings' as const)}</title>
       </Head>
       <div className="flex">
         <aside className="float-left w-[180px] mr-6" aria-label="Filters">
@@ -80,7 +83,7 @@ export const List: NextPage<Props> = ({ data, hubURL, filters, page }) => {
               <Pagination collection={collection} getPagePath={getPagePath} currentPage={page}/>
             </>
           ) || (
-            <p className="w-full flex px-8 pb-4 text-lg">No things found.</p>
+            <p className="w-full flex px-8 pb-4 text-lg">{t('nothingsfound' as const) }</p>
           )}
         </div>
       </div>
