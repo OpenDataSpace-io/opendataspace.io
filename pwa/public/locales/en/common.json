@@ -3,5 +3,6 @@
   "nothingsfound": "No thing was found.",
   "login": "Log in",
   "signOut": "Sign out",
-  "thingsfound": "Thing(s) found"
+  "thingsfound": "Thing(s) found",
+  "change-locale": "Change locale"
 }

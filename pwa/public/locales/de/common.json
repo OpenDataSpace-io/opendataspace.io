@@ -3,5 +3,6 @@
   "nothingsfound": "Keine Ergebnisse gefunden",
   "login": "Anmelden",
   "signOut": "Abmelden",
-  "thingsfound": "Ergebnisse gefunden"
+  "thingsfound": "Ergebnisse gefunden",
+  "change-locale": "Sprache ändern"
 }
