@@ -12,13 +12,6 @@ export const Header = () => {
   const { data: session } = useSession();
   const { t, i18n } = useTranslation('common');
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const onToggleLanguageClick = (newLocale: string) => {
-    const { pathname, asPath, query } = router
-    router.push({ pathname, query }, asPath, { locale: newLocale })
-  }
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const clientSideLanguageChange = (newLocale: string) => {
     i18n.changeLanguage(newLocale);
   }
