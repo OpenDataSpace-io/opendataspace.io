@@ -29,6 +29,12 @@ interface Props {
   page: number;
 }
 
+interface item {
+  name: string;
+  description: string;
+  image: string;
+}
+
 export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
 
   const item = useMercure(data, hubURL);
