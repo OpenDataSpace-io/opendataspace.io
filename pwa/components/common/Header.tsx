@@ -3,12 +3,18 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { useTranslation } from 'next-i18next';
 
 import { signOut } from "@/utils/security";
 
 export const Header = () => {
   const router = useRouter();
   const { data: session } = useSession();
+  const { t, i18n } = useTranslation('common');
+
+  const changeLanguage = (language: string) => {
+    i18n.changeLanguage(language);
+  };
 
   if (router.pathname === "/" || router.pathname.match(/^\/admin/)) return <></>;
 
@@ -19,6 +25,17 @@ export const Header = () => {
           <Link href="/things" className="text-gray-700 hover:text-gray-900">
             OpenDataSpace
           </Link>
+        </div>
+        <div className="lg:flex lg:flex-1 lg:justify-end lg:gap-x-12">
+          {/* Language Selection */}
+          <select
+            value={i18n.language}
+            onChange={(e) => changeLanguage(e.target.value)}
+            className="font-semibold text-gray-900"
+          >
+            <option value="en">English</option>
+            <option value="de">Deutsch</option>
+          </select>
         </div>
         <div className="lg:flex lg:flex-1 lg:justify-end lg:gap-x-12">
           {/* @ts-ignore */}

@@ -13,7 +13,6 @@ import { type PagedCollection } from "@/types/collection";
 import { type FiltersProps, buildUriFromFilters } from "@/utils/thing";
 import { type FetchError, type FetchResponse } from "@/utils/dataAccess";
 import { useMercure } from "@/utils/mercure";
-//import { useTranslation } from '@/i18n/next-i18next';
 import { useTranslation } from 'next-i18next';
 
 interface Props {
@@ -28,7 +27,7 @@ const getPagePath = (page: number): string => `/things?page=${page}`;
 export const List: NextPage<Props> = ({ data, hubURL, filters, page }) => {
   const collection = useMercure(data, hubURL);
   const router = useRouter();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation('common');
 
   const filtersMutation = useMutation<
     FetchResponse<PagedCollection<Thing>> | undefined,
@@ -42,7 +41,7 @@ export const List: NextPage<Props> = ({ data, hubURL, filters, page }) => {
   return (
     <div className="container mx-auto max-w-7xl items-center justify-between p-6 lg:px-8">
       <Head>
-        <title>{t('pageTitleThings' as const)}</title>
+        <title>{t('pageTitleThings')}</title>
       </Head>
       <div className="flex">
         <aside className="float-left w-[180px] mr-6" aria-label="Filters">

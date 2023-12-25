@@ -1,4 +1,5 @@
-//const { i18n } = require('./next-i18next.config')
+// @ts-check
+const { i18n } = require('./next-i18next.config.js')
 
 /** @type {import("next").NextConfig} */
 const nextConfig = {
@@ -19,7 +20,8 @@ const nextConfig = {
         pathname: "/**"
       }
     ]
-  }
+  },
+  i18n
 }
 
 module.exports = nextConfig;

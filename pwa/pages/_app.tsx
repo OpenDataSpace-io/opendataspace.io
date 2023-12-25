@@ -7,8 +7,9 @@ import "@/styles/globals.css";
 import "@fontsource/poppins";
 import "@fontsource/poppins/600.css";
 import "@fontsource/poppins/700.css";
+import { appWithTranslation } from 'next-i18next'
 
-export default function MyApp({ Component, pageProps }: AppProps<{
+export default appWithTranslation(function MyApp({ Component, pageProps }: AppProps<{
   dehydratedState: DehydratedState,
   session: Session,
 }>) {
@@ -19,4 +20,4 @@ export default function MyApp({ Component, pageProps }: AppProps<{
       </Layout>
     </SessionProvider>
   );
-};
+});
