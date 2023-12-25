@@ -4,7 +4,6 @@ import { type FunctionComponent } from "react";
 
 import { type Thing } from "@/types/Thing";
 import { getItemPath } from "@/utils/dataAccess";
-import { useThing } from "@/utils/thing";
 import { Loading } from "@/components/common/Loading";
 import React, { useEffect, useState } from 'react';
 
