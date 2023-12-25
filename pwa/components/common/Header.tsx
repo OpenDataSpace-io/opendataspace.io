@@ -12,9 +12,19 @@ export const Header = () => {
   const { data: session } = useSession();
   const { t, i18n } = useTranslation('common');
 
-  const changeLanguage = (language: string) => {
-    i18n.changeLanguage(language);
-  };
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const onToggleLanguageClick = (newLocale: string) => {
+    const { pathname, asPath, query } = router
+    router.push({ pathname, query }, asPath, { locale: newLocale })
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const clientSideLanguageChange = (newLocale: string) => {
+    i18n.changeLanguage(newLocale);
+  }
+
+  const changeTo = router.locale === 'en' ? 'de' : 'en'
+  // const changeTo = i18n.resolvedLanguage === 'en' ? 'de' : 'en'
 
   if (router.pathname === "/" || router.pathname.match(/^\/admin/)) return <></>;
 
@@ -30,12 +40,15 @@ export const Header = () => {
           {/* Language Selection */}
           <select
             value={i18n.language}
-            onChange={(e) => changeLanguage(e.target.value)}
+            onChange={(e) => clientSideLanguageChange(e.target.value)}
             className="font-semibold text-gray-900"
           >
             <option value="en">English</option>
             <option value="de">Deutsch</option>
           </select>
+          <Link href="/" locale={changeTo}>
+            <button>{t('change-locale', { changeTo })}</button>
+          </Link>
         </div>
         <div className="lg:flex lg:flex-1 lg:justify-end lg:gap-x-12">
           {/* @ts-ignore */}

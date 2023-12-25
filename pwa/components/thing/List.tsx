@@ -72,7 +72,7 @@ export const List: NextPage<Props> = ({ data, hubURL, filters, page }) => {
                     <MenuItem value="desc">Name DESC</MenuItem>
                   </Select>
                 </div>
-                <span data-testid="nb-things" className="float-right mt-1">{collection["hydra:totalItems"]} thing(s) found</span>
+                <span data-testid="nb-things" className="float-right mt-1">{collection["hydra:totalItems"]} {t('thingsfound')}</span>
               </div>
               <div className="grid grid-cols-5 gap-4">
                 {collection["hydra:member"].length !== 0 && collection["hydra:member"].map((thing) => (
