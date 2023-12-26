@@ -1,6 +1,6 @@
 import { expect, Page, test as playwrightTest } from "@playwright/test";
 
-//import { BookPage } from "./pages/BookPage";
+import { ThingPage } from "./pages/ThingPage";
 import { UserPage } from "./pages/UserPage";
 
 expect.extend({
@@ -20,14 +20,14 @@ expect.extend({
 });
 
 type Test = {
-  //bookPage: BookPage,
+  thingPage: ThingPage,
   userPage: UserPage,
 }
 
 export const test = playwrightTest.extend<Test>({
-  /*bookPage: async ({ page }, use) => {
-    await use(new BookPage(page));
-  },*/
+  thingPage: async ({ page }, use) => {
+    await use(new ThingPage(page));
+  },
   userPage: async ({ page }, use) => {
     await use(new UserPage(page));
   },
