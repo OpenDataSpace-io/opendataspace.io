@@ -52,7 +52,7 @@ export const Filters: FunctionComponent<Props> = ({ filters, mutation }) => (
       <form onSubmit={handleSubmit}>
         <FormGroup className="mb-4">
           <FormControlLabel name="name" labelPlacement="top" className="!m-0" label={
-            <Typography className="font-semibold w-full">Title</Typography>
+            <Typography className="font-semibold w-full">Name</Typography>
           } control={
             <TextField value={values?.name ?? ""} placeholder="Search by name..." type="search"
                        data-testid="filter-name" variant="standard" className="w-full" onChange={(e) => {

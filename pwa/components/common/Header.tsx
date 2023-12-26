@@ -35,10 +35,10 @@ export const Header = () => {
             className="font-semibold text-gray-900"
           >
             <option value="en">English</option>
-            <option value="de">Deutsch</option>
+            <option className="font-semibold text-gray-900" value="de">Deutsch</option>
           </select>
         </div>
-        <div className="lg:flex lg:flex-1 lg:justify-end lg:gap-x-12">
+        <div className="lg:flex lg:flex-1 lg:justify-end lg:gap-x-8">
           {/* @ts-ignore */}
           {!!session && !session.error && (
             <a href="#" className="font-semibold text-gray-900" role="menuitem" onClick={(e) => {

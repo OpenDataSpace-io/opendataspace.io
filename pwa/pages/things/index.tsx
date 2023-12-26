@@ -53,7 +53,8 @@ export const getServerSideProps: GetServerSideProps<{
         filters, 
         page,
         ...(await serverSideTranslations(locale ?? 'en', [
-          'thing',
+          'common',
+          'thing'
         ])),
       } 
     };
@@ -67,7 +68,8 @@ export const getServerSideProps: GetServerSideProps<{
     filters, 
     page,
     ...(await serverSideTranslations(locale ?? 'en', [
-      'thing',
+      'common',
+      'thing'
     ])),
    }
   };
