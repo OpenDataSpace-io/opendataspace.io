@@ -8,11 +8,26 @@ import logo from "public/api-platform/logo_api-platform.svg";
 import mercurePicture from "public/api-platform/mercure.svg";
 import logoTilleuls from "public/api-platform/logo_tilleuls.svg";
 import apiPicture from "public/api-platform/api.svg";
+import { useRouter } from 'next/router';
+import type { GetStaticProps, InferGetStaticPropsType } from 'next';
 
-const Welcome = () => (
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+type Props = {
+  // Add custom props here
+}
+
+const Welcome = (
+  _props: InferGetStaticPropsType<typeof getStaticProps>
+) => {
+  const router = useRouter();
+  const { t, i18n } = useTranslation('common');
+
+  return (
   <div className="w-full overflow-x-hidden">
     <Head>
-      <title>Welcome to API Platform!</title>
+      <title>{t('welcome')}</title>
     </Head>
     <section className="w-full bg-spider-cover relative">
       <a
@@ -50,7 +65,7 @@ const Welcome = () => (
         <div className="flex flex-1 flex-col items-center text-center | md:text-left md:items-start">
           <h1>
             <span className="block text-4xl text-cyan-200 font-bold mb-2">
-              Welcome to
+              {t('welcometo')}
             </span>
             <Image alt="API Platform" src={logo}/>
           </h1>
@@ -180,7 +195,18 @@ const Welcome = () => (
       </HelpButton>
     </div>
   </div>
-);
+)};
+
+export const getStaticProps: GetStaticProps<Props> = async ({
+  locale,
+}) => ({
+  props: {
+    ...(await serverSideTranslations(locale ?? 'en', [
+      'common',
+    ])),
+  },
+})
+
 export default Welcome;
 
 const Card = ({

@@ -2,9 +2,10 @@
   "pageTitleThings": "Objekt",
   "nothingsfound": "Keine Ergebnisse gefunden",
   "login": "Anmelden",
-  "signout": "Abmelden",
+  "signOut": "Abmelden",
   "thingsfound": "Ergebnisse gefunden",
   "change-locale": "Sprache ändern",
+  "hello-world": "Hallo Welt!",
   "welcome": "Willkommen",
   "welcometo": "Willkommen bei"
 }

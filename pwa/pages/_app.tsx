@@ -7,12 +7,13 @@ import "@/styles/globals.css";
 import "@fontsource/poppins";
 import "@fontsource/poppins/600.css";
 import "@fontsource/poppins/700.css";
-import { appWithTranslation } from 'next-i18next'
+//import nextI18NextConfig from '../next-i18next.config.js';
+import { appWithTranslation } from 'next-i18next';
 
-export default appWithTranslation(function MyApp({ Component, pageProps }: AppProps<{
+const MyApp = ({ Component, pageProps }: AppProps<{
   dehydratedState: DehydratedState,
   session: Session,
-}>) {
+}>) => {
   return (
     <SessionProvider session={pageProps.session}>
       <Layout dehydratedState={pageProps.dehydratedState}>
@@ -20,4 +21,6 @@ export default appWithTranslation(function MyApp({ Component, pageProps }: AppPr
       </Layout>
     </SessionProvider>
   );
-});
+}
+
+export default appWithTranslation(MyApp/*, nextI18NextConfig*/);

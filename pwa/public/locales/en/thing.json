@@ -2,7 +2,7 @@
   "pageTitleThings": "Things",
   "nothingsfound": "No thing was found.",
   "login": "Log in",
-  "signout": "Sign out",
+  "signOut": "Sign out",
   "thingsfound": "Thing(s) found",
   "change-locale": "Change locale",
   "welcome": "Welcome to API Platform!",

@@ -27,7 +27,7 @@ const getPagePath = (page: number): string => `/things?page=${page}`;
 export const List: NextPage<Props> = ({ data, hubURL, filters, page }) => {
   const collection = useMercure(data, hubURL);
   const router = useRouter();
-  const { t, i18n } = useTranslation('common');
+  const { t, i18n } = useTranslation('thing');
 
   const filtersMutation = useMutation<
     FetchResponse<PagedCollection<Thing>> | undefined,

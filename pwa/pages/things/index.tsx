@@ -1,4 +1,10 @@
-import { type GetServerSideProps } from "next";
+import type {
+  GetServerSideProps,
+  InferGetServerSidePropsType,
+} from 'next'
+
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { List } from "@/components/thing/List";
 import { type Thing } from "@/types/Thing";
@@ -10,7 +16,7 @@ export const getServerSideProps: GetServerSideProps<{
   data: PagedCollection<Thing> | null,
   hubURL: string | null,
   filters: FiltersProps,
-}> = async ({ query }) => {
+}> = async ({ query, locale }) => {
   const page = Number(query.page ?? 1);
   const filters: FiltersProps = {};
   if (query.page) {
@@ -40,12 +46,31 @@ export const getServerSideProps: GetServerSideProps<{
       throw new Error('Unable to retrieve data from /things.');
     }
 
-    return { props: { data: response.data, hubURL: response.hubURL, filters, page } };
+    return { 
+      props: { 
+        data: response.data, 
+        hubURL: response.hubURL, 
+        filters, 
+        page,
+        ...(await serverSideTranslations(locale ?? 'en', [
+          'thing',
+        ])),
+      } 
+    };
   } catch (error) {
     console.error(error);
   }
 
-  return { props: { data: null, hubURL: null, filters, page } };
+  return { props: { 
+    data: null, 
+    hubURL: null, 
+    filters, 
+    page,
+    ...(await serverSideTranslations(locale ?? 'en', [
+      'thing',
+    ])),
+   }
+  };
 };
 
 export default List;

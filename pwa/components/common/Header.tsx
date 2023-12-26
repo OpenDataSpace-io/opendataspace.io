@@ -14,10 +14,8 @@ export const Header = () => {
 
   const clientSideLanguageChange = (newLocale: string) => {
     i18n.changeLanguage(newLocale);
+    router.push(router.asPath, router.asPath, { locale: newLocale });
   }
-
-  const changeTo = router.locale === 'en' ? 'de' : 'en'
-  // const changeTo = i18n.resolvedLanguage === 'en' ? 'de' : 'en'
 
   if (router.pathname === "/" || router.pathname.match(/^\/admin/)) return <></>;
 
@@ -39,9 +37,6 @@ export const Header = () => {
             <option value="en">English</option>
             <option value="de">Deutsch</option>
           </select>
-          <Link href="/" locale={changeTo}>
-            <button>{t('change-locale', { changeTo })}</button>
-          </Link>
         </div>
         <div className="lg:flex lg:flex-1 lg:justify-end lg:gap-x-12">
           {/* @ts-ignore */}
@@ -50,7 +45,7 @@ export const Header = () => {
               e.preventDefault();
               signOut(session);
             }}>
-              Sign out
+              {t('signout')}
             </a>
           ) || (
             <a href="#" className="font-semibold text-gray-900" role="menuitem" onClick={(e) => {
@@ -58,7 +53,7 @@ export const Header = () => {
               signIn("keycloak");
             }}>
               <PersonOutlineIcon className="w-6 h-6 mr-1"/>
-              Log in
+              {t('login')}
             </a>
           )}
         </div>
@@ -66,3 +61,5 @@ export const Header = () => {
     </header>
   )
 }
+
+//export default Header;
