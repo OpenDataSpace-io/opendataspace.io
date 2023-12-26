@@ -6,5 +6,8 @@
   "thingsfound": "Ergebnisse gefunden",
   "change-locale": "Sprache ändern",
   "welcome": "Willkommen",
-  "welcometo": "Willkommen bei"
+  "welcometo": "Willkommen bei",
+  "showmetadata": "Metadaten anzeigen",
+  "closemetadata": "Metadaten schließen",
+  "noimage": "Kein Bild verfügbar"
 }

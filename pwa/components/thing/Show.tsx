@@ -22,6 +22,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Grid from '@mui/material/Grid';
+import { useTranslation } from 'next-i18next';
 
 interface Props {
   data: Thing;
@@ -32,6 +33,7 @@ interface Props {
 export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
 
   const item = useMercure(data, hubURL);
+  const { t } = useTranslation('common');
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -64,7 +66,7 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
               {!!item["image"] && (
                 <Image alt={item["name"]} width={300} height={300} src={item["image"]} priority={true} data-testid="thing-cover" />
               ) || (
-                  <span className="h-40 text-slate-300">No image</span>
+                  <span className="h-40 text-slate-300">{t('noimage')}</span>
                 )}
             </div>
             <div className="w-full">
@@ -115,7 +117,7 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
                 <p className="mt-1 max-w-2xl text-sm leading-6 text-gray-500"></p>
               </div>
               <div className="mt-6 border-t border-gray-10" data-testid="thing-metadata">
-              {showMetadata && (<Button onClick={() => setShowMetadata(false)}>Close Metadata</Button>)}
+              {showMetadata && (<Button onClick={() => setShowMetadata(false)}>{t('closemetadata')}</Button>)}
                 {showMetadata && ( // Render metadata only if showMetadata is true
                   <dl className="divide-y divide-gray-100">
                     {Object.entries(item).map(([key, value]) => {
@@ -153,7 +155,7 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
                   </dl>
                 )}
                 {!showMetadata && ( // Render a button to show metadata if showMetadata is false
-                  <Button onClick={() => setShowMetadata(true)}>Show Metadata</Button>
+                  <Button onClick={() => setShowMetadata(true)}>{t('showmetadata')}</Button>
                 )}
               </div>
             </div>

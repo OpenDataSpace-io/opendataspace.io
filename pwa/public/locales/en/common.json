@@ -6,5 +6,8 @@
   "thingsfound": "Thing(s) found",
   "change-locale": "Change locale",
   "welcome": "Welcome to API Platform!",
-  "welcometo": "Welcome to"
+  "welcometo": "Welcome to",
+  "showmetadata": "Show metadata",
+  "closemetadata": "Close metadata",
+  "noimage": "No image"
 }
