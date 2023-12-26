@@ -9,7 +9,7 @@ test.describe("Things list", () => {
 
   test("I can navigate through the list using the pagination @read", async ({ thingPage, page }) => {
     // test list display
-    await expect(page).toHaveTitle("OpenDataSpace");
+    await expect(page).toHaveTitle("OpenDataSpace - Things");
     await expect(page.getByTestId("nb-things")).toHaveText(`${totalThings} thing(s) found`);
     await expect(page.getByTestId("thing").or(page.getByTestId("loading"))).toHaveCount(30);
 
@@ -130,12 +130,12 @@ test.describe("Things list", () => {
   test("I can sort the list @read", async ({ thingPage, page }) => {
     // sort by title asc
     await thingPage.filter({ order: "Name ASC" });
-    await expect(page).toHaveURL(/\/thing\?order%5Btitle%5D=asc$/);
+    await expect(page).toHaveURL(/\/thing\?order%5Bname%5D=asc$/);
     await expect(await thingPage.getDefaultThing()).not.toBeVisible()
 
     // sort by title desc
     await thingPage.filter({ order: "Name DESC" });
-    await expect(page).toHaveURL(/\/things\?order%5Btitle%5D=desc$/);
+    await expect(page).toHaveURL(/\/things\?order%5Bname%5D=desc$/);
     await expect(await thingPage.getDefaultThing()).not.toBeVisible()
 
     // sort by default (relevance)
@@ -144,7 +144,7 @@ test.describe("Things list", () => {
     await expect(await thingPage.getDefaultThing()).toBeVisible()
 
     // direct url should apply the sort
-    await page.goto("/things?order%5Btitle%5D=asc");
+    await page.goto("/things?order%5Bname%5D=asc");
     await expect(page.getByTestId("sort")).toHaveText("Name ASC");
     await expect(await thingPage.getDefaultThing()).not.toBeVisible()
   });

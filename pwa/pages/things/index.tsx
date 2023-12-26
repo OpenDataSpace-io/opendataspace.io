@@ -3,7 +3,6 @@ import type {
   InferGetServerSidePropsType,
 } from 'next'
 
-import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { List } from "@/components/thing/List";
@@ -53,8 +52,7 @@ export const getServerSideProps: GetServerSideProps<{
         filters, 
         page,
         ...(await serverSideTranslations(locale ?? 'en', [
-          'common',
-          'thing'
+          'common'
         ])),
       } 
     };
@@ -68,8 +66,7 @@ export const getServerSideProps: GetServerSideProps<{
     filters, 
     page,
     ...(await serverSideTranslations(locale ?? 'en', [
-      'common',
-      'thing'
+      'common'
     ])),
    }
   };

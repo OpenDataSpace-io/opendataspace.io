@@ -1,9 +1,9 @@
 {
-  "pageTitleThings": "Things",
+  "pageTitleThings": "OpenDataSpace - Things",
   "nothingsfound": "No thing was found.",
   "login": "Log in",
   "signout": "Sign out",
-  "thingsfound": "Thing(s) found",
+  "thingsfound": "thing(s) found",
   "change-locale": "Change locale",
   "welcome": "Welcome to API Platform!",
   "welcometo": "Welcome to",
