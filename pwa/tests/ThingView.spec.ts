@@ -14,8 +14,8 @@ test.describe("Thing view", () => {
   });
 
   test("I can go back to the things list through the breadcrumb @read", async ({ page }) => {
-    await expect(page.getByTestId("thing-breadcrumb")).toContainText("OpenDataSpace");
-    await page.getByTestId("thing-breadcrumb").getByText("OpenDataSpace").click();
+    await expect(page.getByTestId("thing-breadcrumb")).toContainText("Things/Eiger");
+    await page.getByTestId("thing-breadcrumb").getByText("Things/Eiger").click();
     await expect(page).toHaveURL(/\/things$/);
   });
 
