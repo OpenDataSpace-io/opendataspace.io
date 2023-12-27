@@ -28,6 +28,7 @@ const getPagePath = (page: number): string => `/things?page=${page}`;
 export const List: NextPage<Props> = ({ data, hubURL, filters, page }) => {
   const collection = useMercure(data, hubURL);
   const router = useRouter();
+  const [isLoading, setIsLoading] = React.useState(false);
   const { t } = useTranslation('common');
 
   const filtersMutation = useMutation<
@@ -39,14 +40,7 @@ export const List: NextPage<Props> = ({ data, hubURL, filters, page }) => {
     router.push(buildUriFromFilters("/things", filters));
   });
 
-  const [isLoading, setIsLoading] = React.useState(false);
-
-  const handleFiltersChange = async (event: React.ChangeEvent<{ value: string }>) => {
-    setIsLoading(true);
-    const orderValue = event.target.value as string; // Annahme: Der Wert ist vom Typ string
-    await filtersMutation.mutateAsync({ ...filters, order: orderValue ? { name: orderValue } : undefined });
-    setIsLoading(false);
-  };
+  
 
   return (
     <div className="container mx-auto max-w-7xl items-center justify-between p-6 lg:px-8">
@@ -73,7 +67,9 @@ export const List: NextPage<Props> = ({ data, hubURL, filters, page }) => {
                     variant="standard"
                     value={filters.order?.name ?? ""}
                     displayEmpty
-                    onChange={handleFiltersChange}
+                    onChange={(event) => {
+                      filtersMutation.mutate({ ...filters, page: 1, order: event.target.value ? { name: event.target.value } : undefined });
+                    }}
                     disabled={isLoading}
                   >
                     <MenuItem value="">{t('things.list.sortbyrelevance')}</MenuItem>
