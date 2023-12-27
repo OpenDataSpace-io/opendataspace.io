@@ -27,7 +27,8 @@
       "nodescription": "Keine Beschreibung verfügbar"
     },
     "edit":{
-
+      "hideExpertMode": "Expert mode ausblenden",
+      "showExpertMode": "Expert mode anzeigen"
     }
   }
 }

@@ -7,11 +7,18 @@ import Editors from '@/components/form/Editors';
 import { Container, Grid, Button } from '@mui/material';
 import { signIn, useSession } from "next-auth/react";
 import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/navigation'
+import { type NextPage } from "next";
+import { type Thing } from "@/types/Thing";
 
 interface Session {
     accessToken: string;
     error: string;
+}
+
+interface Props {
+    data: Thing;
+    hubURL: string | null;
+    page: number;
 }
 
 const METHOD = 'POST';
@@ -20,7 +27,7 @@ const AUTHORIZATION_HEADER = 'Authorization';
 const BEARER_PREFIX = 'Bearer';
 const APPLICATION_JSON = 'application/json';
 
-const NewThingForm = () => {
+export const New: NextPage<Props> = ({ data, hubURL, page }) => {
     const [schema, setSchema] = useState({});
     const [uiSchema, setUiSchema] = useState({});
     const [formData, setFormData] = useState({});
@@ -30,7 +37,6 @@ const NewThingForm = () => {
     const [shareURL, setShareURL] = useState<string | null>(null);
     const [isGridVisible, setGridVisible] = useState(false);
     const { data: session = { accessToken: '', error: '' }, status } = useSession() || {};
-    const router = useRouter();
 
     const handleButtonClick = () => {
         setGridVisible(!isGridVisible);
@@ -104,7 +110,7 @@ const NewThingForm = () => {
         console.log(data["formData"]);
 
         try {
-            if (!session) return;
+            //if (!session) return;
             //@ts-ignore
             const token = session.accessToken; // Get the authentication token from the session
             const response = await fetch('/things', {
@@ -119,9 +125,6 @@ const NewThingForm = () => {
             if (response.ok) {
                 // Handle successful response
                 console.log('Thing created successfully');
-                const data = await response.json();
-                console.log(data);
-                router.push(data["@id"]+'/edit');
             } else {
                 // Handle error response
                 console.error('Error creating thing:', response.statusText);
@@ -187,5 +190,3 @@ const NewThingForm = () => {
         </>
     );
 };
-
-export default NewThingForm;

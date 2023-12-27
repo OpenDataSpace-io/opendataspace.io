@@ -26,7 +26,8 @@
       "nodescription": "This things has no description."
     },
     "edit":{
-
+      "hideExpertMode": "Hide expert mode",
+      "showExpertMode": "Show expert mode"
     }
   }
 }

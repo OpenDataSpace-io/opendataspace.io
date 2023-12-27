@@ -45,8 +45,8 @@ const APPLICATION_JSON = 'application/json';
 // https://rjsf-team.github.io/react-jsonschema-form/docs/
 
 export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
-    //const { data: session = { accessToken: '', error: '' }, status } = useSession() || {};
-    const {session, status } = useSession();
+    const { data: session = { accessToken: '', error: '' }, status } = useSession() || {};
+    //const {session, status } = useSession();
     const item = useMercure(data, hubURL);
     const [schema, setSchema] = useState({});
     const [uiSchema, setUiSchema] = useState({});
@@ -57,7 +57,6 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
     const [shareURL, setShareURL] = useState<string | null>(null);
     const [isGridVisible, setGridVisible] = useState(false); // Changed initial value to false
     const [FormComponent, setFormComponent] = useState<ComponentType<FormProps>>(withTheme({}));
-
     const { t } = useTranslation('common');
 
     const handleButtonClick = () => {
@@ -192,11 +191,11 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
         return (
             <>
                 <Head>
-                    <title>New Thing</title>
+                    <title>{item['name']}</title>
                 </Head>
                 <Container maxWidth="xl">
                     <Button onClick={handleButtonClick}>
-                        {isGridVisible ? 'Hide Expert Mode' : 'Show Expert Mode'}
+                        {isGridVisible ? t('things.edit.hideExpertMode') : t('things.edit.showExpertMode')}
                     </Button>
                     <Grid container spacing={2}>
                         <Grid item xs={isGridVisible ? 6 : 12} md={isGridVisible ? 8 : 12}>
