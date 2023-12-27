@@ -8,7 +8,7 @@ const CustomForm = (props:any) => {
     <form onSubmit={event => {event.preventDefault(); onSubmit({formData})}}>
       <button className="px-10 py-4 font-semibold text-sm bg-cyan-500 text-white rounded shadow-sm mx-auto" type="submit">Submit</button>
       <Form {...props} />
-      <button className="px-10 py-4 font-semibold text-sm bg-cyan-500 text-white rounded shadow-sm mx-auto" type="submit" variant="contained">Submit</button>
+      <button className="px-10 py-4 font-semibold text-sm bg-cyan-500 text-white rounded shadow-sm mx-auto" type="submit">Submit</button>
     </form>
   );
 };
