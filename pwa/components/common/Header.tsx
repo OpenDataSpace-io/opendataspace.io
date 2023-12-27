@@ -1,6 +1,7 @@
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { MenuItem, Select } from "@mui/material";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useTranslation } from 'next-i18next';
@@ -29,16 +30,17 @@ export const Header = () => {
         </div>
         <div className="lg:flex lg:flex-1 lg:justify-end lg:gap-x-12">
           {/* Language Selection */}
-          <select
+          <Select
+            data-testid="language"
+            variant="standard"
             value={i18n.language}
-            onChange={(e) => clientSideLanguageChange(e.target.value)}
-            className="font-semibold text-gray-900"
+            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => clientSideLanguageChange(e.target.value)}
           >
-            <option value="en">English</option>
-            <option className="font-semibold text-gray-900" value="de">Deutsch</option>
-          </select>
+            <MenuItem value="en">English</MenuItem>
+            <MenuItem value="de">Deutsch</MenuItem>
+          </Select>
         </div>
-        <div className="lg:flex lg:flex-1 lg:justify-end lg:gap-x-8">
+        <div className="lg:flex lg:flex-1 lg:justify-end lg:gap-x-12">
           {/* @ts-ignore */}
           {!!session && !session.error && (
             <a href="#" className="font-semibold text-gray-900" role="menuitem" onClick={(e) => {
