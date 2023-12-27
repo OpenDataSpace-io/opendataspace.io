@@ -1,7 +1,7 @@
 //import Form from "@rjsf/core";
 import Form from '@rjsf/mui';
 
-const CustomForm = (props) => {
+const CustomForm = (props:any) => {
   const { schema, uiSchema, formData, onSubmit } = props;
 
   return (
