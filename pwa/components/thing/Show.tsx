@@ -66,7 +66,7 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
               {!!item["image"] && (
                 <Image alt={item["name"]} width={300} height={300} src={item["image"]} priority={true} data-testid="thing-cover" />
               ) || (
-                  <span className="h-40 text-slate-300">{t('noimage')}</span>
+                  <span className="h-40 text-slate-300">{t('things.show.noimage')}</span>
                 )}
             </div>
             <div className="w-full">
@@ -95,13 +95,13 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
                   }}
                 >
                   <MenuItem onClick={handleClose}>
-                    <Link href={item['@id'] + "/edit"}>Edit</Link>
+                    <Link href={item['@id'] + "/edit"}>{t('things.show.edit')}</Link>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
-                    <Link href={item['@id'] + ".json"}>Export Json</Link>
+                    <Link href={item['@id'] + ".json"}>{t('things.show.exportjson')}</Link>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
-                    <Link href={item['@id'] + ".jsonld"}>Export JsonLD</Link>
+                    <Link href={item['@id'] + ".jsonld"}>{t('things.show.exportjsonld')}</Link>
                   </MenuItem>
                 </Menu>
               </div>
@@ -110,14 +110,18 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
               
               
               <p className="text-justify leading-7 my-8" data-testid="thing-description">
-                {item["description"] ?? "This book has no description."}
+                {item["description"] && (
+                  item["description"]
+                ) || (
+                    <span className="text-slate-300">{t('things.show.nodescription')}</span>
+                )}
               </p>
               <div className="px-4 sm:px-0">
                 <h3 className="text-base font-semibold leading-7 text-gray-900">Metadaten</h3>
                 <p className="mt-1 max-w-2xl text-sm leading-6 text-gray-500"></p>
               </div>
               <div className="mt-6 border-t border-gray-10" data-testid="thing-metadata">
-              {showMetadata && (<Button onClick={() => setShowMetadata(false)}>{t('closemetadata')}</Button>)}
+              {showMetadata && (<Button onClick={() => setShowMetadata(false)}>{t('things.show.closemetadata')}</Button>)}
                 {showMetadata && ( // Render metadata only if showMetadata is true
                   <dl className="divide-y divide-gray-100">
                     {Object.entries(item).map(([key, value]) => {
@@ -155,7 +159,7 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
                   </dl>
                 )}
                 {!showMetadata && ( // Render a button to show metadata if showMetadata is false
-                  <Button onClick={() => setShowMetadata(true)}>{t('showmetadata')}</Button>
+                  <Button onClick={() => setShowMetadata(true)}>{t('things.show.showmetadata')}</Button>
                 )}
               </div>
             </div>

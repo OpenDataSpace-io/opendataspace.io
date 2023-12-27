@@ -7,9 +7,6 @@
   "change-locale": "Change locale",
   "welcome": "Welcome to API Platform!",
   "welcometo": "Welcome to",
-  "showmetadata": "Show metadata",
-  "closemetadata": "Close metadata",
-  "noimage": "No image",
   "things":{
     "list": {
       "filters": "Filters",
@@ -18,6 +15,15 @@
       "sortbyrelevance": "Relevance",
       "sortbynameasc": "Name ASC",
       "sortbynamedesc": "Name DESC"
+    },
+    "show":{
+      "showmetadata": "Show metadata",
+      "closemetadata": "Close metadata",
+      "noimage": "No image",
+      "edit": "Edit",
+      "exportjson": "Export JSON",
+      "exportjsonld": "Export JSON-LD",
+      "nodescription": "This things has no description."
     },
     "edit":{
 
