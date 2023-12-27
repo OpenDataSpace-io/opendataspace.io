@@ -7,19 +7,10 @@ import Editors from '@/components/form/Editors';
 import { Container, Grid, Button } from '@mui/material';
 import { signIn, useSession } from "next-auth/react";
 import { useTranslation } from 'next-i18next';
-import { type NextPage } from "next";
-import { type Thing } from "@/types/Thing";
-import { useRouter } from "next/router";
 
 interface Session {
     accessToken: string;
     error: string;
-}
-
-interface Props {
-    data: Thing;
-    hubURL: string | null;
-    page: number;
 }
 
 const METHOD = 'POST';
@@ -28,7 +19,7 @@ const AUTHORIZATION_HEADER = 'Authorization';
 const BEARER_PREFIX = 'Bearer';
 const APPLICATION_JSON = 'application/json';
 
-export const New: NextPage<Props> = ({ data, hubURL, page }) => {
+const NewThingForm = () => {
     const [schema, setSchema] = useState({});
     const [uiSchema, setUiSchema] = useState({});
     const [formData, setFormData] = useState({});
@@ -38,7 +29,6 @@ export const New: NextPage<Props> = ({ data, hubURL, page }) => {
     const [shareURL, setShareURL] = useState<string | null>(null);
     const [isGridVisible, setGridVisible] = useState(false);
     const { data: session = { accessToken: '', error: '' }, status } = useSession() || {};
-    const router = useRouter();
 
     const handleButtonClick = () => {
         setGridVisible(!isGridVisible);
@@ -127,9 +117,6 @@ export const New: NextPage<Props> = ({ data, hubURL, page }) => {
             if (response.ok) {
                 // Handle successful response
                 console.log('Thing created successfully');
-                data = await response.json();
-                console.log(data);
-                router.push(data["@id"]);
             } else {
                 // Handle error response
                 console.error('Error creating thing:', response.statusText);
@@ -195,3 +182,5 @@ export const New: NextPage<Props> = ({ data, hubURL, page }) => {
         </>
     );
 };
+
+export default NewThingForm;

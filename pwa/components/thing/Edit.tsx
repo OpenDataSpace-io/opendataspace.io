@@ -17,6 +17,7 @@ import { useMercure } from "@/utils/mercure";
 import { type PagedCollection } from "@/types/collection";
 import { Loading } from "@/components/common/Loading";
 import Editors from '@/components/form/Editors';
+import CustomForm from '@/components/form/CustomForm';
 
 import { ErrorSchema, RJSFSchema, RJSFValidationError, UiSchema, ValidatorType } from '@rjsf/utils';;
 import validator from '@rjsf/validator-ajv8';
@@ -207,18 +208,13 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
                             {selectedForm && (
                                 <>
                                     <div>
-                                        <Form
-                                            schema={schema}
-                                            uiSchema={uiSchema}
-                                            formData={formData}
-                                            validator={validator}
-                                            onChange={onFormDataChange}
-                                            onSubmit={handleSubmit}
-                                            /*fields={{
-                                                // Override the default field component for fields with format "data-url"
-                                                'data-url': FileUpload,
-                                                'geo': GeoWidget,
-                                            }}*/
+                                    <CustomForm
+                                        schema={schema}
+                                        uiSchema={uiSchema}
+                                        formData={formData}
+                                        onSubmit={handleSubmit}
+                                        validator={validator}
+                                        onChange={onFormDataChange}
                                         />
                                     </div>
                                 </>
@@ -232,7 +228,6 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
                                     {formList.map((form: { id: string, name: string }) => (
                                         <option key={form.id} value={form.id}>{form.name}</option>
                                     ))}
-                                    <option value="dynamic">TODO: Dynamic Form by Fields*</option>
                                 </select>
                                 {selectedForm && (
                                     <>
