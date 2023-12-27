@@ -11,9 +11,9 @@ test.describe("Things list", () => {
     // test list display
     await expect(page).toHaveTitle("OpenDataSpace - Things");
     await expect(page.getByTestId("nb-things")).toHaveText(`${totalThings} thing(s) found`);
-    await expect(page.getByTestId("thing").or(page.getByTestId("loading"))).toHaveCount(5);
+    await expect(page.getByTestId("thing").or(page.getByTestId("loading"))).toHaveCount(30);
 
-    const nbPages = Math.ceil(totalThings/5);
+    const nbPages = Math.ceil(totalThings/30);
 
     // test pagination display
     await expect(page.getByTestId("pagination").locator("li a")).toHaveCount(nbPages+4);
@@ -105,12 +105,12 @@ test.describe("Things list", () => {
     await expect(page.getByTestId("filter-name")).toHaveValue("");
     await expect(page).toHaveURL(/\/things$/);
     await expect(page.getByTestId("nb-things")).toHaveText(`${totalThings} thing(s) found`);
-    await expect(page.getByTestId("thing").or(page.getByTestId("loading"))).toHaveCount(5);
+    await expect(page.getByTestId("thing").or(page.getByTestId("loading"))).toHaveCount(30);
 
     // filtering must reset the pagination
     await page.getByLabel("Go to next page").click();
     await expect(page).toHaveURL(/\/things\?page=2$/);
-    await expect(page.getByTestId("thing").or(page.getByTestId("loading"))).toHaveCount(5);
+    await expect(page.getByTestId("thing").or(page.getByTestId("loading"))).toHaveCount(30);
     await expect(await thingPage.getDefaultThing()).not.toBeVisible();
     await thingPage.filter({ name: "Eiger" });
     await expect(page).toHaveURL(/\/things\?name=Eiger/);
@@ -128,12 +128,12 @@ test.describe("Things list", () => {
   });
 
   test("I can sort the list @read", async ({ thingPage, page }) => {
-    // sort by title asc
+    // sort by name asc
     await thingPage.filter({ order: "Name ASC" });
     await expect(page).toHaveURL(/\/thing\?order%5Bname%5D=asc$/);
     await expect(await thingPage.getDefaultThing()).not.toBeVisible()
 
-    // sort by title desc
+    // sort by name desc
     await thingPage.filter({ order: "Name DESC" });
     await expect(page).toHaveURL(/\/things\?order%5Bname%5D=desc$/);
     await expect(await thingPage.getDefaultThing()).not.toBeVisible()
