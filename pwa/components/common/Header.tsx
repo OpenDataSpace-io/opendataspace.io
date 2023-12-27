@@ -8,12 +8,12 @@ import TranslateIcon from '@mui/icons-material/Translate';
 import { useTranslation } from 'next-i18next';
 
 import { signOut } from "@/utils/security";
+import Menu from "../admin/Menu";
 
 export const Header = () => {
   const router = useRouter();
   const { data: session } = useSession();
   const { t, i18n } = useTranslation('common');
-  const locales = i18n.options.locales;
 
   const clientSideLanguageChange = (newLocale: string) => {
     i18n.changeLanguage(newLocale);
@@ -39,14 +39,8 @@ export const Header = () => {
             value={i18n.language}
             onChange={(e: any) => clientSideLanguageChange(e.target.value)}
           >
-            {locales.map((name : any) => (
-            <MenuItem
-              key={name}
-              value={name}
-            >
-              {name}
-            </MenuItem>
-          ))}
+            <MenuItem value="en">English</MenuItem>
+            <MenuItem value="de">Deutsch</MenuItem>
           </Select>
           {/* @ts-ignore */}
           {!!session && !session.error && (

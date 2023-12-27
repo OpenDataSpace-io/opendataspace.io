@@ -6,6 +6,7 @@ import { type Thing } from "@/types/Thing";
 import { getItemPath } from "@/utils/dataAccess";
 import { Loading } from "@/components/common/Loading";
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'next-i18next';
 
 interface Props {
   thing: Thing;
@@ -13,6 +14,7 @@ interface Props {
 
 export const Item: FunctionComponent<Props> = ({ thing }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const { t } = useTranslation('common');
 
   useEffect(() => {
     if (thing) {
@@ -31,7 +33,7 @@ export const Item: FunctionComponent<Props> = ({ thing }) => {
                    className="mx-auto w-auto max-w-[150px] h-auto max-h-[165px]" priority={true}
             />
           ) || (
-            <span className="text-slate-300 block h-full">No cover</span>
+            <span className="text-slate-300 block h-full">{t('things.show.noimage')}</span>
           )}
         </Link>
       </div>

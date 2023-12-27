@@ -7,6 +7,7 @@ import Editors from '@/components/form/Editors';
 import { Container, Grid, Button } from '@mui/material';
 import { signIn, useSession } from "next-auth/react";
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/navigation'
 
 interface Session {
     accessToken: string;
@@ -29,6 +30,7 @@ const NewThingForm = () => {
     const [shareURL, setShareURL] = useState<string | null>(null);
     const [isGridVisible, setGridVisible] = useState(false);
     const { data: session = { accessToken: '', error: '' }, status } = useSession() || {};
+    const router = useRouter();
 
     const handleButtonClick = () => {
         setGridVisible(!isGridVisible);
@@ -102,7 +104,7 @@ const NewThingForm = () => {
         console.log(data["formData"]);
 
         try {
-            //if (!session) return;
+            if (!session) return;
             //@ts-ignore
             const token = session.accessToken; // Get the authentication token from the session
             const response = await fetch('/things', {
@@ -117,6 +119,9 @@ const NewThingForm = () => {
             if (response.ok) {
                 // Handle successful response
                 console.log('Thing created successfully');
+                const data = await response.json();
+                console.log(data);
+                router.push(data["@id"]+'/edit');
             } else {
                 // Handle error response
                 console.error('Error creating thing:', response.statusText);

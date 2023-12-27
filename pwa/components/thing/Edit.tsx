@@ -23,6 +23,8 @@ import validator from '@rjsf/validator-ajv8';
 import { FormProps, IChangeEvent, withTheme } from '@rjsf/core';
 import Form from '@rjsf/mui';
 
+import { useTranslation } from 'next-i18next';
+
 interface Props {
     data: Thing;
     hubURL: string | null;
@@ -55,6 +57,8 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
     const [shareURL, setShareURL] = useState<string | null>(null);
     const [isGridVisible, setGridVisible] = useState(false); // Changed initial value to false
     const [FormComponent, setFormComponent] = useState<ComponentType<FormProps>>(withTheme({}));
+
+    const { t } = useTranslation('common');
 
     const handleButtonClick = () => {
         setGridVisible(!isGridVisible);
