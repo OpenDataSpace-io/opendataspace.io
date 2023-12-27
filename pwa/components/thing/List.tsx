@@ -43,7 +43,7 @@ export const List: NextPage<Props> = ({ data, hubURL, filters, page }) => {
 
   const handleFiltersChange = async (event: React.ChangeEvent<{ value: unknown }>) => {
     setIsLoading(true);
-    await filtersMutation.mutateAsync({ ...filters, order: event.target.value ? { title: event.target.value } : undefined });
+    await filtersMutation.mutateAsync({ ...filters, order: event.target.value ? { name: event.target.value } : undefined });
     setIsLoading(false);
   };
 

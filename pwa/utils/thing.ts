@@ -20,7 +20,6 @@ const filterObject = (object: object) => Object.fromEntries(Object.entries(objec
   return typeof value === "object" ? Object.keys(value).length > 0 : value?.length > 0;
 }));
 
-
 export const buildUriFromFilters = (uri: string, filters: FiltersProps): string => {
   // remove empty filters
   filters = filterObject(filters);
