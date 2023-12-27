@@ -1,9 +1,9 @@
 import type {
   GetServerSideProps,
   InferGetServerSidePropsType,
-} from 'next'
+} from 'next';
 
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import { Show } from "@/components/thing/Show";
 import { Thing } from "@/types/Thing";

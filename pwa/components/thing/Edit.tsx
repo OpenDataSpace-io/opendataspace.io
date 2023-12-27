@@ -43,8 +43,8 @@ const APPLICATION_JSON = 'application/json';
 // https://rjsf-team.github.io/react-jsonschema-form/docs/
 
 export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
-    const { data: session = { accessToken: '', error: '' }, status } = useSession() || {};
-    //const session: Session | null = useSession();
+    //const { data: session = { accessToken: '', error: '' }, status } = useSession() || {};
+    const {session, status } = useSession();
     const item = useMercure(data, hubURL);
     const [schema, setSchema] = useState({});
     const [uiSchema, setUiSchema] = useState({});
@@ -183,7 +183,7 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
     if (status === "loading" || !schema || !uiSchema) {
         return <Loading />;
     } else if (!session) {
-        signIn();
+        signIn('keycloak');
     } else if (item) {
         return (
             <>
