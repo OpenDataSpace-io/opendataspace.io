@@ -22,6 +22,7 @@ import { ErrorSchema, RJSFSchema, RJSFValidationError, UiSchema, ValidatorType }
 import validator from '@rjsf/validator-ajv8';
 import { FormProps, IChangeEvent, withTheme } from '@rjsf/core';
 import Form from '@rjsf/mui';
+import { useRouter } from 'next/router';
 
 import { useTranslation } from 'next-i18next';
 
@@ -58,6 +59,7 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
     const [isGridVisible, setGridVisible] = useState(false); // Changed initial value to false
     const [FormComponent, setFormComponent] = useState<ComponentType<FormProps>>(withTheme({}));
     const { t } = useTranslation('common');
+    const router = useRouter();
 
     const handleButtonClick = () => {
         setGridVisible(!isGridVisible);
@@ -162,6 +164,9 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
             if (response.ok) {
                 // Handle successful response
                 console.log('Thing created successfully');
+                // go to the thing page
+                data = await response.json();
+                router.push(data['@id']);
             } else {
                 // Handle error response
                 throw new Error(`Error creating thing: ${response.statusText}`);

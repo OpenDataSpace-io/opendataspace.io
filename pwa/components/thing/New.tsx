@@ -9,6 +9,7 @@ import { signIn, useSession } from "next-auth/react";
 import { useTranslation } from 'next-i18next';
 import { type NextPage } from "next";
 import { type Thing } from "@/types/Thing";
+import { useRouter } from "next/router";
 
 interface Session {
     accessToken: string;
@@ -37,6 +38,7 @@ export const New: NextPage<Props> = ({ data, hubURL, page }) => {
     const [shareURL, setShareURL] = useState<string | null>(null);
     const [isGridVisible, setGridVisible] = useState(false);
     const { data: session = { accessToken: '', error: '' }, status } = useSession() || {};
+    const router = useRouter();
 
     const handleButtonClick = () => {
         setGridVisible(!isGridVisible);
@@ -125,6 +127,9 @@ export const New: NextPage<Props> = ({ data, hubURL, page }) => {
             if (response.ok) {
                 // Handle successful response
                 console.log('Thing created successfully');
+                data = await response.json();
+                console.log(data);
+                router.push(data["@id"]);
             } else {
                 // Handle error response
                 console.error('Error creating thing:', response.statusText);
