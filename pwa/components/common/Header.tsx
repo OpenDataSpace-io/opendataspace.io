@@ -37,9 +37,9 @@ export const Header = () => {
             data-testid="language"
             variant="standard"
             value={i18n.language}
-            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => clientSideLanguageChange(e.target.value)}
+            onChange={(e: any) => clientSideLanguageChange(e.target.value)}
           >
-            {locales.map((name) => (
+            {locales.map((name : any) => (
             <MenuItem
               key={name}
               value={name}
