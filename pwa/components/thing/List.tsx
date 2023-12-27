@@ -1,4 +1,5 @@
 import { type NextPage } from "next";
+import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useMutation } from "react-query";
@@ -38,6 +39,14 @@ export const List: NextPage<Props> = ({ data, hubURL, filters, page }) => {
     router.push(buildUriFromFilters("/things", filters));
   });
 
+  const [isLoading, setIsLoading] = React.useState(false);
+
+  const handleFiltersChange = async (event: React.ChangeEvent<{ value: unknown }>) => {
+    setIsLoading(true);
+    await filtersMutation.mutateAsync({ ...filters, order: event.target.value ? { name: event.target.value } : undefined });
+    setIsLoading(false);
+  };
+
   return (
     <div className="container mx-auto max-w-7xl items-center justify-between p-6 lg:px-8">
       <Head>
@@ -47,7 +56,7 @@ export const List: NextPage<Props> = ({ data, hubURL, filters, page }) => {
         <aside className="float-left w-[180px] mr-6" aria-label="Filters">
           <div className="font-semibold pb-2 border-b border-black text-lg mb-4">
             <FilterListOutlinedIcon className="w-6 h-6 mr-1"/>
-            Filters
+            {t('things.list.filters')}
           </div>
           {/* @ts-ignore */}
           <Filters mutation={filtersMutation} filters={filters}/>
@@ -57,28 +66,31 @@ export const List: NextPage<Props> = ({ data, hubURL, filters, page }) => {
             <>
               <div className="w-full flex px-8 pb-4 text-lg">
                 <div className="float-left flex w-[400px]">
-                  <span className="mr-2">Sort by:</span>
+                  <span className="mr-2">{t('things.list.sortby')}</span>
                   <Select
                     data-testid="sort"
                     variant="standard"
                     value={filters.order?.name ?? ""}
                     displayEmpty
-                    onChange={(event) => {
-                      filtersMutation.mutate({ ...filters, order: event.target.value ? { name: event.target.value } : undefined });
-                    }}
-                    >
-                    <MenuItem value="">Relevance</MenuItem>
-                    <MenuItem value="asc">Name ASC</MenuItem>
-                    <MenuItem value="desc">Name DESC</MenuItem>
+                    onChange={handleFiltersChange}
+                    disabled={isLoading}
+                  >
+                    <MenuItem value="">{t('things.list.sortbyrelevance')}</MenuItem>
+                    <MenuItem value="asc">{t('things.list.sortbynameasc')}</MenuItem>
+                    <MenuItem value="desc">{t('things.list.sortbynamedesc')}</MenuItem>
                   </Select>
                 </div>
                 <span data-testid="nb-things" className="float-right mt-1">{collection["hydra:totalItems"]} {t('thingsfound')}</span>
               </div>
-              <div className="grid grid-cols-5 gap-4">
-                {collection["hydra:member"].length !== 0 && collection["hydra:member"].map((thing) => (
-                  <Item key={thing["@id"]} thing={thing}/>
-                ))}
-              </div>
+              {isLoading ? (
+                <div className="w-full flex px-8 pb-4 text-lg">Loading...</div>
+              ) : (
+                <div className="grid grid-cols-5 gap-4">
+                  {collection["hydra:member"].length !== 0 && collection["hydra:member"].map((thing) => (
+                    <Item key={thing["@id"]} thing={thing}/>
+                  ))}
+                </div>
+              )}
               <Pagination collection={collection} getPagePath={getPagePath} currentPage={page}/>
             </>
           ) || (

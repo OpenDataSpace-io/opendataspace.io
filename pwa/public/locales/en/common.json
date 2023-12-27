@@ -9,5 +9,18 @@
   "welcometo": "Welcome to",
   "showmetadata": "Show metadata",
   "closemetadata": "Close metadata",
-  "noimage": "No image"
+  "noimage": "No image",
+  "things":{
+    "list": {
+      "filters": "Filters",
+      "searchbyname": "Search by name",
+      "sortby": "Sort by",
+      "sortbyrelevance": "Relevance",
+      "sortbynameasc": "Name ASC",
+      "sortbynamedesc": "Name DESC"
+    },
+    "edit":{
+
+    }
+  }
 }

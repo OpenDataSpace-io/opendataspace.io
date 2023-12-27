@@ -9,5 +9,18 @@
   "welcometo": "Willkommen bei",
   "showmetadata": "Metadaten anzeigen",
   "closemetadata": "Metadaten schließen",
-  "noimage": "Kein Bild verfügbar"
+  "noimage": "Kein Bild verfügbar",
+  "things":{
+    "list": {
+      "filters": "Filter",
+      "searchbyname": "Suche nach Name",
+      "sortby": "Sortieren nach",
+      "sortbyrelevance": "Relevanz",
+      "sortbynameasc": "Name aufsteigend",
+      "sortbynamedesc": "Name absteigend"
+    },
+    "edit":{
+
+    }
+  }
 }
