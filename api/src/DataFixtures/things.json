@@ -903,7 +903,7 @@
     {
         "@context": "https://schema.org",
         "@type": "Accommodation",
-        "name": "Berggasthof",
+        "name": "Berggasthof Alpenblick",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Bergstraße 1",
@@ -912,9 +912,9 @@
             "addressCountry": "Schweiz"
         },
         "telephone": "+41 444 555 666",
-        "email": "info@berggasthof.ch",
-        "url": "https://www.berggasthof.ch",
-        "description": "Der Berggasthof bietet eine rustikale Unterkunft mit herrlichem Bergblick.",
+        "email": "info@berggasthof-alpenblick.ch",
+        "url": "https://www.berggasthof-alpenblick.ch",
+        "description": "Der Berggasthof Alpenblick bietet eine rustikale Unterkunft mit herrlichem Bergblick.",
         "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/image10.jpeg",
         "priceRange": "$$",
         "paymentAccepted": "Cash, Credit Card",
@@ -937,7 +937,7 @@
     {
         "@context": "https://schema.org",
         "@type": "Accommodation",
-        "name": "Stadthotel",
+        "name": "Stadthotel Metropol",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Hauptstraße 789",
@@ -946,9 +946,9 @@
             "addressCountry": "Schweiz"
         },
         "telephone": "+41 999 888 777",
-        "email": "info@stadthotel.ch",
-        "url": "https://www.stadthotel.ch",
-        "description": "Das Stadthotel bietet moderne Unterkünfte im Zentrum von Zürich.",
+        "email": "info@stadthotel-metropol.ch",
+        "url": "https://www.stadthotel-metropol.ch",
+        "description": "Das Stadthotel Metropol bietet moderne Unterkünfte im Zentrum von Zürich.",
         "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/image13.jpeg",
         "priceRange": "$$$",
         "paymentAccepted": "Cash, Credit Card",
@@ -971,7 +971,7 @@
     {
         "@context": "https://schema.org",
         "@type": "Accommodation",
-        "name": "Strandhotel",
+        "name": "Strandhotel Hüsli",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Strandstraße 123",
@@ -980,9 +980,9 @@
             "addressCountry": "Schweiz"
         },
         "telephone": "+41 777 888 999",
-        "email": "info@strandhotel.ch",
-        "url": "https://www.strandhotel.ch",
-        "description": "Das Strandhotel bietet einen entspannten Aufenthalt am Ufer des Vierwaldstättersees.",
+        "email": "info@strandhotel-huesli.ch",
+        "url": "https://www.strandhotel-huesli.ch",
+        "description": "Das Strandhotel Hüsli bietet einen entspannten Aufenthalt am Ufer des Vierwaldstättersees.",
         "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/strandhotel.jpeg",
         "priceRange": "$$$",
         "paymentAccepted": "Cash, Credit Card",
@@ -1005,7 +1005,7 @@
     {
         "@context": "https://schema.org",
         "@type": "Accommodation",
-        "name": "Boutique Hotel",
+        "name": "Boutique Hotel Sophie",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Hügelstraße 456",
@@ -1014,9 +1014,9 @@
             "addressCountry": "Schweiz"
         },
         "telephone": "+41 666 777 888",
-        "email": "info@boutiquehotel.ch",
-        "url": "https://www.boutiquehotel.ch",
-        "description": "Das Boutique Hotel bietet individuell gestaltete Zimmer in einem charmanten historischen Gebäude.",
+        "email": "info@boutiquehotel-sophie.ch",
+        "url": "https://www.boutiquehotel-sophie.ch",
+        "description": "Das Boutique Hotel Sophie bietet individuell gestaltete Zimmer in einem charmanten historischen Gebäude.",
         "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/boutique.jpeg",
         "priceRange": "$$$",
         "paymentAccepted": "Cash, Credit Card",
@@ -1039,7 +1039,7 @@
     {
         "@context": "https://schema.org",
         "@type": "Accommodation",
-        "name": "Landhotel",
+        "name": "Landhotel Jägerhof",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Dorfstraße 789",
@@ -1048,9 +1048,9 @@
             "addressCountry": "Schweiz"
         },
         "telephone": "+41 222 333 444",
-        "email": "info@landhotel.ch",
-        "url": "https://www.landhotel.ch",
-        "description": "Das Landhotel bietet eine idyllische Unterkunft inmitten der Schweizer Alpen.",
+        "email": "info@landhotel-jaegerhof.ch",
+        "url": "https://www.landhotel-jaegerhof.ch",
+        "description": "Das Landhotel Jägerhof bietet eine idyllische Unterkunft inmitten der Schweizer Alpen.",
         "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/landhotel.jpeg",
         "priceRange": "$$",
         "paymentAccepted": "Cash, Credit Card",
@@ -1073,7 +1073,7 @@
     {
         "@context": "https://schema.org",
         "@type": "Accommodation",
-        "name": "Ferienhaus",
+        "name": "Ferienhaus Lyla",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Bergweg 123",
@@ -1082,15 +1082,15 @@
             "addressCountry": "Schweiz"
         },
         "telephone": "+41 555 666 777",
-        "email": "info@ferienhaus.ch",
-        "url": "https://www.ferienhaus.ch",
+        "email": "info@ferienhaus-layla.ch",
+        "url": "https://www.ferienhaus-layla.ch",
         "description": "Das Ferienhaus bietet eine gemütliche Unterkunft in den Schweizer Bergen.",
         "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/ferienhaus.jpeg",
         "priceRange": "$$",
         "paymentAccepted": "Cash, Credit Card",
         "currenciesAccepted": "CHF, EUR",
         "areaServed": "Schweiz",
-        "legalName": "Ferienhaus",
+        "legalName": "Ferienhaus Lyla",
         "founder": "Peter Müller",
         "foundingDate": "1997-04-12",
         "contactPoint": {
@@ -1107,7 +1107,7 @@
     {
         "@context": "https://schema.org",
         "@type": "Accommodation",
-        "name": "Gästehaus",
+        "name": "Gästehaus Meier",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Hauptplatz 789",
@@ -1116,8 +1116,8 @@
             "addressCountry": "Schweiz"
         },
         "telephone": "+41 888 999 000",
-        "email": "info@gastehaus.ch",
-        "url": "https://www.gastehaus.ch",
+        "email": "info@gastehaus-meier.ch",
+        "url": "https://www.gastehaus-meier.ch",
         "description": "Das Gästehaus bietet eine freundliche Unterkunft im Herzen von Lugano.",
         "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/gaesthaus.jpeg",
         "priceRange": "$$",
@@ -1141,7 +1141,7 @@
     {
         "@context": "https://schema.org",
         "@type": "Accommodation",
-        "name": "Pension",
+        "name": "Pension Müller",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Dorfplatz 123",
@@ -1151,7 +1151,7 @@
         },
         "telephone": "+41 777 888 999",
         "email": "info@pension.ch",
-        "url": "https://www.pension.ch",
+        "url": "https://www.pension-mueller.ch",
         "description": "Die Pension bietet eine erschwingliche Unterkunft in Lausanne.",
         "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/pension.jpeg",
         "priceRange": "$",
@@ -1159,7 +1159,7 @@
         "currenciesAccepted": "CHF",
         "areaServed": "Schweiz",
         "legalName": "Pension",
-        "founder": "Hans Meier",
+        "founder": "Hans Müller",
         "foundingDate": "1980-09-15",
         "contactPoint": {
             "@type": "ContactPoint",
@@ -1175,7 +1175,7 @@
     {
         "@context": "https://schema.org",
         "@type": "Accommodation",
-        "name": "Chalet",
+        "name": "Chalet Verbier",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Bergweg 456",
@@ -1185,7 +1185,7 @@
         },
         "telephone": "+41 222 333 444",
         "email": "info@chalet.ch",
-        "url": "https://www.chalet.ch",
+        "url": "https://www.chalet-verbier.ch",
         "description": "Das Chalet bietet eine luxuriöse Unterkunft in den Schweizer Alpen.",
         "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/chalet.jpeg",
         "priceRange": "$$$",
@@ -1209,7 +1209,7 @@
     {
         "@context": "https://schema.org",
         "@type": "Accommodation",
-        "name": "Hostel",
+        "name": "Hostel Bären",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Jugendstraße 789",
@@ -1219,7 +1219,7 @@
         },
         "telephone": "+41 555 666 777",
         "email": "info@hostel.ch",
-        "url": "https://www.hostel.ch",
+        "url": "https://www.hostel-baeren.ch",
         "description": "Das Hostel bietet eine preiswerte Unterkunft für junge Reisende.",
         "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/hostel.jpeg",
         "priceRange": "$",
