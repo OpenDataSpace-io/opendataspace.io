@@ -207,7 +207,7 @@ final class ThingTest extends ApiTestCase
             'email' => UserFactory::createOneAdmin()->email,
         ]);
 
-        $this->client->request('GET', '/admin/thing/' . $thing->getId(), ['auth_bearer' => $token]);
+        $this->client->request('GET', '/admin/things/' . $thing->getId(), ['auth_bearer' => $token]);
 
         self::assertResponseIsSuccessful();
         self::assertResponseHeaderSame('content-type', 'application/ld+json; charset=utf-8');
