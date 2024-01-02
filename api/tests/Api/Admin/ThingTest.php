@@ -85,7 +85,7 @@ final class ThingTest extends ApiTestCase
         ]);
         self::assertCount(min($itemsPerPage ?? $hydraTotalItems, 30), $response->toArray()['hydra:member']);
         //self::assertMatchesJsonSchema(file_get_contents(__DIR__ . '/schemas/Book/collection.json'));
-    }*/
+    }
 
     public static function getUrls(): iterable
     {
@@ -111,6 +111,7 @@ final class ThingTest extends ApiTestCase
             1,
         ];
     }
+    */
 
     /**
      * @test

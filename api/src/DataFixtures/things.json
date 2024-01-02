@@ -1357,25 +1357,6 @@
     {
         "@context": "https://schema.org",
         "@type": "TouristAttraction",
-        "name": "Château de Chillon",
-        "description": "Château de Chillon is a medieval castle located on the shores of Lake Geneva, known for its rich history and stunning architecture.",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Veytaux",
-            "addressCountry": "Switzerland"
-        },
-        "telephone": "+41 21 966 89 10",
-        "url": "https://www.chillon.ch/en/",
-        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/chillon3.jpeg",
-        "openingHours": "Mo-Su 09:00-18:00",
-        "priceRange": "$$",
-        "touristType": "Culture",
-        "isAccessibleForFree": false,
-        "hasMap": "https://www.chillon.ch/en/visit/map"
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "TouristAttraction",
         "name": "Lake Geneva",
         "description": "Lake Geneva is a large lake shared by Switzerland and France, known for its beautiful scenery and water activities.",
         "address": {
