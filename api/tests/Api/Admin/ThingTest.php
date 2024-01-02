@@ -212,7 +212,7 @@ final class ThingTest extends ApiTestCase
         self::assertResponseIsSuccessful();
         self::assertResponseHeaderSame('content-type', 'application/ld+json; charset=utf-8');
         self::assertJsonContains([
-            '@id' => '/things/' . $thing->getId(),
+            '@id' => '/admin/things/' . $thing->getId(),
         ]);
     }
 
