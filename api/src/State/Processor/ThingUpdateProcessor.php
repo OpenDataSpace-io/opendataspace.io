@@ -23,8 +23,8 @@ final readonly class ThingUpdateProcessor implements ProcessorInterface
     public function __construct(
         #[Autowire(service: PersistProcessor::class)]
         private ProcessorInterface $persistProcessor,
-        //#[Autowire(service: MercureProcessor::class)]
-        //private ProcessorInterface $mercureProcessor,
+        #[Autowire(service: MercureProcessor::class)]
+        private ProcessorInterface $mercureProcessor,
         private ThingRepository $repository,
         private RequestStack $requestStack
     ) {
@@ -64,7 +64,7 @@ final readonly class ThingUpdateProcessor implements ProcessorInterface
         // TODO: save History
 
         // publish on Mercure
-        /*foreach (['/admin/things/{id}{._format}', '/things/{id}{._format}'] as $uriTemplate) {
+        foreach (['/admin/things/{id}{._format}', '/things/{id}{._format}'] as $uriTemplate) {
             $this->mercureProcessor->process(
                 $data,
                 $operation,
@@ -73,7 +73,7 @@ final readonly class ThingUpdateProcessor implements ProcessorInterface
                     'item_uri_template' => $uriTemplate,
                 ]
             );
-        }*/
+        }
 
         return $thing;
     }

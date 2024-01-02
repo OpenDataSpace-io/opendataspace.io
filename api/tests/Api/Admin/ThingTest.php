@@ -180,7 +180,7 @@ final class ThingTest extends ApiTestCase
             $options['auth_bearer'] = $token;
         }
 
-        $this->client->request('GET', '/admin/tjomgs/' . $thing->getId(), $options);
+        $this->client->request('GET', '/admin/things/' . $thing->getId(), $options);
 
         self::assertResponseStatusCodeSame($expectedCode);
         self::assertResponseHeaderSame('content-type', 'application/problem+json; charset=utf-8');

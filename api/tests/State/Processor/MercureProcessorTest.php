@@ -11,7 +11,7 @@ use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\Operation;
 use ApiPlatform\Metadata\Resource\Factory\ResourceMetadataCollectionFactoryInterface;
 use ApiPlatform\Metadata\Resource\ResourceMetadataCollection;
-use App\Entity\Book;
+use App\Entity\Thing;
 use App\State\Processor\MercureProcessor;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -28,7 +28,7 @@ final class MercureProcessorTest extends TestCase
     private IriConverterInterface|MockObject $iriConverterMock;
     private MockObject|ResourceMetadataCollectionFactoryInterface $resourceMetadataCollectionFactoryMock;
     private ResourceMetadataCollection $resourceMetadataCollection;
-    private Book|MockObject $objectMock;
+    private Thing|MockObject $objectMock;
     private MockObject|Operation $operationMock;
     private MercureProcessor $processor;
 
@@ -38,12 +38,12 @@ final class MercureProcessorTest extends TestCase
         $this->hubMock = $this->createMock(HubInterface::class);
         $this->hubRegistry = new HubRegistry($this->hubMock);
         $this->resourceMetadataCollectionFactoryMock = $this->createMock(ResourceMetadataCollectionFactoryInterface::class);
-        $this->resourceMetadataCollection = new ResourceMetadataCollection(Book::class, [
-            new ApiResource(operations: [new Get('/admin/books/{id}{._format}')]),
-            new ApiResource(operations: [new Get('/books/{id}{._format}')]),
+        $this->resourceMetadataCollection = new ResourceMetadataCollection(Thing::class, [
+            new ApiResource(operations: [new Get('/admin/things/{id}{._format}')]),
+            new ApiResource(operations: [new Get('/things/{id}{._format}')]),
         ]);
         $this->iriConverterMock = $this->createMock(IriConverterInterface::class);
-        $this->objectMock = $this->createMock(Book::class);
+        $this->objectMock = $this->createMock(Thing::class);
         $this->operationMock = $this->createMock(Operation::class);
 
         $this->processor = new MercureProcessor(
@@ -65,7 +65,7 @@ final class MercureProcessorTest extends TestCase
             ->expects($this->once())
             ->method('getIriFromResource')
             ->with($this->objectMock, UrlGeneratorInterface::ABS_URL, $this->operationMock)
-            ->willReturn('/books/9aff4b91-31cf-4e91-94b0-1d52bbe23fe6')
+            ->willReturn('/things/9aff4b91-31cf-4e91-94b0-1d52bbe23fe6')
         ;
         $this->operationMock
             ->expects($this->once())
@@ -82,7 +82,7 @@ final class MercureProcessorTest extends TestCase
             ->expects($this->once())
             ->method('publish')
             ->with($this->equalTo(new Update(
-                topics: ['/books/9aff4b91-31cf-4e91-94b0-1d52bbe23fe6'],
+                topics: ['/things/9aff4b91-31cf-4e91-94b0-1d52bbe23fe6'],
                 data: json_encode(['foo' => 'bar']),
             )))
         ;
@@ -108,14 +108,14 @@ final class MercureProcessorTest extends TestCase
             ->expects($this->once())
             ->method('publish')
             ->with($this->equalTo(new Update(
-                topics: ['/admin/books/9aff4b91-31cf-4e91-94b0-1d52bbe23fe6'],
+                topics: ['/admin/things/9aff4b91-31cf-4e91-94b0-1d52bbe23fe6'],
                 data: json_encode(['bar' => 'baz']),
             )))
         ;
 
         $this->processor->process($this->objectMock, $this->operationMock, [], [
-            'item_uri_template' => '/admin/books/{id}{._format}',
-            'topics' => ['/admin/books/9aff4b91-31cf-4e91-94b0-1d52bbe23fe6'],
+            'item_uri_template' => '/admin/things/{id}{._format}',
+            'topics' => ['/admin/things/9aff4b91-31cf-4e91-94b0-1d52bbe23fe6'],
             MercureProcessor::DATA => json_encode(['bar' => 'baz']),
         ]);
     }
