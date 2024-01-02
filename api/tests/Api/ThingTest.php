@@ -42,7 +42,7 @@ final class ThingTest extends ApiTestCase
             'hydra:totalItems' => $hydraTotalItems,
         ]);
         self::assertCount(min($hydraTotalItems, 30), $response->toArray()['hydra:member']);
-    }*/
+    }
 
     public static function getUrls(): iterable
     {
@@ -61,7 +61,7 @@ final class ThingTest extends ApiTestCase
             '/things?name=eiger',
             1,
         ];
-    }
+    }*/
 
     /**
      * @test
