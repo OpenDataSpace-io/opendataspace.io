@@ -10,7 +10,7 @@ import "@fontsource/poppins/700.css";
 //import nextI18NextConfig from '../next-i18next.config.js';
 import { appWithTranslation } from 'next-i18next';
 
-const MyApp = ({ Component, pageProps }: AppProps<{
+const App = ({ Component, pageProps }: AppProps<{
   dehydratedState: DehydratedState,
   session: Session,
 }>) => {
@@ -23,4 +23,4 @@ const MyApp = ({ Component, pageProps }: AppProps<{
   );
 }
 
-export default appWithTranslation(MyApp/*, nextI18NextConfig*/);
+export default appWithTranslation(App/*, nextI18NextConfig*/);
