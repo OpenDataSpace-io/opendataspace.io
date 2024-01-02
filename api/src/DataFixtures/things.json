@@ -1239,5 +1239,309 @@
             "https://www.instagram.com/hostel",
             "https://twitter.com/hostel"
         ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Matterhorn",
+        "description": "The Matterhorn is one of the most iconic mountains in the Swiss Alps, known for its distinctive pyramid shape and challenging climbing routes.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zermatt",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 27 966 81 00",
+        "url": "https://www.zermatt.ch/en/matterhorn",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/matterhorn.jpeg",
+        "openingHours": "Mo-Su 24/7",
+        "priceRange": "$$$",
+        "touristType": "Adventure",
+        "isAccessibleForFree": false,
+        "hasMap": "https://www.zermatt.ch/en/matterhorn/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Château de Chillon",
+        "description": "Château de Chillon is a medieval castle located on the shores of Lake Geneva, known for its rich history and stunning architecture.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Veytaux",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 21 966 89 10",
+        "url": "https://www.chillon.ch/en/",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/chillon2.jpeg",
+        "openingHours": "Mo-Su 09:00-18:00",
+        "priceRange": "$$",
+        "touristType": "Culture",
+        "isAccessibleForFree": false,
+        "hasMap": "https://www.chillon.ch/en/visit/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Jungfraujoch",
+        "description": "Jungfraujoch is a popular tourist destination in the Swiss Alps, known as the 'Top of Europe' and offering stunning views and various activities.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Grindelwald",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 33 828 72 33",
+        "url": "https://www.jungfrau.ch/en-gb/jungfraujoch",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/jungfraujoch.jpeg",
+        "openingHours": "Mo-Su 08:00-18:00",
+        "priceRange": "$$$",
+        "touristType": "Adventure",
+        "isAccessibleForFree": false,
+        "hasMap": "https://www.jungfrau.ch/en-gb/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Aletsch Glacier",
+        "description": "Aletsch Glacier is the largest glacier in the Alps, offering stunning views and hiking opportunities.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Fiesch",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 27 971 15 15",
+        "url": "https://www.aletscharena.ch/en/aletsch-glacier",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/aletsch.jpeg",
+        "openingHours": "Mo-Su 24/7",
+        "priceRange": "$",
+        "touristType": "Nature",
+        "isAccessibleForFree": true,
+        "hasMap": "https://www.aletscharena.ch/en/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Zytglogge",
+        "description": "Zytglogge is a medieval clock tower in Bern, known for its astronomical clock and panoramic views of the city.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bern",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 31 328 12 12",
+        "url": "https://www.bern.com/en/detail/zytglogge",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/zytglogge.jpeg",
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "touristType": "Culture",
+        "isAccessibleForFree": true,
+        "hasMap": "https://www.bern.com/en/detail/zytglogge/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Rhine Falls",
+        "description": "The Rhine Falls is the largest waterfall in Switzerland and Europe, offering breathtaking views and boat tours.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Neuhausen am Rheinfall",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 52 672 21 30",
+        "url": "https://www.rhinefalls.com",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/rhinefalls2.jpeg",
+        "openingHours": "Mo-Su 09:00-19:00",
+        "priceRange": "$$",
+        "touristType": "Nature",
+        "isAccessibleForFree": false,
+        "hasMap": "https://www.rhinefalls.com/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Château de Chillon",
+        "description": "Château de Chillon is a medieval castle located on the shores of Lake Geneva, known for its rich history and stunning architecture.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Veytaux",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 21 966 89 10",
+        "url": "https://www.chillon.ch/en/",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/chillon3.jpeg",
+        "openingHours": "Mo-Su 09:00-18:00",
+        "priceRange": "$$",
+        "touristType": "Culture",
+        "isAccessibleForFree": false,
+        "hasMap": "https://www.chillon.ch/en/visit/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Lake Geneva",
+        "description": "Lake Geneva is a large lake shared by Switzerland and France, known for its beautiful scenery and water activities.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Geneva",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 22 909 70 00",
+        "url": "https://www.geneva.info/lake-geneva",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/lakegeneva.jpeg",
+        "openingHours": "Mo-Su 24/7",
+        "priceRange": "$",
+        "touristType": "Nature",
+        "isAccessibleForFree": true,
+        "hasMap": "https://www.geneva.info/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Zurich Old Town",
+        "description": "Zurich Old Town is the historic center of Zurich, known for its medieval architecture, narrow streets, and vibrant atmosphere.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zurich",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 44 215 40 00",
+        "url": "https://www.zuerich.com/en/visit/old-town",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/zuerich.jpeg",
+        "openingHours": "Mo-Su 24/7",
+        "priceRange": "$$",
+        "touristType": "Culture",
+        "isAccessibleForFree": true,
+        "hasMap": "https://www.zuerich.com/en/visit/old-town/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Titlis",
+        "description": "Titlis is a mountain in the Swiss Alps, known for its cable car, panoramic views, and winter sports activities.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Engelberg",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 41 639 50 50",
+        "url": "https://www.titlis.ch/en",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/titlis.jpeg",
+        "openingHours": "Mo-Su 08:00-18:00",
+        "priceRange": "$$$",
+        "touristType": "Adventure",
+        "isAccessibleForFree": false,
+        "hasMap": "https://www.titlis.ch/en/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Jura Mountains",
+        "description": "The Jura Mountains are a sub-alpine mountain range located in Switzerland, France, and Germany, known for their scenic beauty and hiking trails.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Jura",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 32 420 47 77",
+        "url": "https://www.juratourisme.ch/en/discoveries/nature/jura-mountains",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/juramountains.jpeg",
+        "openingHours": "Mo-Su 24/7",
+        "priceRange": "$",
+        "touristType": "Nature",
+        "isAccessibleForFree": true,
+        "hasMap": "https://www.juratourisme.ch/en/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Zermatt",
+        "description": "Zermatt is a popular ski resort town in the Swiss Alps, known for its picturesque views, skiing, and mountaineering opportunities.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zermatt",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 27 966 81 00",
+        "url": "https://www.zermatt.ch",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/zermatt2.jpeg",
+        "openingHours": "Mo-Su 24/7",
+        "priceRange": "$$",
+        "touristType": "Adventure",
+        "isAccessibleForFree": false,
+        "hasMap": "https://www.zermatt.ch/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Lake Lucerne",
+        "description": "Lake Lucerne is a large lake in central Switzerland, known for its beautiful scenery and water activities.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lucerne",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 41 227 17 17",
+        "url": "https://www.luzern.com/en/lake-lucerne",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/lakelucerne.jpeg",
+        "openingHours": "Mo-Su 24/7",
+        "priceRange": "$",
+        "touristType": "Nature",
+        "isAccessibleForFree": true,
+        "hasMap": "https://www.luzern.com/en/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Lake Lugano",
+        "description": "Lake Lugano is a large lake in southern Switzerland, known for its beautiful scenery and water activities.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lugano",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 58 866 66 00",
+        "url": "https://www.luganoregion.com/en/see-do/nature-parks/lake-lugano",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/lakelugano.jpeg",
+        "openingHours": "Mo-Su 24/7",
+        "priceRange": "$",
+        "touristType": "Nature",
+        "isAccessibleForFree": true,
+        "hasMap": "https://www.luganoregion.com/en/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Swiss National Park",
+        "description": "Swiss National Park is a nature reserve located in the Alps, known for its diverse wildlife and hiking trails.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zernez",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 81 851 41 41",
+        "url": "https://www.nationalpark.ch/en/",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/swiss-national-park.jpeg",
+        "openingHours": "Mo-Su 24/7",
+        "priceRange": "$",
+        "touristType": "Nature",
+        "isAccessibleForFree": true,
+        "hasMap": "https://www.nationalpark.ch/en/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Chapel Bridge",
+        "description": "The Chapel Bridge is a famous wooden bridge in Lucerne, adorned with beautiful paintings and offering stunning views of the city.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lucerne",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 41 227 17 17",
+        "url": "https://www.luzern.com/chapel-bridge",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/chapel-bridge.jpeg",
+        "openingHours": "Mo-Su 09:00-18:00",
+        "priceRange": "$$",
+        "touristType": "Culture",
+        "isAccessibleForFree": true,
+        "hasMap": "https://www.luzern.com/map"
     }
 ]

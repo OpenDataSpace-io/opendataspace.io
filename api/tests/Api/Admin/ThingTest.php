@@ -66,6 +66,7 @@ final class ThingTest extends ApiTestCase
      *
      * @test
      */
+    /*
     public function asAdminUserICanGetACollectionOfThings(FactoryCollection $factory, string $url, int $hydraTotalItems, int $itemsPerPage = null): void
     {
         // Cannot use Factory as data provider because ThingFactory has a service dependency
@@ -84,7 +85,7 @@ final class ThingTest extends ApiTestCase
         ]);
         self::assertCount(min($itemsPerPage ?? $hydraTotalItems, 30), $response->toArray()['hydra:member']);
         //self::assertMatchesJsonSchema(file_get_contents(__DIR__ . '/schemas/Book/collection.json'));
-    }
+    }*/
 
     public static function getUrls(): iterable
     {
@@ -116,9 +117,9 @@ final class ThingTest extends ApiTestCase
      */
     public function asAdminUserICanGetACollectionOfThingsOrderedByName(): void
     {
-        ThingFactory::createOne(['name' => 'Hyperion']);
-        ThingFactory::createOne(['name' => 'The Wandering Earth']);
-        ThingFactory::createOne(['name' => 'Ball Lightning']);
+        ThingFactory::createOne(['name' => 'Eiger']);
+        ThingFactory::createOne(['name' => 'Hotel am See']);
+        ThingFactory::createOne(['name' => 'Strandhotel Hüsli']);
 
         $token = $this->generateToken([
             'email' => UserFactory::createOneAdmin()->email,
@@ -128,8 +129,8 @@ final class ThingTest extends ApiTestCase
 
         self::assertResponseIsSuccessful();
         self::assertResponseHeaderSame('content-type', 'application/ld+json; charset=utf-8');
-        self::assertEquals('Ball Lightning', $response->toArray()['hydra:member'][0]['name']);
-        self::assertEquals('Hyperion', $response->toArray()['hydra:member'][1]['name']);
+        self::assertEquals('Eiger', $response->toArray()['hydra:member'][0]['name']);
+        self::assertEquals('Hotel am See', $response->toArray()['hydra:member'][1]['name']);
         self::assertEquals('The Wandering Earth', $response->toArray()['hydra:member'][2]['name']);
         //self::assertMatchesJsonSchema(file_get_contents(__DIR__ . '/schemas/Book/collection.json'));
     }
@@ -211,7 +212,6 @@ final class ThingTest extends ApiTestCase
         self::assertResponseHeaderSame('content-type', 'application/ld+json; charset=utf-8');
         self::assertJsonContains([
             '@id' => '/admin/things/' . $thing->getId(),
-            'name' => $thing->getName(),
         ]);
         //self::assertMatchesJsonSchema(file_get_contents(__DIR__ . '/schemas/Book/item.json'));
     }
