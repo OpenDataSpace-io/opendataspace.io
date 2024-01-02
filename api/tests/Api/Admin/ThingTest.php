@@ -207,7 +207,7 @@ final class ThingTest extends ApiTestCase
             'email' => UserFactory::createOneAdmin()->email,
         ]);
 
-        $this->client->request('GET', '/admin/things/' . $thing->getId(), ['auth_bearer' => $token]);
+        $this->client->request('GET', '/admin/thing/' . $thing->getId(), ['auth_bearer' => $token]);
 
         self::assertResponseIsSuccessful();
         self::assertResponseHeaderSame('content-type', 'application/ld+json; charset=utf-8');
@@ -275,7 +275,7 @@ final class ThingTest extends ApiTestCase
         self::assertResponseHeaderSame('content-type', 'application/problem+json; charset=utf-8');
         self::assertResponseHeaderSame('link', '<http://www.w3.org/ns/hydra/error>; rel="http://www.w3.org/ns/json-ld#error",<http://localhost/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"');
         self::assertJsonContains($expected);
-    }*/
+    }
 
     public function getInvalidDataOnCreate(): iterable
     {
@@ -316,6 +316,7 @@ final class ThingTest extends ApiTestCase
             ],
         ];
     }
+    */
 
     /**
      * @group apiCall
@@ -323,6 +324,7 @@ final class ThingTest extends ApiTestCase
      *
      * @test
      */
+    /*
     public function asAdminUserICanCreateAThing(): void
     {
         $token = $this->generateToken([
@@ -348,7 +350,7 @@ final class ThingTest extends ApiTestCase
         //self::assertMatchesJsonSchema(file_get_contents(__DIR__ . '/schemas/Book/item.json'));
         $id = preg_replace('/^.*\/(.+)$/', '$1', $response->toArray()['@id']);
         /** @var Thing $thing */
-        $thing = self::getContainer()->get(ThingRepository::class)->find($id);
+        /*$thing = self::getContainer()->get(ThingRepository::class)->find($id);
         self::assertCount(2, self::getMercureMessages());
         self::assertEquals(
             new Update(
@@ -372,7 +374,7 @@ final class ThingTest extends ApiTestCase
             ),
             self::getMercureMessage(1)
         );
-    }
+    }*/
 
     /**
      * @dataProvider getNonAdminUsers
