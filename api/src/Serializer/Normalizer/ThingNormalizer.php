@@ -61,7 +61,12 @@ class ThingNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
 
     public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
     {
-        return $data instanceof \App\Entity\Thing;
+        $request = $this->requestStack->getCurrentRequest();
+        if ($request && strpos($request->getPathInfo(), '/things') === 0) {
+            return $data instanceof \App\Entity\Thing;;
+        }
+
+        return false;
     }
 
     /**
@@ -96,7 +101,12 @@ class ThingNormalizer implements NormalizerInterface, CacheableSupportsMethodInt
 
     public function supportsDenormalization(mixed $data, mixed $type, string $format = null): bool
     {
-        return $data instanceof \App\Entity\Thing;
+        $request = $this->requestStack->getCurrentRequest();
+        if ($request && strpos($request->getPathInfo(), '/things') === 0) {
+            return $data instanceof \App\Entity\Thing;;
+        }
+
+        return false;
     }
 
     public function hasCacheableSupportsMethod(): bool

@@ -98,10 +98,10 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
                     <Link href={item['@id'] + "/edit"}>{t('things.show.edit')}</Link>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
-                    <Link href={item['@id'] + ".json"}>{t('things.show.exportjson')}</Link>
+                    <Link href={item['@id'] + ".json"} locale="en">{t('things.show.exportjson')}</Link>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
-                    <Link href={item['@id'] + ".jsonld"}>{t('things.show.exportjsonld')}</Link>
+                    <Link href={item['@id'] + ".jsonld"} locale="en">{t('things.show.exportjsonld')}</Link>
                   </MenuItem>
                 </Menu>
               </div>
