@@ -19,6 +19,7 @@ final readonly class ThingUpdateProcessor implements ProcessorInterface
 {
     /**
      * @param PersistProcessor $persistProcessor
+     * @param MercureProcessor $mercureProcessor
      */
     public function __construct(
         #[Autowire(service: PersistProcessor::class)]
