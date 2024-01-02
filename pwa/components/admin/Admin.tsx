@@ -15,10 +15,18 @@ import authProvider from "@/components/admin/authProvider";
 import AppBar from "@/components/admin/AppBar";
 import Menu from "@/components/admin/Menu";
 import { ENTRYPOINT } from "@/config/entrypoint";
+import { List as BooksList } from "@/components/admin/book/List";
+import { Create as BooksCreate } from "@/components/admin/book/Create";
+import { Edit as BooksEdit } from "@/components/admin/book/Edit";
+import { List as ReviewsList } from "@/components/admin/review/List";
+import { Show as ReviewsShow } from "@/components/admin/review/Show";
+import { Edit as ReviewsEdit } from "@/components/admin/review/Edit";
+import { type Book } from "@/types/Book";
+import { type Review } from "@/types/Review";
+import { type Thing } from "@/types/Thing";
 import { List as ThingsList } from "@/components/admin/thing/List";
 import { Create as ThingsCreate } from "@/components/admin/thing/Create";
 import { Edit as ThingsEdit } from "@/components/admin/thing/Edit";
-import { type Thing } from "@/types/Thing";
 
 const apiDocumentationParser = (session: Session) => async () => {
   try {
@@ -114,7 +122,12 @@ const AdminWithContext = ({ session }: { session: Session }) => {
       }}>
       <AdminUI session={session}>
         <ResourceGuesser name="admin/things" list={ThingsList} create={ThingsCreate} edit={ThingsEdit} hasShow={false}
-                         recordRepresentation={(record: Thing) => `${record.name}`}/>
+                         recordRepresentation={(record: Thing) => record.name}/>
+        <ResourceGuesser name="admin/books" list={BooksList} create={BooksCreate} edit={BooksEdit} hasShow={false}
+                         recordRepresentation={(record: Book) => `${record.title} - ${record.author}`}/>
+        <ResourceGuesser name="admin/reviews" list={ReviewsList} show={ReviewsShow} edit={ReviewsEdit} hasCreate={false}
+                         recordRepresentation={(record: Review) => record.user.name}/>
+
       </AdminUI>
     </DocContext.Provider>
   );
