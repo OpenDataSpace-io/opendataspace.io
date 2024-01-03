@@ -21,12 +21,13 @@ final readonly class ThingCreateProcessor implements ProcessorInterface
 {
     /**
      * @param PersistProcessor $persistProcessor
+     * @param MercureProcessor $mercureProcessor
      */
     public function __construct(
         #[Autowire(service: PersistProcessor::class)]
         private ProcessorInterface $persistProcessor,
-        //#[Autowire(service: MercureProcessor::class)]
-        //private ProcessorInterface $mercureProcessor,
+        #[Autowire(service: MercureProcessor::class)]
+        private ProcessorInterface $mercureProcessor,
         private RequestStack $requestStack
     ) {
     }
@@ -48,6 +49,8 @@ final readonly class ThingCreateProcessor implements ProcessorInterface
         if (isset($body['name'])) {
             $thing->setName($body['name']);
         }
+        
+        $body['license'] = 'https://creativecommons.org/licenses/by/4.0/';
 
         $id = Uuid::v4();
 
@@ -65,7 +68,7 @@ final readonly class ThingCreateProcessor implements ProcessorInterface
         $data = $this->persistProcessor->process($data, $operation, $uriVariables, $context);
 
         // publish on Mercure
-        /*foreach (['/admin/things/{id}{._format}', '/things/{id}{._format}'] as $uriTemplate) {
+        foreach (['/admin/things/{id}{._format}', '/things/{id}{._format}'] as $uriTemplate) {
             $this->mercureProcessor->process(
                 $data,
                 $operation,
@@ -74,11 +77,7 @@ final readonly class ThingCreateProcessor implements ProcessorInterface
                     'item_uri_template' => $uriTemplate,
                 ]
             );
-        }*/
-
-        //$data['debug']['body'] = $body;
-        //$data['debug']['request'] = $request;
-        //$data['debug']['thing'] = $thing;
+        }
 
         return $data;
     }
