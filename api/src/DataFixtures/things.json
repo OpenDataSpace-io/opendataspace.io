@@ -1524,5 +1524,584 @@
         "touristType": "Culture",
         "isAccessibleForFree": true,
         "hasMap": "https://www.luzern.com/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Schweizerisches Nationalmuseum",
+        "description": "Das Schweizerische Nationalmuseum ist das grösste kulturhistorische Museum der Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schweizerisches-nationalmuseum.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zurich",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "telephone": "+41 44 218 65 11",
+        "url": "https://www.nationalmuseum.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Kunstmuseum Basel",
+        "description": "Das Kunstmuseum Basel ist eines der ältesten und bedeutendsten Kunstmuseen der Welt.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/kunstmuseum-basel.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Basel",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-18:00",
+        "telephone": "+41 61 206 62 62",
+        "url": "https://www.kunstmuseumbasel.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Musée d'Art et d'Histoire",
+        "description": "Das Musée d'Art et d'Histoire ist das grösste Kunstmuseum der Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/musee-art-histoire.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Geneva",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-18:00",
+        "telephone": "+41 22 418 26 00",
+        "url": "https://www.ville-ge.ch/mah/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Museum Rietberg",
+        "description": "Das Museum Rietberg ist eines der führenden Museen für Kunst aus Afrika, Asien, Amerika und Ozeanien.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/museum-rietberg.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zurich",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 44 415 31 31",
+        "url": "https://www.rietberg.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Museum für Gestaltung Zürich",
+        "description": "Das Museum für Gestaltung Zürich ist das führende Museum für Design und visuelle Kommunikation in der Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/museum-gestaltung-zurich.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zurich",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 43 446 67 67",
+        "url": "https://www.museum-gestaltung.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Kunstmuseum Bern",
+        "description": "Das Kunstmuseum Bern ist das älteste Kunstmuseum der Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/kunstmuseum-bern.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bern",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-18:00",
+        "telephone": "+41 31 328 09 44",
+        "url": "https://www.kunstmuseumbern.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Museum Tinguely",
+        "description": "Das Museum Tinguely ist ein Museum für das Werk des Schweizer Künstlers Jean Tinguely.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/museum-tinguely.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Basel",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 11:00-18:00",
+        "telephone": "+41 61 681 93 20",
+        "url": "https://www.tinguely.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Kunstmuseum Luzern",
+        "description": "Das Kunstmuseum Luzern ist ein renommiertes Kunstmuseum in der Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/kunstmuseum-luzern.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lucerne",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 41 226 78 00",
+        "url": "https://www.kunstmuseumluzern.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Museum Oskar Reinhart",
+        "description": "Das Museum Oskar Reinhart ist ein Kunstmuseum in Winterthur, Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/museum-oskar-reinhart.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Winterthur",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 52 267 51 62",
+        "url": "https://www.museumoskarreinhart.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Kunstmuseum St. Gallen",
+        "description": "Das Kunstmuseum St. Gallen ist ein renommiertes Kunstmuseum in der Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/kunstmuseum-st-gallen.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "St. Gallen",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 71 242 06 71",
+        "url": "https://www.kunstmuseumsg.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Museum für Kommunikation Bern",
+        "description": "Das Museum für Kommunikation Bern ist ein Museum zur Geschichte der Kommunikation.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/museum-kommunikation-bern.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bern",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 31 357 55 55",
+        "url": "https://www.mfk.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Kunstmuseum Winterthur",
+        "description": "Das Kunstmuseum Winterthur ist ein renommiertes Kunstmuseum in der Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/kunstmuseum-winterthur.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Winterthur",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 52 267 51 62",
+        "url": "https://www.kmw.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Museum für Naturkunde",
+        "description": "Das Museum für Naturkunde ist ein Naturkundemuseum in der Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/museum-naturkunde.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bern",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 31 350 71 11",
+        "url": "https://www.nmbe.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Kunstmuseum Zürich",
+        "description": "Das Kunstmuseum Zürich ist ein renommiertes Kunstmuseum in der Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/kunstmuseum-zurich.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zurich",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 44 253 84 84",
+        "url": "https://www.kunstmuseum.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Museum für Moderne Kunst Zürich",
+        "description": "Das Museum für Moderne Kunst Zürich ist ein renommiertes Museum für moderne Kunst in der Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/museum-moderne-kunst-zurich.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zurich",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 44 253 84 84",
+        "url": "https://www.museumfuermusik.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Museum für Gestaltung Basel",
+        "description": "Das Museum für Gestaltung Basel ist ein renommiertes Museum für Design und visuelle Kommunikation in der Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/museum-gestaltung-basel.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Basel",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 61 261 14 13",
+        "url": "https://www.museum-gestaltung.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Museum für Kommunikation Zürich",
+        "description": "Das Museum für Kommunikation Zürich ist ein Museum zur Geschichte der Kommunikation.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/museum-kommunikation-zurich.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zurich",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 44 217 90 00",
+        "url": "https://www.mfk.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Thun",
+        "description": "Schloss Thun ist ein mittelalterliches Schloss in der Stadt Thun.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-thun.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schlossberg 1",
+            "addressLocality": "Thun",
+            "postalCode": "3600",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 33 223 20 00",
+        "url": "https://www.schlossthun.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Aarburg",
+        "description": "Schloss Aarburg ist eine mittelalterliche Burg in der Stadt Aarburg.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-aarburg.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schlossweg 1",
+            "addressLocality": "Aarburg",
+            "postalCode": "4663",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-16:00",
+        "priceRange": "$",
+        "telephone": "+41 62 787 14 14",
+        "url": "https://www.schlossaarburg.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Kyburg",
+        "description": "Schloss Kyburg ist eine mittelalterliche Burg in der Gemeinde Kyburg.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-kyburg.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schloss 1",
+            "addressLocality": "Kyburg",
+            "postalCode": "8314",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 52 232 42 42",
+        "url": "https://www.schlosskyburg.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Habsburg",
+        "description": "Schloss Habsburg ist eine mittelalterliche Burg in der Gemeinde Habsburg.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-habsburg.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schloss 1",
+            "addressLocality": "Habsburg",
+            "postalCode": "5245",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 56 496 64 32",
+        "url": "https://www.schlosshabsburg.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Lenzburg",
+        "description": "Schloss Lenzburg ist eine mittelalterliche Burg in der Stadt Lenzburg.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-lenzburg.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schloss 1",
+            "addressLocality": "Lenzburg",
+            "postalCode": "5600",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 62 888 44 00",
+        "url": "https://www.schlosslenzburg.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Rapperswil",
+        "description": "Schloss Rapperswil ist eine mittelalterliche Burg in der Stadt Rapperswil.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-rapperswil.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schloss 1",
+            "addressLocality": "Rapperswil",
+            "postalCode": "8640",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 55 220 57 00",
+        "url": "https://www.schlossrapperswil.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Hallwyl",
+        "description": "Schloss Hallwyl ist eine mittelalterliche Burg in der Gemeinde Seengen.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-hallwyl.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schloss 1",
+            "addressLocality": "Seengen",
+            "postalCode": "5707",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 62 897 23 30",
+        "url": "https://www.schlosshallwyl.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Hohentwiel",
+        "description": "Schloss Hohentwiel ist eine mittelalterliche Burg in der Stadt Singen.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-hohentwiel.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hohentwiel 1",
+            "addressLocality": "Singen",
+            "postalCode": "78224",
+            "addressCountry": "Deutschland"
+        },
+        "openingHours": "Mo-Su 09:00-18:00",
+        "priceRange": "$$",
+        "telephone": "+49 7731 85 1950",
+        "url": "https://www.schlosshohentwiel.de/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Tarasp",
+        "description": "Schloss Tarasp ist eine mittelalterliche Burg in der Gemeinde Tarasp.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-tarasp.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schlossweg 1",
+            "addressLocality": "Tarasp",
+            "postalCode": "7553",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 81 861 88 30",
+        "url": "https://www.schlosstarasp.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Riedholz",
+        "description": "Schloss Riedholz ist eine mittelalterliche Burg in der Gemeinde Riedholz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-riedholz.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schloss 1",
+            "addressLocality": "Riedholz",
+            "postalCode": "4533",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 32 636 13 13",
+        "url": "https://www.schlossriedholz.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Werdenberg",
+        "description": "Schloss Werdenberg ist eine mittelalterliche Burg in der Gemeinde Werdenberg.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-werdenberg.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schloss 1",
+            "addressLocality": "Werdenberg",
+            "postalCode": "9470",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 81 599 11 11",
+        "url": "https://www.schlosswerdenberg.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Waldegg",
+        "description": "Schloss Waldegg ist eine mittelalterliche Burg in der Gemeinde Solothurn.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-waldegg.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schloss 1",
+            "addressLocality": "Solothurn",
+            "postalCode": "4500",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 32 622 40 22",
+        "url": "https://www.schlosswaldegg.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Wildegg",
+        "description": "Schloss Wildegg ist eine mittelalterliche Burg in der Gemeinde Wildegg.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-wildegg.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schloss 1",
+            "addressLocality": "Wildegg",
+            "postalCode": "5103",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 62 896 46 46",
+        "url": "https://www.schlosswildegg.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Rapperswil-Jona",
+        "description": "Schloss Rapperswil-Jona ist eine mittelalterliche Burg in der Stadt Rapperswil-Jona.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-rapperswil-jona.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schloss 1",
+            "addressLocality": "Rapperswil-Jona",
+            "postalCode": "8640",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 55 220 57 00",
+        "url": "https://www.schlossrapperswiljona.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Laufen",
+        "description": "Schloss Laufen ist eine mittelalterliche Burg in der Gemeinde Laufen.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-laufen.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schloss 1",
+            "addressLocality": "Laufen",
+            "postalCode": "4242",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 61 761 77 11",
+        "url": "https://www.schlosslaufen.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Chillon",
+        "description": "Schloss Chillon ist ein historisches Schloss am Ufer des Genfersees.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-chillon.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Avenue de Chillon 21",
+            "addressLocality": "Veytaux",
+            "postalCode": "1820",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 09:00-18:00",
+        "priceRange": "$$",
+        "telephone": "+41 21 966 89 10",
+        "url": "https://www.chillon.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Hohensalzburg",
+        "description": "Schloss Hohensalzburg ist eine mittelalterliche Burg in der Stadt Salzburg.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-hohensalzburg.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Mönchsberg 34",
+            "addressLocality": "Salzburg",
+            "postalCode": "5020",
+            "addressCountry": "Österreich"
+        },
+        "openingHours": "Mo-Su 09:00-18:00",
+        "priceRange": "$$",
+        "telephone": "+43 662 84243011",
+        "url": "https://www.salzburg-burgen.at/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Neuschwanstein",
+        "description": "Schloss Neuschwanstein ist ein Schloss im Allgäu in Bayern.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-neuschwanstein.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Neuschwansteinstraße 20",
+            "addressLocality": "Hohenschwangau",
+            "postalCode": "87645",
+            "addressCountry": "Deutschland"
+        },
+        "openingHours": "Mo-Su 09:00-18:00",
+        "priceRange": "$$",
+        "telephone": "+49 8362 930830",
+        "url": "https://www.neuschwanstein.de/"
     }
 ]
