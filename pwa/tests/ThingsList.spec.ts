@@ -11,7 +11,7 @@ test.describe("Things list", () => {
     // test list display
     await expect(page).toHaveTitle("OpenDataSpace - Things");
     await expect(page.getByTestId("nb-things")).toHaveText(`${totalThings} thing(s) found`);
-    await expect(page.getByTestId("thing").or(page.getByTestId("loading"))).toHaveCount(totalThings);
+    await expect(page.getByTestId("thing").or(page.getByTestId("loading"))).toHaveCount(30);
 
     const nbPages = Math.ceil(totalThings/30);
 
@@ -61,7 +61,7 @@ test.describe("Things list", () => {
 
     await page.getByLabel("Go to last page").click();
     await expect(page).toHaveURL(new RegExp(`\/things\\?page=${nbPages}$`));
-    await expect(page.getByTestId("thing").or(page.getByTestId("loading"))).not.toHaveCount(totalThings);
+    await expect(page.getByTestId("thing").or(page.getByTestId("loading"))).not.toHaveCount(30);
     await expect(await thingPage.getDefaultThing()).not.toBeVisible();
     await expect(page.getByTestId("pagination").locator("li a.Mui-selected")).toHaveAttribute("aria-label", `page ${nbPages}`);
     await expect(page.getByLabel("Go to first page")).toBeEnabled();
@@ -71,7 +71,7 @@ test.describe("Things list", () => {
 
     await page.getByLabel("Go to first page").click();
     await expect(page).toHaveURL(/\/things\?page=1$/);
-    await expect(page.getByTestId("thing").or(page.getByTestId("loading"))).toHaveCount(totalThings);
+    await expect(page.getByTestId("thing").or(page.getByTestId("loading"))).toHaveCount(30);
     await expect(await thingPage.getDefaultThing()).toBeVisible();
     await expect(page.getByTestId("pagination").locator("li a.Mui-selected")).toHaveAttribute("aria-label", "page 1");
     await expect(page.getByLabel("Go to first page")).toBeDisabled();
@@ -82,7 +82,7 @@ test.describe("Things list", () => {
     // direct url should target to the right page
     await page.goto("/things?page=2");
     await page.waitForURL(/\/things\?page=2$/);
-    await expect(page.getByTestId("thing").or(page.getByTestId("loading"))).toHaveCount(totalThings);
+    await expect(page.getByTestId("thing").or(page.getByTestId("loading"))).toHaveCount(30);
     await expect(await thingPage.getDefaultThing()).not.toBeVisible();
     await expect(page.getByTestId("pagination").locator("li a.Mui-selected")).toHaveAttribute("aria-label", "page 2");
     await expect(page.getByLabel("Go to first page")).toBeEnabled();
@@ -105,12 +105,12 @@ test.describe("Things list", () => {
     await expect(page.getByTestId("filter-name")).toHaveValue("");
     await expect(page).toHaveURL(/\/things$/);
     await expect(page.getByTestId("nb-things")).toHaveText(`${totalThings} thing(s) found`);
-    await expect(page.getByTestId("thing").or(page.getByTestId("loading"))).toHaveCount(totalThings);
+    await expect(page.getByTestId("thing").or(page.getByTestId("loading"))).toHaveCount(30);
 
     // filtering must reset the pagination
     await page.getByLabel("Go to next page").click();
     await expect(page).toHaveURL(/\/things\?page=2$/);
-    await expect(page.getByTestId("thing").or(page.getByTestId("loading"))).toHaveCount(totalThings);
+    await expect(page.getByTestId("thing").or(page.getByTestId("loading"))).toHaveCount(30);
     await expect(await thingPage.getDefaultThing()).not.toBeVisible();
     await thingPage.filter({ name: "Eiger" });
     await expect(page).toHaveURL(/\/things\?name=Eiger/);
