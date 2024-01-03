@@ -110,9 +110,9 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
             </Grid>
               
               <span className="flex">
-                  <span>{t('things.show.dateCreated')}: <FormattedDate dateString={item["dateCreated"]} /></span>
+                  <span>{t('things.show.dateCreated')}: <FormattedDate dateString={item["dateCreated"] ?? ""} /></span>
                   {!!item["dateModified"] && (
-                    <span className="ml-1"> | {t('things.show.dateModified')} <FormattedDate dateString={item["dateModified"]} /></span>
+                    <span className="ml-1"> | {t('things.show.dateModified')} <FormattedDate dateString={item["dateModified"] ?? ""} /></span>
                   )}
                 </span>
               <p className="text-justify leading-7 my-8" data-testid="thing-description">

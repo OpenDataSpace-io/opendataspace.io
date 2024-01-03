@@ -2103,5 +2103,2139 @@
         "priceRange": "$$",
         "telephone": "+49 8362 930830",
         "url": "https://www.neuschwanstein.de/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Hostel Bären",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Jugendstraße 789",
+            "addressLocality": "Zug",
+            "postalCode": "6300",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 555 666 777",
+        "email": "info@hostel.ch",
+        "url": "https://www.hostel-baeren.ch",
+        "description": "Das Hostel bietet eine preiswerte Unterkunft für junge Reisende.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/hostel.jpeg",
+        "priceRange": "$",
+        "paymentAccepted": "Cash",
+        "currenciesAccepted": "CHF",
+        "areaServed": "Schweiz",
+        "legalName": "Hostel",
+        "founder": "Laura Müller",
+        "foundingDate": "1999-11-22",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 555 666 777",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/hostel",
+            "https://www.instagram.com/hostel",
+            "https://twitter.com/hostel"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Matterhorn",
+        "description": "The Matterhorn is one of the most iconic mountains in the Swiss Alps, known for its distinctive pyramid shape and challenging climbing routes.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zermatt",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 27 966 81 00",
+        "url": "https://www.zermatt.ch/en/matterhorn",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/matterhorn.jpeg",
+        "openingHours": "Mo-Su 24/7",
+        "priceRange": "$$$",
+        "touristType": "Adventure",
+        "isAccessibleForFree": false,
+        "hasMap": "https://www.zermatt.ch/en/matterhorn/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Château de Chillon",
+        "description": "Château de Chillon is a medieval castle located on the shores of Lake Geneva, known for its rich history and stunning architecture.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Veytaux",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 21 966 89 10",
+        "url": "https://www.chillon.ch/en/",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/chillon2.jpeg",
+        "openingHours": "Mo-Su 09:00-18:00",
+        "priceRange": "$$",
+        "touristType": "Culture",
+        "isAccessibleForFree": false,
+        "hasMap": "https://www.chillon.ch/en/visit/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Jungfraujoch",
+        "description": "Jungfraujoch is a popular tourist destination in the Swiss Alps, known as the 'Top of Europe' and offering stunning views and various activities.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Grindelwald",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 33 828 72 33",
+        "url": "https://www.jungfrau.ch/en-gb/jungfraujoch",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/jungfraujoch.jpeg",
+        "openingHours": "Mo-Su 08:00-18:00",
+        "priceRange": "$$$",
+        "touristType": "Adventure",
+        "isAccessibleForFree": false,
+        "hasMap": "https://www.jungfrau.ch/en-gb/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Aletsch Glacier",
+        "description": "Aletsch Glacier is the largest glacier in the Alps, offering stunning views and hiking opportunities.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Fiesch",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 27 971 15 15",
+        "url": "https://www.aletscharena.ch/en/aletsch-glacier",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/aletsch.jpeg",
+        "openingHours": "Mo-Su 24/7",
+        "priceRange": "$",
+        "touristType": "Nature",
+        "isAccessibleForFree": true,
+        "hasMap": "https://www.aletscharena.ch/en/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Zytglogge",
+        "description": "Zytglogge is a medieval clock tower in Bern, known for its astronomical clock and panoramic views of the city.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bern",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 31 328 12 12",
+        "url": "https://www.bern.com/en/detail/zytglogge",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/zytglogge.jpeg",
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "touristType": "Culture",
+        "isAccessibleForFree": true,
+        "hasMap": "https://www.bern.com/en/detail/zytglogge/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Rhine Falls",
+        "description": "The Rhine Falls is the largest waterfall in Switzerland and Europe, offering breathtaking views and boat tours.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Neuhausen am Rheinfall",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 52 672 21 30",
+        "url": "https://www.rhinefalls.com",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/rhinefalls2.jpeg",
+        "openingHours": "Mo-Su 09:00-19:00",
+        "priceRange": "$$",
+        "touristType": "Nature",
+        "isAccessibleForFree": false,
+        "hasMap": "https://www.rhinefalls.com/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Lake Geneva",
+        "description": "Lake Geneva is a large lake shared by Switzerland and France, known for its beautiful scenery and water activities.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Geneva",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 22 909 70 00",
+        "url": "https://www.geneva.info/lake-geneva",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/lakegeneva.jpeg",
+        "openingHours": "Mo-Su 24/7",
+        "priceRange": "$",
+        "touristType": "Nature",
+        "isAccessibleForFree": true,
+        "hasMap": "https://www.geneva.info/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Zurich Old Town",
+        "description": "Zurich Old Town is the historic center of Zurich, known for its medieval architecture, narrow streets, and vibrant atmosphere.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zurich",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 44 215 40 00",
+        "url": "https://www.zuerich.com/en/visit/old-town",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/zuerich.jpeg",
+        "openingHours": "Mo-Su 24/7",
+        "priceRange": "$$",
+        "touristType": "Culture",
+        "isAccessibleForFree": true,
+        "hasMap": "https://www.zuerich.com/en/visit/old-town/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Titlis",
+        "description": "Titlis is a mountain in the Swiss Alps, known for its cable car, panoramic views, and winter sports activities.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Engelberg",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 41 639 50 50",
+        "url": "https://www.titlis.ch/en",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/titlis.jpeg",
+        "openingHours": "Mo-Su 08:00-18:00",
+        "priceRange": "$$$",
+        "touristType": "Adventure",
+        "isAccessibleForFree": false,
+        "hasMap": "https://www.titlis.ch/en/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Jura Mountains",
+        "description": "The Jura Mountains are a sub-alpine mountain range located in Switzerland, France, and Germany, known for their scenic beauty and hiking trails.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Jura",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 32 420 47 77",
+        "url": "https://www.juratourisme.ch/en/discoveries/nature/jura-mountains",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/juramountains.jpeg",
+        "openingHours": "Mo-Su 24/7",
+        "priceRange": "$",
+        "touristType": "Nature",
+        "isAccessibleForFree": true,
+        "hasMap": "https://www.juratourisme.ch/en/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Zermatt",
+        "description": "Zermatt is a popular ski resort town in the Swiss Alps, known for its picturesque views, skiing, and mountaineering opportunities.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zermatt",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 27 966 81 00",
+        "url": "https://www.zermatt.ch",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/zermatt2.jpeg",
+        "openingHours": "Mo-Su 24/7",
+        "priceRange": "$$",
+        "touristType": "Adventure",
+        "isAccessibleForFree": false,
+        "hasMap": "https://www.zermatt.ch/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Lake Lucerne",
+        "description": "Lake Lucerne is a large lake in central Switzerland, known for its beautiful scenery and water activities.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lucerne",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 41 227 17 17",
+        "url": "https://www.luzern.com/en/lake-lucerne",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/lakelucerne.jpeg",
+        "openingHours": "Mo-Su 24/7",
+        "priceRange": "$",
+        "touristType": "Nature",
+        "isAccessibleForFree": true,
+        "hasMap": "https://www.luzern.com/en/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Lake Lugano",
+        "description": "Lake Lugano is a large lake in southern Switzerland, known for its beautiful scenery and water activities.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lugano",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 58 866 66 00",
+        "url": "https://www.luganoregion.com/en/see-do/nature-parks/lake-lugano",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/lakelugano.jpeg",
+        "openingHours": "Mo-Su 24/7",
+        "priceRange": "$",
+        "touristType": "Nature",
+        "isAccessibleForFree": true,
+        "hasMap": "https://www.luganoregion.com/en/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Swiss National Park",
+        "description": "Swiss National Park is a nature reserve located in the Alps, known for its diverse wildlife and hiking trails.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zernez",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 81 851 41 41",
+        "url": "https://www.nationalpark.ch/en/",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/swiss-national-park.jpeg",
+        "openingHours": "Mo-Su 24/7",
+        "priceRange": "$",
+        "touristType": "Nature",
+        "isAccessibleForFree": true,
+        "hasMap": "https://www.nationalpark.ch/en/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Chapel Bridge",
+        "description": "The Chapel Bridge is a famous wooden bridge in Lucerne, adorned with beautiful paintings and offering stunning views of the city.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lucerne",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 41 227 17 17",
+        "url": "https://www.luzern.com/chapel-bridge",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/chapel-bridge.jpeg",
+        "openingHours": "Mo-Su 09:00-18:00",
+        "priceRange": "$$",
+        "touristType": "Culture",
+        "isAccessibleForFree": true,
+        "hasMap": "https://www.luzern.com/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Schweizerisches Nationalmuseum",
+        "description": "Das Schweizerische Nationalmuseum ist das grösste kulturhistorische Museum der Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schweizerisches-nationalmuseum.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zurich",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "telephone": "+41 44 218 65 11",
+        "url": "https://www.nationalmuseum.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Kunstmuseum Basel",
+        "description": "Das Kunstmuseum Basel ist eines der ältesten und bedeutendsten Kunstmuseen der Welt.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/kunstmuseum-basel.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Basel",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-18:00",
+        "telephone": "+41 61 206 62 62",
+        "url": "https://www.kunstmuseumbasel.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Musée d'Art et d'Histoire",
+        "description": "Das Musée d'Art et d'Histoire ist das grösste Kunstmuseum der Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/musee-art-histoire.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Geneva",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-18:00",
+        "telephone": "+41 22 418 26 00",
+        "url": "https://www.ville-ge.ch/mah/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Museum Rietberg",
+        "description": "Das Museum Rietberg ist eines der führenden Museen für Kunst aus Afrika, Asien, Amerika und Ozeanien.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/museum-rietberg.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zurich",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 44 415 31 31",
+        "url": "https://www.rietberg.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Museum für Gestaltung Zürich",
+        "description": "Das Museum für Gestaltung Zürich ist das führende Museum für Design und visuelle Kommunikation in der Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/museum-gestaltung-zurich.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zurich",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 43 446 67 67",
+        "url": "https://www.museum-gestaltung.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Kunstmuseum Bern",
+        "description": "Das Kunstmuseum Bern ist das älteste Kunstmuseum der Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/kunstmuseum-bern.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bern",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-18:00",
+        "telephone": "+41 31 328 09 44",
+        "url": "https://www.kunstmuseumbern.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Museum Tinguely",
+        "description": "Das Museum Tinguely ist ein Museum für das Werk des Schweizer Künstlers Jean Tinguely.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/museum-tinguely.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Basel",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 11:00-18:00",
+        "telephone": "+41 61 681 93 20",
+        "url": "https://www.tinguely.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Kunstmuseum Luzern",
+        "description": "Das Kunstmuseum Luzern ist ein renommiertes Kunstmuseum in der Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/kunstmuseum-luzern.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lucerne",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 41 226 78 00",
+        "url": "https://www.kunstmuseumluzern.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Museum Oskar Reinhart",
+        "description": "Das Museum Oskar Reinhart ist ein Kunstmuseum in Winterthur, Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/museum-oskar-reinhart.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Winterthur",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 52 267 51 62",
+        "url": "https://www.museumoskarreinhart.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Kunstmuseum St. Gallen",
+        "description": "Das Kunstmuseum St. Gallen ist ein renommiertes Kunstmuseum in der Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/kunstmuseum-st-gallen.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "St. Gallen",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 71 242 06 71",
+        "url": "https://www.kunstmuseumsg.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Museum für Kommunikation Bern",
+        "description": "Das Museum für Kommunikation Bern ist ein Museum zur Geschichte der Kommunikation.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/museum-kommunikation-bern.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bern",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 31 357 55 55",
+        "url": "https://www.mfk.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Kunstmuseum Winterthur",
+        "description": "Das Kunstmuseum Winterthur ist ein renommiertes Kunstmuseum in der Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/kunstmuseum-winterthur.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Winterthur",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 52 267 51 62",
+        "url": "https://www.kmw.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Museum für Naturkunde",
+        "description": "Das Museum für Naturkunde ist ein Naturkundemuseum in der Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/museum-naturkunde.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bern",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 31 350 71 11",
+        "url": "https://www.nmbe.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Kunstmuseum Zürich",
+        "description": "Das Kunstmuseum Zürich ist ein renommiertes Kunstmuseum in der Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/kunstmuseum-zurich.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zurich",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 44 253 84 84",
+        "url": "https://www.kunstmuseum.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Museum für Moderne Kunst Zürich",
+        "description": "Das Museum für Moderne Kunst Zürich ist ein renommiertes Museum für moderne Kunst in der Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/museum-moderne-kunst-zurich.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zurich",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 44 253 84 84",
+        "url": "https://www.museumfuermusik.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Museum für Gestaltung Basel",
+        "description": "Das Museum für Gestaltung Basel ist ein renommiertes Museum für Design und visuelle Kommunikation in der Schweiz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/museum-gestaltung-basel.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Basel",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 61 261 14 13",
+        "url": "https://www.museum-gestaltung.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Museum",
+        "name": "Museum für Kommunikation Zürich",
+        "description": "Das Museum für Kommunikation Zürich ist ein Museum zur Geschichte der Kommunikation.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/museum-kommunikation-zurich.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zurich",
+            "addressCountry": "Switzerland"
+        },
+        "openingHours": "Tu-Su 10:00-17:00",
+        "telephone": "+41 44 217 90 00",
+        "url": "https://www.mfk.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Thun",
+        "description": "Schloss Thun ist ein mittelalterliches Schloss in der Stadt Thun.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-thun.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schlossberg 1",
+            "addressLocality": "Thun",
+            "postalCode": "3600",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 33 223 20 00",
+        "url": "https://www.schlossthun.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Aarburg",
+        "description": "Schloss Aarburg ist eine mittelalterliche Burg in der Stadt Aarburg.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-aarburg.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schlossweg 1",
+            "addressLocality": "Aarburg",
+            "postalCode": "4663",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-16:00",
+        "priceRange": "$",
+        "telephone": "+41 62 787 14 14",
+        "url": "https://www.schlossaarburg.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Kyburg",
+        "description": "Schloss Kyburg ist eine mittelalterliche Burg in der Gemeinde Kyburg.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-kyburg.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schloss 1",
+            "addressLocality": "Kyburg",
+            "postalCode": "8314",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 52 232 42 42",
+        "url": "https://www.schlosskyburg.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Habsburg",
+        "description": "Schloss Habsburg ist eine mittelalterliche Burg in der Gemeinde Habsburg.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-habsburg.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schloss 1",
+            "addressLocality": "Habsburg",
+            "postalCode": "5245",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 56 496 64 32",
+        "url": "https://www.schlosshabsburg.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Lenzburg",
+        "description": "Schloss Lenzburg ist eine mittelalterliche Burg in der Stadt Lenzburg.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-lenzburg.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schloss 1",
+            "addressLocality": "Lenzburg",
+            "postalCode": "5600",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 62 888 44 00",
+        "url": "https://www.schlosslenzburg.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Rapperswil",
+        "description": "Schloss Rapperswil ist eine mittelalterliche Burg in der Stadt Rapperswil.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-rapperswil.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schloss 1",
+            "addressLocality": "Rapperswil",
+            "postalCode": "8640",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 55 220 57 00",
+        "url": "https://www.schlossrapperswil.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Hallwyl",
+        "description": "Schloss Hallwyl ist eine mittelalterliche Burg in der Gemeinde Seengen.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-hallwyl.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schloss 1",
+            "addressLocality": "Seengen",
+            "postalCode": "5707",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 62 897 23 30",
+        "url": "https://www.schlosshallwyl.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Hohentwiel",
+        "description": "Schloss Hohentwiel ist eine mittelalterliche Burg in der Stadt Singen.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-hohentwiel.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hohentwiel 1",
+            "addressLocality": "Singen",
+            "postalCode": "78224",
+            "addressCountry": "Deutschland"
+        },
+        "openingHours": "Mo-Su 09:00-18:00",
+        "priceRange": "$$",
+        "telephone": "+49 7731 85 1950",
+        "url": "https://www.schlosshohentwiel.de/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Tarasp",
+        "description": "Schloss Tarasp ist eine mittelalterliche Burg in der Gemeinde Tarasp.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-tarasp.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schlossweg 1",
+            "addressLocality": "Tarasp",
+            "postalCode": "7553",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 81 861 88 30",
+        "url": "https://www.schlosstarasp.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Riedholz",
+        "description": "Schloss Riedholz ist eine mittelalterliche Burg in der Gemeinde Riedholz.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-riedholz.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schloss 1",
+            "addressLocality": "Riedholz",
+            "postalCode": "4533",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 32 636 13 13",
+        "url": "https://www.schlossriedholz.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Werdenberg",
+        "description": "Schloss Werdenberg ist eine mittelalterliche Burg in der Gemeinde Werdenberg.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-werdenberg.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schloss 1",
+            "addressLocality": "Werdenberg",
+            "postalCode": "9470",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 81 599 11 11",
+        "url": "https://www.schlosswerdenberg.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Waldegg",
+        "description": "Schloss Waldegg ist eine mittelalterliche Burg in der Gemeinde Solothurn.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-waldegg.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schloss 1",
+            "addressLocality": "Solothurn",
+            "postalCode": "4500",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 32 622 40 22",
+        "url": "https://www.schlosswaldegg.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Wildegg",
+        "description": "Schloss Wildegg ist eine mittelalterliche Burg in der Gemeinde Wildegg.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-wildegg.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schloss 1",
+            "addressLocality": "Wildegg",
+            "postalCode": "5103",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 62 896 46 46",
+        "url": "https://www.schlosswildegg.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Rapperswil-Jona",
+        "description": "Schloss Rapperswil-Jona ist eine mittelalterliche Burg in der Stadt Rapperswil-Jona.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-rapperswil-jona.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schloss 1",
+            "addressLocality": "Rapperswil-Jona",
+            "postalCode": "8640",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 55 220 57 00",
+        "url": "https://www.schlossrapperswiljona.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Laufen",
+        "description": "Schloss Laufen ist eine mittelalterliche Burg in der Gemeinde Laufen.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-laufen.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schloss 1",
+            "addressLocality": "Laufen",
+            "postalCode": "4242",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "telephone": "+41 61 761 77 11",
+        "url": "https://www.schlosslaufen.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Chillon",
+        "description": "Schloss Chillon ist ein historisches Schloss am Ufer des Genfersees.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-chillon.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Avenue de Chillon 21",
+            "addressLocality": "Veytaux",
+            "postalCode": "1820",
+            "addressCountry": "Schweiz"
+        },
+        "openingHours": "Mo-Su 09:00-18:00",
+        "priceRange": "$$",
+        "telephone": "+41 21 966 89 10",
+        "url": "https://www.chillon.ch/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Hohensalzburg",
+        "description": "Schloss Hohensalzburg ist eine mittelalterliche Burg in der Stadt Salzburg.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-hohensalzburg.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Mönchsberg 34",
+            "addressLocality": "Salzburg",
+            "postalCode": "5020",
+            "addressCountry": "Österreich"
+        },
+        "openingHours": "Mo-Su 09:00-18:00",
+        "priceRange": "$$",
+        "telephone": "+43 662 84243011",
+        "url": "https://www.salzburg-burgen.at/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Neuschwanstein",
+        "description": "Schloss Neuschwanstein ist ein Schloss im Allgäu in Bayern.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-neuschwanstein.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Neuschwansteinstraße 20",
+            "addressLocality": "Hohenschwangau",
+            "postalCode": "87645",
+            "addressCountry": "Deutschland"
+        },
+        "openingHours": "Mo-Su 09:00-18:00",
+        "priceRange": "$$",
+        "telephone": "+49 8362 930830",
+        "url": "https://www.neuschwanstein.de/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Schönbrunn",
+        "description": "Schloss Schönbrunn ist ein Schloss in Wien.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-schonbrunn.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schönbrunner Schloßstraße 47",
+            "addressLocality": "Wien",
+            "postalCode": "1130",
+            "addressCountry": "Österreich"
+        },
+        "openingHours": "Mo-Su 09:00-18:00",
+        "priceRange": "$$",
+        "telephone": "+43 1 811 13 239",
+        "url": "https://www.schoenbrunn.at/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Mirabell",
+        "description": "Schloss Mirabell ist ein Schloss in Salzburg.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-mirabell.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Mirabellplatz 4",
+            "addressLocality": "Salzburg",
+            "postalCode": "5020",
+            "addressCountry": "Österreich"
+        },
+        "openingHours": "Mo-Su 09:00-18:00",
+        "priceRange": "$$",
+        "telephone": "+43 662 80720",
+        "url": "https://www.salzburg-burgen.at/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Schloss Hellbrunn",
+        "description": "Schloss Hellbrunn ist ein Schloss in Salzburg.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/schloss-hellbrunn.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Fürstenweg 37",
+            "addressLocality": "Salzburg",
+            "postalCode": "5020",
+            "addressCountry": "Österreich"
+        },
+        "openingHours": "Mo-Su 09:00-18:00",
+        "priceRange": "$$",
+        "telephone": "+43 662 8203720",
+        "url": "https://www.salzburg-burgen.at/"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Place",
+        "name": "Rhine Falls",
+        "description": "Rhine Falls is the largest waterfall in Switzerland.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/rhinefalls.jpeg",
+        "url": "https://example.com/rhine-falls",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Schaffhausen",
+            "addressCountry": "Switzerland"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 47.6779,
+            "longitude": 8.6155
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                ],
+                "opens": "09:00",
+                "closes": "19:00"
+            }
+        ],
+        "telephone": "+41 777 888 999",
+        "priceRange": "$",
+        "review": {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": 4.4,
+                "bestRating": 5
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Michael Brown"
+            },
+            "datePublished": "2022-01-06",
+            "reviewBody": "Rhine Falls is a magnificent natural wonder that should not be missed."
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Place",
+        "name": "Jungfraujoch",
+        "description": "Jungfraujoch is the 'Top of Europe' and offers stunning views of the Swiss Alps.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/jungfraujoch.jpeg",
+        "url": "https://example.com/jungfraujoch",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bernese Alps",
+            "addressCountry": "Switzerland"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 46.547,
+            "longitude": 7.985
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                ],
+                "opens": "07:30",
+                "closes": "18:00"
+            }
+        ],
+        "telephone": "+41 666 777 888",
+        "priceRange": "$$$",
+        "review": {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": 4.9,
+                "bestRating": 5
+            },
+            "author": {
+                "@type": "Person",
+                "name": "David Wilson"
+            },
+            "datePublished": "2022-01-07",
+            "reviewBody": "Jungfraujoch is a breathtaking experience that offers panoramic views of the Swiss Alps."
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Aarbergerhof",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/image1.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Aarbergergasse 40",
+            "addressLocality": "Bern",
+            "addressRegion": "BE",
+            "postalCode": "3011",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 31 311 33 33",
+        "priceRange": "$$$",
+        "servesCuisine": "Swiss",
+        "openingHours": "Mo-Su 11:30-14:00, 18:00-22:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.5"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.aarbergerhof.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Les Armures",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/image5.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rue du Puits-Saint-Pierre 1",
+            "addressLocality": "Geneva",
+            "addressRegion": "GE",
+            "postalCode": "1204",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 22 310 34 42",
+        "priceRange": "$$$",
+        "servesCuisine": "French",
+        "openingHours": "Mo-Su 12:00-14:00, 19:00-22:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.6"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.restaurant-les-armures.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant La Cucina",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/image2.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Seefeldstrasse 82",
+            "addressLocality": "Zurich",
+            "addressRegion": "ZH",
+            "postalCode": "8008",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 44 388 34 34",
+        "priceRange": "$$$",
+        "servesCuisine": "Italian",
+        "openingHours": "Mo-Su 11:30-14:00, 18:30-23:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.7"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.lacucina-zurich.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Bären",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/image4.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Marktgasse 4",
+            "addressLocality": "Bern",
+            "addressRegion": "BE",
+            "postalCode": "3011",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 31 311 22 11",
+        "priceRange": "$$",
+        "servesCuisine": "Swiss",
+        "openingHours": "Mo-Su 11:30-14:00, 18:00-22:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.2"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.baeren-bern.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Chez Fritz",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/image6.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rue de Lausanne 45",
+            "addressLocality": "Geneva",
+            "addressRegion": "GE",
+            "postalCode": "1202",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 22 312 34 56",
+        "priceRange": "$$",
+        "servesCuisine": "French",
+        "openingHours": "Mo-Su 12:00-14:00, 19:00-22:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.3"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.chez-fritz.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Pizzeria Roma",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/image7.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Bahnhofstrasse 10",
+            "addressLocality": "Zurich",
+            "addressRegion": "ZH",
+            "postalCode": "8001",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 44 333 22 11",
+        "priceRange": "$$",
+        "servesCuisine": "Italian",
+        "openingHours": "Mo-Su 11:30-14:00, 18:30-23:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.1"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.pizzeria-roma.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Schwellenmätteli",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/image8.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Dalmaziquai 11",
+            "addressLocality": "Bern",
+            "addressRegion": "BE",
+            "postalCode": "3005",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 31 311 44 55",
+        "priceRange": "$$$",
+        "servesCuisine": "Swiss",
+        "openingHours": "Mo-Su 11:30-14:00, 18:00-22:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.4"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.schwellenmaetteli.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Le Relais de l'Entrecôte",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/image9.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rue Pierre-Fatio 15",
+            "addressLocality": "Geneva",
+            "addressRegion": "GE",
+            "postalCode": "1204",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 22 312 34 56",
+        "priceRange": "$$$",
+        "servesCuisine": "French",
+        "openingHours": "Mo-Su 12:00-14:00, 19:00-22:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.8"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.relais-entrecote.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Trattoria Romana",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/image3.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Seefeldstrasse 123",
+            "addressLocality": "Zurich",
+            "addressRegion": "ZH",
+            "postalCode": "8008",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 44 388 55 66",
+        "priceRange": "$$$",
+        "servesCuisine": "Italian",
+        "openingHours": "Mo-Su 11:30-14:00, 18:30-23:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.9"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.trattoria-romana.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Altes Tramdepot",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/restaurant6.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Grosser Muristalden",
+            "addressLocality": "Bern",
+            "addressRegion": "BE",
+            "postalCode": "3006",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 31 311 55 66",
+        "priceRange": "$$$",
+        "servesCuisine": "Swiss",
+        "openingHours": "Mo-Su 11:30-14:00, 18:00-22:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.3"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.altes-tramdepot.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Le Chat-Botté",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/restaurant5.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Quai du Mont-Blanc 13",
+            "addressLocality": "Geneva",
+            "addressRegion": "GE",
+            "postalCode": "1201",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 22 312 34 56",
+        "priceRange": "$$$",
+        "servesCuisine": "French",
+        "openingHours": "Mo-Su 12:00-14:00, 19:00-22:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.7"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.chat-botte.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Da Angela",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/restaurant4.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Seefeldstrasse 200",
+            "addressLocality": "Zurich",
+            "addressRegion": "ZH",
+            "postalCode": "8008",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 44 388 66 77",
+        "priceRange": "$$$",
+        "servesCuisine": "Italian",
+        "openingHours": "Mo-Su 11:30-14:00, 18:30-23:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.6"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.da-angela.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Kornhauskeller",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/restaurant3.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Kornhausplatz 18",
+            "addressLocality": "Bern",
+            "addressRegion": "BE",
+            "postalCode": "3011",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 31 311 77 88",
+        "priceRange": "$$$",
+        "servesCuisine": "Swiss",
+        "openingHours": "Mo-Su 11:30-14:00, 18:00-22:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.5"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.kornhauskeller.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Le Flacon",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/restaurant2.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rue Vautier 45",
+            "addressLocality": "Geneva",
+            "addressRegion": "GE",
+            "postalCode": "1227",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 22 312 34 56",
+        "priceRange": "$$$",
+        "servesCuisine": "French",
+        "openingHours": "Mo-Su 12:00-14:00, 19:00-22:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.9"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.le-flacon.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Restaurant Da Michelangelo",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/restaurant1.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Seefeldstrasse 300",
+            "addressLocality": "Zurich",
+            "addressRegion": "ZH",
+            "postalCode": "8008",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 44 388 88 99",
+        "priceRange": "$$$",
+        "servesCuisine": "Italian",
+        "openingHours": "Mo-Su 11:30-14:00, 18:30-23:00",
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Rating",
+                "value": "4.7"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Website",
+                "value": "https://www.da-michelangelo.ch"
+            }
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Schweizer Alpenhotel",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/image11.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Musterstraße 123",
+            "addressLocality": "Zürich",
+            "postalCode": "8000",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 123 456 789",
+        "email": "info@schweizeralpenhotel.ch",
+        "url": "https://www.schweizeralpenhotel.ch",
+        "description": "Das Schweizer Alpenhotel bietet komfortable Unterkünfte in den atemberaubenden Schweizer Alpen.",
+        "priceRange": "$$$",
+        "paymentAccepted": "Cash, Credit Card",
+        "currenciesAccepted": "CHF, EUR",
+        "areaServed": "Schweiz",
+        "legalName": "Schweizer Alpenhotel",
+        "founder": "Max Mustermann",
+        "foundingDate": "2000-01-01",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 123 456 789",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/schweizeralpenhotel",
+            "https://www.instagram.com/schweizeralpenhotel",
+            "https://twitter.com/schweizeralpen"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Hotel am See",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/image14.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Seestraße 456",
+            "addressLocality": "Genf",
+            "postalCode": "1200",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 987 654 321",
+        "email": "info@hotelamsee.ch",
+        "url": "https://www.hotelamsee.ch",
+        "description": "Das Hotel am See bietet einen malerischen Blick auf den Genfer See.",
+        "priceRange": "$$",
+        "paymentAccepted": "Cash, Credit Card",
+        "currenciesAccepted": "CHF, EUR",
+        "areaServed": "Schweiz",
+        "legalName": "Hotel am See",
+        "founder": "Erika Musterfrau",
+        "foundingDate": "1995-05-10",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 987 654 321",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/hotelamsee",
+            "https://www.instagram.com/hotelamsee",
+            "https://twitter.com/hotelamsee"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Hotel Walhalla",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/image12.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Beispielstraße 789",
+            "addressLocality": "Bern",
+            "postalCode": "3000",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 111 222 333",
+        "email": "info@hotelxyz.ch",
+        "url": "https://www.hotelxyz.ch",
+        "description": "Das Hotel XYZ bietet eine gemütliche Unterkunft im Herzen von Bern.",
+        "priceRange": "$$",
+        "paymentAccepted": "Cash, Credit Card",
+        "currenciesAccepted": "CHF, EUR",
+        "areaServed": "Schweiz",
+        "legalName": "Hotel XYZ",
+        "founder": "John Doe",
+        "foundingDate": "2005-07-15",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 111 222 333",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/hotelxyz",
+            "https://www.instagram.com/hotelxyz",
+            "https://twitter.com/hotelxyz"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Berggasthof Alpenblick",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Bergstraße 1",
+            "addressLocality": "Interlaken",
+            "postalCode": "3800",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 444 555 666",
+        "email": "info@berggasthof-alpenblick.ch",
+        "url": "https://www.berggasthof-alpenblick.ch",
+        "description": "Der Berggasthof Alpenblick bietet eine rustikale Unterkunft mit herrlichem Bergblick.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/image10.jpeg",
+        "priceRange": "$$",
+        "paymentAccepted": "Cash, Credit Card",
+        "currenciesAccepted": "CHF, EUR",
+        "areaServed": "Schweiz",
+        "legalName": "Berggasthof",
+        "founder": "Maria Müller",
+        "foundingDate": "1990-12-20",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 444 555 666",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/berggasthof",
+            "https://www.instagram.com/berggasthof",
+            "https://twitter.com/berggasthof"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Stadthotel Metropol",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hauptstraße 789",
+            "addressLocality": "Zürich",
+            "postalCode": "8000",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 999 888 777",
+        "email": "info@stadthotel-metropol.ch",
+        "url": "https://www.stadthotel-metropol.ch",
+        "description": "Das Stadthotel Metropol bietet moderne Unterkünfte im Zentrum von Zürich.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/image13.jpeg",
+        "priceRange": "$$$",
+        "paymentAccepted": "Cash, Credit Card",
+        "currenciesAccepted": "CHF, EUR",
+        "areaServed": "Schweiz",
+        "legalName": "Stadthotel",
+        "founder": "Thomas Schmidt",
+        "foundingDate": "2008-03-01",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 999 888 777",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/stadthotel",
+            "https://www.instagram.com/stadthotel",
+            "https://twitter.com/stadthotel"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Strandhotel Hüsli",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Strandstraße 123",
+            "addressLocality": "Luzern",
+            "postalCode": "6000",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 777 888 999",
+        "email": "info@strandhotel-huesli.ch",
+        "url": "https://www.strandhotel-huesli.ch",
+        "description": "Das Strandhotel Hüsli bietet einen entspannten Aufenthalt am Ufer des Vierwaldstättersees.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/strandhotel.jpeg",
+        "priceRange": "$$$",
+        "paymentAccepted": "Cash, Credit Card",
+        "currenciesAccepted": "CHF, EUR",
+        "areaServed": "Schweiz",
+        "legalName": "Strandhotel",
+        "founder": "Anna Müller",
+        "foundingDate": "1998-09-05",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 777 888 999",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/strandhotel",
+            "https://www.instagram.com/strandhotel",
+            "https://twitter.com/strandhotel"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Boutique Hotel Sophie",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hügelstraße 456",
+            "addressLocality": "Basel",
+            "postalCode": "4000",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 666 777 888",
+        "email": "info@boutiquehotel-sophie.ch",
+        "url": "https://www.boutiquehotel-sophie.ch",
+        "description": "Das Boutique Hotel Sophie bietet individuell gestaltete Zimmer in einem charmanten historischen Gebäude.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/boutique.jpeg",
+        "priceRange": "$$$",
+        "paymentAccepted": "Cash, Credit Card",
+        "currenciesAccepted": "CHF, EUR",
+        "areaServed": "Schweiz",
+        "legalName": "Boutique Hotel",
+        "founder": "Sophie Meier",
+        "foundingDate": "2012-11-30",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 666 777 888",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/boutiquehotel",
+            "https://www.instagram.com/boutiquehotel",
+            "https://twitter.com/boutiquehotel"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Landhotel Jägerhof",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Dorfstraße 789",
+            "addressLocality": "St. Moritz",
+            "postalCode": "7500",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 222 333 444",
+        "email": "info@landhotel-jaegerhof.ch",
+        "url": "https://www.landhotel-jaegerhof.ch",
+        "description": "Das Landhotel Jägerhof bietet eine idyllische Unterkunft inmitten der Schweizer Alpen.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/landhotel.jpeg",
+        "priceRange": "$$",
+        "paymentAccepted": "Cash, Credit Card",
+        "currenciesAccepted": "CHF, EUR",
+        "areaServed": "Schweiz",
+        "legalName": "Landhotel",
+        "founder": "Hans Müller",
+        "foundingDate": "1992-06-25",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 222 333 444",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/landhotel",
+            "https://www.instagram.com/landhotel",
+            "https://twitter.com/landhotel"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Ferienhaus Lyla",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Bergweg 123",
+            "addressLocality": "Davos",
+            "postalCode": "7260",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 555 666 777",
+        "email": "info@ferienhaus-layla.ch",
+        "url": "https://www.ferienhaus-layla.ch",
+        "description": "Das Ferienhaus bietet eine gemütliche Unterkunft in den Schweizer Bergen.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/ferienhaus.jpeg",
+        "priceRange": "$$",
+        "paymentAccepted": "Cash, Credit Card",
+        "currenciesAccepted": "CHF, EUR",
+        "areaServed": "Schweiz",
+        "legalName": "Ferienhaus Lyla",
+        "founder": "Peter Müller",
+        "foundingDate": "1997-04-12",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 555 666 777",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/ferienhaus",
+            "https://www.instagram.com/ferienhaus",
+            "https://twitter.com/ferienhaus"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Gästehaus Meier",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hauptplatz 789",
+            "addressLocality": "Lugano",
+            "postalCode": "6900",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 888 999 000",
+        "email": "info@gastehaus-meier.ch",
+        "url": "https://www.gastehaus-meier.ch",
+        "description": "Das Gästehaus bietet eine freundliche Unterkunft im Herzen von Lugano.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/gaesthaus.jpeg",
+        "priceRange": "$$",
+        "paymentAccepted": "Cash, Credit Card",
+        "currenciesAccepted": "CHF, EUR",
+        "areaServed": "Schweiz",
+        "legalName": "Gästehaus",
+        "founder": "Martina Meier",
+        "foundingDate": "2003-08-18",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 888 999 000",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/gastehaus",
+            "https://www.instagram.com/gastehaus",
+            "https://twitter.com/gastehaus"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Pension Müller",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Dorfplatz 123",
+            "addressLocality": "Lausanne",
+            "postalCode": "1000",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 777 888 999",
+        "email": "info@pension.ch",
+        "url": "https://www.pension-mueller.ch",
+        "description": "Die Pension bietet eine erschwingliche Unterkunft in Lausanne.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/pension.jpeg",
+        "priceRange": "$",
+        "paymentAccepted": "Cash",
+        "currenciesAccepted": "CHF",
+        "areaServed": "Schweiz",
+        "legalName": "Pension",
+        "founder": "Hans Müller",
+        "foundingDate": "1980-09-15",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 777 888 999",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/pension",
+            "https://www.instagram.com/pension",
+            "https://twitter.com/pension"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Chalet Verbier",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Bergweg 456",
+            "addressLocality": "Verbier",
+            "postalCode": "1936",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 222 333 444",
+        "email": "info@chalet.ch",
+        "url": "https://www.chalet-verbier.ch",
+        "description": "Das Chalet bietet eine luxuriöse Unterkunft in den Schweizer Alpen.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/chalet.jpeg",
+        "priceRange": "$$$",
+        "paymentAccepted": "Cash, Credit Card",
+        "currenciesAccepted": "CHF, EUR",
+        "areaServed": "Schweiz",
+        "legalName": "Chalet",
+        "founder": "Michael Müller",
+        "foundingDate": "2003-02-28",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 222 333 444",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/chalet",
+            "https://www.instagram.com/chalet",
+            "https://twitter.com/chalet"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Accommodation",
+        "name": "Hostel Bären",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Jugendstraße 789",
+            "addressLocality": "Zug",
+            "postalCode": "6300",
+            "addressCountry": "Schweiz"
+        },
+        "telephone": "+41 555 666 777",
+        "email": "info@hostel.ch",
+        "url": "https://www.hostel-baeren.ch",
+        "description": "Das Hostel bietet eine preiswerte Unterkunft für junge Reisende.",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/hostel.jpeg",
+        "priceRange": "$",
+        "paymentAccepted": "Cash",
+        "currenciesAccepted": "CHF",
+        "areaServed": "Schweiz",
+        "legalName": "Hostel",
+        "founder": "Laura Müller",
+        "foundingDate": "1999-11-22",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+41 555 666 777",
+            "contactType": "customer support"
+        },
+        "sameAs": [
+            "https://www.facebook.com/hostel",
+            "https://www.instagram.com/hostel",
+            "https://twitter.com/hostel"
+        ]
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Matterhorn",
+        "description": "The Matterhorn is one of the most iconic mountains in the Swiss Alps, known for its distinctive pyramid shape and challenging climbing routes.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zermatt",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 27 966 81 00",
+        "url": "https://www.zermatt.ch/en/matterhorn",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/matterhorn.jpeg",
+        "openingHours": "Mo-Su 24/7",
+        "priceRange": "$$$",
+        "touristType": "Adventure",
+        "isAccessibleForFree": false,
+        "hasMap": "https://www.zermatt.ch/en/matterhorn/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Château de Chillon",
+        "description": "Château de Chillon is a medieval castle located on the shores of Lake Geneva, known for its rich history and stunning architecture.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Veytaux",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 21 966 89 10",
+        "url": "https://www.chillon.ch/en/",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/chillon2.jpeg",
+        "openingHours": "Mo-Su 09:00-18:00",
+        "priceRange": "$$",
+        "touristType": "Culture",
+        "isAccessibleForFree": false,
+        "hasMap": "https://www.chillon.ch/en/visit/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Jungfraujoch",
+        "description": "Jungfraujoch is a popular tourist destination in the Swiss Alps, known as the 'Top of Europe' and offering stunning views and various activities.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Grindelwald",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 33 828 72 33",
+        "url": "https://www.jungfrau.ch/en-gb/jungfraujoch",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/jungfraujoch.jpeg",
+        "openingHours": "Mo-Su 08:00-18:00",
+        "priceRange": "$$$",
+        "touristType": "Adventure",
+        "isAccessibleForFree": false,
+        "hasMap": "https://www.jungfrau.ch/en-gb/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Aletsch Glacier",
+        "description": "Aletsch Glacier is the largest glacier in the Alps, offering stunning views and hiking opportunities.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Fiesch",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 27 971 15 15",
+        "url": "https://www.aletscharena.ch/en/aletsch-glacier",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/aletsch.jpeg",
+        "openingHours": "Mo-Su 24/7",
+        "priceRange": "$",
+        "touristType": "Nature",
+        "isAccessibleForFree": true,
+        "hasMap": "https://www.aletscharena.ch/en/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Zytglogge",
+        "description": "Zytglogge is a medieval clock tower in Bern, known for its astronomical clock and panoramic views of the city.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bern",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 31 328 12 12",
+        "url": "https://www.bern.com/en/detail/zytglogge",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/zytglogge.jpeg",
+        "openingHours": "Mo-Su 10:00-17:00",
+        "priceRange": "$",
+        "touristType": "Culture",
+        "isAccessibleForFree": true,
+        "hasMap": "https://www.bern.com/en/detail/zytglogge/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Rhine Falls",
+        "description": "The Rhine Falls is the largest waterfall in Switzerland and Europe, offering breathtaking views and boat tours.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Neuhausen am Rheinfall",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 52 672 21 30",
+        "url": "https://www.rhinefalls.com",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/rhinefalls2.jpeg",
+        "openingHours": "Mo-Su 09:00-19:00",
+        "priceRange": "$$",
+        "touristType": "Nature",
+        "isAccessibleForFree": false,
+        "hasMap": "https://www.rhinefalls.com/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Lake Geneva",
+        "description": "Lake Geneva is a large lake shared by Switzerland and France, known for its beautiful scenery and water activities.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Geneva",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 22 909 70 00",
+        "url": "https://www.geneva.info/lake-geneva",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/lakegeneva.jpeg",
+        "openingHours": "Mo-Su 24/7",
+        "priceRange": "$",
+        "touristType": "Nature",
+        "isAccessibleForFree": true,
+        "hasMap": "https://www.geneva.info/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Zurich Old Town",
+        "description": "Zurich Old Town is the historic center of Zurich, known for its medieval architecture, narrow streets, and vibrant atmosphere.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zurich",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 44 215 40 00",
+        "url": "https://www.zuerich.com/en/visit/old-town",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/zuerich.jpeg",
+        "openingHours": "Mo-Su 24/7",
+        "priceRange": "$$",
+        "touristType": "Culture",
+        "isAccessibleForFree": true,
+        "hasMap": "https://www.zuerich.com/en/visit/old-town/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Titlis",
+        "description": "Titlis is a mountain in the Swiss Alps, known for its cable car, panoramic views, and winter sports activities.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Engelberg",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 41 639 50 50",
+        "url": "https://www.titlis.ch/en",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/titlis.jpeg",
+        "openingHours": "Mo-Su 08:00-18:00",
+        "priceRange": "$$$",
+        "touristType": "Adventure",
+        "isAccessibleForFree": false,
+        "hasMap": "https://www.titlis.ch/en/map"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Jura Mountains",
+        "description": "The Jura Mountains are a sub-alpine mountain range located in Switzerland, France, and Germany, known for their scenic beauty and hiking trails.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Jura",
+            "addressCountry": "Switzerland"
+        },
+        "telephone": "+41 32 420 47 77",
+        "url": "https://www.juratourisme.ch/en/discoveries/nature/jura-mountains",
+        "image": "https://opendataspace.sos-ch-dk-2.exoscale-cdn.com/examples/images/juramountains.jpeg",
+        "openingHours": "Mo-Su 24/7",
+        "priceRange": "$",
+        "touristType": "Nature",
+        "isAccessibleForFree": true,
+        "hasMap": "https://www.juratourisme.ch/en/map"
     }
 ]

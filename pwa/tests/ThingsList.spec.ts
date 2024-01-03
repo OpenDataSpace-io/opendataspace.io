@@ -1,6 +1,6 @@
 import { expect, test } from "./test";
 
-const totalThings = 85;
+const totalThings = 179;
 
 test.describe("Things list", () => {
   test.beforeEach(async ({ thingPage }) => {
