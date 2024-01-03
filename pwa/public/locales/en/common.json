@@ -23,7 +23,9 @@
       "edit": "Edit",
       "exportjson": "Export JSON",
       "exportjsonld": "Export JSON-LD",
-      "nodescription": "This things has no description."
+      "nodescription": "This things has no description.",
+      "dateModified": "Last update",
+      "dateCreated": "Creation date"
     },
     "edit":{
       "hideExpertMode": "Hide expert mode",

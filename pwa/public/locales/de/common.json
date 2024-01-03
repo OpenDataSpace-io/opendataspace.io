@@ -24,7 +24,9 @@
       "edit": "Bearbeiten",
       "exportjson": "JSON exportieren",
       "exportjsonld": "JSON-LD exportieren",
-      "nodescription": "Keine Beschreibung verfügbar"
+      "nodescription": "Keine Beschreibung verfügbar",
+      "dateModified": "Zuletzt geändert",
+      "dateCreated": "Erstellt"
     },
     "edit":{
       "hideExpertMode": "Expert mode ausblenden",

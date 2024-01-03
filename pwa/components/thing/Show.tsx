@@ -23,6 +23,7 @@ import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Grid from '@mui/material/Grid';
 import { useTranslation } from 'next-i18next';
+import FormattedDate from '@/utils/formattedDate';
 
 interface Props {
   data: Thing;
@@ -33,7 +34,7 @@ interface Props {
 export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
 
   const item = useMercure(data, hubURL);
-  const { t } = useTranslation('common');
+  const { t, i18n} = useTranslation('common');
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -108,7 +109,12 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
               </Grid>
             </Grid>
               
-              
+              <span className="flex">
+                  <span>{t('things.show.dateCreated')}: <FormattedDate dateString={item["dateCreated"]} /></span>
+                  {!!item["dateModified"] && (
+                    <span className="ml-1"> | {t('things.show.dateModified')} <FormattedDate dateString={item["dateModified"]} /></span>
+                  )}
+                </span>
               <p className="text-justify leading-7 my-8" data-testid="thing-description">
                 {item["description"] && (
                   item["description"]
