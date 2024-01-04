@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { ErrorSchema, RJSFSchema, RJSFValidationError, UiSchema, ValidatorType } from '@rjsf/utils';
 import validator from '@rjsf/validator-ajv8';
+import { FormProps, IChangeEvent, withTheme } from '@rjsf/core';
 import Form from '@rjsf/mui';
 import Head from "next/head";
 import Editors from '@/components/form/Editors';
 import { Container, Grid, Button } from '@mui/material';
 import { signIn, useSession } from "next-auth/react";
 import { useTranslation } from 'next-i18next';
+import CustomForm from '@/components/form/CustomForm';
 
 interface Session {
     accessToken: string;
@@ -126,6 +128,18 @@ const NewThingForm = () => {
         }
     };
 
+    const onFormDataChange = useCallback(
+        ({ formData }: IChangeEvent, id?: string) => {
+            if (id) {
+                console.log('Field changed, id: ', id);
+            }
+
+            setFormData(formData);
+            setShareURL(null);
+        },
+        [setFormData, setShareURL]
+    );
+
     return (
         <>
             <Head>
@@ -140,12 +154,13 @@ const NewThingForm = () => {
                         {selectedForm && (
                         <>
                             <div>
-                                <Form
+                                <CustomForm
                                     schema={schema}
                                     uiSchema={uiSchema}
                                     formData={formData}
-                                    validator={validator}
                                     onSubmit={handleSubmit}
+                                    validator={validator}
+                                    onChange={onFormDataChange}
                                 />
                             </div>
                         </>
