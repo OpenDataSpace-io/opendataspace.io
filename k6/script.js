@@ -35,9 +35,9 @@ function check_https_redirect() {
 }
 
 function check_api_link_header() {
-    var r = http.get(`https://${target}/books?page=1`);
+    var r = http.get(`https://${target}/things?page=1`);
     check(r, {
-        "books API: status is 200": (r) => r.status === 200,
-        "books API: Link in https": (r) => r.headers["Link"].match(`https://${target}/docs.jsonld`),
+        "things API: status is 200": (r) => r.status === 200,
+        "things API: Link in https": (r) => r.headers["Link"].match(`https://${target}/docs.jsonld`),
     });
 }

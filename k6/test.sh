@@ -3,7 +3,7 @@
 cd $(dirname $0)
 
 if [ -z "$TARGET" ]; then
-	echo "Missing TARGET argument (e.g.: pr-123-demo.api-platform.com)" 1>&2
+	echo "Missing TARGET argument (e.g.: pr-123-demo.opendataspace.io)" 1>&2
 	exit 1
 fi
 
