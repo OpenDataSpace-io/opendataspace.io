@@ -20,7 +20,7 @@ export const Header = () => {
     router.push(router.asPath, router.asPath, { locale: newLocale });
   }
 
-  if (router.pathname === "/" || router.pathname.match(/^\/admin/)) return <></>;
+  if (router.pathname === "/" || router.pathname === "/welcome" || router.pathname.match(/^\/admin/)) return <></>;
 
   return (
     <header className="bg-neutral-100 sticky top-0 z-10">
