@@ -70,9 +70,9 @@ jobs:
         run: docker compose exec -T php chmod +x bin/phpunit
       -
         name: Run PHPUnit
-        # run: docker compose exec -T php bin/phpunit --coverage-clover coverage.xml
+        run: docker compose exec -T php bin/phpunit --coverage-clover coverage.xml
         # ToDo Bug-fix: Call to undefined method PhpParser\ParserFactory::createForHostVersion()
-        run: docker compose exec -T -e XDEBUG_MODE=coverage php bin/phpunit --coverage-clover coverage.xml
+        # run: docker compose exec -T -e XDEBUG_MODE=coverage php bin/phpunit --coverage-clover coverage.xml
       -
         name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3

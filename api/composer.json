@@ -41,7 +41,8 @@
         "web-token/jwt-checker": "^3.2",
         "web-token/jwt-signature-algorithm-ecdsa": "^3.2",
         "webonyx/graphql-php": "^15.8",
-        "zenstruck/foundry": "^1.36"
+        "zenstruck/foundry": "^1.36",
+        "sentry/sentry-symfony": "^4.13.1"
     },
     "require-dev": {
         "api-platform/schema-generator": "^5.2",
