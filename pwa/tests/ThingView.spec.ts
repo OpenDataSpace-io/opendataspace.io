@@ -16,7 +16,7 @@ test.describe("Thing view", () => {
   test("I can go back to the things list through the breadcrumb @read", async ({ page }) => {
     await expect(page.getByTestId("thing-breadcrumb")).toContainText("Things/Eiger");
     await page.getByTestId("thing-breadcrumb").getByText("Things/Eiger").click();
-    await expect(page).toHaveURL(/\/things\/*$/);
+    await expect(page).toHaveURL(/\/things\/$/);
   });
 
   test("I can go back to the things list filtered by name through the breadcrumb @read", async ({ page }) => {

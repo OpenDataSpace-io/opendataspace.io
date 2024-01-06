@@ -209,16 +209,20 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
                 </div>
                 <Container maxWidth="xl">
                     <Grid container spacing={2}>
-                        <Button onClick={handleButtonClick}>
-                            {isGridVisible ? t('things.edit.hideExpertMode') : t('things.edit.showExpertMode')}
-                        </Button>
-                        <h2>Select Form</h2>
+                        <Grid item xs={6} md={8}>
+                            <Button onClick={handleButtonClick}>
+                                {isGridVisible ? t('things.edit.hideExpertMode') : t('things.edit.showExpertMode')}
+                            </Button>
+                        </Grid>
+                        <Grid item xs={4} md={2}>
+                            <h2>Select Form</h2>
                                 <select value={selectedForm} onChange={handleFormSelect}>
                                     <option value="">Select a form</option>
                                     {formList.map((form: { id: string, name: string }) => (
                                         <option key={form.id} value={form.id}>{form.name}</option>
                                     ))}
                                 </select>
+                        </Grid>
                     </Grid>
                     <Grid container spacing={2}>
                         <Grid item xs={isGridVisible ? 6 : 12} md={isGridVisible ? 8 : 12}>

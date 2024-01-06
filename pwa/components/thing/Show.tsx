@@ -24,7 +24,6 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Grid from '@mui/material/Grid';
 import { useTranslation } from 'next-i18next';
 import FormattedDate from '@/utils/formattedDate';
-import { useRouter } from 'next/navigation';
 
 interface Props {
   data: Thing;
@@ -36,7 +35,6 @@ export const Show: NextPage<Props> = ({ data, hubURL, page }) => {
 
   const item = useMercure(data, hubURL);
   const { t, i18n} = useTranslation('common');
-  const router = useRouter()
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
