@@ -1,6 +1,6 @@
 {
   "realm": "demo",
-  "displayName": "API Platform - Demo",
+  "displayName": "OpenDataSpace.io - Demo",
   "enabled": true,
   "registrationAllowed": false,
   "accessCodeLifespan": 1,
