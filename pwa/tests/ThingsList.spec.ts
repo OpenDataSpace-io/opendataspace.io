@@ -105,7 +105,7 @@ test.describe("Things list", () => {
     await expect(page).toHaveURL(/\/things\?page=2$/);
     await expect(await thingPage.getDefaultThing()).not.toBeVisible();
     await thingPage.filter({ name: "Eiger" });
-    await expect(page).toHaveURL(/\/things\?name=Eiger/);
+    await expect(page).toHaveURL(/\/things\?page=2&name=Eiger/);
     await expect(page.getByTestId("nb-things")).toHaveText("1 thing(s) found");
     //await expect(page.getByTestId("thing").or(page.getByTestId("loading"))).toHaveCount(1);
     await expect(page.getByTestId("pagination")).toHaveCount(0);
@@ -121,7 +121,7 @@ test.describe("Things list", () => {
   test("I can sort the list @read", async ({ thingPage, page }) => {
     // sort by name asc
     await thingPage.filter({ order: "Name ASC" });
-    await expect(page).toHaveURL(/\/thing\?order%5Bname%5D=asc$/);
+    await expect(page).toHaveURL(/\/things\?order%5Bname%5D=asc$/);
     await expect(await thingPage.getDefaultThing()).not.toBeVisible()
 
     // sort by name desc
