@@ -32,6 +32,12 @@
       "hideExpertMode": "Expert mode ausblenden",
       "showExpertMode": "Expert mode anzeigen",
       "save": "Speichern"
+    },
+    "new":{
+      "title": "Neues Objekt",
+      "hideExpertMode": "Expert mode ausblenden",
+      "showExpertMode": "Expert mode anzeigen",
+      "save": "Speichern"
     }
   }
 }

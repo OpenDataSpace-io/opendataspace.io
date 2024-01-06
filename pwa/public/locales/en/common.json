@@ -31,6 +31,12 @@
       "hideExpertMode": "Hide expert mode",
       "showExpertMode": "Show expert mode",
       "save": "Save"
+    },
+    "new":{
+      "title": "New thing",
+      "hideExpertMode": "Hide expert mode",
+      "showExpertMode": "Show expert mode",
+      "save": "Save"
     }
   }
 }
