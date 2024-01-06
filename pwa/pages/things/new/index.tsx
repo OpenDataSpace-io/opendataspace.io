@@ -31,6 +31,7 @@ const NewThingForm = () => {
     const [shareURL, setShareURL] = useState<string | null>(null);
     const [isGridVisible, setGridVisible] = useState(false);
     const { data: session = { accessToken: '', error: '' }, status } = useSession() || {};
+    const { t } = useTranslation('common');
 
     const handleButtonClick = () => {
         setGridVisible(!isGridVisible);
@@ -170,7 +171,6 @@ const NewThingForm = () => {
                         <Grid item xs={6} md={4}>
                             <h2>Select Form</h2>
                             <select value={selectedForm} onChange={handleFormSelect}>
-                                <option value="">Select a form</option>
                                 {formList.map((form: { id: string, name: string }) => (
                                     <option key={form.id} value={form.id}>{form.name}</option>
                                 ))}

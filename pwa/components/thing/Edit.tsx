@@ -215,9 +215,8 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
                             </Button>
                         </Grid>
                         <Grid item xs={4} md={2}>
-                            <h2>Select Form</h2>
+                            <span>Select Form</span>
                                 <select value={selectedForm} onChange={handleFormSelect}>
-                                    <option value="">Select a form</option>
                                     {formList.map((form: { id: string, name: string }) => (
                                         <option key={form.id} value={form.id}>{form.name}</option>
                                     ))}

@@ -208,7 +208,7 @@ class FormFixtures extends Fixture
                                 ],
                                 "closes" => [
                                     "type" => "string",
-                                    "title" => "Schließt",
+                                    "title" => "Schliesst",
                                     "format" => "time"
                                 ]
                             ]
