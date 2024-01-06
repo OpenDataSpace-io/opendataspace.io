@@ -91,76 +91,6 @@ class FormFixtures extends Fixture
                     "title" => "Website",
                     "format" => "uri"
                 ],
-                "openingHours" => [
-                    "type" => "array",
-                    "title" => "Öffnungszeiten",
-                    "items" => [
-                    "type" => "object",
-                    "properties" => [
-                        "dayOfWeek" => [
-                            "type" => "string",
-                            "title" => "Wochentag",
-                            "enum" => [
-                                "Monday",
-                                "Tuesday",
-                                    "Wednesday",
-                                    "Thursday",
-                                    "Friday",
-                                    "Saturday",
-                                    "Sunday"
-                            ],
-                            "enumNames" => [
-                                "Montag",
-                                "Dienstag",
-                                "Mittwoch",
-                                "Donnerstag",
-                                "Freitag",
-                                "Samstag",
-                                "Sonntag"
-                            ]
-                        ],
-                        "opens" => [
-                            "type" => "string",
-                            "title" => "Öffnet",
-                            "format" => "time"
-                        ],
-                        "closes" => [
-                            "type" => "string",
-                            "title" => "Schließt",
-                            "format" => "time"
-                        ]
-                    ]
-                    ]
-                ],
-                "openingHoursSpecification" =>[
-                    "type" => "array",
-                    "title" => "spezifische Öffnungszeiten",
-                    "items" => [
-                    "type" => "object",
-                    "properties" => [
-                        "date" => [
-                        "type" => "string",
-                        "title" => "Datum",
-                        "format" => "date"
-                        ],
-                        "opens" => [
-                        "type" => "string",
-                        "title" => "Öffnet",
-                        "format" => "time"
-                        ],
-                        "closes" => [
-                        "type" => "string",
-                        "title" => "Schließt",
-                        "format" => "time"
-                        ],
-                        "closed" => [
-                        "type" => "boolean",
-                        "title" => "Geschlossen",
-                        "default" => false
-                        ]
-                    ]
-                    ]
-                ],
                 "sameAs" => [
                     "type" => "array",
                     "title" => "Links",
@@ -197,20 +127,6 @@ class FormFixtures extends Fixture
                     "inputType" => "url"
                 ]
             ],
-            "openingHours" => [
-                "ui:options" => [
-                    "addable" => false,
-                    "orderable" => false,
-                    "removable" => false
-                ]
-            ],
-            "openingHoursSpecification" => [
-                "ui:options" => [
-                    "addable" => false,
-                    "orderable" => false,
-                    "removable" => false
-                ]
-            ],
             "sameAs" => [
                 "ui:options" => [
                     "addable" => false,
@@ -235,50 +151,10 @@ class FormFixtures extends Fixture
             "telephone" => "+49 30 12345678",
             "email" => "example@test.ch",
             "url" => "https://example.com",
-            "openingHours" =>  [
-                    [
-                        "dayOfWeek" => "Monday",
-                        "opens" => "10:00:00",
-                        "closes" => "16:00:00"
-                    ],
-                    [
-                        "dayOfWeek"=> "Tuesday",
-                        "opens" => "09:00:00",
-                        "closes" => "17:00:00"
-                    ],
-                    [
-                        "dayOfWeek"=> "Wednesday",
-                        "opens" => "09:00:00",
-                        "closes" => "17:00:00"
-                    ],
-                    [
-                        "dayOfWeek"=> "Thursday",
-                        "opens" => "09:00:00",
-                        "closes" => "17:00:00"
-                    ],
-                    [
-                        "dayOfWeek"=> "Friday",
-                        "opens" => "09:00:00",
-                        "closes" => "17:00:00"
-                    ]
-                ],
-                "openingHoursSpecification" => [
-                    [
-                        "date" => "2021-01-01",
-                        "opens" => "10:00:00",
-                        "closes" => "16:00:00"
-                    ],
-                    [
-                        "date" => "2021-01-01",
-                        "opens" => "09:00:00",
-                        "closes" => "17:00:00"
-                    ]
-                ],
-                "sameAs" => [
+            "sameAs" => [
                     "https://example.com"
-                ]
             ]
-        );
+        ]);
         $manager->persist($form);
 
         $manager->flush();
@@ -343,6 +219,13 @@ class FormFixtures extends Fixture
         );
         $form->setUISchema([
             "@type" => [ 'ui:widget' => 'hidden' ],
+            "openingHoursSpecification" => [
+                "ui:options" => [
+                    "addable" => true,
+                    "orderable" => true,
+                    "removable" => true
+                ]
+            ]
         ]);
         $form->setFormData([
                 "openingHoursSpecification" => [
