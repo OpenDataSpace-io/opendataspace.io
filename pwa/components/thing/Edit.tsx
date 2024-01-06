@@ -208,9 +208,18 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
                     </Breadcrumbs>
                 </div>
                 <Container maxWidth="xl">
-                    <Button onClick={handleButtonClick}>
-                        {isGridVisible ? t('things.edit.hideExpertMode') : t('things.edit.showExpertMode')}
-                    </Button>
+                    <Grid container spacing={2}>
+                        <Button onClick={handleButtonClick}>
+                            {isGridVisible ? t('things.edit.hideExpertMode') : t('things.edit.showExpertMode')}
+                        </Button>
+                        <h2>Select Form</h2>
+                                <select value={selectedForm} onChange={handleFormSelect}>
+                                    <option value="">Select a form</option>
+                                    {formList.map((form: { id: string, name: string }) => (
+                                        <option key={form.id} value={form.id}>{form.name}</option>
+                                    ))}
+                                </select>
+                    </Grid>
                     <Grid container spacing={2}>
                         <Grid item xs={isGridVisible ? 6 : 12} md={isGridVisible ? 8 : 12}>
                             {selectedForm && (
@@ -230,13 +239,6 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
                         </Grid>
                         {isGridVisible && (
                             <Grid item xs={6} md={4}>
-                                <h2>Select Form</h2>
-                                <select value={selectedForm} onChange={handleFormSelect}>
-                                    <option value="">Select a form</option>
-                                    {formList.map((form: { id: string, name: string }) => (
-                                        <option key={form.id} value={form.id}>{form.name}</option>
-                                    ))}
-                                </select>
                                 {selectedForm && (
                                     <>
                                         <Editors
