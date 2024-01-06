@@ -11,7 +11,7 @@ test.describe("Things list", () => {
     // test list display
     await expect(page).toHaveTitle("OpenDataSpace - Things");
     await expect(page.getByTestId("nb-things")).toHaveText(`${totalThings} thing(s) found`);
-    await expect(page.getByTestId("thing").or(page.getByTestId("loading"))).toHaveCount(5);
+    await expect(page.getByTestId("thing").or(page.getByTestId("loading"))).toHaveCount(30);
 
     const nbPages = Math.ceil(totalThings/30);
 
