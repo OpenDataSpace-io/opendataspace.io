@@ -16,6 +16,7 @@ import { useMercure } from "@/utils/mercure";
 //import { fetch, type FetchError, type FetchResponse } from "@/utils/dataAccess";
 import { type PagedCollection } from "@/types/collection";
 import { Loading } from "@/components/common/Loading";
+import CircularLoading from '@/components/common/CircularLoading';
 import Editors from '@/components/form/Editors';
 import CustomForm from '@/components/form/CustomForm';
 import SelectForm from '@/components/form/SelectForm';
@@ -25,6 +26,7 @@ import validator from '@rjsf/validator-ajv8';
 import { FormProps, IChangeEvent, withTheme } from '@rjsf/core';
 import Form from '@rjsf/mui';
 import { useRouter } from 'next/router';
+
 
 import { useTranslation } from 'next-i18next';
 
@@ -187,7 +189,7 @@ export const New: NextPage<Props> = ({ data, hubURL, page }) => {
     };
 
     if (status === "loading" || !schema || !uiSchema) {
-        return <Loading />;
+        return <CircularLoading />;
     } else if (!session) {
         signIn('keycloak');
     } else {

@@ -72,6 +72,9 @@ const AdminUI = ({ session, children }: { session: Session, children?: React.Rea
     apiDocumentationParser: apiDocumentationParser(session),
   });
 
+  console.log(dataProvider.current);
+  console.log(window.origin);
+
   return docType === "hydra" ? (
     <HydraAdmin
       requireAuth
