@@ -195,10 +195,18 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
         signIn('keycloak');
     } else if (item) {
         return (
-            <>
+            <div className="container mx-auto max-w-7xl items-center justify-between p-6 lg:px-8">
                 <Head>
                     <title>{item['name']}</title>
                 </Head>
+                <div role="presentation" className="mb-8">
+                    <Breadcrumbs aria-label="breadcrumb" data-testid="thing-breadcrumb">
+                    <Link href="/things" className="hover:underline">
+                        Things
+                    </Link>
+                    <Typography color="text.primary">{item["name"]}</Typography>
+                    </Breadcrumbs>
+                </div>
                 <Container maxWidth="xl">
                     <Button onClick={handleButtonClick}>
                         {isGridVisible ? t('things.edit.hideExpertMode') : t('things.edit.showExpertMode')}
@@ -212,8 +220,8 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
                                         schema={schema}
                                         uiSchema={uiSchema}
                                         formData={formData}
-                                        onSubmit={handleSubmit}
                                         validator={validator}
+                                        onSubmit={handleSubmit}
                                         onChange={onFormDataChange}
                                         />
                                     </div>
@@ -248,7 +256,7 @@ export const Edit: NextPage<Props> = ({ data, hubURL, page }) => {
                         )}
                     </Grid>
                 </Container>
-            </>
+            </div>
         );
     }
 };

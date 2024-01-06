@@ -304,17 +304,7 @@ class FormFixtures extends Fixture
                             "type" => "object",
                             "properties" => [
                                 "dayOfWeek" => [
-                                    "type" => "string",
                                     "title" => "Wochentag",
-                                    "enum" => [
-                                        "Monday",
-                                        "Tuesday",
-                                            "Wednesday",
-                                            "Thursday",
-                                            "Friday",
-                                            "Saturday",
-                                            "Sunday"
-                                    ],
                                     "enumNames" => [
                                         "Montag",
                                         "Dienstag",
@@ -323,6 +313,15 @@ class FormFixtures extends Fixture
                                         "Freitag",
                                         "Samstag",
                                         "Sonntag"
+                                    ],
+                                    "enum" => [
+                                        "Monday",
+                                        "Tuesday",
+                                        "Wednesday",
+                                        "Thursday",
+                                        "Friday",
+                                        "Saturday",
+                                        "Sunday"
                                     ]
                                 ],
                                 "validFrom" => [

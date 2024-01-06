@@ -22,15 +22,16 @@
       "closemetadata": "Metadaten schließen",
       "noimage": "Kein Bild verfügbar",
       "edit": "Bearbeiten",
-      "exportjson": "JSON exportieren",
-      "exportjsonld": "JSON-LD exportieren",
+      "exportjson": "JSON",
+      "exportjsonld": "JSON-LD",
       "nodescription": "Keine Beschreibung verfügbar",
       "dateModified": "Zuletzt geändert",
       "dateCreated": "Erstellt"
     },
     "edit":{
       "hideExpertMode": "Expert mode ausblenden",
-      "showExpertMode": "Expert mode anzeigen"
+      "showExpertMode": "Expert mode anzeigen",
+      "save": "Speichern"
     }
   }
 }
