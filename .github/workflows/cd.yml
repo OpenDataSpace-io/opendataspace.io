@@ -1,9 +1,10 @@
 name: CD
 
 on:
+  workflow_dispatch: ~
   push:
-    branches:
-      - main
+    tags:
+      - '*'
   # Deploy PR if "deploy" label exists
   pull_request:
     types: [ reopened, synchronize, labeled ]
