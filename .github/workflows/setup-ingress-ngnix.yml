@@ -1,0 +1,71 @@
+name: Setup Ingress Nginx
+
+on:
+  workflow_dispatch:
+    inputs:
+      gke-cluster:
+        description: 'GKE cluster name'
+        required: true
+      gke-zone:
+        description: 'GKE cluster zone'
+        required: true
+
+jobs:
+  deploy:
+    name: Setup Ingress Nginx
+    runs-on: ubuntu-latest
+    environment:
+      name: prod
+      url: https://opendataspace.io
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+    outputs:
+       url: ${{ steps.deploy.outputs.url }}
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v4
+      -
+        name: Auth gcloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GKE_SA_KEY }}
+      -
+        name: Setup gcloud
+        uses: google-github-actions/setup-gcloud@v1
+        with:
+          project_id: ${{ secrets.GKE_PROJECT }}
+      -
+        name: Configure gcloud
+        run: |
+          gcloud components install gke-gcloud-auth-plugin
+          gcloud --quiet auth configure-docker
+          gcloud container clusters get-credentials ${{ inputs.gke-cluster }} --zone ${{ inputs.gke-zone }}
+      -
+        name: Cache Helm Dependencies
+        uses: actions/cache@v3
+        with:
+          path: helm/api-platform/charts/
+          key: ${{ runner.os }}-helm-dependencies-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-helm-dependencies-
+      -
+        name: Get helm repo info
+        run: |
+          helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+          helm repo update
+      -
+        name: Deploy ingress-nginx
+        run: |
+          release=prod
+          namespace=$release
+          url=opendataspace.io
+          helm -n ingress-nginx upgrade -i $release ingress-nginx/ingress-nginx \
+              --set=controller.replicaCount=2 \
+              --create-namespace \
+              --namespace=$namespace
+      -
+        name: Debug kube events
+        if: failure()
+        run: kubectl get events --namespace=$namespace --sort-by .metadata.creationTimestamp

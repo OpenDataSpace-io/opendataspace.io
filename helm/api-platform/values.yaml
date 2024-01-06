@@ -32,10 +32,11 @@ php:
 #    }
   resources:
     requests:
-      memory: 100Mi
-      cpu: 50m
-    limits:
       memory: 300Mi
+      cpu: 100m
+    limits:
+      memory: 600Mi
+      cpu: 500m
 
 pwa:
   image:
@@ -48,9 +49,10 @@ pwa:
   resources:
     requests:
       memory: 300Mi
-      cpu: 50m
+      cpu: 100m
     limits:
-      memory: 300Mi
+      memory: 600Mi
+      cpu: 500m
 
 # You may prefer using the managed version in production: https://mercure.rocks
 mercure:
@@ -86,8 +88,8 @@ postgresql:
       tag: 16
     resources:
       requests:
-        memory: 50Mi
-        cpu: 1m
+        memory: 500Mi
+        cpu: 100m
 
 # Full configuration: https://github.com/bitnami/charts/tree/master/bitnami/keycloak
 keycloak:
@@ -100,11 +102,11 @@ keycloak:
     tag: "0.1.0"
   resources:
     requests:
-      memory: 1Gi
+      memory: 512Mi
       cpu: 500m
     limits:
       memory: 1Gi
-      cpu: 500m
+      cpu: 1000m
   service:
     type: ClusterIP
   extraEnvVars:
@@ -157,8 +159,8 @@ keycloak:
         tag: 16
       resources:
         requests:
-          memory: 50Mi
-          cpu: 1m
+          memory: 500Mi
+          cpu: 100m
   auth:
     createAdminUser: true
     adminUser: admin
@@ -168,11 +170,11 @@ external-dns:
   enabled: true
   resources:
     requests:
-      memory: 50Mi
-      cpu: 50m
+      memory: 500Mi
+      cpu: 500m
     limits:
-      memory: 200Mi
-      cpu: 100m
+      memory: 1Gi
+      cpu: 1000m
   domainFilters:
     - opendataspace.io
   provider: cloudflare
