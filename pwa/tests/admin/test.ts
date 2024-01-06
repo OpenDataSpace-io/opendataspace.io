@@ -8,9 +8,9 @@ type Test = {
 }
 
 export const test = playwrightTest.extend<Test>({
-  /*thingPage: async ({ page }, use) => {
+  thingPage: async ({ page }, use) => {
     await use(new ThingPage(page));
-  }*/
+  }
 });
 
 export { expect };
