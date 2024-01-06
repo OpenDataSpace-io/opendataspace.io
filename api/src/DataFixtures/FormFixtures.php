@@ -297,50 +297,9 @@ class FormFixtures extends Fixture
                 "description" => "A simple form example.",
                 "type" => "object",
                 "properties" => [
-                    "openingHours" => [
-                        "type" => "array",
-                        "title" => "Öffnungszeiten",
-                        "items" => [
-                        "type" => "object",
-                        "properties" => [
-                            "dayOfWeek" => [
-                                "type" => "string",
-                                "title" => "Wochentag",
-                                "enum" => [
-                                    "Monday",
-                                    "Tuesday",
-                                        "Wednesday",
-                                        "Thursday",
-                                        "Friday",
-                                        "Saturday",
-                                        "Sunday"
-                                ],
-                                "enumNames" => [
-                                    "Montag",
-                                    "Dienstag",
-                                    "Mittwoch",
-                                    "Donnerstag",
-                                    "Freitag",
-                                    "Samstag",
-                                    "Sonntag"
-                                ]
-                            ],
-                            "opens" => [
-                                "type" => "string",
-                                "title" => "Öffnet",
-                                "format" => "time"
-                            ],
-                            "closes" => [
-                                "type" => "string",
-                                "title" => "Schließt",
-                                "format" => "time"
-                            ]
-                        ]
-                        ]
-                    ],
                     "openingHoursSpecification" => [
                         "type" => "array",
-                        "title" => "spezifische Öffnungszeiten",
+                        "title" => "Öffnungszeiten",
                         "items" => [
                             "type" => "object",
                             "properties" => [
@@ -385,11 +344,6 @@ class FormFixtures extends Fixture
                                     "type" => "string",
                                     "title" => "Schließt",
                                     "format" => "time"
-                                ],
-                                "closed" => [
-                                    "type" => "boolean",
-                                    "title" => "Geschlossen",
-                                    "default" => false
                                 ]
                             ]
                         ]
@@ -401,33 +355,6 @@ class FormFixtures extends Fixture
             "@type" => [ 'ui:widget' => 'hidden' ],
         ]);
         $form->setFormData([
-            "openingHours" =>  [
-                    [
-                        "dayOfWeek" => "Monday",
-                        "opens" => "10:00:00",
-                        "closes" => "16:00:00"
-                    ],
-                    [
-                        "dayOfWeek"=> "Tuesday",
-                        "opens" => "09:00:00",
-                        "closes" => "17:00:00"
-                    ],
-                    [
-                        "dayOfWeek"=> "Wednesday",
-                        "opens" => "09:00:00",
-                        "closes" => "17:00:00"
-                    ],
-                    [
-                        "dayOfWeek"=> "Thursday",
-                        "opens" => "09:00:00",
-                        "closes" => "17:00:00"
-                    ],
-                    [
-                        "dayOfWeek"=> "Friday",
-                        "opens" => "09:00:00",
-                        "closes" => "17:00:00"
-                    ]
-                ],
                 "openingHoursSpecification" => [
                     [
                         "@type" => "OpeningHoursSpecification",
