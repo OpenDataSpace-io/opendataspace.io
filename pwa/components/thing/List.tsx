@@ -16,6 +16,7 @@ import { type FetchError, type FetchResponse } from "@/utils/dataAccess";
 import { useMercure } from "@/utils/mercure";
 import { useTranslation } from 'next-i18next';
 import { Link } from "@mui/material";
+import Button from '@mui/material/Button';
 import CircularLoading from "@/components/common/CircularLoading";
 
 interface Props {
@@ -80,7 +81,9 @@ export const List: NextPage<Props> = ({ data, hubURL, filters, page }) => {
                   </Select>
                 </div>
                 <span data-testid="nb-things" className="float-right mt-1">{collection["hydra:totalItems"]} {t('thingsfound')}</span>
-                <Link href="/things/new" className="px-10 py-4 font-semibold text-sm bg-cyan-500 text-white rounded shadow-sm mx-auto">{t('things.new.title')}</Link>
+                <div className="px-12">
+                  <Button href="/things/new" className="font-semibold text-sm bg-cyan-500 text-white rounded shadow-sm">{t('things.new.title')}</Button>
+                </div>
               </div>
               {isLoading ? (
                 <div className="w-full flex px-8 pb-4 text-lg"><CircularLoading /></div>
