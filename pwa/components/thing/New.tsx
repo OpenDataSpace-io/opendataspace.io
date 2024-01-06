@@ -18,6 +18,7 @@ import { type PagedCollection } from "@/types/collection";
 import { Loading } from "@/components/common/Loading";
 import Editors from '@/components/form/Editors';
 import CustomForm from '@/components/form/CustomForm';
+import SelectForm from '@/components/form/SelectForm';
 
 import { ErrorSchema, RJSFSchema, RJSFValidationError, UiSchema, ValidatorType } from '@rjsf/utils';;
 import validator from '@rjsf/validator-ajv8';
@@ -211,12 +212,11 @@ export const New: NextPage<Props> = ({ data, hubURL, page }) => {
                             </Button>
                         </Grid>
                         <Grid item xs={4} md={2}>
-                            <span>Select Form</span>
-                                <select value={selectedForm} onChange={handleFormSelect}>
-                                    {formList.map((form: { id: string, name: string }) => (
-                                        <option key={form.id} value={form.id}>{form.name}</option>
-                                    ))}
-                                </select>
+                            <SelectForm 
+                                selectedForm={selectedForm}
+                                formList={formList}
+                                handleFormSelect={handleFormSelect}
+                            />
                         </Grid>
                     </Grid>
                     <Grid container spacing={2}>

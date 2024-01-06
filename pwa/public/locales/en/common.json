@@ -37,6 +37,9 @@
       "hideExpertMode": "Hide expert mode",
       "showExpertMode": "Show expert mode",
       "save": "Save"
+    },
+    "form":{
+      "selectform": "Select a form"
     }
   }
 }

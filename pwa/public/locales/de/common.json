@@ -38,6 +38,9 @@
       "hideExpertMode": "Expert mode ausblenden",
       "showExpertMode": "Expert mode anzeigen",
       "save": "Speichern"
+    },
+    "form":{
+      "selectform": "Formular auswählen"
     }
   }
 }
