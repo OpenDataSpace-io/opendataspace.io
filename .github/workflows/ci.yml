@@ -189,6 +189,9 @@ jobs:
         if: ${{ !cancelled() }}
         # use 1 worker to prevent conflict between scenarios
         run: npx nyc pnpm exec playwright test --grep @write --workers=1
+      - 
+        name: Create Report for Codecov
+        run: npx nyc report --reporter=lcov
       -
         name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
