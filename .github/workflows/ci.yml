@@ -68,6 +68,9 @@ jobs:
       - 
         name: Give right for bin/console
         run: docker compose exec -T php chmod +x bin/phpunit
+      -
+        name: Git Token
+        run: docker compose exec -T php composer config --global github-oauth.github.com ${{ secrets.TOKEN_GITHUB }}
       - 
         name: Install composer dependencies
         run: docker compose exec -T php composer require nikic/php-parser
