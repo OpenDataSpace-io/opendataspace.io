@@ -105,6 +105,7 @@ jobs:
       KEYCLOAK_ADMIN_PASSWORD: 2f31e2fad93941b818449fd8d57fd019b6ce7fa5
       KEYCLOAK_HTTPS_CERTIFICATE_FILE: ./helm/api-platform/keycloak/certs/tls.crt
       KEYCLOAK_HTTPS_CERTIFICATE_KEY_FILE: ./helm/api-platform/keycloak/certs/tls.pem
+      PLAYWRIGHT_JSON_OUTPUT_NAME: results.json
       # https://docs.docker.com/compose/environment-variables/envvars/#compose_file
       COMPOSE_FILE: compose.yaml:compose.prod.yaml:compose.e2e.yaml
     steps:
@@ -181,14 +182,14 @@ jobs:
         name: Run Playwright @read
         working-directory: pwa
         # don't run @read and @write scenarios to prevent conflict between them
-        run: npx nyc pnpm exec playwright test --grep @read
+        run: npx nyc pnpm exec playwright test --grep @read --reporter=lcov
       -
         name: Run Playwright @write
         working-directory: pwa
         # run all e2e tests even if @read ones fail
         if: ${{ !cancelled() }}
         # use 1 worker to prevent conflict between scenarios
-        run: npx nyc pnpm exec playwright test --grep @write --workers=1
+        run: npx nyc pnpm exec playwright test --grep @write --workers=1 --reporter=lcov
       - 
         name: Test nyc
         if: failure() || success()
