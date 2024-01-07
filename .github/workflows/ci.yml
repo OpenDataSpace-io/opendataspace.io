@@ -195,7 +195,7 @@ jobs:
         if: failure() || success()
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          file: pwa/coverage/lcov.info
+          file: pwa/test-results
       -
         uses: actions/upload-artifact@v4
         if: failure()
