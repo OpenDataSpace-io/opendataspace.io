@@ -195,6 +195,8 @@ jobs:
         # use 1 worker to prevent conflict between scenarios
         run: pnpm exec playwright test --grep @write --workers=1 --reporter=json
       -
+        # ToDo: Upload to codecov
+        # https://github.com/mxschmitt/playwright-test-coverage
         name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         if: failure() || success()
