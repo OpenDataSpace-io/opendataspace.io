@@ -190,9 +190,9 @@ jobs:
         # use 1 worker to prevent conflict between scenarios
         run: npx nyc pnpm exec playwright test --grep @write --workers=1
       - 
-        name: Upload coverage to Codecov
+        name: Create Report
         if: failure() || success()
-        run: npx codecov
+        run: npx nyc report --reporter=lcov
       -
         name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
