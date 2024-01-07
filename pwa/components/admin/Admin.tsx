@@ -23,8 +23,6 @@ import { Edit as ThingsEdit } from "@/components/admin/thing/Edit";
 console.log("ENTRYPOINT");
 console.log(ENTRYPOINT);
 
-
-
 const apiDocumentationParser = (session: Session) => async () => {
   try {
     return await parseHydraDocumentation(ENTRYPOINT, {
@@ -64,11 +62,10 @@ const AdminUI = ({ session, children }: { session: Session, children?: React.Rea
   // @ts-ignore
   const dataProvider = useRef<DataProvider>();
   const { docType } = useContext(DocContext);
-  const fixurl = new URL('https://opendataspace.io/docs.jsonld');
 
   dataProvider.current = hydraDataProvider({
     entrypoint: ENTRYPOINT,
-    httpClient: (url: URL, options = {}) => fetchHydra(fixurl, {
+    httpClient: (url: URL, options = {}) => fetchHydra(url, {
       ...options,
       headers: {
         // @ts-ignore
