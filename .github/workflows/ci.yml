@@ -178,12 +178,12 @@ jobs:
         name: Install coverage dependencies
         run: pnpm add --save-dev nyc codecov
       -
-        name: Run Playwright @read with coverage
+        name: Run Playwright @read
         working-directory: pwa
         # don't run @read and @write scenarios to prevent conflict between them
         run: npx nyc pnpm exec playwright test --grep @read
       -
-        name: Run Playwright @write with coverage
+        name: Run Playwright @write
         working-directory: pwa
         # run all e2e tests even if @read ones fail
         if: ${{ !cancelled() }}
@@ -199,7 +199,6 @@ jobs:
         if: failure() || success()
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          file: pwa/test-results
       -
         uses: actions/upload-artifact@v4
         if: failure()
