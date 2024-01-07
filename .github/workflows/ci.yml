@@ -191,6 +191,7 @@ jobs:
         run: npx nyc pnpm exec playwright test --grep @write --workers=1
       - 
         name: Create Report for Codecov
+        if: failure() || success()
         run: npx nyc report --reporter=lcov
       -
         name: Upload coverage reports to Codecov
