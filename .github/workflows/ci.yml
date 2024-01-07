@@ -66,9 +66,6 @@ jobs:
         name: Run migrations
         run: docker compose exec -T php bin/console -e test doctrine:migrations:migrate --no-interaction
       - 
-        name: Composer add php-parser
-        run: docker compose exec -T php composer require nikic/php-parser:^4.10
-      - 
         name: Give right for bin/console
         run: docker compose exec -T php chmod +x bin/phpunit
       -
@@ -108,7 +105,7 @@ jobs:
       KEYCLOAK_ADMIN_PASSWORD: 2f31e2fad93941b818449fd8d57fd019b6ce7fa5
       KEYCLOAK_HTTPS_CERTIFICATE_FILE: ./helm/api-platform/keycloak/certs/tls.crt
       KEYCLOAK_HTTPS_CERTIFICATE_KEY_FILE: ./helm/api-platform/keycloak/certs/tls.pem
-      PLAYWRIGHT_JSON_OUTPUT_NAME: results.json
+      PLAYWRIGHT_JUNIT_OUTPUT_NAME: results.xml
       # https://docs.docker.com/compose/environment-variables/envvars/#compose_file
       COMPOSE_FILE: compose.yaml:compose.prod.yaml:compose.e2e.yaml
     steps:
@@ -191,29 +188,21 @@ jobs:
         name: Run Playwright @read
         working-directory: pwa
         # don't run @read and @write scenarios to prevent conflict between them
-        run: npx nyc pnpm exec playwright test --grep @read --reporter=json
+        run: npx nyc pnpm exec playwright test --grep @read --reporter=junit
       -
         name: Run Playwright @write
         working-directory: pwa
         # run all e2e tests even if @read ones fail
         if: ${{ !cancelled() }}
         # use 1 worker to prevent conflict between scenarios
-        run: npx nyc pnpm exec playwright test --grep @write --workers=1 --reporter=json
-      -
-        name: NPM Run end-to-end tests
-        if: failure() || success()
-        run: npm test
-      - 
-        # https://github.com/mxschmitt/playwright-test-coverage/tree/main
-        name: Report coverage
-        if: failure() || success()
-        run: npx nyc report --reporter=lcovonly
+        run: npx nyc pnpm exec playwright test --grep @write --workers=1 --reporter=junit
       -
         name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         if: failure() || success()
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+          file: results.xml
       -
         uses: actions/upload-artifact@v4
         if: failure()
