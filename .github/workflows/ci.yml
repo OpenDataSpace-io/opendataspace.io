@@ -177,7 +177,7 @@ jobs:
         run: pnpm exec playwright install
       - 
         name: Install coverage dependencies
-        run: pnpm add --save-dev nyc codecov
+        run: pnpm add --save-dev nyc
       -
         name: Install coverage dependencies vite-plugin-istanbul
         run: pnpm add --save-dev vite vite-plugin-istanbul

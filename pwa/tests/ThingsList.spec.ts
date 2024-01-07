@@ -3,8 +3,15 @@ import { expect, test } from "./test";
 const totalThings = 179;
 
 test.describe("Things list", () => {
+  let jsCoverage = [];
   test.beforeEach(async ({ thingPage }) => {
+    await thingPage.startJSCoverage();
     await thingPage.gotoList();
+  });
+
+  test.afterEach(async ({ thingPage }) => {
+    const coverage = await thingPage.stopJSCoverage();
+    jsCoverage = jsCoverage.concat(coverage);
   });
 
   test("I can navigate through the list using the pagination @read", async ({ thingPage, page }) => {
