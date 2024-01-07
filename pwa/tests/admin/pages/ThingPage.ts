@@ -11,7 +11,7 @@ export class ThingPage extends AbstractPage {
     await this.page.goto("/admin");
     await this.login();
     await this.page.waitForURL(/\/admin#\/admin/);
-    await this.page.locator(".RaSidebar-fixed").getByText("Thing").click();
+    await this.page.locator(".RaSidebar-fixed").getByText("Things").click();
 
     return this.page;
   }
@@ -26,7 +26,7 @@ export class ThingPage extends AbstractPage {
       await this.page.getByRole("menu").getByText("Name").waitFor({ state: "visible" });
       await this.page.getByRole("menu").getByText("Name").click();
       await this.page.getByLabel("Name").fill(filters.name);
-      await this.page.waitForResponse(/\/thing/);
+      await this.page.waitForResponse(/\/things/);
     }
 
     return this.page;
