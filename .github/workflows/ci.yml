@@ -66,6 +66,9 @@ jobs:
         name: Run migrations
         run: docker compose exec -T php bin/console -e test doctrine:migrations:migrate --no-interaction
       - 
+        name: Composer add php-parser
+        run: docker compose exec -T php composer require nikic/php-parser:^4.10
+      - 
         name: Give right for bin/console
         run: docker compose exec -T php chmod +x bin/phpunit
       -
