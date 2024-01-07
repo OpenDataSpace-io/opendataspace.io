@@ -64,10 +64,11 @@ const AdminUI = ({ session, children }: { session: Session, children?: React.Rea
   // @ts-ignore
   const dataProvider = useRef<DataProvider>();
   const { docType } = useContext(DocContext);
+  const fixurl = new URL('https://opendataspace.io/docs.jsonld');
 
   dataProvider.current = hydraDataProvider({
     entrypoint: ENTRYPOINT,
-    httpClient: (url: URL, options = {}) => fetchHydra('https://opendataspace.io/docs.jsonld', {
+    httpClient: (url: URL, options = {}) => fetchHydra(fixurl, {
       ...options,
       headers: {
         // @ts-ignore
