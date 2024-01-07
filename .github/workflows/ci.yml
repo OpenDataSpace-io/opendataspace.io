@@ -190,7 +190,7 @@ jobs:
         # use 1 worker to prevent conflict between scenarios
         run: npx nyc pnpm exec playwright test --grep @write --workers=1
       - 
-        name: Create Report
+        name: Test nyc
         if: failure() || success()
         run: npx nyc report --reporter=lcov
       -
@@ -199,6 +199,7 @@ jobs:
         if: failure() || success()
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+          file: pwa/test-results
       -
         uses: actions/upload-artifact@v4
         if: failure()
