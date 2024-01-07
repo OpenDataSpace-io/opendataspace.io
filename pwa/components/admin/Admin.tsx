@@ -20,9 +20,6 @@ import { List as ThingsList } from "@/components/admin/thing/List";
 import { Create as ThingsCreate } from "@/components/admin/thing/Create";
 import { Edit as ThingsEdit } from "@/components/admin/thing/Edit";
 
-console.log("ENTRYPOINT");
-console.log(ENTRYPOINT);
-
 const apiDocumentationParser = (session: Session) => async () => {
   try {
     return await parseHydraDocumentation(ENTRYPOINT, {
@@ -63,6 +60,9 @@ const AdminUI = ({ session, children }: { session: Session, children?: React.Rea
   const dataProvider = useRef<DataProvider>();
   const { docType } = useContext(DocContext);
 
+  console.log(ENTRYPOINT);
+  console.log(hydraDataProvider);
+
   dataProvider.current = hydraDataProvider({
     entrypoint: ENTRYPOINT,
     httpClient: (url: URL, options = {}) => fetchHydra(url, {
@@ -75,8 +75,11 @@ const AdminUI = ({ session, children }: { session: Session, children?: React.Rea
     apiDocumentationParser: apiDocumentationParser(session),
   });
 
-  console.log(dataProvider.current);
+  console.log("DEBUG");
   console.log(window.origin);
+  console.log(dataProvider.current);
+  console.log(hydraDataProvider);
+  
 
   return docType === "hydra" ? (
     <HydraAdmin
