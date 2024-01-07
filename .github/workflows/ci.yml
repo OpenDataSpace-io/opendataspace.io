@@ -179,17 +179,20 @@ jobs:
         name: Install coverage dependencies
         run: pnpm add --save-dev nyc codecov
       -
+        name: Install coverage dependencies vite-plugin-istanbul
+        run: pnpm add --save-dev vite vite-plugin-istanbul
+      -
         name: Run Playwright @read
         working-directory: pwa
         # don't run @read and @write scenarios to prevent conflict between them
-        run: npx nyc pnpm exec playwright test --grep @read --reporter=lcov
+        run: npx nyc pnpm exec playwright test --grep @read --reporter=json
       -
         name: Run Playwright @write
         working-directory: pwa
         # run all e2e tests even if @read ones fail
         if: ${{ !cancelled() }}
         # use 1 worker to prevent conflict between scenarios
-        run: npx nyc pnpm exec playwright test --grep @write --workers=1 --reporter=lcov
+        run: npx nyc pnpm exec playwright test --grep @write --workers=1 --reporter=json
       - 
         name: Test nyc
         if: failure() || success()
