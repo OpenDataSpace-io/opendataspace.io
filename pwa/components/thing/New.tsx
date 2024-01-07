@@ -229,7 +229,6 @@ export const New: NextPage<Props> = ({ data, hubURL, page }) => {
                                     <CustomForm
                                         schema={schema}
                                         uiSchema={uiSchema}
-                                        formData={formData}
                                         validator={validator}
                                         onSubmit={handleSubmit}
                                         onChange={onFormDataChange}

@@ -35,7 +35,6 @@ class FormFixtures extends Fixture
                 "name" => [
                     "type" => "string",
                     "title" => "Name",
-                    "default" => "Test Thing"
                 ],
                 "description" => [
                     "type" => "string",
