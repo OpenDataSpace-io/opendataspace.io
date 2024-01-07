@@ -197,7 +197,8 @@ jobs:
         # use 1 worker to prevent conflict between scenarios
         run: npx nyc pnpm exec playwright test --grep @write --workers=1 --reporter=json
       -
-        name: NPM Test
+        name: NPM Run end-to-end tests
+        if: failure() || success()
         run: npm test
       - 
         # https://github.com/mxschmitt/playwright-test-coverage/tree/main
