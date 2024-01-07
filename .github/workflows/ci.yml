@@ -68,6 +68,9 @@ jobs:
       - 
         name: Give right for bin/console
         run: docker compose exec -T php chmod +x bin/phpunit
+      - 
+        name: Install composer dependencies
+        run: docker compose exec -T php composer require nikic/php-parser
       -
         name: Run PHPUnit
         #run: docker compose exec -T php bin/phpunit --coverage-clover coverage.xml
