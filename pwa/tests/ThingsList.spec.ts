@@ -111,10 +111,10 @@ test.describe("Things list", () => {
     await expect(page.getByTestId("pagination")).toHaveCount(0);
     //await expect(await thingPage.getDefaultThing()).toBeVisible();
 
-    // clear author field
+    // clear name field
     await page.getByTestId("filter-name").clear();
     await expect(page.getByTestId("filter-name")).toHaveValue("");
-    await expect(page).toHaveURL(/\/things$/);
+    await expect(page).toHaveURL(/\/things\?page=2$/);
     await expect(page.getByTestId("nb-things")).toHaveText(`${totalThings} thing(s) found`);
   });
 
@@ -122,7 +122,7 @@ test.describe("Things list", () => {
     // sort by name asc
     await thingPage.filter({ order: "Name ASC" });
     await expect(page).toHaveURL(/\/things\?order%5Bname%5D=asc$/);
-    //await expect(await thingPage.getDefaultThing()).not.toBeVisible()
+    await expect(await thingPage.getDefaultThing()).not.toBeVisible()
 
     // sort by name desc
     await thingPage.filter({ order: "Name DESC" });
@@ -137,6 +137,7 @@ test.describe("Things list", () => {
     // direct url should apply the sort
     await page.goto("/things?order%5Bname%5D=asc");
     await expect(page.getByTestId("sort")).toHaveText("Name ASC");
+    await page.waitForTimeout(3000);
     await expect(await thingPage.getDefaultThing()).not.toBeVisible()
   });
 });
