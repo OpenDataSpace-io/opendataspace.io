@@ -174,24 +174,34 @@ jobs:
         if: steps.playwright-cache.outputs.cache-hit == 'true'
         working-directory: pwa
         run: pnpm exec playwright install
+      - 
+        name: Install coverage dependencies
+        run: pnpm add --save-dev nyc codecov
       -
-        name: Run Playwright @read
+        name: Run Playwright @read with coverage
         working-directory: pwa
         # don't run @read and @write scenarios to prevent conflict between them
-        run: pnpm exec playwright test --grep @read
+        run: npx nyc pnpm exec playwright test --grep @read
       -
-        name: Run Playwright @write
+        name: Run Playwright @write with coverage
         working-directory: pwa
         # run all e2e tests even if @read ones fail
         if: ${{ !cancelled() }}
         # use 1 worker to prevent conflict between scenarios
-        run: pnpm exec playwright test --grep @write --workers=1
+        run: npx nyc pnpm exec playwright test --grep @write --workers=1
+      -
+        name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: pwa/coverage/lcov.info
       -
         uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: playwright-screenshots
           path: pwa/test-results
+      
 
   lint:
     name: Lint
