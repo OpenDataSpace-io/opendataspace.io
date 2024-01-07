@@ -65,7 +65,7 @@ const AdminUI = ({ session, children }: { session: Session, children?: React.Rea
 
   dataProvider.current = hydraDataProvider({
     entrypoint: ENTRYPOINT,
-    httpClient: (url: URL, options = {}) => fetchHydra(url, {
+    httpClient: (url: URL, options = {}) => fetchHydra('/docs.jsonld', {
       ...options,
       headers: {
         // @ts-ignore
