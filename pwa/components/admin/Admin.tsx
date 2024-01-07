@@ -20,6 +20,9 @@ import { List as ThingsList } from "@/components/admin/thing/List";
 import { Create as ThingsCreate } from "@/components/admin/thing/Create";
 import { Edit as ThingsEdit } from "@/components/admin/thing/Edit";
 
+console.log("ENTRYPOINT");
+console.log(ENTRYPOINT);
+
 const apiDocumentationParser = (session: Session) => async () => {
   try {
     return await parseHydraDocumentation(ENTRYPOINT, {
