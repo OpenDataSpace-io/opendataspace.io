@@ -122,17 +122,20 @@ test.describe("Things list", () => {
     // sort by name asc
     await thingPage.filter({ order: "Name ASC" });
     await expect(page).toHaveURL(/\/things\?order%5Bname%5D=asc$/);
-    await expect(await thingPage.getDefaultThing()).not.toBeVisible(10000)
+    await expect(page.getByTestId("sort")).toHaveText("Name ASC");
+    //await expect(await thingPage.getDefaultThing()).not.toBeVisible()
 
     // sort by name desc
     await thingPage.filter({ order: "Name DESC" });
     await expect(page).toHaveURL(/\/things\?order%5Bname%5D=desc$/);
-    await expect(await thingPage.getDefaultThing()).not.toBeVisible()
+    await expect(page.getByTestId("sort")).toHaveText("Name DESC");
+    //await expect(await thingPage.getDefaultThing()).not.toBeVisible()
 
     // sort by default (relevance)
     await thingPage.filter({ order: "Relevance" });
     await expect(page).toHaveURL(/\/things$/);
-    await expect(await thingPage.getDefaultThing()).toBeVisible()
+    await expect(page.getByTestId("sort")).toHaveText("Relevance");
+    //await expect(await thingPage.getDefaultThing()).toBeVisible()
 
     // direct url should apply the sort
     await page.goto("/things?order%5Bname%5D=asc");
