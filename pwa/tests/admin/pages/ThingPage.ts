@@ -9,11 +9,6 @@ interface FiltersProps {
 export class ThingPage extends AbstractPage {
   public async gotoList() {
     await this.page.goto("/admin");
-    if (await this.page.locator("#kc-header-wrapper").isVisible()) {
-      await this.login();
-    } else {
-      await this.page.locator(".button").click();
-    }
     await this.login();
     await this.page.waitForURL(/\/admin#\/admin/);
     await this.page.locator(".RaSidebar-fixed").getByText("Things").click();
