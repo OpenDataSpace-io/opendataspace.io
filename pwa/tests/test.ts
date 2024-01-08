@@ -43,22 +43,34 @@ type Test = {
 });*/
 
 export const test = playwrightTest.extend<Test>({
-  context: async ({ context }, use) => {
-    await context.addInitScript(() =>
+  thingPage: async ({ page }, use) => {
+    await page.addInitScript(() =>
       window.addEventListener('beforeunload', () =>
         (window as any).collectIstanbulCoverage(JSON.stringify((window as any).__coverage__))
       ),
     );
     await fs.promises.mkdir(istanbulCLIOutput, { recursive: true });
-    await context.exposeFunction('collectIstanbulCoverage', (coverageJSON: string) => {
+    await page.exposeFunction('collectIstanbulCoverage', (coverageJSON: string) => {
       if (coverageJSON)
         fs.writeFileSync(path.join(istanbulCLIOutput, `playwright_coverage_${generateUUID()}.json`), coverageJSON);
     });
-    await use(context);
-    for (const page of context.pages()) {
-      await page.evaluate(() => (window as any).collectIstanbulCoverage(JSON.stringify((window as any).__coverage__)))
-    }
-  }
+    await use(new ThingPage(page));
+    await page.evaluate(() => (window as any).collectIstanbulCoverage(JSON.stringify((window as any).__coverage__)))
+  },
+  userPage: async ({ page }, use) => {
+    await page.addInitScript(() =>
+      window.addEventListener('beforeunload', () =>
+        (window as any).collectIstanbulCoverage(JSON.stringify((window as any).__coverage__))
+      ),
+    );
+    await fs.promises.mkdir(istanbulCLIOutput, { recursive: true });
+    await page.exposeFunction('collectIstanbulCoverage', (coverageJSON: string) => {
+      if (coverageJSON)
+        fs.writeFileSync(path.join(istanbulCLIOutput, `playwright_coverage_${generateUUID()}.json`), coverageJSON);
+    });
+    await use(new UserPage(page));
+    await page.evaluate(() => (window as any).collectIstanbulCoverage(JSON.stringify((window as any).__coverage__)))
+  },
 });
 
 export { expect };
