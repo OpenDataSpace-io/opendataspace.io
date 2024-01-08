@@ -26,7 +26,9 @@ Eine Schritt für Schritt Anleitung.
     docker-compose up -d
     ```
 
-⚠️Hinweis: Beim ersten mal müssen alle Packages heruntergeladen werden. Das kann eine Weile dauern.
+⚠️Hinweis:
+
+Beim ersten mal müssen alle Packages heruntergeladen werden. Das kann eine Weile dauern.
 Warten bis app-php und app-pwa bereit sind.
 
 4. Demo Daten importieren
@@ -39,23 +41,25 @@ Mit “yes” bestätigen.
 
 5. Keycloak Demo importieren
 
-⚠️Hinweis: Der keycloak-config-cli-Job funktioniert zur Zeit nicht. Daher müssen wir die Demo-Realm manuell erstellen.
+⚠️Hinweis:
 
-    5.1 In die Keycloak Console einloggen.
+Der keycloak-config-cli-Job funktioniert zur Zeit nicht. Daher müssen wir die Demo-Realm manuell erstellen.
 
-    https://localhost/oidc/admin/master/console/
+5.1 In die Keycloak Console einloggen.
 
-    Username: admin
+https://localhost/oidc/admin/master/console/
 
-    Password: !ChangeMe!
+Username: admin
 
-    5.2 Create realm
+Password: !ChangeMe!
 
-    https://localhost/oidc/admin/master/console/#/master/add-realm
+5.2 Create realm
 
-    5.3 Demo Real importieren
+https://localhost/oidc/admin/master/console/#/master/add-realm
 
-    https://github.com/OpenDataSpace-io/opendataspace.io/blob/main/helm/api-platform/keycloak/config/realm-demo.json
+5.3 Demo Real importieren
+
+https://github.com/OpenDataSpace-io/opendataspace.io/blob/main/helm/api-platform/keycloak/config/realm-demo.json
 
 6. https://localhost öffnen und einloggen
 
