@@ -11,22 +11,29 @@ Eine Schritt für Schritt Anleitung.
 
 1. Clone Git Repository oder Code-Ordner in Editor öffnen.
     
-    $ git clone https://github.com/OpenDataSpace-io/opendataspace.io.git
+    ```
+    git clone https://github.com/OpenDataSpace-io/opendataspace.io.git
 
 2. Docker Build
     
-    $ docker compose build --no-cache
+    ```
+    docker compose build --no-cache
+    ```
 
 3. Docker Container starten
     
-    $ docker-compose up -d
+    ```
+    docker-compose up -d
+    ```
 
 ⚠️Hinweis: Beim ersten mal müssen alle Packages heruntergeladen werden. Das kann eine Weile dauern.
 Warten bis app-php und app-pwa bereit sind.
 
 4. Demo Daten importieren
     
-    $ docker-compose exec php bin/console doctrine:fixtures:load
+    ```
+    docker-compose exec php bin/console doctrine:fixtures:load
+    ```
 
 Mit “yes” bestätigen.
 
