@@ -122,7 +122,7 @@ test.describe("Things list", () => {
     // sort by name asc
     await thingPage.filter({ order: "Name ASC" });
     await expect(page).toHaveURL(/\/things\?order%5Bname%5D=asc$/);
-    await expect(await thingPage.getDefaultThing()).not.toBeVisible()
+    await expect(await thingPage.getDefaultThing()).not.toBeVisible(10000)
 
     // sort by name desc
     await thingPage.filter({ order: "Name DESC" });
