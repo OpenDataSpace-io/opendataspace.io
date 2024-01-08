@@ -60,9 +60,6 @@ const AdminUI = ({ session, children }: { session: Session, children?: React.Rea
   const dataProvider = useRef<DataProvider>();
   const { docType } = useContext(DocContext);
 
-  console.log(ENTRYPOINT);
-  console.log(hydraDataProvider);
-
   dataProvider.current = hydraDataProvider({
     entrypoint: ENTRYPOINT,
     httpClient: (url: URL, options = {}) => fetchHydra(url, {
@@ -74,12 +71,6 @@ const AdminUI = ({ session, children }: { session: Session, children?: React.Rea
     }),
     apiDocumentationParser: apiDocumentationParser(session),
   });
-
-  console.log("DEBUG");
-  console.log(window.origin);
-  console.log(dataProvider.current);
-  console.log(hydraDataProvider);
-  
 
   return docType === "hydra" ? (
     <HydraAdmin
