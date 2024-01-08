@@ -53,7 +53,7 @@ Username: admin
 
 Password: !ChangeMe!
 
-5.2 Create realm
+5.2 Erstelle Demo realm
 
 https://localhost/oidc/admin/master/console/#/master/add-realm
 
