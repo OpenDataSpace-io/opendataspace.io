@@ -82,7 +82,7 @@ jobs:
         # run: docker compose exec -T -e XDEBUG_MODE=coverage php bin/phpunit --coverage-clover coverage.xml
       -
         name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         if: failure() || success()
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -199,7 +199,7 @@ jobs:
         # ToDo: Upload to codecov
         # https://github.com/mxschmitt/playwright-test-coverage
         name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         if: failure() || success()
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
